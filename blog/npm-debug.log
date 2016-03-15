@@ -1,0 +1,72 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'hexo-deployer-git',
+1 verbose cli   '--save' ]
+2 info using npm@2.14.20
+3 info using node@v4.4.0
+4 verbose install initial load of /home/chengca/hexo_blog/blog/package.json
+5 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo/package.json
+6 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo-generator-archive/package.json
+7 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo-generator-category/package.json
+8 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo-generator-index/package.json
+9 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo-generator-tag/package.json
+10 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo-renderer-ejs/package.json
+11 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo-renderer-marked/package.json
+12 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo-renderer-stylus/package.json
+13 verbose installManyTop reading scoped package data from /home/chengca/hexo_blog/blog/node_modules/hexo-server/package.json
+14 verbose readDependencies loading dependencies from /home/chengca/hexo_blog/blog/package.json
+15 silly cache add args [ 'hexo-deployer-git', null ]
+16 verbose cache add spec hexo-deployer-git
+17 silly cache add parsed spec Result {
+17 silly cache add   raw: 'hexo-deployer-git',
+17 silly cache add   scope: null,
+17 silly cache add   name: 'hexo-deployer-git',
+17 silly cache add   rawSpec: '',
+17 silly cache add   spec: 'latest',
+17 silly cache add   type: 'tag' }
+18 silly addNamed hexo-deployer-git@latest
+19 verbose addNamed "latest" is being treated as a dist-tag for hexo-deployer-git
+20 info addNameTag [ 'hexo-deployer-git', 'latest' ]
+21 silly mapToRegistry name hexo-deployer-git
+22 silly mapToRegistry using default registry
+23 silly mapToRegistry registry https://registry.npmjs.org/
+24 silly mapToRegistry uri https://registry.npmjs.org/hexo-deployer-git
+25 verbose addNameTag registry:https://registry.npmjs.org/hexo-deployer-git not in flight; fetching
+26 verbose request uri https://registry.npmjs.org/hexo-deployer-git
+27 verbose request no auth needed
+28 info attempt registry request try #1 at 16:16:33
+29 verbose request id a3d0ab9689c49421
+30 http request GET https://registry.npmjs.org/hexo-deployer-git
+31 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=Parse Error
+32 info attempt registry request try #2 at 16:16:44
+33 http request GET https://registry.npmjs.org/hexo-deployer-git
+34 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=Parse Error
+35 info attempt registry request try #3 at 16:17:44
+36 http request GET https://registry.npmjs.org/hexo-deployer-git
+37 verbose stack Error: tunneling socket could not be established, cause=Parse Error
+37 verbose stack     at ClientRequest.onError (/usr/local/lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/index.js:176:17)
+37 verbose stack     at ClientRequest.g (events.js:260:16)
+37 verbose stack     at emitOne (events.js:77:13)
+37 verbose stack     at ClientRequest.emit (events.js:169:7)
+37 verbose stack     at Socket.socketOnData (_http_client.js:314:9)
+37 verbose stack     at emitOne (events.js:77:13)
+37 verbose stack     at Socket.emit (events.js:169:7)
+37 verbose stack     at readableAddChunk (_stream_readable.js:146:16)
+37 verbose stack     at Socket.Readable.push (_stream_readable.js:110:10)
+37 verbose stack     at TCP.onread (net.js:529:20)
+38 verbose cwd /home/chengca/hexo_blog/blog
+39 error Linux 3.13.0-55-generic
+40 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "hexo-deployer-git" "--save"
+41 error node v4.4.0
+42 error npm  v2.14.20
+43 error code ECONNRESET
+44 error network tunneling socket could not be established, cause=Parse Error
+44 error network This is most likely not a problem with npm itself
+44 error network and is related to network connectivity.
+44 error network In most cases you are behind a proxy or have bad network settings.
+44 error network
+44 error network If you are behind a proxy, please make sure that the
+44 error network 'proxy' config is set properly.  See: 'npm help config'
+45 verbose exit [ 1, true ]
