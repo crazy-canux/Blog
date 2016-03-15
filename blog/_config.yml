@@ -4,16 +4,15 @@
 
 # Site
 title: Canux's Blog
-subtitle: Enjoy coding, enjoy life!
-description: Concentrate on Java/Python and WEB develop.
+subtitle:
+description:
 author: Canux CHENG
-email: canux.cheng@gmail.com
-language: zh-CN
-timezone: Asia/Shanghai
+language:
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blogofcanux.com
+url: http://yoursite.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -64,19 +63,12 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-landscape
-#theme: hexo-theme-light
-#theme: hexo-theme-phase
-#theme: next
-#theme: yilia
-#theme: landscape-plus
-#theme: coney
+theme: landscape
 
 # Deployment
-# For all hexo-deployer-git.
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:crazy-canux/crazy-canux.io.git
+  repo: git@github:crazy-canux/crazy-canux.github.io.git
   branch: master
   message:
