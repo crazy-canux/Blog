@@ -69,6 +69,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github:crazy-canux/crazy-canux.github.io.git
+  repo: git@github.com:crazy-canux/crazy-canux.github.io.git
   branch: master
   message:
