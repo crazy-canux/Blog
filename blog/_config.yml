@@ -4,11 +4,12 @@
 
 # Site
 title: Canux's Blog
-subtitle:
-description:
+subtitle: 专注于 Java和Python 相关的开发
+description: 一个用VIM写Java和Python的男人
 author: Canux CHENG
-language:
-timezone:
+email: canux.cheng@gmail.com
+#language: en
+language: zh-Hans
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,7 +64,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
+
+Plugins:
+  - hexo-generator-feed
+  - hexo-generator-sitemap
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -72,3 +77,15 @@ deploy:
   repo: git@github.com:crazy-canux/crazy-canux.github.io.git
   branch: master
   message:
+
+########## Extend plugins ##########
+# sitemap
+sitemap:
+  path: sitemap.xml
+
+# feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
