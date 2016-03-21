@@ -5,7 +5,7 @@
 # Site
 title: Canux's Blog
 subtitle: 专注于 Java和Python 相关的开发
-description: 一个用VIM写Java和Python的男人
+description: 一个用VIM和GIT写代码的程序猿
 author: Canux CHENG
 email: canux.cheng@gmail.com
 #language: en
@@ -13,7 +13,7 @@ language: zh-Hans
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://crazy-canux.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -41,8 +41,8 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
-  tab_replace:
+  auto_detect: true
+  tab_replace: ''
 
 # Category & Tag
 default_category: uncategorized
@@ -79,6 +79,14 @@ deploy:
   message:
 
 ########## Extend plugins ##########
+# Archives
+# 2: enable pagination
+# 1: disable pagination
+# 0: fully disable
+archive: 1
+category: 1
+tag: 1
+
 # sitemap
 sitemap:
   path: sitemap.xml
