@@ -94,18 +94,14 @@
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?8343378";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
+
+
+  <div style="display: none;">
+    <script src="http://s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
 
 
 
@@ -122,7 +118,7 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta custom-logo">
+      <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
@@ -132,7 +128,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">专注于 Java和Python 相关的开发</p>
+  <p class="site-subtitle">专注于 Java/Python/Web 等相关的开发</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -170,16 +166,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
@@ -211,9 +197,39 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
   
 </nav>
 
@@ -248,8 +264,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/20/about_this_blog/" itemprop="url">
-                  关于本博客
+                <a class="post-title-link" href="/2016/03/22/使用Hexo和Github搭建个人主页/" itemprop="url">
+                  使用Hexo和Github搭建个人主页
                 </a>
               
             
@@ -262,19 +278,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-20T11:02:52+08:00" content="2016-03-20">
-              2016-03-20
+            <time itemprop="dateCreated" datetime="2016-03-22T12:59:10+08:00" content="2016-03-22">
+              2016-03-22
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/20/about_this_blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/about_this_blog/" itemprop="commentsCount"></span>
+                <a href="/2016/03/22/使用Hexo和Github搭建个人主页/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/使用Hexo和Github搭建个人主页/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,13 +333,16 @@
       
         
           
-          Hexo是用Javascirpt的后端nodejs开发的一个轻量级的博客框架。
-本博客是使用hexo和github搭建的个人主页，使用的主题是next。
-
+          简单介绍
+安装依赖
+快速使用
+配置全局配置主题配置
+第三方插件
+写博客
           
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/20/about_this_blog/#more" rel="contents">
+            <a class="btn" href="/2016/03/22/使用Hexo和Github搭建个人主页/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -363,21 +401,35 @@
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/myimages/myself.jpg"
+               src="/images/myimages/avatar.jpg"
                alt="Canux CHENG" />
           <p class="site-author-name" itemprop="name">Canux CHENG</p>
           <p class="site-description motion-element" itemprop="description">一个用VIM和GIT写代码的程序猿</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/archives">
+            <a href="/">
               <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -403,23 +455,15 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://sourceforge.net/u/canuxcheng/profile/" target="_blank">
+                <a href="http://stackoverflow.com/" target="_blank">
                   
-                    <i class="fa fa-sourceforge"></i> sourceforge
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/3631324653/profile?topnav=1&wvr=6&is_all=1" target="_blank">
-                  
-                    <i class="fa fa-weibo"></i> 微博
+                    <i class="fa fa-stack-overflow"></i> stackoverflow
                   
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.linkedin.com/in/%E4%BC%9F-%E7%A8%8B-4b5b23ab?trk=nav_responsive_tab_profile_pic" target="_blank">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank">
                   
                     <i class="fa fa-linkedin"></i> LinkedIn
                   
@@ -427,17 +471,9 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/canux" target="_blank">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank">
                   
-                    <i class="fa fa-zhihu"></i> 知呼
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://stackoverflow.com/" target="_blank">
-                  
-                    <i class="fa fa-stackoverflow"></i> stackoverflow
+                    <i class="fa fa-envelope"></i> E-mail
                   
                 </a>
               </span>
@@ -447,6 +483,12 @@
 
         
         
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/zero/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
 
         
         <div class="links-of-blogroll motion-element">
@@ -455,7 +497,7 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://bbs.chinaunix.net/" target="_blank">CSDN</a>
+                  <a href="http://bbs.csdn.net/home" target="_blank">CSDN</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
