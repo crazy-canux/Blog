@@ -28,7 +28,7 @@ Markdown 英文手册：
 
 一般文件名是 markdown.md
 
-## 两个需要特殊处理的字符< 和 &
+## 两个需要特殊处理的字符
 
 < 的表示方法：
 > & l t ;
@@ -46,9 +46,9 @@ Markdown 英文手册：
 
 ## 标题
 
-markdown支持两个语法格式的标题：
+markdown支持两个语法格式的标题
 
-### setext格式：
+### setext格式
 
 任意个数下等号=表示大标题:
 
@@ -68,7 +68,7 @@ Subtitle
 > Subtitle
 > -----
 
-### atx格式：
+### atx格式
 
 一到六个#表示一到六阶标题,#后面有空格
 
@@ -99,7 +99,6 @@ Subtitle
 
 \> # title
 > # title
-
 
 ## 列表
 
@@ -201,7 +200,7 @@ Subtitle
 
 用反引号标记一小段代码：
 
-\`monospace`
+\`monospace\`
 > `monospace`
 
 ## 图片
