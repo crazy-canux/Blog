@@ -26,7 +26,7 @@ Markdown 英文手册：
 
 <http://daringfireball.net/projects/markdown/syntax>
 
-一般文件名是 markdown.md
+Markdown文件的扩展名是md。
 
 ## 两个需要特殊处理的字符
 
@@ -52,36 +52,29 @@ markdown支持两个语法格式的标题
 
 任意个数下等号=表示大标题:
 
-Title
-
-======
-
-> Title
-> ======
+    Title
+    ======
 
 任意个数下减号表示副标题：
 
-Subtitle
-
-\-----
-
-> Subtitle
-> -----
+    Subtitle
+    --------
 
 ### atx格式
 
 一到六个#表示一到六阶标题,#后面有空格
 
-\# 一阶标题:
-> # 一阶标题
+    # 一阶标题
 
-\## 二阶标题：
-> ## 二阶标题
+    ## 二阶标题
 
-...
+    ### 三阶标题
 
-\###### 六阶标题：
-> ###### 六阶标题
+    #### 四阶标题
+
+    ##### 五阶标题
+
+    ###### 六阶标题
 
 ## 区块引用
 
@@ -92,13 +85,10 @@ Subtitle
 
 使用多个>嵌套使用：
 
-\>> block
+\>\> block
 >> block
 
-区块内也可以用标题，列表和代码区块等：
-
-\> # title
-> # title
+区块内也可以用标题，列表和代码区块等。
 
 ## 列表
 
@@ -136,13 +126,13 @@ Subtitle
 
 三个以上的*-_都可以产生分割线:
 
-\***
+\*\*\*
 > ***
 
-\---
+\-\-\-
 > ---
 
-\___
+\_\_\_
 > ___
 
 ***
@@ -158,13 +148,9 @@ Subtitle
 
 ### 参考式链接
 
-\[Link][id]
+\[Link]\[id]
 
-\[id]: https://github.com/crazy-canux
-
-> [Link][id]
-
-> [id]: https://github.com/crazy-canux
+\[id]:https://github.com/crazy-canux
 
 ### 自动链接
 
@@ -212,13 +198,9 @@ Subtitle
 
 ### 参考式图片
 
-\!\[pic][id]
+\!\[pic]\[id]
 
 \[id]: /path/to/img.jpg
-
-> ![pic][id]
-
-> [id]: /path/to/img.jgp
 
 ***
 

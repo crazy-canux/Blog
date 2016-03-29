@@ -125,11 +125,23 @@ Nagios XI 架构：
 
 # Nagios 集中监控
 
-使用nagios core + plugins可以监控本地的linux/unix机器。
+## 本地监控
 
-使用nagios core + plugins + addons（NCPA/NRPE）可以监控远程的linux/unix机器。
+使用nagios core + plugins:
 
-使用nagios core + plugins + addons（NCPA/NSCP）可以监控远程的windows机器。
+使用nagios core + plugins 可以监控本地的linux/unix机器。
+
+## 远程监控
+
+使用nagios core + plugins + addons:
+
+使用nagios core + plugins + NRPE 可以监控远程的linux/unix机器。
+
+使用nagios core + plugins + NSCP 可以监控远程的windows机器。
+
+使用nagios core + plugins + NCPA 可以监控远程的linux/unix/windows机器。
+
+使用nagios core + plugins + Check_MK 可以监控远程的linux/unix/windows机器。
 
 ***
 
@@ -139,9 +151,13 @@ Nagios的分布式监控方案有很多。
 
 ## NRDP/NSCA
 
+NRDP是NSCA的升级版。
+
+## Op5 Merlin
+
 ## DNX
 
-## Mod_gearman
+## Mod Gearman
 
 ![pic](/images/nagios.png)
 
