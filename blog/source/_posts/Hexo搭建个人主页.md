@@ -10,7 +10,7 @@ tags:
 - hexo
 - next
 categories:
-- web
+- Web
 permalink:
 ---
 

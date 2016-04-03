@@ -7,7 +7,7 @@ updated:
 tags:
 - Markdown
 categories:
-- web
+- Web
 permalink:
 ---
 

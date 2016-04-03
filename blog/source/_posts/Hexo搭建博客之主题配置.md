@@ -10,7 +10,7 @@ tags:
 - hexo
 - next
 categories:
-- web
+- Web
 permalink:
 ---
 
@@ -40,15 +40,15 @@ permalink:
 
 >\# 将制作好的favicon图标放到/source里面。
 
->    favicon: /favicon.ico
+>     favicon: /favicon.ico
 
 >\# SEO优化的关键字。
 
->    keywords: "Java, Python, Web, Canux, CHENG"
+>     keywords: "Linux, Java, Python, Web, Canux, CHENG"
 
 >\# 指定站点的起始日期。
 
->    since: 2013
+>     since: 2013
 
 >\# ---------------------------------------------------------------
 
@@ -58,37 +58,37 @@ permalink:
 
 >\# 顶部菜单栏
 
->    menu:
+>     menu:
 
->      home: /
+>       home: /
 
->      about: /about
+>       about: /about
 
->      categories: /categories
+>       categories: /categories
 
->      tags: /tags
+>       tags: /tags
 
->      archives: /archives
+>       archives: /archives
 
->      #commonweal: /404.html
+>       #commonweal: /404.html
 
 >\# 菜单栏图标,使用fontawsome
 
->    menu_icons:
+>     menu_icons:
 
->      enable: true
+>       enable: true
 
->      home: home
+>       home: home
 
->      about: user
+>       about: user
 
->      categories: th
+>       categories: th
 
->      tags: tags
+>       tags: tags
 
->      archives: archive
+>       archives: archive
 
->      #commonweal: heartbeat
+>       #commonweal: heartbeat
 
 >\# ---------------------------------------------------------------
 
@@ -96,7 +96,7 @@ permalink:
 
 >\# ---------------------------------------------------------------
 
->    scheme: Muse
+>     scheme: Muse
 
 >\# ---------------------------------------------------------------
 
@@ -104,11 +104,11 @@ permalink:
 
 >\# ---------------------------------------------------------------
 
->    reward_comment: 您的支持是我创作的动力!
+>     reward_comment: 您的支持是我创作的动力!
 
->    wechatpay: /images/myimages/wechatpay.jpg
+>     wechatpay: /images/myimages/wechatpay.jpg
 
->    alipay: /images/myimages/alipay.jpg
+>     alipay: /images/myimages/alipay.jpg
 
 >\# ---------------------------------------------------------------
 
@@ -118,69 +118,69 @@ permalink:
 
 >\# 社交信息
 
->    social:
+>     social:
 
->      GitHub: https://github.com/crazy-canux
+>       GitHub: https://github.com/crazy-canux
 
->      Stackoverflow: http://stackoverflow.com/
+>       Stackoverflow: http://stackoverflow.com/
 
->      LinkedIn: http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button
+>       LinkedIn: http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button
 
->      E-mail: mailto:canuxcheng@gmail.com
+>       E-mail: mailto:canuxcheng@gmail.com
 
 >\# 社交信息图标，使用fontawsome。
 
->    social_icons:
+>     social_icons:
 
->      enable: true
+>       enable: true
 
->      GitHub: github
+>       GitHub: github
 
->      LinkedIn: linkedin
+>       LinkedIn: linkedin
 
->      Stackoverflow: stack-overflow
+>       Stackoverflow: stack-overflow
 
->      E-mail: envelope
+>       E-mail: envelope
 
 >\# 友情链接
 
->    links_title: Links
+>     links_title: Links
 
->    links:
+>     links:
 
->      CSDN: http://bbs.csdn.net/home
+>       CSDN: http://bbs.csdn.net/home
 
->      51CTO: http://bbs.51cto.com/
+>       51CTO: http://bbs.51cto.com/
 
->      ChinaUnix: http://bbs.chinaunix.net/
+>       ChinaUnix: http://bbs.chinaunix.net/
 
->      ITPUB: http://www.itpub.net/forum.php
+>       ITPUB: http://www.itpub.net/forum.php
 
 >\# 侧边栏图像
 
->    avatar: /images/myimages/avatar.jpg
+>     avatar: /images/myimages/avatar.jpg
 
 >\# TOC设置
 
->    toc:
+>     toc:
 
->      enable: true
+>       enable: true
 
->      number: true
+>       number: true
 
 >\#  设置 4.0 International 许可证: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 
->    creative_commons: zero
+>     creative_commons: zero
 
 >\# 侧边栏位置: left | right
 
->    sidebar:
+>     sidebar:
 
->      position: left
+>       position: left
 
 >\# 侧边栏显示方式： post | always | hide | remove
 
->    display: post
+>     display: post
 
 >\# ---------------------------------------------------------------
 
@@ -190,154 +190,162 @@ permalink:
 
 >\# 使用Custom Logo.
 
->    custom_logo:
+>     custom_logo:
 
->      enabled: false
+>       enabled: false
 
->      image:
+>       image:
 
 >\# 代码高亮主题: normal | night | night eighties | night blue | night bright
 
->    highlight_theme: night eighties
+>     highlight_theme: night eighties
 
 >\# 自动滚动页面
 
->    scroll_to_more: true
+>     scroll_to_more: true
 
 >\# 自动摘录
 
->    auto_excerpt:
+>     auto_excerpt:
 
->      enable: true
+>       enable: true
 
->      length: 150
+>       length: 150
 
 >\# 使用Lato font
 
->    use_font_lato: true
+>     use_font_lato: true
 
 >\# ---------------------------------------------------------------
 
->\# 第三方插件
+>\# 第三方插件: 一般都需要去插件的官网注册使用。
 
 >\# ---------------------------------------------------------------
 
 >\# MathJax Support
 
->    mathjax: true
+>     mathjax: true
 
->\# leancloud analytics
-
->    leancloud_visitors:
-
->      enable: false
-
->      app_id: #<app_id>
-
->      app_key: #<app_key>
+>
 
 >\# Google Analytics - US
 
->    #google_analytics:
+>     #google_analytics:
 
->\# Facebook sdk
+>\# Facebook sdk Analytics - US
 
->    facebook_sdk:
+>     facebook_sdk:
 
->      enable: false
+>       enable: false
 
->      app_id: #<app_id>
+>       app_id: #<app_id>
 
->      fb_admin: #<user_id>
+>       fb_admin: #<user_id>
 
->      like_button: #true
+>       like_button: #true
 
->      webmaster: #true
+>       webmaster: #true
 
->\# CNZZ  - CN
+>\# CNZZ Analytics - CN
 
->    cnzz_siteid: 1258132457
+>     cnzz_siteid: 1258132457
 
->\# Baidu Analytics ID
+>\# leancloud Analytics - CN
 
->    #baidu_analytics: 8343378
+>     leancloud_visitors:
 
->\# Tencent analytics ID
+>       enable: false
 
->    #tencent_analytics: 55134199
+>       app_id: #<app_id>
+
+>       app_key: #<app_key>
+
+>\# Baidu Analytics
+
+>     #baidu_analytics: 8343378
+
+>\# Tencent Analytics
+
+>     #tencent_analytics: 55134199
+
+>
 
 >\# Disqus - US
 
->    #disqus_shortname: canux
+>     #disqus_shortname: canux
 
 >\# Duoshuo - CN
 
->    duoshuo_shortname: crazy-canux
+>     duoshuo_shortname: crazy-canux
 
 >\# Make duoshuo show UA
 
->    duoshuo_info:
+>     duoshuo_info:
 
->      ua_enable: true
+>       ua_enable: true
 
->      admin_enable: false
+>       admin_enable: false
 
->      user_id:
+>       user_id:
 
->      #admin_nickname: ROOT
+>       #admin_nickname: ROOT
 
 >\# Make duoshuo show hot artical
 
->    duoshuo_hotartical: true
+>     duoshuo_hotartical: true
+
+>
 
 >\# AddThis - US
 
->    #add_this_id:
+>     #add_this_id:
 
 >\# JiaThis - CN
 
->    jiathis: true
+>     jiathis: true
 
 >\# Baidu Share
 
->    #baidushare: true
+>     #baidushare: true
 
 >\# Duoshuo Share
 
->    #duoshuo_share: true
+>     #duoshuo_share: true
+
+>
 
 >\# Swiftype - US
 
->    swiftype_key: xGAKY5LyK8xDYvH9zzcX
+>     swiftype_key: xGAKY5LyK8xDYvH9zzcX
 
 >\# Tinysou - CN
 
->    #tinysou_Key
+>     #tinysou_Key
 
 >\#! ---------------------------------------------------------------
 
->\#! 不可编辑的主题信息
+>\#! 谨慎编辑的主题信息
 
 >\#! ---------------------------------------------------------------
 
->\# Motion
+>\# 侧边栏移动插件 Motion
 
->    use_motion: true
+>     use_motion: true
 
->\# Fancybox
+>\# 图片弹出插件 Fancybox
 
->    fancybox: true
+>     fancybox: true
 
 >\# Static files
 
->    vendors: vendors
+>     vendors: vendors
 
->    css: css
+>     css: css
 
->    js: js
+>     js: js
 
->    images: images
+>     images: images
 
 >\# Theme version
 
->    version: 0.5.0
+>     version: 0.5.0

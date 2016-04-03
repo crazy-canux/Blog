@@ -37,7 +37,9 @@ zenoss: 新的开源监控套件。
 
 ***
 
-# Nagios发展
+# Nagios安装配置
+
+Nagios发展：
 
 Nagios core 1.0
 
@@ -54,6 +56,12 @@ Nagios core 4.0
 开源解决方案： Nagios core
 
 商业解决方案： Nagios XI
+
+Nagios安装配置：
+
+安装和配置nagios core,plugins,addons参考官方文档
+
+<https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html>
 
 ***
 
@@ -84,9 +92,9 @@ Nagios frontends包括了 主题,web接口,移动设备接口。
 
 >Tools and GUIs for simplifying Nagios Core configuration.
 
-nagios core的的组件。
+nagios core的组件。
 
-包括NConf,Thruk,NagiosQL,Mod_gearman,mk-livestatus,NDOUtils,BPI,NSTI,NRDP(NSCA),NCPA(NRPE/NSCP)等addons。
+包括NConf,Thruk,NagiosQL,livestatus,NDOUtils,BPI,NSTI,NRDP(NSCA),NCPA(NRPE/NSCP)等addons。
 
 ## Nagios exchange:
 
@@ -119,6 +127,8 @@ Nagios XI 架构：
 
 ## Nagios fusion
 
+做分布式监控。
+
 ## Nagios incident manager
 
 ***
@@ -127,35 +137,50 @@ Nagios XI 架构：
 
 ## 本地监控
 
-使用nagios core + plugins:
-
-使用nagios core + plugins 可以监控本地的linux/unix机器。
+使用nagios core + plugins只能监控本地的linux/unix机器。
 
 ## 远程监控
 
-使用nagios core + plugins + addons:
+使用nagios core + plugins + addons可以监控远程的linux/unix/windows/mac机器。
 
-使用nagios core + plugins + NRPE 可以监控远程的linux/unix机器。
+NRPE和check_nrpe, 运行远程机器上的插件, 支持unix和linux:
 
-使用nagios core + plugins + NSCP 可以监控远程的windows机器。
+    nagios core + check_nrpe <=> NRPE + plugins
 
-使用nagios core + plugins + NCPA 可以监控远程的linux/unix/windows机器。
+NSCP和check_nt, 只能使用固定的几个命令查基本属性, 支持windows和linux：
 
-使用nagios core + plugins + Check_MK 可以监控远程的linux/unix/windows机器。
+    nagios core + check_nt -v variable <=> NSCP(NSClient++)
+
+NSCP和check_nrpe，可以传自己的命令或插件, 支持windows和linux：
+
+    nagios core + check_nrpe -c command <=> NSCP
+
+NSCP和NSCA/NRDP, NSCA提供被动检测, 支持windows和linux：
+
+    nagios core + NSCA/NRDP <=> NSCP
+
+NCPA是python写的跨平台代理, 支持linux/windows/mac：
+
+    nagios core + check_ncpa.py <=> NCPA
+
+check_MK_agent是一款先进的代理, 支持linux/windows：
+
+    nagios core + Check_MK <=> check_mk_agent
 
 ***
 
 # Nagios 分布式监控
 
-Nagios的分布式监控方案有很多。
+Nagios的分布式监控方案有很多,性能最优的就是mod gearman，分布式监控基于集中监控。
 
 ## NRDP/NSCA
 
-NRDP是NSCA的升级版。
+官方推荐，NRDP是NSCA的升级版,提供被动检测,这种方式效率低，稳定性差。
 
-## Op5 Merlin
-
-## DNX
+    nagios core <- plugins <- NSCA <= send_nsca <- ocsp <- Nagios core <=> Hosts
+                                  ^
+                                 ||
+                                 send_nsca <- ocsp <- Nagios core <=> Hosts
 
 ## Mod Gearman
 
@@ -165,20 +190,17 @@ NRDP是NSCA的升级版。
 
 ***
 
-# 安装配置
+# 其它组建介绍
 
-安装和配置nagios core,plugins,addons参考官方文档：
+NDO:
 
-<https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html>
+Livestatus: 类似与NDO。
 
-***
+Thruk:基于perl的web框架catalyst的dashbord。
 
-# Nagios的插件开发
+Nagvis:
 
-开发nagios plugins参考官方文档：
-
-<https://nagios-plugins.org/doc/guidelines.html>
+Pnp4nagios:
 
 ***
 
-*Nagios配置和插件开发请看下回分解*
