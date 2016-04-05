@@ -13,7 +13,6 @@ tags:
 - Doxygen
 categories:
 - Linux
-- C
 permalink:
 ---
 

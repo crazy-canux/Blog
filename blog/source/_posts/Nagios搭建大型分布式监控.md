@@ -39,7 +39,7 @@ zenoss: 新的开源监控套件。
 
 # Nagios安装配置
 
-Nagios发展：
+## Nagios发展
 
 Nagios core 1.0
 
@@ -57,11 +57,17 @@ Nagios core 4.0
 
 商业解决方案： Nagios XI
 
-Nagios安装配置：
+## Nagios安装配置
 
-安装和配置nagios core,plugins,addons参考官方文档
+安装和配置nagios core,plugins,addons参考
+
+官方文档:
 
 <https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html>
+
+中文文档：
+
+<http://nagios-cn.sourceforge.net/nagios-cn/index.html>
 
 ***
 
@@ -75,12 +81,15 @@ Nagios core是监控和警报的主引擎，围绕它建立了成千上万的项
 技术栈是c，只能安装在linux/unix系统。
 Nagios core只是一个监控套件，本身没有监控功能，需要插件来完成监控。
 
+<https://www.nagios.org/projects/nagios-core/>
+
 ## Nagios plugins:
 
 >Efficient, standalone extensions that provide low-level intelligence for monitoring anything and everything with Nagios Core.
 
-Nagios core的监控插件。
-也就是官方插件,主要是c、shell和perl。
+Nagios core的监控插件,也就是官方插件,主要是c、shell和perl。
+
+<https://www.nagios.org/projects/nagios-plugins/>
 
 ## Nagios frontends:
 
@@ -88,22 +97,29 @@ Nagios core的监控插件。
 
 Nagios frontends包括了 主题,web接口,移动设备接口。
 
-## Nagios configuration tools:
+<https://www.nagios.org/downloads/nagios-core-frontends/>
+
+## Nagios config tools(Nagios addons projects):
 
 >Tools and GUIs for simplifying Nagios Core configuration.
 
 nagios core的组件。
 
-包括NConf,Thruk,NagiosQL,livestatus,NDOUtils,BPI,NSTI,NRDP(NSCA),NCPA(NRPE/NSCP)等addons。
+包括Lilac,NagiosQL,NConf,OneCMDB,ignoramus
+
+<https://www.nagios.org/projects/nagios-config-tools/>
+
+<https://www.nagios.org/downloads/nagios-core-addons/>
 
 ## Nagios exchange:
 
 >Nagios® Exchange is the central place where you'll find all types of Nagios projects - plugins, addons, documentation, extensions, and more. This site is designed for the Nagios Community to share its Nagios creations.
 
 Nagios exchange是nagios的开源宝库。
+
 包括第三方plugins、addons和docs。
 
-[nagios-excnahge](https://exchange.nagios.org/https://exchange.nagios.org/)
+<https://exchange.nagios.org/https://exchange.nagios.org/>
 
 ***
 
@@ -157,7 +173,7 @@ NSCP和check_nrpe，可以传自己的命令或插件, 支持windows和linux：
 
 NSCP和NSCA/NRDP, NSCA提供被动检测, 支持windows和linux：
 
-    nagios core + NSCA/NRDP <=> NSCP
+    nagios core + NSCA/NSCA-ng/NRDP <=> NSCP
 
 NCPA是python写的跨平台代理, 支持linux/windows/mac：
 
@@ -173,7 +189,11 @@ check_MK_agent是一款先进的代理, 支持linux/windows：
 
 Nagios的分布式监控方案有很多,性能最优的就是mod gearman，分布式监控基于集中监控。
 
-## NRDP/NSCA
+## merlin
+
+## check_MK
+
+## NRDP/NSCA/NSCA-ng
 
 官方推荐，NRDP是NSCA的升级版,提供被动检测,这种方式效率低，稳定性差。
 
@@ -192,15 +212,93 @@ Nagios的分布式监控方案有很多,性能最优的就是mod gearman，分�
 
 # 其它组建介绍
 
-NDO:
+## Mathias kethner
 
-Livestatus: 类似与NDO。
+<http://mathias-kettner.com/index.html>
 
-Thruk:基于perl的web框架catalyst的dashbord。
+1. check_MK
 
-Nagvis:
+类似于mod gearman的分布式监控。
 
-Pnp4nagios:
+<http://mathias-kettner.de/check_mk.html>
+
+2. MK Livestatus
+
+其它的livestatus都是fork这个组件。
+
+<http://mathias-kettner.de/checkmk_livestatus.html>
+
+3. MK MultiSite
+
+类似于thruk，基于check_mk的dashbord。
+
+<http://mathias-kettner.de/checkmk_multisite.html>
+
+## op5
+
+<https://www.op5.com/>
+
+1. merlin
+
+类似与mod gearman的分布式监控。
+
+<https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home>
+
+2. Ninja
+
+类似于thruk, 基于merlin的dashbord。
+
+2. check_vmware_api.pl
+
+3. check_events.pl
+
+## consol labs
+
+许多开源插件
+
+<https://labs.consol.de/>
+
+<https://github.com/lausser?tab=repositories>
+
+1. check_mssql_health.pl
+
+## mod gearman
+
+分布式监控。
+
+<http://www.mod-gearman.org/>
+
+## Thruk
+
+基于perl的web框架catalyst的dashbord。
+
+<http://www.thruk.org/>
+
+## Nagvis
+
+画nagios的地图,支持mk livestatus, NDOUtils, op5 merlin。
+
+<http://www.nagvis.org/>
+
+## Pnp4nagios
+
+画nagios的性能图
+
+<http://docs.pnp4nagios.org/>
+
+## NDOUtils(NDO)
+
+N * (Nagios core + NDO module) -> TCP/Socket -> NDO2DB daemon -> DB
+
+从nagios导出当前和历史数据到mysql数据库。
+
+## Nagiosgraph
+
+类似于Pnp4nagios
+
+## NSTI
+
+Nagios SNMP Trap Interface
 
 ***
 
