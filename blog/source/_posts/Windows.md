@@ -1,14 +1,12 @@
 ---
 layout: post
-title: VIM
+title: Windows
 comments: true
-date: 2016-04-02 21:11:26
+date: 2016-04-03 14:15:40
 updated:
 tags:
-- VI
-- VIM
+- Windows
 categories:
-- Develop
-- Vim
+- Windows
 permalink:
 ---

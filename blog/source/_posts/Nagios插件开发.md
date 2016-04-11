@@ -10,6 +10,7 @@ tags:
 - Plugins
 categories:
 - DevOps
+- Nagios
 permalink:
 ---
 

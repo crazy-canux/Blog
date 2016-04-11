@@ -100,11 +100,11 @@ POSIX.1-2008/SUSv4
 
 ## <aio.h>
 
-## <mqueue.h>
-
 ## <pthread.h>
 
 ## <semaphore.h>
+
+## <mqueue.h>
 
 ## <sched.h>
 

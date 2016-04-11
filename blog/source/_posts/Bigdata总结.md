@@ -1,14 +1,12 @@
 ---
 layout: post
-title: VIM
+title: Bigdata总结
 comments: true
-date: 2016-04-02 21:11:26
+date: 2016-04-05 21:55:53
 updated:
 tags:
-- VI
-- VIM
+- bigdata
 categories:
-- Develop
-- Vim
+- Bigdata
 permalink:
 ---

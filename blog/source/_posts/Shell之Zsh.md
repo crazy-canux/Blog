@@ -8,6 +8,7 @@ tags:
 - Shell
 - Zsh
 categories:
+- Develop
 - Shell
 permalink:
 ---

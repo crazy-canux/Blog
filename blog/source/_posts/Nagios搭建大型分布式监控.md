@@ -10,6 +10,7 @@ tags:
 - DevOps
 categories:
 - DevOps
+- Nagios
 permalink:
 ---
 
@@ -159,9 +160,9 @@ Nagios XI 架构：
 
 使用nagios core + plugins + addons可以监控远程的linux/unix/windows/mac机器。
 
-NRPE和check_nrpe, 运行远程机器上的插件, 支持unix和linux:
+NRPE/NRPE_NT和check_nrpe, 运行远程机器上的插件, 支持windows/unix/linux:
 
-    nagios core + check_nrpe <=> NRPE + plugins
+    nagios core + check_nrpe <=> NRPE/NRPE_NT + plugins
 
 NSCP和check_nt, 只能使用固定的几个命令查基本属性, 支持windows和linux：
 
@@ -218,49 +219,53 @@ Nagios的分布式监控方案有很多,性能最优的就是mod gearman，分�
 
 1. check_MK
 
-类似于mod gearman的分布式监控。
+    类似于mod gearman的分布式监控。
 
-<http://mathias-kettner.de/check_mk.html>
+    <http://mathias-kettner.de/check_mk.html>
 
 2. MK Livestatus
 
-其它的livestatus都是fork这个组件。
+    其它的livestatus都是fork这个组件。
 
-<http://mathias-kettner.de/checkmk_livestatus.html>
+    <http://mathias-kettner.de/checkmk_livestatus.html>
 
 3. MK MultiSite
 
-类似于thruk，基于check_mk的dashbord。
+    类似于thruk，基于check_mk的dashbord。
 
-<http://mathias-kettner.de/checkmk_multisite.html>
+    <http://mathias-kettner.de/checkmk_multisite.html>
 
 ## op5
 
 <https://www.op5.com/>
 
+<http://git.op5.org/#/admin/projects/>
+
 1. merlin
 
-类似与mod gearman的分布式监控。
+    类似与mod gearman的分布式监控。
 
-<https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home>
+    <https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home>
 
 2. Ninja
 
-类似于thruk, 基于merlin的dashbord。
+    类似于thruk, 基于merlin的dashbord。
 
-2. check_vmware_api.pl
-
-3. check_events.pl
+3. check_vmware_api.pl
 
 ## consol labs
-
-许多开源插件
 
 <https://labs.consol.de/>
 
 <https://github.com/lausser?tab=repositories>
 
 1. check_mssql_health.pl
+
+## centreon
+
+nagios的分布式监控管理平台
+
+<https://www.centreon.com/en/>
 
 ## mod gearman
 
@@ -288,9 +293,9 @@ Nagios的分布式监控方案有很多,性能最优的就是mod gearman，分�
 
 ## NDOUtils(NDO)
 
-N * (Nagios core + NDO module) -> TCP/Socket -> NDO2DB daemon -> DB
-
 从nagios导出当前和历史数据到mysql数据库。
+
+    N * (Nagios core + NDO module) -> TCP/Socket -> NDO2DB daemon -> DB
 
 ## Nagiosgraph
 

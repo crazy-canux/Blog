@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Shell之正则表达式
+title: Shell
 comments: true
-date: 2016-04-02 11:16:16
+date: 2016-04-01 20:42:59
 updated:
 tags:
 - Shell
-- RE
+- Bash
 categories:
 - Develop
 - Shell

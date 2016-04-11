@@ -1,14 +1,15 @@
 ---
 layout: post
-title: Shell之正则表达式
+title: VIM之插件
 comments: true
-date: 2016-04-02 11:16:16
+date: 2016-04-03 10:14:40
 updated:
 tags:
-- Shell
-- RE
+- VIM
+- Plugins
+- Addons
 categories:
 - Develop
-- Shell
+- Vim
 permalink:
 ---

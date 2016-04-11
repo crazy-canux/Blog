@@ -1,14 +1,13 @@
 ---
 layout: post
-title: VIM
+title: Mac
 comments: true
-date: 2016-04-02 21:11:26
+date: 2016-04-10 11:25:39
 updated:
 tags:
-- VI
-- VIM
+- MAC
+- OSX
 categories:
-- Develop
-- Vim
+- Mac
 permalink:
 ---

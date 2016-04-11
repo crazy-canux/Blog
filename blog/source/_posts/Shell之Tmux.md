@@ -9,6 +9,7 @@ tags:
 - Tmux
 - Screen
 categories:
+- Develop
 - Shell
 permalink:
 ---

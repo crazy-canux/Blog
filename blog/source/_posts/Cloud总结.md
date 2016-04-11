@@ -1,14 +1,12 @@
 ---
 layout: post
-title: VIM
+title: Cloud总结
 comments: true
-date: 2016-04-02 21:11:26
+date: 2016-04-05 21:56:00
 updated:
 tags:
-- VI
-- VIM
+- cloud
 categories:
-- Develop
-- Vim
+- Cloud
 permalink:
 ---

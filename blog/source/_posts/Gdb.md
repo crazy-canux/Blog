@@ -1,14 +1,12 @@
 ---
 layout: post
-title: Shell之正则表达式
+title: Gdb
 comments: true
-date: 2016-04-02 11:16:16
+date: 2016-04-10 11:26:33
 updated:
 tags:
-- Shell
-- RE
+- gdb
 categories:
 - Develop
-- Shell
 permalink:
 ---

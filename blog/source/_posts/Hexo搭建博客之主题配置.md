@@ -11,6 +11,7 @@ tags:
 - next
 categories:
 - Web
+- Nodejs
 permalink:
 ---
 
@@ -44,7 +45,7 @@ permalink:
 
 >\# SEO优化的关键字。
 
->     keywords: "Linux, Java, Python, Web, Canux, CHENG"
+>     keywords: "Canux, CHENG, blog"
 
 >\# 指定站点的起始日期。
 
@@ -160,7 +161,7 @@ permalink:
 
 >     avatar: /images/myimages/avatar.jpg
 
->\# TOC设置
+>\# TOC(table of contents)设置
 
 >     toc:
 

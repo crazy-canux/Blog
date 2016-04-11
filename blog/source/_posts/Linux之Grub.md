@@ -1,14 +1,12 @@
 ---
 layout: post
-title: VIM
+title: Linux之Grub
 comments: true
-date: 2016-04-02 21:11:26
+date: 2016-04-10 11:29:31
 updated:
 tags:
-- VI
-- VIM
+- grub
 categories:
-- Develop
-- Vim
+- Linux
 permalink:
 ---

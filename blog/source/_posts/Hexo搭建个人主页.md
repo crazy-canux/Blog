@@ -11,6 +11,7 @@ tags:
 - next
 categories:
 - Web
+- Nodejs
 permalink:
 ---
 
@@ -319,10 +320,6 @@ themes
 
 >        - hexo-deployer-git
 
->        - hexo-generator-feed
-
->        - hexo-generator-sitemap
-
 >>\# Extend plugins
 
 >\## deploy
@@ -336,24 +333,6 @@ themes
 >        branch: master
 
 >        message:
-
->\## sitemap
-
->        sitemap:
-
->        path: sitemap.xml
-
->\## feed
-
->        feed:
-
->        type: atom
-
->        path: atom.xml
-
->        limit: 20
-
->        hub:
 
 ## 主题配置
 
