@@ -1,12 +1,10 @@
 ---
 layout: post
-title: Gcc
+title: Shell之grep
 comments: true
-date: 2016-04-10 11:26:26
+date: 2016-04-20 13:55:36
 updated:
 tags:
-- gcc
 categories:
-- Develop
 permalink:
 ---

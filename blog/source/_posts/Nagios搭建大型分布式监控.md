@@ -7,7 +7,6 @@ updated:
 tags:
 - nagios
 - monitoring
-- DevOps
 categories:
 - DevOps
 - Nagios

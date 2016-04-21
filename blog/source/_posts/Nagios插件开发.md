@@ -5,8 +5,8 @@ comments: true
 date: 2016-04-01 13:12:15
 updated:
 tags:
-- Nagios
-- Monitoring
+- nagios
+- monitoring
 - Plugins
 categories:
 - DevOps

@@ -15,37 +15,29 @@ type: "about"
 
 程 伟
 Canux CHENG
-![Myself](/images/myself.jpg)
 
-1989年生于湖北蕲春，2013年开始接触linux，2014年在上海开始从事IT行业。
-入门时主要学习linux/unix环境的C编程和Python编程，使用Mysql数据库。
-后来学习了Ruby编程和Java编程,使用Oracle和MSSQL数据库。
+1989生人，2013年开始接触linux，2014年在上海开始从事IT行业。
+入门时主要学习linux/unix环境的C编程和Mysql数据库。
+后来学习了Python和Java,使用Oracle和MSSQL数据库。
 再后来学习了Web相关知识，javascript/html/css等。
-目前主要从事Linux环境的Java/Python/Web相关的开发。
-擅长的开发环境：Shell，VIM，Git。
 
+擅长的开发环境：Shell，Vim，Git。
+目前主要从事Linux/Unix环境的C/Java/Python/Web相关的开发。
 主要研究领域：监控(Nagios/ITM)、自动化运维(DevOps)和Web相关的开发，Linux系统管理，数据库优化。
+
 感兴趣的领域：虚拟化、云计算、大数据、docker和vagrant。
 
 ***
 
 ## 交流方式(Contact)
 
-欢迎追踪我的Github
-Welcome to follow my github
+了解项目情况，欢迎追踪我的Github
+Welcome to follow my github, to see the project.
 [Follow](https://github.com/crazy-canux)
 
-欢迎追踪我的LinkedIn
-Welcome to follow my LinkedIn
+查看简历，欢迎追踪我的LinkedIn
+Welcome to follow my LinkedIn, to see my resume.
 [Follow](http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button)
-
-欢迎加入微信Java交流群
-Welcome join wechat group to talk about Java
-![Java-Wechat-Group](/images/java.jpg)
-
-欢迎加入微信Python交流群
-Welcome join wechat group to talk about Python
-![Python-Wechat-Group](/images/python.jpg)
 
 ***
 
@@ -56,3 +48,6 @@ Welcome join wechat group to talk about Python
 
 职位邮箱(position)
 <canuxcheng@163.com>
+
+商务邮箱(business)
+<canuxcheng@outlook.com>

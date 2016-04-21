@@ -113,13 +113,21 @@ help命令查看所有内置命令：
 
 ## 使用shell
 
-man 1 <name> 查到shell的外部命令(包括应用程序的命令行)
+查到shell的外部命令(包括应用程序的命令行)
 
-man 7 <name> 查到包括宏，包，惯用法等
+    man 1 <name>
 
-man 8 <name> 查到系统管理员命令
+查到包括宏，包，惯用法等
 
-man 9 <name> 查到内核的惯用法
+    man 7 <name>
+
+查到系统管理员命令
+
+    man 8 <name>
+
+查到内核的惯用法
+
+    man 9 <name>
 
 # Linux编程
 
@@ -134,14 +142,26 @@ man 9 <name> 查到内核的惯用法
 
 通过CONFORMING TO可以看到函数遵循什么标准。
 
-man 2 <name>      查到的是系统调用（实际上也是POSIX封装的同名函数）
+查到的是系统调用（实际上也是POSIX封装的同名函数）
 
-man 3 <name>      查到的glibc（包括ISO C，POSIX的部分函数，其它库）
+    man 2 <name>
 
-man syscalls      查看系统调用所有函数宏
+查到的glibc（包括ISO C，POSIX的部分函数，其它库）
 
-man Unimplemented 查看未实现的系统调用
+    man 3 <name>
 
-man libc          查看glibc
+查看系统调用所有函数宏
 
-man standards     查看C和Linux的标准
+    man syscalls
+
+查看未实现的系统调用
+
+    man unimplemented
+
+查看glibc
+
+    man libc
+
+查看C和Linux的标准
+
+    man standards

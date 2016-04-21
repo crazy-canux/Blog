@@ -11,10 +11,12 @@ categories:
 permalink:
 ---
 
+# 关于
+
+本博文主要收集常用的软件的下载地址。
+
 # 怎样选择Licenses
 
 <http://choosealicense.com/licenses/>
 
-# 关于
-
-本博文主要收集常用的软件的下载地址。
+![pic](/images/license.jpeg)
