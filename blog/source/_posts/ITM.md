@@ -162,7 +162,7 @@ C:\IBM\ITM\bin\tacmd
 
 管理agent：
 
-    ./tacmd startAgent/stopAgent ???
+    ./tacmd startAgent/stopAgent/restartAgent/updateAgent ...
 
 刷新Netcool/OMNIbus：
 
@@ -190,7 +190,4 @@ C:\IBM\ITM\bin\tacmd
 启动MTEMS(manage tivoli enterprise monitoring services):
 
     ./itmcmd manage &
-
-## tivcmd
-
 

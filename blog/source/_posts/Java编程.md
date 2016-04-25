@@ -14,46 +14,33 @@ permalink:
 # java概述
 
 Java的三个体系:
+1. J2SE: 标准版
+2. J2EE: 企业版
+3. J2ME: 微型版
 
-J2SE: 标准版
+Java的版本：
+1. OpenJDK
+2. Oracle JDK
+3. IBM JDK
 
-J2EE: 企业版
+Java的web框架SSH: struts + spring + hibernate。
 
-J2ME: 微型版
-
-Java的web框架SSH:
-
-struts + spring + hibernate。
-
-安装jdk:
-
-JDK: JRE + java开发工具（编译器javac + 打包工具jar）
-
-JRE: JVM + java核心类库
-
-sudo apt-get install openjdk-7-jdk
-
-安装java的web服务器:
-
-sudo apt-get install tomcat
+java的web服务器: tomcat
 
 java命令:
-
-java
-
-javac     编译器
-
-jdb       调试器
-
-jar       归档工具
-
-javadoc   文档工具
+1. java
+2. javac     编译器
+3. jdb       调试器
+4. jar       归档工具
+5. javadoc   文档工具
 
 java的ide:
+1. eclipse(IBM)
+2. netbeans(Oracle)
 
-eclipse
+Java的架构：
 
-netbeans
+![pic](/images/java.PNG)
 
 ***
 
@@ -328,9 +315,34 @@ java可以用+连接两个字符串。
 
 3. 字符串比较
 
-equals比较相等,相等返回true,s和t可以是字符串变量也可以常量:
+equals函数比较相等,相等返回true,s和t可以是字符串变量也可以常量:
 
     s.equals(t)
+
+equalsIgnoreCase函数比较字符串是否相等，不区分大小写：
+
+    s.equalsIgnoreCase(t)
+
+length函数返回字符串长度：
+
+    s.length()
+
+空串：
+
+    if (s.length() == 0)
+    if (s.equals(""))
+
+Null:
+
+    if (str == null)
+
+判断一个字符串既不时空串又不是null，先判断是否为null，对null调用方法会出现错误：
+
+    if (str != null && str.length() != 0)
+
+
+
+
 
 ## java控制流
 
@@ -443,11 +455,4 @@ PrintWriter out = new PrintWriter(“myfile.txt”));
 ***
 
 # 面向对象：
-
-
-
-
-
-
-
 
