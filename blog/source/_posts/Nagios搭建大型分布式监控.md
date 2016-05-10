@@ -157,29 +157,29 @@ Nagios XI 架构：
 
 ## 远程监控
 
-使用nagios core + plugins + addons可以监控远程的linux/unix/windows/mac机器。
+使用nagios core + plugins + addons可以监控远程的linux/unix/windows机器。
 
-NRPE/NRPE_NT和check_nrpe, 运行远程机器上的插件, 支持windows/unix/linux:
+NRPE(for linux)/NRPE_NT(for windows)和check_nrpe, 运行远程机器上的插件, 支持windows/unix/linux:
 
     nagios core + check_nrpe <=> NRPE/NRPE_NT + plugins
 
-NSCP和check_nt, 只能使用固定的几个命令查基本属性, 支持windows和linux：
+NSCP和check_nt, 只能使用固定的几个命令查基本属性, 支持windows/linux/unix：
 
-    nagios core + check_nt -v variable <=> NSCP(NSClient++)
+    nagios core + check_nt -H <NSCP IP> [-v <command>] <=> NSCP(NSClient++)
 
-NSCP和check_nrpe，可以传自己的命令或插件, 支持windows和linux：
+NSCP和check_nrpe，可以传自己的命令或插件, 支持windows/linux/unix：
 
-    nagios core + check_nrpe -c command <=> NSCP
+    nagios core + check_nrpe -H <NSCP IP> [-c <command/plugins>] [-a <argument list>] <=> NSCP(NSClient++) + plugins
 
-NSCP和NSCA/NRDP, NSCA提供被动检测, 支持windows和linux：
+NSCP和NSCA(NSCA-ng)/NRDP, NSCA/NRDP提供被动检测, 支持windows/linux/unix：
 
-    nagios core + NSCA/NSCA-ng/NRDP <=> NSCP
+    nagios core + NSCA/NSCA-ng/NRDP <=> NSCP(NSClient++)
 
-NCPA是python写的跨平台代理, 支持linux/windows/mac：
+NCPA是python写的跨平台代理, 支持linux/windows/unix：
 
     nagios core + check_ncpa.py <=> NCPA
 
-check_MK_agent是一款先进的代理, 支持linux/windows：
+check_MK_agent是一款先进的代理, 支持linux/windows/unix：
 
     nagios core + Check_MK <=> check_mk_agent
 
@@ -189,28 +189,30 @@ check_MK_agent是一款先进的代理, 支持linux/windows：
 
 Nagios的分布式监控方案有很多,性能最优的就是mod gearman，分布式监控基于集中监控。
 
-## merlin
-
-## check_MK
-
 ## NRDP/NSCA/NSCA-ng
 
 官方推荐，NRDP是NSCA的升级版,提供被动检测,这种方式效率低，稳定性差。
 
     nagios core <- plugins <- NSCA <= send_nsca <- ocsp <- Nagios core <=> Hosts
-                                  ^
-                                 ||
-                                 send_nsca <- ocsp <- Nagios core <=> Hosts
+                                   ^
+                                  ||
+                                  send_nsca <- ocsp <- Nagios core <=> Hosts
+
+## merlin
+
+![pic](/images/merlin.PNG)
 
 ## Mod Gearman
 
 ![pic](/images/nagios.png)
 
-这种架构监控几千台服务器和几万个服务没有压力。
+## check_MK
+
+TODO
 
 ***
 
-# 其它组建介绍
+# 其它组件介绍
 
 ## Mathias kethner
 
@@ -294,7 +296,7 @@ nagios的分布式监控管理平台
 
 从nagios导出当前和历史数据到mysql数据库。
 
-    N * (Nagios core + NDO module) -> TCP/Socket -> NDO2DB daemon -> DB
+N * (Nagios core + NDO module) -> TCP/Socket -> NDO2DB daemon -> DB
 
 ## Nagiosgraph
 

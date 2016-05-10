@@ -17,6 +17,16 @@ permalink:
 
 # MSSQL
 
+商业版：
+1. 企业版
+2. 商业智能版
+3. 标准版
+
+免费版：
+1. Express
+2. Compact
+3. Web
+
 # pymssql
 
 (7202, "Could not find server 'euedcapp0049.edc.eu.corp' in sys.servers. Verify

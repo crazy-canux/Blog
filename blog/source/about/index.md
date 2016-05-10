@@ -16,16 +16,19 @@ type: "about"
 程 伟
 Canux CHENG
 
-1989生人，2013年开始接触linux，2014年在上海开始从事IT行业。
-入门时主要学习linux/unix环境的C编程和Mysql数据库。
-后来学习了Python和Java,使用Oracle和MSSQL数据库。
-再后来学习了Web相关知识，javascript/html/css等。
-
 擅长的开发环境：Shell，Vim，Git。
-目前主要从事Linux/Unix环境的C/Java/Python/Web相关的开发。
-主要研究领域：监控(Nagios/ITM)、自动化运维(DevOps)和Web相关的开发，Linux系统管理，数据库优化。
+
+擅长编程语言：C，Java，Python。
+
+擅长数据库： Mysql、Oracle、MSSQL。
+
+擅长Web框架： Django，Spring。
+
+主要研究领域：工业4.0监控、DevOps、Web。
 
 感兴趣的领域：虚拟化、云计算、大数据、docker和vagrant。
+
+提供Nagios和IBM Tivoli等工业级监控相关的项目开发、部署、咨询、培训等业务。
 
 ***
 

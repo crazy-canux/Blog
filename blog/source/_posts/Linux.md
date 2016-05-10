@@ -23,17 +23,19 @@ Linux内核的站点：
 
 <https://www.kernel.org/>
 
+商业化的linux系统：
+1. redhat
+2. suse
+
 # Linux桌面环境
 
 X windows
 
 KDE
 
-GNOME
+GNOME2(Mate)
 
-Mate
-
-Cinnamon
+GNOME3(Mate/Cinnamon)
 
 Unity
 
@@ -41,7 +43,19 @@ xface
 
 lxde
 
-enlightenment
+enlightenment(https://www.enlightenment.org/start)
+
+# Linux桌面管理器：
+
+xDM
+
+gDM(gnome)
+
+kDM(kde)
+
+lightDM
+
+Slim
 
 # Linux的Shell
 

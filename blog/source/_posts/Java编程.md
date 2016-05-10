@@ -15,7 +15,7 @@ permalink:
 
 Java的三个体系:
 1. J2SE: 标准版
-2. J2EE: 企业版
+2. J2EE: 企业版(包括J2SE)
 3. J2ME: 微型版
 
 Java的版本：
@@ -28,7 +28,7 @@ Java的web框架SSH: struts + spring + hibernate。
 java的web服务器: tomcat
 
 java命令:
-1. java
+1. java      运行程序
 2. javac     编译器
 3. jdb       调试器
 4. jar       归档工具
@@ -284,7 +284,7 @@ array[1] = new int[2];
 
 int[][] array = new {｛1｝，｛2，3｝}；
 
-## 字符串：
+## 字符串(java.lang.String)：
 
 java字符串就是unicode字符序列。
 
@@ -296,7 +296,7 @@ java没有字符串类型，而是用标准库中预定义的类Spring。
 
 不能修改java字符串中的字符，所以String类对象是不可变字符串。
 
-1. 子串
+* 子串
 
 String类的substring方法可以获取子串
 
@@ -305,7 +305,7 @@ String类的substring方法可以获取子串
 
 substring(start, end)，下标从0开始，从start到end，但是不包括end。
 
-2. 拼接
+* 拼接
 
 java可以用+连接两个字符串。
 
@@ -313,7 +313,7 @@ java可以用+连接两个字符串。
     String PG13 = "deleted";
     String message = expletive + PG13;
 
-3. 字符串比较
+* 字符串比较
 
 equals函数比较相等,相等返回true,s和t可以是字符串变量也可以常量:
 
@@ -340,9 +340,87 @@ Null:
 
     if (str != null && str.length() != 0)
 
+* String类的方法
 
+参考java.lang.String。
 
+* 用StringBuilder构建字符串
 
+构建一个空字符串构建器：
+
+    StringBuilder builder = new StringBuilder();
+
+修改内容：
+
+    builder.append(String str)
+    builder.append(char c)
+    builder.delete(int startIndex, int endIndex)
+    builder.insert(int offset, String str)
+    builder.insert(int offset, Char c)
+
+构建新字符串：
+
+    String completeString = builder.toString();
+
+参考 java.lang.StringBuilder 类的方法。
+
+* 用StringBuffer构建字符串缓冲区
+
+参考 java.lang.StringBuffer 类的方法。
+
+## 输入输出：
+
+### 标准输出流：System.out
+
+输出控制流的方法：
+
+    System.out.print();
+    System.out.println();
+
+参考 java.io.PrintStream 的方法。
+
+### 标准输入流：System.in
+
+导入Scanner类：
+
+    import java.util.Scanner;
+
+构造Scanner对象，然后和System.in关联：
+
+    Scanner in = new Scanner(System.in);
+
+输入控制流的方法：
+
+    String name = in.nextLine(); / 读取输入的下一行内容 /
+    String firstName = in.next(); / 读取输入的下一个单词 /
+    int age = in.nextInt(); / 读取一个整数 /
+    double number = in.nextDouble(); / 读取一个浮点数 /
+    boolean test = in.hasNext(); / 检测输入中是否还有其他单词 /
+    boolean test = in.hasNextInt(); / 检测输入中是否还有其他int类型 /
+    boolean test = in.hasNextDouble(); / 检测输入中是否还有其他double类型 /
+
+参考 java.util.Scanner 的方法。
+
+### 控制台输入System.console()
+
+返回一个Console类型对象：
+ 
+    Console cons = System.console();
+
+Console类型对象的方法：
+
+    String username = cons.readLine("User name: ");
+    char[] password = cons.readPassword("Password: ");
+
+参考 java.io.Console 的方法。
+
+### 文件输出（读）：
+Scanner in = new Scanner(Paths.get(“myfile.txt”));
+用in读文件即可。
+
+### 文件输入（写）：
+PrintWriter out = new PrintWriter(“myfile.txt”));
+用out写文件。
 
 ## java控制流
 
@@ -405,37 +483,6 @@ break语句:
 continue语句：
 只能用于循环语句，继续下一次循环，不能用于if。
 
-## 输入输出：
-
-标准输出流：System.out
-
-System.out.print();
-System.out.println();
-
-标准输入流：System.in
-import   java.util.*;   #导入Scanner
-java.util.Scanner:
-Scanner(InputStream in) #用给定输入流创建一个Scanner对象。
-
-eg：
-Scanner in = new Scanner(System.in);
-String name = in.nextLine();
-
-String nextLine() 读取输入的下一行内容。
-String next() 读取输入的下一个单词。
-int nextInt()
-double nextDouble()
-boolean hasNext()
-boolean hasNextInt()
-boolean hasNextDouble()
-
-文件输出（读）：
-Scanner in = new Scanner(Paths.get(“myfile.txt”));
-用in读文件即可。
-
-文件输入（写）：
-PrintWriter out = new PrintWriter(“myfile.txt”));
-用out写文件。
 
 ***
 

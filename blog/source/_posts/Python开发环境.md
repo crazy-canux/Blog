@@ -10,3 +10,22 @@ categories:
 - Python
 permalink:
 ---
+
+# pydoc
+
+# doctest
+
+# unittest
+
+# test
+
+# bdb
+
+# pdb
+
+# trace
+
+# hotshot
+
+# timeit
+

@@ -14,3 +14,11 @@ categories:
 - C
 permalink:
 ---
+
+# gcc
+
+# gdb
+
+# make
+
+# doygen

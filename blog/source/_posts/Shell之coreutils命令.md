@@ -47,5 +47,5 @@ Linux外部命令的项目是coreutils。
     man [command]
     info [command]
 
-# 常用外部命令
+# logrodate
 

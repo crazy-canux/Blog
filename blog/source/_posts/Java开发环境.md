@@ -10,6 +10,7 @@ tags:
 - jdb
 - javadoc
 - jar
+- ant
 categories:
 - Java
 permalink:
@@ -17,13 +18,47 @@ permalink:
 
 # Java安装
 
-1. Linux推荐安装OpenJDK(/usr/lib/jvm/)
+JRE: Java Runtime Environment. Java的运行环境。
 
+JDK: Java Develop Kit. Java的开发工具包。包括JRE和其它开发工具。
+
+1. OpenJDK(/usr/lib/jvm/)
+
+        sudo add-apt-repository ppa:openjdk-r/ppa
+        sudo apt-get update
         sudo apt-get install openjdk-8-jdk
 
-2. Windows安装Oracle JDK(C:\Program Files\Java\)
+2. Oracle JDK(C:\Program Files\Java\)
 
-3. IBM JDK
+        sudo add-apt-repository ppa:webupd8team/java
+        sudo apt-get update
+        sudo apt-get install oracle-java8-installer
+
+3. IBM JRE
+
+    一些IBM的程序需要安装IBM的JRE。
+
+# java配置
+
+配置java和java工具：
+
+    sudo update-alternatives --config java
+    sudo update-alternatives --config javac
+    sudo update-alternatives --config jdb
+    sudo update-alternatives --config jar
+    sudo update-alternatives --config javadoc
+    sudo update-alternatives --config javap
+    sudo update-alternatives --config javah
+
+windows添加环境变量：
+
+JAVA_HOME:
+
+    C:\Program Files\Java\jdk1.8.0_92
+
+PATH:
+
+    %JAVA_HOME%\bin
 
 # 获取java源代码
 
@@ -37,16 +72,50 @@ permalink:
 
 file:\\\C:\Program Files\Java\jdk_version\docs\index.html
 
+# java的开发工具
+
+IBM -> eclipse
+
+Oracle -> NetBeans
+
+VIM
+
 # java
+
+/usr/lib/jvm/<java-version>/jre/bin/java
 
 # javac
 
+/usr/lib/jvm/<java-version>/bin/javac
+
+# jdb
+
+/usr/lib/jvm/<java-version>/bin/jdb
+
 # javadoc
+
+/usr/lib/jvm/<java-version>/bin/javadoc
 
 # jar
 
+/usr/lib/jvm/<java-version>/bin/jar
+
 # javap
+
+/usr/lib/jvm/<java-version>/bin/javap
+
+# javah
+
+/usr/lib/jvm/<java-version>/bin/javah
 
 # jdeps
 
-# jdb
+/usr/lib/jvm/<java-version>/bin/jdeps
+
+# javaws
+
+# ant(apache)
+
+    sudo apt-get install ant
+
+# maven(apache)
