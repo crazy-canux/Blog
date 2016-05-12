@@ -15,16 +15,26 @@ categories:
 permalink:
 ---
 
+# labs consol
+
+<https://labs.consol.de/index.html>
+
+<http://www.mod-gearman.org/>
+
+<http://www.thruk.org/>
+
 # Mod gearman
 
 labs consol的分布式监控组件。
 
-<http://www.mod-gearman.org/>
-
 ![pic](/images/nagios.png)
+
+# livestatus
+
+labs consol的后台。
+
+官方用的NDO，最好还是用livestatus。
 
 # Thruk
 
 基于perl的web框架catalyst的dashbord。
-
-<http://www.thruk.org/>

@@ -20,8 +20,6 @@ permalink:
 
 IBM Agent Builder agents
 
-Universal Agent(UA) 已经被AgentBuilder取代。
-
 windows:
 
     C:\Program Files(x86)\IBM\AgentBuilder
@@ -30,27 +28,56 @@ aix/linux:
 
     /opt/ibm/AgentBuilder
 
-<http://www-933.ibm.com/support/fixcentral/swg/downloadFixes?parent=ibm%2FTivoli&product=ibm/Tivoli/IBM+Tivoli+Monitoring&release=All&platform=All&function=fixId&fixids=6.3.0-TIV-ITM_ABLDR-IF0001&includeRequisites=1&includeSupersedes=0&downloadMethod=http>
+Data source:
+1. JDBC
+2. HTTP
+3. SOAP
+4. Ping
+5. Socket
+6. Java API
+
+# Universal Agent
+
+Data source:
+1. ODBC
+2. SOCKET
+3. API
+4. POST
 
 # create agent
 
-1. define the agent in the agent builder
+1. Create the agent in the Agent Builder
     agent information
     data source
     runtime configuration
-2. Test the agent
-3. Add ITM queries, workspaces, situations, and take actions.
-4. create and install production agent.
+2. Install and test the agent
+    output and install the agent
+    config and start agent in MTEMS.
+    confirm agent data
+    revise and retest as needed
+3. Add application support
+    create in TEP, including queries, workspaces, situations, and take actions.
+    Import application support into agent in Agent Builder.
+    Retest the agent and application support
+4. Create an installation solution.
+    Create solution install package from the agent.
+    Create solution install package from the package.
+    Run the image on the target location.
 
-# create agent for ITM
+# uninstall agent
 
-1. use agent builder's agent generator to install process.
+1. uninstall from commandline.
 
-2. use MTEMS to starting and configuring agent.
+    windows:
 
-    METEMS -> your agent -> configure useing defaults -> start
+        cd C:\IBM\ITM\TMAITM6_x64
+        Kxx_uninstall.vbs C:\IBM\ITM
 
-3. use TEP client to create workspaces, queries, situations, and take actions for agent.
+    linux/unix:
+
+        /opt/IBM/ITM/bin/uninstall.sh -f -i -h /opt/IBM/ITM [product_platformCode]
+
+2. Remove from TEP client(clear off-line entry)
 
 # Monitoring windows resources
 
@@ -58,12 +85,25 @@ aix/linux:
 
 2. Windows Performance Monitor(Perfmon)
 
-3. Common Information Model(CIM)
-
-4. Windows Event Log
+3. Windows Event Log
 
 # Monitoring process and command return codes
 
+1. Monitoring process
+
+2. Monitoring command return code
+
 # Monitoring custom data sources
 
-# Monitoring remote and optional resources
+1. Monitoring script output
+
+2. Monitoring log file
+
+# Monitoring remote resources
+
+1. Monitoring SNMP
+
+2. Monitoring CIM
+
+3. Moitoring JMX
+

@@ -145,8 +145,6 @@ Nagios XI 架构：
 
 ## Nagios fusion
 
-做分布式监控。
-
 ## Nagios incident manager
 
 ***
@@ -198,11 +196,13 @@ check_MK_agent是一款先进的代理, 支持linux/windows/unix：
                                   ||
                                   send_nsca <- ocsp <- Nagios core <=> Hosts
 
+## DNX
+
 # 其它组件介绍
 
 ## Nagvis
 
-画nagios的地图,支持mk livestatus, NDOUtils, op5 merlin。
+画nagios的地图,支持livestatus, NDOUtils。
 
 <http://www.nagvis.org/>
 
@@ -212,11 +212,21 @@ check_MK_agent是一款先进的代理, 支持linux/windows/unix：
 
 <http://docs.pnp4nagios.org/>
 
+## dokuwiki
+
+Nagios的procedure。
+
+<https://www.dokuwiki.org/dokuwiki/>
+
 ## NDOUtils(NDO)
 
 从nagios导出当前和历史数据到mysql数据库。
 
 N * (Nagios core + NDO module) -> TCP/Socket -> NDO2DB daemon -> DB
+
+## livestatus
+
+是NDO的升级版。
 
 ## Nagiosgraph
 
