@@ -54,7 +54,7 @@ Linux/Unix: /opt/IBM/ITM
 
 使用Tivoli Monitoring Startup Center安装，分为本地安装和分布式安装。
 
-1. 需要先为TEPS和TDW安装DB。
+1. 需要先为TEPS和TDW安装DB(ODBC/JDBC)。
 
     DB2
     MSSQL
@@ -86,15 +86,7 @@ Linux/Unix: /opt/IBM/ITM
 
 <http://www-933.ibm.com/support/fixcentral/swg/downloadFixes?parent=ibm%2FTivoli&product=ibm/Tivoli/IBM+Tivoli+Monitoring&release=All&platform=All&function=fixId&fixids=6.3.0-TIV-ITM-FP0005&includeRequisites=1&includeSupersedes=0&downloadMethod=http>
 
-# Management
-
-管理所有组件一般使用GUI叫MTEMS(manage tivoli enterprise monitoring services)
-
-windows/linux/unix都可以用GUI。
-
-也可以使用CLI（命令行）,见后文.
-
-一般使用MTEMS来启动、停止和配置组件。
+...
 
 # TEMS
 
@@ -201,6 +193,8 @@ TEP的结构：
 * Navigator workspace
     每个view项目都有一个默认的workspace。
 
+...
+
 # History data collection(TDW)
 
 TDW: Tivoli Data Warehouse
@@ -221,7 +215,7 @@ TDW使用该agent控制数据库大小。
 
 使用MTEMS配置summarization and pruning agent。
 
-# Jazz for Service Management
+# Jazz for Service Management(Visualization)
 
 ## Dashboard Application Services Hub(DASH)(visualization services)
 
@@ -240,6 +234,18 @@ TDW使用该agent控制数据库大小。
 ## IBM WebSphere® Application Server
 
 ## Web Server Plug-ins for IBM WebSphere Application Server
+
+...
+
+# Management
+
+管理所有组件一般使用GUI叫MTEMS(manage tivoli enterprise monitoring services)
+
+windows/linux/unix都可以用GUI。
+
+也可以使用CLI（命令行）,见后文.
+
+一般使用MTEMS来启动、停止和配置组件。
 
 # CLI
 
@@ -269,13 +275,13 @@ C:\IBM\ITM\BIN\tacmd
 
 管理agent：
 
-    ./tacmd startAgent/stopAgent/restartAgent/updateAgent ...
+    ./tacmd startAgent/stopAgent/restartAgent/updateAgent/viewAgent/updateAgent ...
 
 刷新Netcool/OMNIbus：
 
     ./tacmd refreshTECinfo {-t|--type} {eif|maps|attr|all}
 
-## itmcd
+## itmcmd
 
 用于Linux/Unix系统的命令
 
@@ -299,4 +305,36 @@ C:\IBM\ITM\BIN\tacmd
     ./itmcmd manage &
 
 ## tivcmd
+
+...
+
+# Advanced Administration
+
+## Queries(query editor)
+
+DB agent -> normal way to get data source from database servers.
+ODBC -> get data source from windows database
+JDBC -> get data source from linux/unix database
+
+## Advanced link topics
+
+Simple link:
+
+Just used to navigate portal workspaces without using the navigator.
+
+Advanced link:
+
+Can be used to manipulate data that is displayed in the target workspace.
+
+## Advanced situation techniques(situation editor)
+
+## Agent autonomy
+
+## Policy(workflow editor)
+
+## Agentless monitoring
+
+TEPS -> Agentless Monitoring Serve -> Servers
+
+## Agent Managent Services(AMS)
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nagios搭建大型分布式监控
+title: Nagios
 comments: true
 date: 2016-03-25 11:15:48
 updated:
@@ -29,11 +29,13 @@ Nagios提供对服务器，交换机，应用和服务的完整的监控和警�
 
 开源项目：
 
-Naemon, Icinga 和 Shinken 都是基于Nagios core开发的监控套件。
+Naemon是Nagios的升级版。
 
-zabbix: 一个企业级的，开源的分布式监控套件。
+Shinken是用python对nagios core的重写。
 
-zenoss: 新的开源监控套件。
+Icinga是Nagios的变种。
+
+Centreon是Nagios的变种。
 
 ***
 
@@ -187,8 +189,6 @@ check_MK_agent是一款先进的代理, 支持linux/windows/unix：
 
 # Nagios 分布式监控
 
-Nagios的分布式监控方案有很多,性能最优的就是mod gearman，分布式监控基于集中监控。
-
 ## NRDP/NSCA/NSCA-ng
 
 官方推荐，NRDP是NSCA的升级版,提供被动检测,这种方式效率低，稳定性差。
@@ -198,87 +198,7 @@ Nagios的分布式监控方案有很多,性能最优的就是mod gearman，分�
                                   ||
                                   send_nsca <- ocsp <- Nagios core <=> Hosts
 
-## merlin
-
-![pic](/images/merlin.PNG)
-
-## Mod Gearman
-
-![pic](/images/nagios.png)
-
-## check_MK
-
-TODO
-
-***
-
 # 其它组件介绍
-
-## Mathias kethner
-
-<http://mathias-kettner.com/index.html>
-
-1. check_MK
-
-    类似于mod gearman的分布式监控。
-
-    <http://mathias-kettner.de/check_mk.html>
-
-2. MK Livestatus
-
-    其它的livestatus都是fork这个组件。
-
-    <http://mathias-kettner.de/checkmk_livestatus.html>
-
-3. MK MultiSite
-
-    类似于thruk，基于check_mk的dashbord。
-
-    <http://mathias-kettner.de/checkmk_multisite.html>
-
-## op5
-
-<https://www.op5.com/>
-
-<http://git.op5.org/#/admin/projects/>
-
-1. merlin
-
-    类似与mod gearman的分布式监控。
-
-    <https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home>
-
-2. Ninja
-
-    类似于thruk, 基于merlin的dashbord。
-
-3. check_vmware_api.pl
-
-## consol labs
-
-<https://labs.consol.de/>
-
-<https://github.com/lausser?tab=repositories>
-
-1. check_mssql_health.pl
-
-## centreon
-
-nagios的分布式监控管理平台
-
-<https://www.centreon.com/en/>
-
-## mod gearman
-
-分布式监控。
-
-<http://www.mod-gearman.org/>
-
-## Thruk
-
-基于perl的web框架catalyst的dashbord。
-
-<http://www.thruk.org/>
 
 ## Nagvis
 

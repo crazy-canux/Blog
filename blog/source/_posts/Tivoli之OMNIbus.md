@@ -29,9 +29,6 @@ linux/aix:
 
     /opt/IBM/NCOhome
 
-conductor
-./nco &
-
 Browser版本需要安装IBM的JRE，在C:\Program Files\IBM\Java70。
 
 # EIF
