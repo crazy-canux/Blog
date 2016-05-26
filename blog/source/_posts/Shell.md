@@ -8,7 +8,9 @@ tags:
 - Shell
 - Bash
 categories:
-- Develop
+- Linux
 - Shell
 permalink:
 ---
+
+# shell script

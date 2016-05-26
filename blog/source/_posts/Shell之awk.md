@@ -8,7 +8,7 @@ tags:
 - Shell
 - awk
 categories:
-- Develop
+- Linux
 - Shell
 permalink:
 ---

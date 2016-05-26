@@ -97,7 +97,7 @@ markdown支持两个语法格式的标题
 无序列表使用星号、加号或是减号作为列表标记,符号和字符之间有空格：
 
 \* shopping list
-> *  shopping list
+> * shopping list
 
 \+ shoppint list
 > + shopping list

@@ -1,20 +1,43 @@
 ---
 layout: post
-title: Nagios插件开发
+title: Monitoring之Plugins
 comments: true
-date: 2016-04-01 13:12:15
+date: 2016-04-08 16:17:39
 updated:
 tags:
 - nagios
-- monitoring
-- Plugins
+- plugin
 categories:
 - DevOps
-- Nagios
+- Monitor
 permalink:
 ---
 
-# Nagios插件开发的文档
+# Nagios/naemon/icinga/shinken/sensu Plugins
+
+* check_wmi_plus.pl
+
+    <http://www.edcint.co.nz/checkwmiplus/>
+
+* check_wmware_api.pl
+
+    <https://kb.op5.com/display/PLUGINS/Plugins+Home>
+
+    <http://git.op5.org/#/admin/projects/system-addons/plugins/op5/check_vmware_api>
+
+* check_vmware_esx.pl
+
+    <https://github.com/BaldMansMojo/check_vmware_esx>
+
+* check_mssql_health.pl
+
+    <https://labs.consol.de/nagios/check_mssql_health/index.html>
+
+    <https://github.com/lausser/check_mssql_health>
+
+***
+
+# Nagios插件开发
 
 Nagios Plugin API:
 
@@ -27,8 +50,6 @@ Developing Plugins For Use With Embedded Perl:
 Nagios Plugin Development Guidelines:
 
 <https://nagios-plugins.org/doc/guidelines.html>
-
-# Nagios插件开发
 
 Nagios不是基于agent的，所以插件都是通过协议来获取监控信息。
 
@@ -56,3 +77,7 @@ Nagios不是基于agent的，所以插件都是通过协议来获取监控信息
 
 7. oracle
     sqlplus
+
+***
+
+# check_MK插件开发

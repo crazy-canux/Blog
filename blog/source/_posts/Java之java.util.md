@@ -22,16 +22,16 @@ classes (a string tokenizer, a random-number generator, and a bit array
 
 Constructor:
 
-    Scanner(File source)
+    Scanner(File source) /* 构造一个从给定文件读取数据的对象 */
     Scanner(File source, String charsetName)
-    Scanner(InputStream source)
+    Scanner(InputStream source) /* 用给定的输入流创建一个对象 */
     Scanner(InputStream source, String charsetName)
-    Scanner(Path source)
+    Scanner(Path source) /* 构造一个从给定路径读取数据的对象 */
     Scanner(Path source, String charsetName)
     Scanner(Readable source)
     Scanner(ReadableByteChannel source)
-    Scanner(ReadableByteChannel source)
-    Scanner(String source)
+    Scanner(ReadableByteChannel source, String charsetName)
+    Scanner(String source) /* 构建一个从给定字符串读取数据的对象 */
 
 Method:
 

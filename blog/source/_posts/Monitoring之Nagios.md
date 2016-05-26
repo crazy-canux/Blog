@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nagios
+title: Monitoring之Nagios
 comments: true
 date: 2016-03-25 11:15:48
 updated:
@@ -9,7 +9,7 @@ tags:
 - monitoring
 categories:
 - DevOps
-- Nagios
+- Monitor
 permalink:
 ---
 
@@ -25,17 +25,13 @@ Nagios官方宣称nagios是IT基础监控的工业标准。
 
 Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。
 
+Nagios是无agent的，nagios的plugin通过协议远程获取信息。
+
 ## 类似项目
 
-开源项目：
+zabbix
 
-Naemon是Nagios的升级版。
-
-Shinken是用python对nagios core的重写。
-
-Icinga是Nagios的变种。
-
-Centreon是Nagios的变种。
+zenoss
 
 ***
 
@@ -85,6 +81,8 @@ Nagios core只是一个监控套件，本身没有监控功能，需要插件来
 
 <https://www.nagios.org/projects/nagios-core/>
 
+<https://github.com/NagiosEnterprises/nagioscore>
+
 ## Nagios plugins:
 
 >Efficient, standalone extensions that provide low-level intelligence for monitoring anything and everything with Nagios Core.
@@ -92,6 +90,8 @@ Nagios core只是一个监控套件，本身没有监控功能，需要插件来
 Nagios core的监控插件,也就是官方插件,主要是c、shell和perl。
 
 <https://www.nagios.org/projects/nagios-plugins/>
+
+<https://github.com/nagios-plugins/nagios-plugins>
 
 ## Nagios frontends:
 
@@ -196,7 +196,7 @@ check_MK_agent是一款先进的代理, 支持linux/windows/unix：
                                   ||
                                   send_nsca <- ocsp <- Nagios core <=> Hosts
 
-## DNX
+***
 
 # 其它组件介绍
 
@@ -218,15 +218,21 @@ Nagios的procedure。
 
 <https://www.dokuwiki.org/dokuwiki/>
 
-## NDOUtils(NDO)
+## NDOUtils(NDO)/IDOUtils(IDO)
 
-从nagios导出当前和历史数据到mysql数据库。
+从nagios导出当前和历史数据到mysql数据库,需要安装数据库。
 
 N * (Nagios core + NDO module) -> TCP/Socket -> NDO2DB daemon -> DB
 
-## livestatus
+## MK livestatus
 
-是NDO的升级版。
+参考check_MK
+
+## rrdtool
+
+<https://www.rrdtool.com/>
+
+<http://oss.oetiker.ch/rrdtool/>
 
 ## Nagiosgraph
 
@@ -236,5 +242,64 @@ N * (Nagios core + NDO module) -> TCP/Socket -> NDO2DB daemon -> DB
 
 Nagios SNMP Trap Interface
 
+## NCONF
+
+nagios的基于web的配置工具。
+
+## BPI
+
+Nagios Business Process Intelligence
+
+<http://bp-addon.monitoringexchange.org/>
+
 ***
+
+# consol*的分布式监控方案
+
+一家德国的咨询和解决方案软件公司。
+
+<https://www.consol.de/>
+
+<https://labs.consol.de/index.html>
+
+![pic](/images/nagios.png)
+
+## Mod gearman
+
+labs consol的分布式监控组件。
+
+<http://www.mod-gearman.org/>
+
+<https://github.com/sni/mod_gearman>
+
+## NDOUtils/mk livestatus
+
+Event broker.
+
+官方用的NDOUtils，最好还是用Mk livestatus。
+
+<https://exchange.nagios.org/directory/Addons/Database-Backends/NDOUtils/details>
+
+## Thruk
+
+基于perl的web框架catalyst的dashbord。
+
+<http://www.thruk.org/>
+
+<https://github.com/sni/Thruk>
+
+## OMD
+
+The Open Monitoring Distribution
+
+用于快速部署基于nagios的分布式监控，包括：
+1. Icinga
+2. Shinken
+3. check_mk
+4. 基于mod-gearman/MK Livestatus/thruk的分布式监控。
+5. 其它组件。
+
+<http://omdistro.org/>
+
+<https://labs.consol.de/omd/index.html>
 

@@ -27,18 +27,6 @@ as supporting such standard methods as equals and hashCode. The Void class is a
 non-instantiable class that holds a reference to a Class object representing the
 type void.
 
-> The class Math provides commonly used mathematical functions such as sine,
-cosine, and square root. The classes String, StringBuffer, and StringBuilder
-similarly provide commonly used operations on character strings.
-
-> Classes ClassLoader, Process, ProcessBuilder, Runtime, SecurityManager, and
-System provide "system operations" that manage the dynamic loading of classes,
-creation of external processes, host environment inquiries such as the time of
-day, and enforcement of security policies.
-
-> Class Throwable encompasses objects that may be thrown by the throw statement.
-Subclasses of Throwable represent errors and exceptions.
-
 java的基础类，不需要用import导入。
 
 # java.lang.Object
@@ -197,7 +185,7 @@ Method:
 
 Constructor:
 
-    StringBuilder()
+    StringBuilder() /* 构建一个空的字符串构建器 */
     StringBuilder(charSequence seq)
     StringBuilder(int capacity)
     StringBuilder(String str)
@@ -248,6 +236,17 @@ Fields:
 Method:
 
     static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
-    public static Console console()
+    static String clearProperty(String key)
+    static Console console()
+    static long currentTimeMillis()
+    static void exit(int status)
+    static void gc()
+    static Map<String, String> getenv()
+    static String getenv(String name)
+    static Properties getProperty()
+    static String getProperty(String key)
+    static String getProperty(String key, String def)
+    static SecurityManager getSecurityManager()
+    static int indentityHashCode(Object x)
     ...
 

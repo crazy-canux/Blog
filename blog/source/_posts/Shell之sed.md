@@ -8,7 +8,7 @@ tags:
 - Shell
 - sed
 categories:
-- Develop
+- Linux
 - Shell
 permalink:
 ---

@@ -24,8 +24,17 @@ Linux内核的站点：
 <https://www.kernel.org/>
 
 商业化的linux系统：
-1. redhat
-2. suse
+1. redhat enterprise linux
+2. suse enterprise linux
+
+免费的服务器版本：
+1. centos (rhel的免费版)
+2. debian
+
+免费的桌面版本：
+1. fedora (原来的redhat desktop linux)
+2. ubuntu (debian的分支)
+3. open suse (suse的桌面版)
 
 # Linux桌面环境
 

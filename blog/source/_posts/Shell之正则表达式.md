@@ -8,7 +8,7 @@ tags:
 - Shell
 - RE
 categories:
-- Develop
+- Linux
 - Shell
 permalink:
 ---

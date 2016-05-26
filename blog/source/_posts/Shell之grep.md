@@ -5,6 +5,10 @@ comments: true
 date: 2016-04-20 13:55:36
 updated:
 tags:
+- grep
+- re
 categories:
+- Linux
+- Shell
 permalink:
 ---

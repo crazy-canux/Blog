@@ -154,7 +154,7 @@ Constructor:
     PrintWriter(File file, String csn)
     PrintWriter(OutputStream out)
     PrintWriter(OutputStream out, boolean autoflush)
-    PrintWriter(String fileName)
+    PrintWriter(String fileName) /* 构建一个将数据写入文件的对象 */
     PrintWriter(String fileName, String csn)
     PrintWriter(Writer out)
     PrintWriter(Writer out, boolean autoFlush)

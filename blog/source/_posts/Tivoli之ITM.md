@@ -275,7 +275,7 @@ C:\IBM\ITM\BIN\tacmd
 
 管理agent：
 
-    ./tacmd startAgent/stopAgent/restartAgent/updateAgent/viewAgent/updateAgent ...
+    ./tacmd startAgent/stopAgent/restartAgent/viewAgent/updateAgent ...
 
 刷新Netcool/OMNIbus：
 

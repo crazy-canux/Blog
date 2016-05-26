@@ -415,12 +415,12 @@ Console类型对象的方法：
 参考 java.io.Console 的方法。
 
 ### 文件输出（读）：
-Scanner in = new Scanner(Paths.get(“myfile.txt”));
-用in读文件即可。
+
+    Scanner in = new Scanner(Paths.get(“myfile.txt”));
 
 ### 文件输入（写）：
-PrintWriter out = new PrintWriter(“myfile.txt”));
-用out写文件。
+
+    PrintWriter out = new PrintWriter(“myfile.txt”));
 
 ## java控制流
 
