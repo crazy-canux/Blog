@@ -49,10 +49,17 @@ system databases:
 
     SELECT @@SERVICENAME
 
+创建/删除用户：
+
+
 创建/删除数据库：
 
-    CREATE DATABASE databasename
-    DROP DATABASE databasename
+    CREATE DATABASE databasename;
+    DROP DATABASE databasename;
+
+导入/导出数据库：
+
+导入/导出表：
 
 # freeTDS
 

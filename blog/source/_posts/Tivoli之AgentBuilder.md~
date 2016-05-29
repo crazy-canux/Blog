@@ -90,22 +90,22 @@ You must install the TEMS and TEPS support on TEMS and TEPS server.
 
     安装下面三个包：
 
-        installIra.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password>
+        ./installIra.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password>
         ./installIra.sh /opt/IBM/ITM -a <architecture> -h <HTEMS> -u <username> -p <password>
 
     在被监控机器安装agent:
 
-        installIraAgent.bat C:\IBM\ITM
+        ./installIraAgent.bat C:\IBM\ITM
         ./installIraAgent.sh /opt/IBM/ITM -a <architecture>
 
     在TEMS服务器安装对agent的支持：
 
-        installIraAgentTEMS.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password>
+        ./installIraAgentTEMS.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password>
         ./installIraAgentTEMS.sh /opt/IBM/ITM -a <architecture> -h <HTEMS> -u <username> -p <password>
 
     在TEPS服务器安装对agent的支持：
 
-        installIraAgentTEPS.bat C:\IBM\ITM
+        ./installIraAgentTEPS.bat C:\IBM\ITM
         ./installIraAgentTEPS.sh /opt/IBM/ITM
 
 # config agent

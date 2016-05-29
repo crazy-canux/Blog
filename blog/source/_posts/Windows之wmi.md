@@ -11,3 +11,29 @@ categories:
 - Windows
 permalink:
 ---
+
+# wmic
+
+wmic是wmi的客户端。
+
+    wmic -U [domain/]adminuser%password //host "select * from Win32_ComputerSystem"
+
+Linux需要自己创建wmic命令，可以通过samba获取，也可以安装openvas的安装包。
+
+<https://mikepalmer.net/debianubuntu-wmi-client-package-with-openvas-libwmiclient1-patches/>
+
+# Python
+
+## wmi
+
+Windows安装pywin32和wmi两个包,可以访问wmi。
+
+    import wmi
+    c = wmi.WMI()
+
+## subprocess
+
+Linux通过subprocess远程执行wmic命令。
+
+    import subprocess
+    wmi_output = subprocess.check_output(command)
