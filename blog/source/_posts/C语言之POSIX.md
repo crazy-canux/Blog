@@ -44,6 +44,14 @@ POSIX.1-2008/SUSv4
 
 <http://www.opengroup.org/austin/>
 
+# Cygwin
+
+提供POSIX的API用于windows上开发Linux/Unix程序。
+
+源代码不能在windows运行。
+
+<https://cygwin.com/index.html>
+
 # POSIX标准定义的必须头文件
 
 ## <dirent.h>

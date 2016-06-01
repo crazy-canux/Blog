@@ -15,10 +15,20 @@ categories:
 permalink:
 ---
 
-# gcc
+# IDE
+
+Windows: DEV C++
+
+<http://orwelldevcpp.blogspot.com/>
+
+Linux: Vim + Gcc + Gdb
+
+# gcc/clang
 
 # gdb
 
 # make
 
 # doygen
+
+文档生成工具

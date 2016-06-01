@@ -90,23 +90,27 @@ You must install the TEMS and TEPS support on TEMS and TEPS server.
 
     安装下面三个包：
 
-        installIra.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password>
-        ./installIra.sh /opt/IBM/ITM -a <architecture> -h <HTEMS> -u <username> -p <password>
+        InstallIra.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
+        InstallIra.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password> # for windows
+        ./InstallIra.sh /opt/IBM/ITM -h <HTEMS> -u <username> -p <password> # for linux
 
     在被监控机器安装agent:
 
-        installIraAgent.bat C:\IBM\ITM
-        ./installIraAgent.sh /opt/IBM/ITM -a <architecture>
+        installIraAgent.bat/.sh itm_install_location
+        installIraAgent.bat C:\IBM\ITM # for windows
+        ./installIraAgent.sh /opt/IBM/ITM # for linux
 
     在TEMS服务器安装对agent的支持：
 
-        installIraAgentTEMS.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password>
-        ./installIraAgentTEMS.sh /opt/IBM/ITM -a <architecture> -h <HTEMS> -u <username> -p <password>
+        installIraAgentTEMS.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
+        installIraAgentTEMS.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password> # for windows
+        ./installIraAgentTEMS.sh /opt/IBM/ITM -h <HTEMS> -u <username> -p <password> # for linux
 
     在TEPS服务器安装对agent的支持：
 
-        installIraAgentTEPS.bat C:\IBM\ITM
-        ./installIraAgentTEPS.sh /opt/IBM/ITM
+        installIraAgentTEPS.bat/.sh itm_install_location
+        installIraAgentTEPS.bat C:\IBM\ITM # for windows
+        ./installIraAgentTEPS.sh /opt/IBM/ITM # for linux
 
 # config agent
 
@@ -126,12 +130,15 @@ start agent:
 
     windows:
 
+        cd ITM_INSTALL/TMAITM6
         cd C:\IBM\ITM\TMAITM6_x64
+        kxx_uninstall.vbs ITM_INSTALL
         K<product code>_uninstall.vbs C:\IBM\ITM
 
     linux/unix:
 
-        /opt/IBM/ITM/bin/uninstall.sh [-f] [-i] [-h install_dir] <product code> platformCode
+        /opt/IBM/ITM/bin/cinfo -i # check the product and platformCode.
+        /opt/IBM/ITM/bin/uninstall.sh [-f] [-i] [-h install_dir] product platformCode
 
 2. Remove from TEP client(clear offline entry)
 

@@ -13,4 +13,8 @@ categories:
 permalink:
 ---
 
+# IDE
+
+Windows: ISE
+
 # powershell script

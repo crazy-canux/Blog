@@ -16,27 +16,29 @@ type: "about"
 程 伟
 Canux CHENG
 
-擅长的开发平台： Linux/Shell，Windows/PowerShell
+Windows平台： Powershell+ISE, Python+IDLE
 
-擅长的开发环境：Vim，eclipse，Visual Studio Code
+Linux平台： Shell+Vim, Python+Vim
 
 擅长的版本控制工具：git
 
-曾经擅长的编程语言：C
+擅长的PO语言：C + Vim/DevC++
 
-擅长编程语言：Java
+擅长的OO语言：Java + Vim/Eclipse
 
-擅长脚本语言： Python
+擅长的Web语言： JavaScript，Html，Css
 
 擅长数据库： Mysql、MSSQL
 
 擅长Web框架： Django，Spring。
 
-主要研究领域：工业4.0监控、DevOps、Web。
+主要研究领域：工级别监控、DevOps、Web。
 
 感兴趣的领域：虚拟化、云计算、大数据、docker和vagrant。
 
 提供Nagios、check_MK和IBM Tivoli等工业级监控相关的项目开发、部署、咨询、培训等业务。
+
+适合岗位：运维开发工程师/运维架构师
 
 ***
 

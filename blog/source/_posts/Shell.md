@@ -13,4 +13,8 @@ categories:
 permalink:
 ---
 
+# IDE
+
+Linux: vim
+
 # shell script

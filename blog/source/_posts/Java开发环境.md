@@ -16,6 +16,12 @@ categories:
 permalink:
 ---
 
+# java的IDE
+
+IBM -> eclipse
+
+Oracle -> NetBeans
+
 # Java安装
 
 JRE: Java Runtime Environment. Java的运行环境。
@@ -71,14 +77,6 @@ PATH:
 在安装路径新建docs目录，解压到docs目录,用file协议访问。
 
 file:\\\C:\Program Files\Java\jdk_version\docs\index.html
-
-# java的开发工具
-
-IBM -> eclipse
-
-Oracle -> NetBeans
-
-VIM
 
 # java
 
