@@ -19,29 +19,45 @@ permalink:
 
 # Monitoring
 
-<https://www.monitoring-plugins.org/>
+My monitoring project on github:
 
-<https://github.com/monitoring-plugins>
+<https://github.com/crazy-canux/awesome-monitoring>
 
 ***
 
 # Nagios
 
+For more informations, see here:
+
+<http://crazy-canux.github.io/2016/03/25/Monitoring%E4%B9%8BNagios/>
+
+***
+
+# check_MK
+
+For more informations, see here:
+
+<http://crazy-canux.github.io/2016/05/12/Monitoring%E4%B9%8Bcheck_MK/>
+
 ***
 
 # Icinga
 
+<https://www.icinga.org/>
+
+<https://github.com/Icinga>
+
+<https://exchange.icinga.org/>
+
 ## Icinga2
 
-C++写的基于nagios的监控引擎。
+Based on nagios and written in C++.
 
 <https://github.com/Icinga/icinga2>
 
 ## IDOUtils
 
-Event broker,需要数据库。
-
-也可以用MK livestatus。
+Event broker.
 
 ## Icingaweb2
 
@@ -53,15 +69,19 @@ Dashboard.
 
 # Naemon
 
-## Naemon
+<http://www.naemon.org/>
 
-C写的兼容nagios的监控套件。
+<https://github.com/naemon>
+
+## Naemon-core
+
+Naemon is 100% Nagios compatible and written in C.
 
 <https://github.com/naemon/naemon-core>
 
 ## Naemon-Livestatus
 
-Fork from MK livestatus, it's the event broker.
+Event broker, fork from MK_livestatus.
 
 <https://github.com/naemon/naemon-livestatus>
 
@@ -73,9 +93,15 @@ Dashboard.
 
 # Shinken
 
-## Shinken
+<http://www.shinken-monitoring.org/>
 
-python对nagios core的重写。
+<https://github.com/naparuba/shinken>
+
+<https://github.com/shinken-monitoring>
+
+## Shinken(core)
+
+Shinken is nagios compatible monitoring framework, written in python.
 
 <https://github.com/naparuba/shinken>
 
@@ -99,49 +125,62 @@ Dashboard
 
 <https://sensuapp.org/>
 
+<https://sensuapp.org/plugins#categories>
+
+## sensu(core)
+
+Monitoring for today's infrastructure, written in ruby.
+
+<https://github.com/sensu/sensu>
+
+## RabbitMQ
+
+Secure Transport data from server and client.
+
+<http://www.rabbitmq.com/>
+
+## uchiwa
+
+Dashboard
+
+<https://github.com/sensu/uchiwa>
+
 ***
 
 # centreon
 
+<https://www.centreon.com>
+
+<https://github.com/centreon>
+
+<https://github.com/centreon/centreon-plugins>
+
 ## centreon engine
 
-C++写的基于nagios的监控引擎。
+Centreon is monitoring scheduler and written in C++.
 
 <https://github.com/centreon/centreon-engine>
 
-## centreon
-
-The web interface.
-
-<https://github.com/centreon/centreon>
-
 ## centreon broker
 
-event broker。
+Event broker。
 
 <https://github.com/centreon/centreon-broker>
 
+## centreon(web)
+
+Dashboard.
+
+<https://github.com/centreon/centreon>
+
 ***
 
-# Op5 monitor
+# Monitoring Plugins
 
-<https://www.op5.com/>
+<https://www.monitoring-plugins.org/>
 
-<https://kb.op5.com/dashboard.action>
+<https://github.com/monitoring-plugins>
 
-<http://git.op5.org/#/admin/projects/>
+<http://crazy-canux.github.io/2016/04/08/Monitoring%E4%B9%8BPlugins/>
 
-## merlin
-
-Op5 Monitor的分布式组件。
-
-![pic](/images/merlin.PNG)
-
-## mk livestatus
-
-event broker.
-
-## Ninja
-
-Op5 Monitor的Dashboard。
-
+<https://github.com/crazy-canux/awesome-monitoring>

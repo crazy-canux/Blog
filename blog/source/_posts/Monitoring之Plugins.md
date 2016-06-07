@@ -13,27 +13,85 @@ categories:
 permalink:
 ---
 
-# Nagios/naemon/icinga/shinken/sensu Plugins
+# Monitoring(Nagios/naemon/icinga/shinken/sensu) Plugins
+
+Office project:
+
+<https://github.com/monitoring-plugins>
+
+<https://www.monitoring-plugins.org/>
+
+My project:
+
+<https://github.com/crazy-canux/xPlugin_Monitoring>
+
+<http://crazy-canux.github.io/2016/04/08/Monitoring%E4%B9%8BPlugins/>
+
+Open source project:
+
+<https://github.com/crazy-canux/awesome-monitoring>
+
+## Windows monitoring
 
 * check_wmi_plus.pl
 
     <http://www.edcint.co.nz/checkwmiplus/>
 
+## Vitual Machine monitoring
+
 * check_wmware_api.pl
 
-    <https://kb.op5.com/display/PLUGINS/Plugins+Home>
-
-    <http://git.op5.org/#/admin/projects/system-addons/plugins/op5/check_vmware_api>
+    <https://kb.op5.com/display/PLUGINS/Check+VMware+API+nagios+plugin>
+    <http://git.op5.org/gitweb?p=system-addons%2Fplugins%2Fop5%2Fcheck_vmware_api.git;a=summary>
 
 * check_vmware_esx.pl
 
     <https://github.com/BaldMansMojo/check_vmware_esx>
 
+## DB monitoring
+
+* check_mysql_health.pl
+
+    <https://github.com/lausser/check_mysql_health>
+
+* check_oracle_health.pl
+
+    <https://github.com/lausser/check_oracle_health>
+
+* check_db2_health.pl
+
+    <https://github.com/lausser/check_db2_health>
+
 * check_mssql_health.pl
 
-    <https://labs.consol.de/nagios/check_mssql_health/index.html>
-
     <https://github.com/lausser/check_mssql_health>
+
+## Log monitoring
+
+* check_logfiles.pl
+
+    <https://github.com/lausser/check_logfiles>
+
+* check_events.pl
+
+    <https://kb.op5.com/display/PLUGINS/check_events.pl>
+    <https://sites.google.com/site/peterwirdemo/home/nagios-plugins>
+
+## Network monitoring
+
+* check_nwc_health.pl
+
+    <https://github.com/lausser/check_nwc_health>
+
+## Application monitoring
+
+* check_sap_health.pl
+
+    <https://github.com/lausser/check_sap_health>
+
+* check_mailbox_health.pl
+
+    <https://github.com/lausser/check_mailbox_health>
 
 ***
 

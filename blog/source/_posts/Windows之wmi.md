@@ -16,9 +16,17 @@ permalink:
 
 wmic是wmi的客户端。
 
-    wmic -U [domain/]adminuser%password //host "select * from Win32_ComputerSystem"
+windows的wmic：
+
+    cmd->wmic
+    /?
+
+linux的wmic：
 
 Linux需要自己创建wmic命令，可以通过samba获取，也可以安装openvas的安装包。
+
+    man wmic
+    wmic -U [domain/]adminuser%password //host "select * from Win32_ComputerSystem"
 
 <https://mikepalmer.net/debianubuntu-wmi-client-package-with-openvas-libwmiclient1-patches/>
 

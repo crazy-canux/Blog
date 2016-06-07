@@ -16,15 +16,38 @@ permalink:
 
 # check_MK
 
-<http://mathias-kettner.com/check_mk.html>
-
 check_Mk有两个版本：
 1. Raw edition(开源版本)
 2. Enterprise edition(商业版本)
 
 check_Mk是基于agent的，需要在被监控机器上安装agent。
 
+check_MK包括mk livestatus等组件。
+
+<http://mathias-kettner.com/check_mk.html>
+
+<http://git.mathias-kettner.de/git/?p=check_mk.git;a=tree>
+
+<http://mathias-kettner.com/check_mk_exchange.php?HTML=yes>
+
 ![pic](/images/mkdis.PNG)
+
+***
+
+# OMD
+
+The Open Monitoring Distribution
+
+用于快速部署基于nagios的分布式监控，包括：
+1. Icinga
+2. Shinken
+3. check_mk
+4. 基于mod-gearman/MK Livestatus/thruk的分布式监控。
+5. 其它组件。
+
+<http://omdistro.org/>
+
+<http://git.mathias-kettner.de/git/?p=omd.git;a=tree>
 
 ***
 

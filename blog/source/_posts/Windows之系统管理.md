@@ -15,6 +15,6 @@ permalink:
 
 # windows的services和process
 
-services是windows的服务，有Name，Service Name，Display Name，Description等属性。
+services是windows的服务，有Name(Display Name)，Service Name，Description等属性。
 
-process是以.exe为后缀的application，有process name和description等属性。
+process是以.exe为后缀的application，有Name(product name)、original filename(Image Name)、file description(description)等属性。

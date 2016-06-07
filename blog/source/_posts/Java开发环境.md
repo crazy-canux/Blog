@@ -22,6 +22,8 @@ IBM -> eclipse
 
 Oracle -> NetBeans
 
+Linux: Vim + javac + jdb
+
 # Java安装
 
 JRE: Java Runtime Environment. Java的运行环境。

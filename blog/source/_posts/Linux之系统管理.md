@@ -45,11 +45,6 @@ permalink:
 org->gnome->gedit->preferences->encodings->auto-detected
 添加'GB2312','GBK',...
 
-# 安装jre或jdk
-
-    sudo apt-get install openjdk-7-jre
-    sudo apt-get install openjdk-7-jdk
-
 # debian/ubuntu安装rpm包
 
 安装工具alien：

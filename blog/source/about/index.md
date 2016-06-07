@@ -16,19 +16,23 @@ type: "about"
 程 伟
 Canux CHENG
 
-Windows平台： Powershell+ISE, Python+IDLE
+Windows平台：PowerShell+ISE
 
-Linux平台： Shell+Vim, Python+Vim
+Linux平台：Shell+Vim
 
-擅长的版本控制工具：git
+擅长的编程语言： C、Java
 
-擅长的PO语言：C + Vim/DevC++
+擅长的脚本语言： Python
 
-擅长的OO语言：Java + Vim/Eclipse
+擅长的IDE：Eclipse
+
+擅长的编辑器：Vim
+
+擅长的版本控制工具：Git
 
 擅长的Web语言： JavaScript，Html，Css
 
-擅长数据库： Mysql、MSSQL
+擅长数据库： Mysql、MSSQL、Oracle
 
 擅长Web框架： Django，Spring。
 
