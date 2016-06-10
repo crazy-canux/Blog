@@ -34,23 +34,6 @@ check_MK包括mk livestatus等组件。
 
 ***
 
-# OMD
-
-The Open Monitoring Distribution
-
-用于快速部署基于nagios的分布式监控，包括：
-1. Icinga
-2. Shinken
-3. check_mk
-4. 基于mod-gearman/MK Livestatus/thruk的分布式监控。
-5. 其它组件。
-
-<http://omdistro.org/>
-
-<http://git.mathias-kettner.de/git/?p=omd.git;a=tree>
-
-***
-
 # check_MK macro core
 
 是nagios core的升级版，用python写的。

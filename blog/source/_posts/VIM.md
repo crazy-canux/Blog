@@ -19,6 +19,11 @@ permalink:
 
 <https://github.com/vim/vim>
 
+安装vim：
+
+    sudo apt-get install vim
+    yum install vim
+
 ## gVim
 
 vim的图形化版本。

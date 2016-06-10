@@ -119,34 +119,6 @@ Dashboard
 
 ***
 
-# Sensu
-
-<https://github.com/sensu>
-
-<https://sensuapp.org/>
-
-<https://sensuapp.org/plugins#categories>
-
-## sensu(core)
-
-Monitoring for today's infrastructure, written in ruby.
-
-<https://github.com/sensu/sensu>
-
-## RabbitMQ
-
-Secure Transport data from server and client.
-
-<http://www.rabbitmq.com/>
-
-## uchiwa
-
-Dashboard
-
-<https://github.com/sensu/uchiwa>
-
-***
-
 # centreon
 
 <https://www.centreon.com>
@@ -175,12 +147,28 @@ Dashboard.
 
 ***
 
-# Monitoring Plugins
+# Sensu
 
-<https://www.monitoring-plugins.org/>
+<https://github.com/sensu>
 
-<https://github.com/monitoring-plugins>
+<https://sensuapp.org/>
 
-<http://crazy-canux.github.io/2016/04/08/Monitoring%E4%B9%8BPlugins/>
+<https://sensuapp.org/plugins#categories>
 
-<https://github.com/crazy-canux/awesome-monitoring>
+## sensu(core)
+
+Monitoring for today's infrastructure, written in ruby.
+
+<https://github.com/sensu/sensu>
+
+## RabbitMQ
+
+Secure Transport data from server and client.
+
+<http://www.rabbitmq.com/>
+
+## uchiwa
+
+Dashboard
+
+<https://github.com/sensu/uchiwa>

@@ -242,7 +242,7 @@ nagios的基于web的配置工具。
 
 ## DNX
 
-分布式组件
+分布式组件。
 
 <http://dnx.sourceforge.net/>
 
@@ -250,43 +250,15 @@ nagios的基于web的配置工具。
 
 ## Nagiosgraph
 
-nagios的绘图组件
+> nagiosgraph parses output and performance data from Nagios plugins and stores
+the data in RRD files. nagiosgraph creates graphs and generates HTML pages with
+graphic reports from the data.
+
+基于RRD，绘制nagios的性能图。
 
 <http://nagiosgraph.sourceforge.net/>
 
 <https://sourceforge.net/projects/nagiosgraph/>
-
-## Nagvis
-
-画nagios的地图,支持livestatus, NDOUtils。
-
-<http://www.nagvis.org/>
-
-<https://github.com/NagVis/nagvis>
-
-## Pnp4nagios
-
-画nagios的性能图
-
-<http://docs.pnp4nagios.org/>
-
-<https://github.com/lingej/pnp4nagios>
-
-## dokuwiki
-
-Nagios的procedure。
-
-<https://www.dokuwiki.org/dokuwiki/>
-
-<https://github.com/splitbrain/dokuwiki>
-
-## rrdtool
-
-画性能图
-
-<http://oss.oetiker.ch/rrdtool/>
-
-<https://github.com/oetiker/rrdtool-1.x>
 
 ***
 
