@@ -19,10 +19,43 @@ permalink:
 
 <https://github.com/vim/vim>
 
+查看vim版本和编译信息：
+
+    vim --version
+
 安装vim：
 
     sudo apt-get install vim
     yum install vim
+
+源码安装vim：
+
+    sudo apt-get build-dep vim
+    cd vim/src
+
+    ./configure \
+    --with-features=huge \
+    --with-compiledby="Canux" \
+    --enable-multibyte \
+    --enable-gui=gtk2 \
+    --enable-gpm \
+    --prefix=/usr \
+    --enable-cscope \
+    --enable-fontset \
+    --enable-xim \
+    --enable-fail-if-missing \
+    --enable-mzschemeinterp \
+    --enable-perlinterp \
+    --enable-luainterp \
+    --enable-tclinterp\
+    --enable-rubyinterp \
+    --enable-pythoninterp \
+    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+    --enable-python3interp \
+    --with-python3-config-dir=/usr/lib/python3.4/config-3.4m-x86_64-linux-gnu
+
+    make VIMRUNTIMEDIR=/usr/share/vim/vim74
+    sudo make install
 
 ## gVim
 
@@ -108,6 +141,12 @@ dein已经取代neobundle, 可以用于vim和neovim。
 分布式vim。
 
 <https://github.com/carlhuda/janus>
+
+## goyo.vim
+
+分布式vim。
+
+<https://github.com/junegunn/goyo.vim>
 
 ## vimrc
 

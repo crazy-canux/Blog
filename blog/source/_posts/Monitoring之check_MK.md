@@ -16,6 +16,9 @@ permalink:
 
 # check_MK
 
+> Welcome to the official Homepage of Check_MK. Check_MK is comprehensive IT
+monitoring solution in the tradition of Nagios.
+
 check_Mk有两个版本：
 1. Raw edition(开源版本)
 2. Enterprise edition(商业版本)
@@ -44,7 +47,7 @@ check_MK包括mk livestatus等组件。
 
 # MK livestatus
 
-Event broker,是NDO的升级版,不需要数据库。
+Event broker,是NDO/IDO的升级版,不需要数据库。
 
 支持：
 1. mk Multisite
@@ -77,10 +80,6 @@ check_mk的配置工具。
 ***
 
 # install check_mk
-
-安装工具gdebi：
-
-    sudo apt-get install gdebi-core
 
 安装正确的版本：
 

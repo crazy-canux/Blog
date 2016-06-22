@@ -1,16 +1,15 @@
 ---
 layout: post
-title: Shell之Tmux
+title: TMUX
 comments: true
-date: 2016-04-03 10:26:10
+date: 2016-06-19 11:17:53
 updated:
 tags:
-- Shell
-- Tmux
-- Screen
+- tmux
+- screen
 categories:
-- Linux
-- Shell
+- Develop
+- TMUX
 permalink:
 ---
 
@@ -26,7 +25,9 @@ tmux三个基本概念：
 
 3. 面板（pane）
 
-tmux使用c/s架构，tmux命令启动tmux服务器，一个tmux服务有多个session，每个session就是tmux管理下的伪终端集合，一个session有多个window与之关联，每个window就是一个伪终端，占据整个屏幕，一个window可以被分割成多个pane。
+tmux使用c/s架构，tmux命令启动tmux服务器，一个tmux服务有多个session，
+每个session就是tmux管理下的伪终端集合，一个session有多个window与之关联，
+每个window就是一个伪终端，占据整个屏幕，一个window可以被分割成多个pane。
 
 ***
 
@@ -41,6 +42,7 @@ tmux依赖libevent和ncurses库。
 <http://invisible-island.net/ncurses/>
 
     sudo apt-get install tmux
+    sudo yum install tmux
 
 用户配置文件： ~/.tmux.conf
 
@@ -68,6 +70,8 @@ tmux依赖libevent和ncurses库。
 ***
 
 # tmux快捷键
+
+tmux的prefix是ctrl-b
 
 按下ctrl-b然后松开，通知tmux下面的按键是快捷键。
 
@@ -191,3 +195,13 @@ detach当前session:
 使用粘贴模式：
 
     ctrl-b + ]
+
+# tmux-plugins
+
+<https://github.com/tmux-plugins>
+
+## TPM
+
+Tmux Plugins Manager.
+
+<https://github.com/tmux-plugins/tpm>

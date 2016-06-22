@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Windows之powershell
+title: Powershell
 comments: true
 date: 2016-04-26 09:52:02
 updated:

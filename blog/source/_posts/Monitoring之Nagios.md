@@ -175,17 +175,9 @@ NSCP和check_nrpe，可以传自己的命令或插件, 支持windows/linux/unix�
 
     nagios core + check_nrpe -H <NSCP IP> [-c <command/plugins>] [-a <argument list>] <=> NSCP(NSClient++) + plugins
 
-NSCP和NSCA(NSCA-ng)/NRDP, NSCA/NRDP提供被动检测, 支持windows/linux/unix：
-
-    nagios core + NSCA/NSCA-ng/NRDP <=> NSCP(NSClient++)
-
 NCPA是python写的跨平台代理, 支持linux/windows/unix：
 
     nagios core + check_ncpa.py <=> NCPA
-
-check_MK_agent是一款先进的代理, 支持linux/windows/unix：
-
-    nagios core + Check_MK <=> check_mk_agent
 
 ***
 
@@ -292,11 +284,9 @@ labs consol的分布式监控组件。
 
 <https://github.com/sni/mod_gearman>
 
-## NDOUtils
+## NDOUtils/livestatus
 
 Event broker.
-
-官方用的NDOUtils，最好还是用Mk livestatus。
 
 ## Thruk
 
@@ -316,7 +306,7 @@ Event broker.
 
 <https://kb.op5.com/dashboard.action>
 
-<http://git.op5.org/#/admin/projects/>
+<https://github.com/op5>
 
 ## merlin
 
@@ -324,14 +314,16 @@ Event broker.
 
 <https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home>
 
-## livestatus
+<https://github.com/op5/merlin>
 
-Eevent broker, 基于MK livestatus。
+## NDOUtils/MK livestatus
 
-<https://kb.op5.com/display/LIVESTATUS/Backend+%28Livestatus%29+Home>
+Eevent broker
 
 ## Ninja
 
 Dashboard.
 
 <https://kb.op5.com/display/GUI/GUI+%28Ninja%29+Home>
+
+<https://github.com/op5/ninja>

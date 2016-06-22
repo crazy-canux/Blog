@@ -170,16 +170,16 @@ markdown支持两个语法格式的标题
 
 用一个*或_表示强调，符号和字符中间没有空格
 
-斜体：\*italic*
+斜体：\*italic\*
 > *italic*
 
-斜体： \_italic_
+斜体： \_italic\_
 > _italic_
 
-粗体： \**bold**
+粗体： \*\*bold\*\*
 > **bold**
 
-粗体： \__bold__
+粗体： \_\_bold\_\_
 > __bold__
 
 ## 代码

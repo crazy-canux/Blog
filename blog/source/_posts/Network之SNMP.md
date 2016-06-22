@@ -16,4 +16,6 @@ permalink:
 
 # Python
 
-import pysnmp
+python的snmp包[pysnmp](https://github.com/etingof/pysnmp)
+
+    import pysnmp

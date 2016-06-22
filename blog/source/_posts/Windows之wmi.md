@@ -34,7 +34,7 @@ Linux需要自己创建wmic命令，可以通过samba获取，也可以安装ope
 
 ## wmi
 
-Windows安装pywin32和wmi两个包,可以访问wmi。
+Windows安装[pywin32](https://sourceforge.net/projects/pywin32/?source=navbar)和[wmi](http://timgolden.me.uk/python/wmi/index.html)两个包,可以访问wmi。
 
     import wmi
     c = wmi.WMI()

@@ -28,13 +28,14 @@ Linux内核的站点：
 2. suse enterprise linux
 
 免费的服务器版本：
-1. centos (rhel的免费版)
-2. debian
+1. centos (rhel的免费版服务器版)
+2. open suse
+3. debian/ubuntu
 
 免费的桌面版本：
 1. fedora (原来的redhat desktop linux)
-2. ubuntu (debian的分支)
-3. open suse (suse的桌面版)
+2. open suse
+3. debian/ubuntu
 
 # Linux桌面环境
 

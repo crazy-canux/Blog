@@ -84,6 +84,8 @@ cases beyond a traditional wiki.
 
 <http://graphite.readthedocs.io/en/latest/index.html>
 
+Zabbix,Sensu,Ganglia,Nagios/Naemon/Icinga/Shinken都可以配合使用。
+
 绘制性能图。
 
 graphite-web
@@ -96,7 +98,9 @@ carbon
 memory for "hot queries" from the Graphite-Web application, and persisting them
 to disk using the Whisper time-series library.
 
-whisper
+whisper/ceres
+
+ceres会替代whisper。
 
 > Whisper is a fixed-size database, similar in design and purpose to RRD
 (round-robin-database). It provides fast, reliable storage of numeric data over

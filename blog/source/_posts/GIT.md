@@ -29,6 +29,8 @@ Git安装：
     sudo apt-get install git gitk
     yum install git gitk
 
+# Git配置
+
 # Git原理
 
 # Git命令

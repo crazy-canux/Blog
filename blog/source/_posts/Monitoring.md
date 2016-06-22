@@ -17,7 +17,7 @@ categories:
 permalink:
 ---
 
-# Monitoring
+# **Monitoring**
 
 My monitoring project on github:
 
@@ -25,7 +25,7 @@ My monitoring project on github:
 
 ***
 
-# Nagios
+# **Nagios**
 
 For more informations, see here:
 
@@ -33,11 +33,34 @@ For more informations, see here:
 
 ***
 
-# check_MK
+# Naemon
 
-For more informations, see here:
+<http://www.naemon.org/>
 
-<http://crazy-canux.github.io/2016/05/12/Monitoring%E4%B9%8Bcheck_MK/>
+<https://github.com/naemon>
+
+## Distribution
+
+Naemon can use the same addons as nagios to do the distribution
+monitoring.
+
+## Naemon-core
+
+Naemon is 100% Nagios compatible and written in C.
+
+The next generation of nagios.
+
+<https://github.com/naemon/naemon-core>
+
+## Naemon-Livestatus
+
+Event broker, fork from MK_livestatus.
+
+<https://github.com/naemon/naemon-livestatus>
+
+## Thruk
+
+Dashboard.
 
 ***
 
@@ -64,30 +87,6 @@ Event broker.
 Dashboard.
 
 <https://github.com/Icinga/icingaweb2>
-
-***
-
-# Naemon
-
-<http://www.naemon.org/>
-
-<https://github.com/naemon>
-
-## Naemon-core
-
-Naemon is 100% Nagios compatible and written in C.
-
-<https://github.com/naemon/naemon-core>
-
-## Naemon-Livestatus
-
-Event broker, fork from MK_livestatus.
-
-<https://github.com/naemon/naemon-livestatus>
-
-## Thruk
-
-Dashboard.
 
 ***
 
@@ -119,7 +118,43 @@ Dashboard
 
 ***
 
-# centreon
+# **check_MK**
+
+For more informations, see here:
+
+<http://crazy-canux.github.io/2016/05/12/Monitoring%E4%B9%8Bcheck_MK/>
+
+***
+
+# **Sensu**
+
+<https://github.com/sensu>
+
+<https://sensuapp.org/>
+
+<https://sensuapp.org/plugins#categories>
+
+## sensu(core)
+
+Monitoring for today's infrastructure, written in ruby.
+
+<https://github.com/sensu/sensu>
+
+## RabbitMQ
+
+Secure Transport data from server and client.
+
+<http://www.rabbitmq.com/>
+
+## uchiwa
+
+Dashboard
+
+<https://github.com/sensu/uchiwa>
+
+***
+
+# **Centreon**
 
 <https://www.centreon.com>
 
@@ -146,29 +181,3 @@ Dashboard.
 <https://github.com/centreon/centreon>
 
 ***
-
-# Sensu
-
-<https://github.com/sensu>
-
-<https://sensuapp.org/>
-
-<https://sensuapp.org/plugins#categories>
-
-## sensu(core)
-
-Monitoring for today's infrastructure, written in ruby.
-
-<https://github.com/sensu/sensu>
-
-## RabbitMQ
-
-Secure Transport data from server and client.
-
-<http://www.rabbitmq.com/>
-
-## uchiwa
-
-Dashboard
-
-<https://github.com/sensu/uchiwa>

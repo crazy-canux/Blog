@@ -60,3 +60,7 @@ org->gnome->gedit->preferences->encodings->auto-detected
     sudo alien -d -c XXX.rpm
     sudo dpkg/alien -i XXX.deb
 
+# virtualbox linux-windows share folder
+
+    sudo vim /etc/rc.local
+    mount.vboxsf -w ShareFolderName /home/User/MountPoint

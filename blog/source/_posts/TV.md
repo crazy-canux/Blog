@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 2016年美剧
+title: 美剧
 comments: true
 date: 2016-03-24 22:38:01
 updated:
 tags:
-- movie
+- TV
 categories:
 - media
 permalink:
@@ -43,10 +43,19 @@ E01 - E13
 
 <http://cn163.net/archives/19774/>
 
+# 末日孤舰
+
+13 June 2016
+
+E01 - E13
+
+下载地址：
+
+<http://cn163.net/archives/23679/>
+
 # 黑客军团S02
 
-23 June 2016
-
-![pic](/images/hkjt.jpg)
+23 July 2016
 
 E01 - E10
+
