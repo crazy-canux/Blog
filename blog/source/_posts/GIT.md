@@ -24,13 +24,13 @@ SVN: subversion并发式版本控制系统。
 2. gitlab
 3. bitbucket
 
+# Git安装和配置
+
 Git安装：
 
     sudo apt-get install git gitk
     yum install git gitk
 
-# Git配置
+# GIT相关项目
 
-# Git原理
-
-# Git命令
+# Git用法

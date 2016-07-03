@@ -46,6 +46,10 @@ Data source:
 
 # create agent
 
+Every agent have a unique produce code.
+
+Like: k00-k99, k{0-9}{A-Z}.
+
 1. Create the agent in the Agent Builder
     agent information
     data source

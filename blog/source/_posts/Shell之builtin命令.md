@@ -27,3 +27,8 @@ help命令查看所有内置命令：
     help    [command]
 
 # cd
+
+# which
+
+# type
+

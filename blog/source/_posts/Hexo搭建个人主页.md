@@ -5,13 +5,14 @@ comments: true
 date: 2016-03-22 12:59:10
 updated:
 tags:
+- javascript
 - nodejs
 - npm
 - hexo
 - next
 categories:
 - Web
-- Nodejs
+- Javascript
 permalink:
 ---
 

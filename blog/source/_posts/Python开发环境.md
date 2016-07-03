@@ -61,24 +61,18 @@ IDE：
         cd package
         python setup.py install
 
-* setuptools安装：
-
-    被淘汰的安装工具。
+* setuptools(easy_install)安装：
 
     <https://github.com/pypa/setuptools>
-
-    使用setuptools
 
         easy_install packagename[=version] # 安装
         easy_install -U packagename[=version] # 升级
 
 * pip安装：
 
-    python自带的安装工具。
+    python自带的安装工具,easy_install的替代版。
 
     <https://github.com/pypa/pip>
-
-    使用pip
 
         pip install packagename[=version] # 安装
         pip install -U packagename[=version] # 升级

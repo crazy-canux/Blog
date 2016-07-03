@@ -47,5 +47,14 @@ Linux外部命令的项目是coreutils。
     man [command]
     info [command]
 
-# logrodate
+# man
 
+# info
+
+# locate
+
+# apropos
+
+# whatis
+
+# logrotate

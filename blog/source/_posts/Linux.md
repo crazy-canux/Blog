@@ -67,79 +67,17 @@ lightDM
 
 Slim
 
-# Linux的Shell
+# Linux的shell
 
-## 查看shell
+查看shell内置命令：
 
-Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。
+    help [command]
 
-查看当前使用的shell：
-
-    echo $SHELL
-    echo $0
-
-查看安装了哪些shell：
-
-    cat /etc/shells
-
-## shell命令
-
-shell命令分为内置命令和外部命令：
-
-查看一个命令是内置命令还是外部命令：
-
-    type [command]
-
-提示"[command] is a shell builtin"就表示是内置命令。
-
-### 内置命令
-
-内置命令在bash/builtins目录中
-
-help命令查看所有内置命令：
-
-    help
-
-查看内置命令的帮助：
-
-    help    [command]
-
-### 外部命令
-
-外部命令在coreutils目录中
-
-查看外部命令所在目录：
-
-    echo $PATH
-
-外部命令在下列目录中：
-
-/sbin
-
-/bin
-
-/usr/sbin
-
-/usr/bin
-
-/usr/local/sbin
-
-/usr/local/bin
-
-/usr/games
-
-/usr/local/games
-
-查看外部命令手册：
+查看shell的外部命令(包括应用程序的命令行)
 
     man [command]
+    man 1 [command]
     info [command]
-
-## 使用shell
-
-查到shell的外部命令(包括应用程序的命令行)
-
-    man 1 <name>
 
 查到包括宏，包，惯用法等
 

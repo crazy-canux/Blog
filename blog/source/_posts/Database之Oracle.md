@@ -11,3 +11,7 @@ categories:
 - Database
 permalink:
 ---
+
+# Oracle
+
+

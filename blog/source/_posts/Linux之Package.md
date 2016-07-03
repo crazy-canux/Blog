@@ -77,3 +77,5 @@ suse的包管理机制。
 ***
 
 # Alien
+
+> alien is a program that converts between Red Hat rpm, Debian deb, Stampede slp, Slackware tgz, and Solaris pkg file formats.

@@ -13,7 +13,7 @@ categories:
 permalink:
 ---
 
-# IDE
+# Powershell
 
 Windows: ISE
 

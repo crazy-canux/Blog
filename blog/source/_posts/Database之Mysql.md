@@ -125,6 +125,8 @@ nowarning (\w) Don't show warnings after every statement.
 
 <http://dev.mysql.com/doc/connector-j/5.1/en/>
 
+<https://github.com/mysql/mysql-connector-j>
+
 官方提供的java的API，下载java安装包安装。
 
 # Python
@@ -132,6 +134,8 @@ nowarning (\w) Don't show warnings after every statement.
 ## connector/Python
 
 <http://dev.mysql.com/doc/connector-python/en/>
+
+<https://github.com/mysql/mysql-connector-python>
 
 官方提供的python的API。
 
@@ -149,4 +153,7 @@ nowarning (\w) Don't show warnings after every statement.
 
 MySQLdb 1.X 是旧版本，<https://github.com/farcepest/MySQLdb1>
 
+    sudo pip install mysql-python
+
 MySQLdb 2.X 是新版本，改名为moist， <https://github.com/farcepest/moist>
+

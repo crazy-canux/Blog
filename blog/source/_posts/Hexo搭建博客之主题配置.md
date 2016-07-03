@@ -11,7 +11,7 @@ tags:
 - next
 categories:
 - Web
-- Nodejs
+- Javascript
 permalink:
 ---
 

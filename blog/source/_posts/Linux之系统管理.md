@@ -45,22 +45,43 @@ permalink:
 org->gnome->gedit->preferences->encodings->auto-detected
 添加'GB2312','GBK',...
 
-# debian/ubuntu安装rpm包
-
-安装工具alien：
-
-    sudo apt-get install alien
-
-直接安装：
-
-    sudo alien -i -c XXX.rpm
-
-转换成deb包：
-
-    sudo alien -d -c XXX.rpm
-    sudo dpkg/alien -i XXX.deb
-
-# virtualbox linux-windows share folder
+# virtualbox 开机自动挂载共享文件夹
 
     sudo vim /etc/rc.local
-    mount.vboxsf -w ShareFolderName /home/User/MountPoint
+    mount.vboxsf -w ShareFolderNameOnWindows MountPointOnLinux
+
+# 挂载U盘失败
+
+移动硬盘或者u盘不能挂载，删掉/etc/fstab的关于sdb的行，保存后重新插拔。
+
+# Linux修改hostname
+
+    sudo vim /etc/hostname
+    sudo vim /etc/hosts
+    sudo reboot
+
+# Linux创建桌面图标（比如eclipse）
+
+    cd /usr/share/applications
+    sudo vi XXX.desktop
+
+添加必要属性后拖到桌面或启动栏即可。
+
+# Linux安装QQ
+
+    sudo apt-get install libgtk2.0-0:i386
+    sudo apt-get install lib32ncurses5
+    sudo apt-get install -f
+    sudo dpkg -i fonts-wqy-microhei_0.2.0-beta-2_all.deb
+    sudo dpkg -i ttf-wqy-microhei_0.2.0-beta-2_all.deb
+    sudo dpkg -i wine-qqintl_0.1.3-2_i386.deb
+
+# 安装文档的包
+
+    sudo apt-get install glibc-doc manpages-dev manpages-posix-dev manpages-zh
+
+手册位于/usr/share/man
+
+# ufw & iptables
+
+# upstart & systemd

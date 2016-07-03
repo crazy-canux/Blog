@@ -50,7 +50,17 @@ tmux依赖libevent和ncurses库。
 
 ***
 
-# tmux使用
+# tmux相关项目
+
+## TPM
+
+Tmux Plugins Manager.
+
+<https://github.com/tmux-plugins/tpm>
+
+***
+
+# tmux用法
 
     man tmux
 
@@ -67,9 +77,7 @@ tmux依赖libevent和ncurses库。
 
     tmux ls
 
-***
-
-# tmux快捷键
+## tmux快捷键
 
 tmux的prefix是ctrl-b
 
@@ -195,13 +203,3 @@ detach当前session:
 使用粘贴模式：
 
     ctrl-b + ]
-
-# tmux-plugins
-
-<https://github.com/tmux-plugins>
-
-## TPM
-
-Tmux Plugins Manager.
-
-<https://github.com/tmux-plugins/tpm>
