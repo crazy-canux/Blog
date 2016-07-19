@@ -24,16 +24,21 @@ permalink:
 
 免费版：
 1. Express
-2. Compact
-3. Web
-4. Developer
+2. Developer
+3. Compact
+4. Web
 5. SQL Azure
+
+安装配置参考文档。
+
+# mssql基本属性
 
 system databases:
 1. master 主数据库
 2. model  模板数据库
 3. msdb   自动机数据库
-4. tempdb 零时交换数据库
+4. tempdb 零时交换数据库,不需要备份,挂载到独立的子系统。
+5. resource
 
 default port：1433
 
@@ -41,11 +46,99 @@ default port：1433
 
 2012: max instance 256
 
-Client -> SNAC(OLE DB/ODBC) -> Network Libraries -> TDS ->
+Client -> SNAC(OLE DB/ODBC) -> Network Libraries -> TDS <=> Server -> Endpoints -> SQL OS(relational engine/storage engine)
 
--> Server -> Endpoints -> SQL OS(relational engine/storage engine)
+## XX.mdf & XX.ldf
 
-sql server存储数据放在data file和log file中。
+sql server存储数据放在data file, 叫.mdf/.ndf,日志文件存放在log file，叫.ldf。
+
+只能有一个.mdf。
+
+Shinking, 自动收缩，不推荐。
+database-file-dbcc-shrinks
+database-file-auto-shrinks
+database-datafile-auto-shrinks
+database-logfile-auto-shrinks
+
+Expanding,自动扩展。
+database-file-auto-growths
+database-datafile-auto-growths
+database-logfile-auto-growths
+
+connection-time
+cpy-busy
+io-busy
+full-scans
+connected-users
+transactions
+batch-requests
+latches-waits
+latches-wait-time
+locks-waits
+locks-timeouts
+locks-deadlocks
+sql-recompilations
+sql-initcompilations
+total-server-memory
+mem-pool-data-buffer-hit-ratio
+lazy-writes
+page-life-expectancy
+free-list-stalls
+checkpoint-pages
+database-online
+database-free
+database-used
+database-backup-age
+database-logbackup-age
+failed-jobs
+jobs-enabled
+list-databases
+list-datafiles
+list-locks
+
+***
+
+# GUI
+
+## SSMS
+
+SQL Server Management Studio是mssql的图形化管理界面。
+
+从模板中获取常用的SQL：
+
+view -> template explorer + query -> specify values for template parameters.
+
+## SSIS
+
+数据集成服务。
+
+## cliconfg.exe
+
+用于给数据库取别名并分发。
+
+***
+
+# CLI
+
+## sqlcmd
+
+SQL Server的命令行界面。
+
+    sqlcmd -? # 查看帮助
+    sqlcmd /?
+
+    sqlcmd -A # 管理员专用模式。
+
+## bcp
+
+数据库import/export工具
+
+    bcp -? # 查看帮助
+    bcp XXX out XXX -T -c
+
+## sqlps
+
+SQL Server的PowerShell命令行模式。
 
 ***
 
@@ -68,36 +161,6 @@ sql server存储数据放在data file和log file中。
 
 ***
 
-# GUI(SSMS)
-
-SQL Server Management Studio是mssql的图形化管理界面。
-
-从模板中获取常用的SQL：
-
-view -> template explorer + query -> specify values for template parameters.
-
-***
-
-# CLI
-
-## sqlcmd
-
-SQL Server的命令行界面。
-
-    sqlcmd -? # 查看帮助
-
-    sqlcmd -A # 管理员专用模式。
-
-## bcp
-
-    bcp -? # 查看帮助
-
-## sqlps
-
-SQL Server的PowerShell命令行模式。
-
-***
-
 # data type
 
 三种数据类型：
@@ -107,34 +170,34 @@ SQL Server的PowerShell命令行模式。
 
 system data有下面类型：
 
-tinyint: 8bits
-smallint: 16bits
-int: 32bits
-bigint: 64
-decimal:
-numeric:
-smallmoney: 32bits
-money: 64bits
-bit: 0/1
+    tinyint: 8bits
+    smallint: 16bits
+    int: 32bits
+    bigint: 64
+    decimal:
+    numeric:
+    smallmoney: 32bits
+    money: 64bits
+    bit: 0/1
 
-float: <=53bits
-real: 32bits
+    float: <=53bits
+    real: 32bits
 
-date:
-datetime2:
-datetime:
-datetimeoffset:
-smalldatetime:
-time:
+    date:
+    datetime2:
+    datetime:
+    datetimeoffset:
+    smalldatetime:
+    time:
 
-char:
-nchar:
-varchar:
-nvarchar:
-varchar(max): <=2GB
-nvarchar(max): <=2GB
+    char:
+    nchar:
+    varchar:
+    nvarchar:
+    varchar(max): <=2GB
+    nvarchar(max): <=2GB
 
-rowversion:
+    rowversion:
 
 ## data attribution
 
@@ -242,6 +305,8 @@ sa是数据库默认的管理员,dbcc需要sa权限执行。
 ## sql query
 
 和标准SQL操作一样。
+
+    bulk insert
 
 ## Stored Procedures
 

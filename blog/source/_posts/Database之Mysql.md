@@ -29,7 +29,9 @@ GUI工具： mysql workbench
 
 # mysql命令
 
+    mysql db_name
     mysql --user=user_name --password=your_password db_name
+    mysql db_name < script.sql > output.tab
 
 初始化时需要用root用户进入mysql命令行
 
@@ -40,6 +42,10 @@ GUI工具： mysql workbench
 
     mysql -u username -p
     mysql -u <mysql server> -P <port> -u <username> -p
+
+# mysql的命令
+
+先用mysql命令进入mysql的命令行。
 
 ?         (\?) Synonym for help.
 help      (\h) Display this help.
@@ -70,13 +76,6 @@ use       (\u) Use another database. Takes database name as argument.
 charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
 warnings  (\W) Show warnings after every statement.
 nowarning (\w) Don't show warnings after every statement.
-
-# mysql其它命令
-
-## show
-
-    show databases; 查看所有数据库
-    show tables; 查看所有表
 
 # sql query
 
@@ -119,16 +118,6 @@ nowarning (\w) Don't show warnings after every statement.
     CREATE DATABASE databasename;
     DROP DATABASE databasename;
 
-# Java
-
-## connector/J
-
-<http://dev.mysql.com/doc/connector-j/5.1/en/>
-
-<https://github.com/mysql/mysql-connector-j>
-
-官方提供的java的API，下载java安装包安装。
-
 # Python
 
 ## connector/Python
@@ -153,7 +142,31 @@ nowarning (\w) Don't show warnings after every statement.
 
 MySQLdb 1.X 是旧版本，<https://github.com/farcepest/MySQLdb1>
 
-    sudo pip install mysql-python
-
 MySQLdb 2.X 是新版本，改名为moist， <https://github.com/farcepest/moist>
+
+    sudo pip install mysql-python
+    import MySQLdb
+    cxn = MySQLdb.connect(db='mysql', user='root', passwd='*')
+    cur = cxn.cursor()
+    cur.query(<sql query>)
+    cur.execute(,sql query>)
+    ...
+    cur.close()
+    cxn.close()
+
+## pymysql
+
+<https://github.com/PyMySQL/PyMySQL>
+
+    import pymysql
+
+# Java
+
+## connector/J
+
+<http://dev.mysql.com/doc/connector-j/5.1/en/>
+
+<https://github.com/mysql/mysql-connector-j>
+
+官方提供的java的API，下载java安装包安装。
 

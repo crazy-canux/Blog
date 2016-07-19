@@ -33,6 +33,8 @@ java的基础类，不需要用import导入。
 
 Object类是所有类的基类。
 
+Field:
+
 Constructor:
 
     Object()
@@ -145,6 +147,8 @@ Method:
 
 # java.lang.StringBuffer
 
+Field:
+
 Constructor:
 
     StringBuffer()
@@ -182,6 +186,8 @@ Method:
     void trimToSize()
 
 # java.lang.StringBuilder
+
+Field:
 
 Constructor:
 
@@ -224,14 +230,11 @@ Method:
 
 Fields:
 
-    public static final InputStream    in
-    /* 标准输入流 */
+    public static final InputStream in /* 标准输入流 */
+    public static final PrintStream out /* 标准输出流 */
+    public static final PrintStream err /* 标准错误输出流 */
 
-    public static final PrintStream    out
-    /* 标准输出流 */
-
-    public static final PrintStream    err
-    /* 标准错误输出流 */
+Constructor:
 
 Method:
 

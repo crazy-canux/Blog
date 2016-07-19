@@ -47,6 +47,10 @@ Linux外部命令的项目是coreutils。
     man [command]
     info [command]
 
+自定义外部命令：
+
+添加$PATH变量，然后放到该目录。
+
 # man
 
 # info

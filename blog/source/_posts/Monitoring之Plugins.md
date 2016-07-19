@@ -98,30 +98,13 @@ Nagios Plugin Development Guidelines:
 
 Nagios不是基于agent的，所以插件都是通过协议来获取监控信息。
 
-1. windows:
-    snmp
-    wmi(wmic)
+## threshold and ranges
 
-2. linux/unix:
-    snmp
-    ssh
-
-3. network
-    http
-    https
-    snmp
-
-4. storage
-    snmp
-
-5. mssql
-    freetds
-
-6. mysql
-    mysql
-
-7. oracle
-    sqlplus
+10    |    <0 or >10 alert
+10:    |    <10 alert
+~:10    |    >10 alert
+10:20    |    <10 or >20 alert
+@10:20    |    >=10 and <=20 alert
 
 ***
 

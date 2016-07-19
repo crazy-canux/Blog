@@ -18,6 +18,10 @@ NullPointerException to be thrown.
 
 # java.io.Console
 
+Field:
+
+Constructor:
+
 Method:
 
     void flush()
@@ -31,6 +35,8 @@ Method:
     PrintWriter writer()
 
 # java.io.InputStream
+
+Field:
 
 Constructor:
 
@@ -64,6 +70,8 @@ Method:
 
 # java.io.OutputStream
 
+Field:
+
 Constructor:
 
     OutputStream()
@@ -91,6 +99,8 @@ Method:
     The same with java.io.OutputStream
 
 ### java.io.PrintStream (java.io.FilterOutputStream)
+
+Field:
 
 Constructor:
 

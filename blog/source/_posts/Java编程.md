@@ -23,10 +23,6 @@ Java的版本：
 2. Oracle JDK
 3. IBM JDK
 
-Java的web框架SSH: struts + spring + hibernate。
-
-java的web服务器: tomcat
-
 java命令:
 1. java      运行程序
 2. javac     编译器
@@ -54,9 +50,9 @@ java大小写敏感。
 
 java使用骆驼命名法，单词首字母大写。
 
-java语句要用分号；结尾, 用{}表示一个代码块。
+java语句要用分号；结尾, 用{}表示一个代码块, import语句也需要分号;。
 
-java程序以类的形式出现，类名单词首字母最好大写。
+java程序以类的形式出现，类名单词首字母大写。
 
 java源代码文件名要和公共类的名字相同。
 
@@ -146,7 +142,6 @@ char类型可以转换成int类型.
 
 在java中整形值和布尔值不能转换。
 
-
 ### 进制：
 
 前缀0b表示二进制
@@ -157,7 +152,7 @@ char类型可以转换成int类型.
 
 ### 变量
 
-type var = val
+    int <variable> = <value>
 
 变量需要先申明类型,然后再初始化, 最后才能使用.
 
@@ -167,11 +162,11 @@ type var = val
 
 ### 常量:
 
-final type CON = val
+    final int <VAR> = <val>
 
 使用final修饰的是常量，只能被赋值一次。
 
-static final CON = val
+    static final int <VAR> = <val>
 
 在一个类的多个方法中使用的是类常量，使用static final修饰。
 
@@ -261,28 +256,94 @@ static final CON = val
 
 定义枚举类型:
 
->> enum type_name { val1, val2, ..., valN };
+    enum <enum_name> { val1, val2, ..., valN };
 
 申明枚举类型
 
->> type_name name = type_name.varX
+    <enum_name> <variable> = <enum_name>.varX
 
-## 数组： 就是一个容器，相同数据类型的集合。
+## 数组
 
-元素类型［］   数组名   =   new   元素类型［数组长度］；
-元素类型［］   数组名   =   new   元素类型［］｛val1，...}；
-元素类型［］   数组名   =   ｛val1， …};
-数组默认初始化值为0或false 或 '\u0000'
-array.length   #求数组长度。
+数组就是一个容器，存储相同数据类型的集合。
 
-二维数组：
-int[][] array = new int[2][3];
+数组大小不能改变，只能改变数组元素的大小。
 
-int[][] array = new int[2][];
-array[0] = new int[1];
-array[1] = new int[2];
+### 一维数组
 
-int[][] array = new {｛1｝，｛2，3｝}；
+申明数组两种方法：
+
+    int[] array;
+    int array[];
+
+使用new初始化数组：
+
+需要用new创建一个数组,n可以是变量,也可以是0.
+
+数字数组初始化为0,布尔类型初始化为false，对象类型初始化为null（包括String类型）。
+
+    int[] array =  new int[n];
+
+直接初始化数组：
+
+    int[] array = {<val1>, <val2>, ...};
+
+创建并初始化匿名数组,可以直接将匿名数组赋值给别的数组:
+
+    new int[] {<val1>, <val2>, ...};
+
+用for访问数组元素，下标从0开始,下标不能越界:
+
+    for (int i = 0; i < n; i++)
+        array[i] = <value>;
+
+使用for each访问数组元素：
+
+    for (int <variable> : array)
+        System.out.println(<variable>)
+
+length函数求数组长度：
+
+    array.length
+
+数组拷贝：
+
+将一个数组变量拷贝给另一个数组变量，两个变量引用同一个数组,
+
+也就是说任意改变一个元素的值，另一个数组的对应元素值也改变。
+
+    int[] array1 = array;
+
+将一个数组所有值拷贝给一个新数组：
+
+java.util.Arrays.copyOf()仅仅是把一个数组的所有值拷贝给另一个数组。
+
+    int[] array1 = Arrays.copyOf(array, array.length);
+
+数组排序：
+
+    Arrays.sort(array); / 优化的快速排序 /
+
+### 多维数组：
+
+申明二维数组：
+
+    double[][] arrays;
+
+用new初始化数组：
+
+    double[][] arrays = new double[m][n];
+
+直接初始化：
+
+    double[][] arrays = {｛...｝，｛...｝, ...}；
+
+访问数组元素：
+
+    for (double[] row : arrays)
+        for (double col : row)
+            System.out.println(col)
+
+参考java.util.Arrays类。
 
 ## 字符串(java.lang.String)：
 
@@ -296,7 +357,7 @@ java没有字符串类型，而是用标准库中预定义的类Spring。
 
 不能修改java字符串中的字符，所以String类对象是不可变字符串。
 
-* 子串
+子串:
 
 String类的substring方法可以获取子串
 
@@ -305,7 +366,7 @@ String类的substring方法可以获取子串
 
 substring(start, end)，下标从0开始，从start到end，但是不包括end。
 
-* 拼接
+拼接:
 
 java可以用+连接两个字符串。
 
@@ -313,7 +374,7 @@ java可以用+连接两个字符串。
     String PG13 = "deleted";
     String message = expletive + PG13;
 
-* 字符串比较
+字符串比较:
 
 equals函数比较相等,相等返回true,s和t可以是字符串变量也可以常量:
 
@@ -340,17 +401,17 @@ Null:
 
     if (str != null && str.length() != 0)
 
-* String类的方法
+String类的方法:
 
 参考java.lang.String。
 
-* 用StringBuilder构建字符串
+### 用StringBuilder构建字符串:
 
-构建一个空字符串构建器：
+构建一个空字符串构建器:
 
     StringBuilder builder = new StringBuilder();
 
-修改内容：
+修改内容:
 
     builder.append(String str)
     builder.append(char c)
@@ -364,7 +425,7 @@ Null:
 
 参考 java.lang.StringBuilder 类的方法。
 
-* 用StringBuffer构建字符串缓冲区
+### 用StringBuffer构建字符串缓冲区
 
 参考 java.lang.StringBuffer 类的方法。
 
@@ -404,7 +465,7 @@ Null:
 ### 控制台输入System.console()
 
 返回一个Console类型对象：
- 
+
     Console cons = System.console();
 
 Console类型对象的方法：
@@ -424,82 +485,270 @@ Console类型对象的方法：
 
 ## java控制流
 
+由{}括起来的若干简单语句构成块作用域。
+
+不能在嵌套的两个块中申明同名的变量。
+
+### if条件语句
+
 条件语句if - else if - else:
-if(condition) {
-    expression；
-}    //if 只有一条语句，{}可以省略
 
-if(condition) {
-    expression;
-} else {
-    expression;
-}
+    if (condition)
+    {
+        statement；
+    }; / if 只有一条语句，{}可以省略 /
 
-if(condition) {
-    expression;
-} else if {
-    expression;
-} else {
-    expression;
-}
+    if (condition)
+    {
+        statement;
+    }
+    else
+    {
+        statement;
+    }; / else与最近的if构成一组 /
 
-条件语句switch – case:
-condition 只能是 byte， short， int， char.
+    if(condition)
+    {
+        statement;
+    }
+    else if (condition)
+    {
+        statement;
+    }
+    else
+    {
+        expression;
+    };
+
+### switch条件语句
+
+条件语句switch-case, variable只能是 byte， short， int，char的常量表达式或枚举常量，也可以是字符串字面量。
+
 default不管在哪里都是最后运行。
-switch(condition) {
-    case val1:
-        expression;
-        break;
-    …
-    case valN:
-        expression;
-        break;
-    default:
-        expression;
-        break;
-}
 
-循环语句while：
-条件为真进入循环。
-while (condition) {
-    expression;
-}
+从第一个匹配的case开始执行，直到遇到break停止。
 
-循环语句do – while:
-先执行一次，再判断条件为真，进入循环。
-do {
-    expression;
-} while (condition)
+编译时加javac -Xlint:fallthrough会给出没有break的警告。
 
-循环语句for:
-init最先执行且只执行一次，condition为真进入循环，执行expression，然后再执行expression1，最后在condition-expression-expression1之间循环。
-for (init; condition; expression1) {
-    expression;
-}
+不提倡使用switch-case语句。
+
+    switch (variable)
+    {
+        case value1:
+            statement1;
+            break;
+        …
+        case valueN:
+            statementN;
+            break;
+        default:
+            statement;
+            break;
+    }
+
+### while循环语句
+
+循环语句while,条件为真进入循环。
+
+    while (condition)
+    {
+        statement;
+    }
+
+### do while循环语句
+
+循环语句do – while,先执行一次，再判断条件为真，进入循环。
+
+    do
+    {
+        statement;
+    }
+    while (condition)
+
+### for循环语句
+
+循环语句for,init最先执行且只执行一次，condition为真进入循环，执行statement1，然后再执行statement，最后在condition-statement1-statement之间循环。
+
+for循环体内申明和定义的变量不能在外部使用，除非在外部申明和定义。
+
+    for (init; condition; statement) {
+        statement1;
+    }
+
+### 中断控制流程语句
 
 break语句:
-只能用于循环语句，跳出循环，不能用于if。
+
+只能用于循环语句，跳出循环，不能用于选择语句。
 
 continue语句：
-只能用于循环语句，继续下一次循环，不能用于if。
 
+只能用于循环语句，继续下一次循环，不能用于选择语句。
+
+带标签的break语句：
+
+标签放在希望跳出的最外层循环/选择块 之前， 标签需要紧跟一个冒号。
+
+带标签的break语句可以用于任何语句。
+
+    label:
+    {
+        ...
+        break label;
+    }
 
 ***
 
 # 函数：
 
-格式：
-修饰符   返回值类型／void   函数名（参数类型 形式参数1， ...） ｛
-    执行语句；
-    return   返回值；／ return；（没有返回值可省略）
-｝
+函数也叫方法。
 
-不能在函数内部定义函数（函数不能嵌套定义）。
+一种特殊函数，如果函数没有返回值，用修饰符void代替返回值。
 
-函数重载：
-函数重载和函数返回值无关，同一个类中的同名函数，在参数个数或类型不完全相同的情况下可以重载。
+    <decorate>... <type> <function_name>(<type> <argument>, ...)
+    {
+        statements;
+        return <value>;
+    }
 
 ***
 
 # 面向对象：
 
+类是构造对象的模板或蓝图，由类构造对象的过程称为创建类的实例。
+
+对象的三个主要特征：
+1. 对象的行为
+2. 对象的状态
+3. 对象的标识
+
+类之间的关系：
+1. 依赖
+2. 聚合
+3. 继承
+
+对象变量并没有实际包含一个对象，仅仅引用一个对象。
+
+使用预定义类,java自带几千个类：
+
+    <object-type> <object-name> = new <object>()
+
+对实例域做出修改的方法称为更改器方法,一般用set开头。
+
+仅访问实例域而不修改的方法称为访问器方法，一般用get开头。
+
+自定义类：
+
+包含三个部分，域（field），构造器（constructor），方法（method）。
+
+    class ClassName
+    {
+        field1
+        field2
+        ...
+        constructor1
+        constructor2
+        ...
+        method1
+        method2
+        ...
+    }
+
+一般的一个类放到一个java文件中。
+
+编译时编译main函数所在的文件即可，会自动编译包含的类的源文件。
+
+## filed(域)
+
+如果所有构造器方法都希望赋予相同的值，可以直接在申明时给域赋值。
+
+域中的所有数据最好都是private。
+
+    private type name;
+
+可以将实例域定义为final,构造器必须初始化这个域,并且不能再修改。
+
+    private final type name;
+    public final type name;
+
+静态域：
+
+用static修饰的是静态域,静态域属于类，不属于任何对象，是唯一的。
+
+    private static type name;
+    ClassName.name; # 通过类来访问
+
+静态常量：
+
+    private static final type name = value;
+    ClassName.name; # 可以通过类来访问
+
+## method（方法）
+
+java中所有的方法都要在类的内部定义。
+
+方法的参数有显示参数和隐式参数，类对象（实例）就是隐式参数，用关键字this表示。
+
+    public type name(arguments)
+    {
+        ...
+    }
+
+静态方法：
+
+静态方法就是不面向对象的方法，也就是没有隐式参数this。
+
+静态方法只能访问自身类中的静态域,不能访问非静态域。
+
+    public static type name(arguments)
+    {
+        ...
+    }
+    ClassName.name(arguments); # 用类名来调用
+
+方法参数：
+
+java方参数是值调用，不是引用调用。
+
+一个方法不可能修改一个基本数据类型的参数的值。
+
+一个方法可以改变一个对象参数的状态。
+
+一个方法不能让对象参数引用一个新的对象。
+
+## constructor（构造器）
+
+1. 构造器与类同名
+2. 每个类可以有多个构造器
+3. 构造器可以有任意个参数
+4. 构造器没有返回值
+5. 构造器总是随new一起调用
+6. 不要在构造器中定义与域重名的局部变量
+
+重载：
+
+多个构造器方法名字相同，参数不同，构成重载，编译器自动找匹配的构造器方法执行，找不到就编译错误。
+
+推荐在构造器方法中对域进行初始化，避免使用默认的初始化。
+
+当类没有提供任何构造器，系统会默认提供一个无参数的构造器，如果有至少一个构造器，而且没有提供无参数构造器，就不能用无参数的构造器初始化对象。
+
+构造器方法的参数：
+
+    / 在前面加个a和域区分开 /
+    public ConstructorName(type aName)
+    {
+        ...
+    }
+
+    / 和域同名，但是引用域需要加this区别 /
+    public ConstructorName(type name)
+    {
+        this.name = name;
+    }
+
+    / 一个构造器方法内部调用另外的构造器方法 /
+    public ConstructorName(type name)
+    {
+        this("other argument", name);
+    }

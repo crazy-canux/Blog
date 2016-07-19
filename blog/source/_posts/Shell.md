@@ -31,15 +31,23 @@ Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。
 2. zsh
 3. fish
 
-# Shell命令
+大部分发行版默认使用bash,无需额外安装。
 
-shell命令分为内置命令和外部命令.
+bash的优化项目bash-it：
 
-查看一个命令是内置命令还是外部命令：
+<https://github.com/Bash-it/bash-it>
 
-    type [command]
+安装zsh：
 
-提示"[command] is a shell builtin"就表示是内置命令，否则就是外部命令。
+    sudo apt-get install zsh
 
-# shell脚本
+zsh的优化项目oh-my-zsh:
+
+<https://github.com/robbyrussell/oh-my-zsh>
+
+# bash命令
+
+    bash --help
+
+# bash script
 

@@ -18,6 +18,14 @@ permalink:
 
 内置命令在bash/builtins目录中
 
+shell命令分为内置命令和外部命令.
+
+查看一个命令是内置命令还是外部命令：
+
+    type [command]
+
+    提示"[command] is a shell builtin"就表示是内置命令，否则就是外部命令。
+
 help命令查看所有内置命令：
 
     help

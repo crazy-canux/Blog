@@ -41,6 +41,46 @@ IDE：
 1. Windows: IDLE
 2. Linux: Vim + Scripts
 
+# python的其它解释器
+
+## cpython
+
+比python更快的python。
+
+python的默认解释器，安装python即可获得。
+
+## pypy
+
+用python写的python解释器。
+
+比cpython更快的python。
+
+<http://pypy.org/>
+
+    sudo apt-get install pypy
+
+## ipython
+
+python写的交互式解释器。
+
+<https://github.com/ipython/ipython>
+
+    sudo apt-get install ipython
+
+## jpython
+
+运行在java平台的python解释器。
+
+## ironpython
+
+运行在.net平台的python解释器。
+
+# virtualenv
+
+分离的虚拟的python环境
+
+<https://github.com/pypa/virtualenv>
+
 # 第三方库
 
 <https://pypi.python.org/pypi>
@@ -78,22 +118,6 @@ IDE：
         pip install -U packagename[=version] # 升级
         pip uninstall packagename # 卸载
         pip install XXX.whl # 安装wheel包
-
-# virtualenv
-
-<https://github.com/pypa/virtualenv>
-
-# ipython
-
-<https://github.com/ipython/ipython>
-
-    sudo apt-get install ipython
-    sudo apt-get install ipython-notebook
-
-# jupyter
-
-<https://github.com/jupyter/jupyter>
-<https://github.com/jupyterhub/jupyterhub>
 
 # python代码检查
 
