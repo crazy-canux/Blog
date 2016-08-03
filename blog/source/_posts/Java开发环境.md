@@ -84,17 +84,26 @@ file:\\\C:\Program Files\Java\jdk_version\docs\index.html
 
 /usr/lib/jvm/<java-version>/jre/bin/java
 
+    java -version
+
 # javac
 
 /usr/lib/jvm/<java-version>/bin/javac
+
+    javac -version
 
 # jdb
 
 /usr/lib/jvm/<java-version>/bin/jdb
 
+    jdb -version
+
 # javadoc
 
 /usr/lib/jvm/<java-version>/bin/javadoc
+
+    javadoc [options] [packagenames] [sourcefiles] [@files]
+    java -d <directory> ...
 
 # jar
 

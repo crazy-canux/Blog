@@ -162,3 +162,28 @@ Constructor:
 
 Method:
 
+# java.util.Random
+
+Field:
+
+Constructor:
+
+    Random()
+    Random(long seed)
+
+Method:
+
+    DoubleStream doubles(...)
+    IntStream ints(...)
+    LongStream longs(...)
+    protected int next(int bits)
+    boolean nextBoolean()
+    void nextBytes(byte[] bytes)
+    double nextDouble()
+    float nextFloat()
+    double nextGaussian()
+    int nextInt()
+    int nextInt(int bound)
+    long nextLong()
+    void setSeed(long seed)
+

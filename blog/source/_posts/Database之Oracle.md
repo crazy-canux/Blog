@@ -128,12 +128,17 @@ sysman是oracle的数据库用户EM管理用户。
 
 # python
 
-需要安装python的库cx_Oracle.
+## cx_Oracle
+
+<http://cx-oracle.sourceforge.net/>
+
+需要安装oracle数据库或者oracle instant client并设置环境变量。
+
+参考oracle网站下载安装配置oracle instant client
+
+<http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html>
 
     import cx_Oracle
-    con = cx_oOracle.connect('<username>/<password>@<Host>/orcl')
-    ...
-    con.close()
 
 # java
 

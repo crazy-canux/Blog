@@ -88,6 +88,10 @@ CLI工具： psql
 
 # python
 
+## psycopg
+
+<http://initd.org/psycopg/>
+
 安装库：
 
     sudo pip install psycopg2

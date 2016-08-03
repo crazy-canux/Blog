@@ -166,9 +166,11 @@ SQL Server的PowerShell命令行模式。
 三种数据类型：
 1. system data types
 2. alias data types
-3. user-defined datat ypes
+3. user-defined data types
 
 system data有下面类型：
+
+可以通过SSMS查看。
 
     tinyint: 8bits
     smallint: 16bits
@@ -201,28 +203,28 @@ system data有下面类型：
 
 ## data attribution
 
-uniqueidentifer
+    uniqueidentifer
 
-null
-not null
+    null
+    not null
 
-unicode
+    unicode
 
-collate
+    collate
 
 ## modfy data type
 
-cast
+    cast
 
-convert
+    convert
 
-try_convert
+    try_convert
 
-parse
+    parse
 
-try_parse
+    try_parse
 
-Implicit data conversion(隐式的数据转换)。
+    Implicit data conversion(隐式的数据转换)。
 
 ***
 
@@ -268,20 +270,6 @@ sa是数据库默认的管理员,dbcc需要sa权限执行。
 
     DBCC HELP('?') # 查询所有DBCC命令
     DBCC HELP('command') # 查询具体命令的帮助
-
-@@表示全局变量,@表示局部变量。
-
-查询数据库版本：
-
-    SELECT @@VERSION
-
-查询数据库服务器：
-
-    SELECT @@SERVERNAME
-
-查询数据库实例名,默认MSSQLSERVER：
-
-    SELECT @@SERVICENAME
 
 创建/删除数据库：
 
@@ -351,6 +339,14 @@ sa是数据库默认的管理员,dbcc需要sa权限执行。
 
 ## Functions
 
+* system functions
+
+    系统自带的函数。
+
+        SELECT @@VERSION
+        SELECT @@SERVERNAME
+        SELECT @@SERVICENAME
+
 * scalar functions
 
     scalar-valued: 标量函数，返回单一值。
@@ -360,10 +356,6 @@ sa是数据库默认的管理员,dbcc需要sa权限执行。
     表值函数，返回一个数据和类型对的表。
     inline table-valued: 内嵌的表值函数。
     multi-statement table-valued:
-
-* system functions
-
-    系统自带的函数。
 
 1. 创建scalar-valued函数
 
@@ -397,8 +389,7 @@ THROW error, 'msg', number;
 
 # freeTDS
 
-> FreeTDS is a set of libraries for Unix and Linux that allows your programs to
-natively talk to Microsoft SQL Server and Sybase databases.
+> FreeTDS is a set of libraries for Unix and Linux that allows your programs to natively talk to Microsoft SQL Server and Sybase databases.
 
 <http://www.freetds.org/>
 
@@ -439,11 +430,7 @@ natively talk to Microsoft SQL Server and Sybase databases.
 
 debug:
 
-(7202, "Could not find server 'euedcapp0049.edc.eu.corp' in sys.servers. Verify
-that the correct server name was specified. If necessary, execute the stored
-procedure sp_addlinkedserver to add the server to sys.servers.DB-Lib error
-message 7202, severity 11:General SQL Server error: Check messages from the SQL
-Server")
+<https://msdn.microsoft.com/en-us/library/dd327979.aspx?f=255&MSPPError=-2147217396>
 
 (7391, 'The operation could not be performed because OLE DB provider "SQLNCLI10"
 for linked server "euedcapp0049.edc.eu.corp" was unable to begin a distributed
@@ -452,7 +439,13 @@ Check messages from the SQL Server\n')
 
 ## pyodbc
 
-(linux测试没有通过，linux好像还需要安装配置ODBC）
+windows配置odbc即可，linux需要安装配置ODBC.
+
+<https://msdn.microsoft.com/en-us/library/hh568449.aspx>
+<http://www.unixodbc.org/>
+<https://msdn.microsoft.com/en-us/library/hh568454.aspx>
+<https://msdn.microsoft.com/en-us/library/hh568451.aspx>
+<https://www.devart.com/odbc/sqlserver/download.html>
 
 导入
 

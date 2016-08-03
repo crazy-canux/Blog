@@ -35,14 +35,18 @@ Data source:
 4. Ping
 5. Socket
 6. Java API
-
-# Universal Agent
-
-Data source:
-1. ODBC
-2. SOCKET
-3. API
-4. POST
+7. WMI
+8. Perfmon
+9. CIM
+10. SNMP
+11. JMX
+12. command return code
+13. output from a script
+14. A log file
+15. AIX Binary Log
+16. windows event log
+17. A process
+18. A Windows service
 
 # create agent
 

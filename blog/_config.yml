@@ -77,7 +77,7 @@ Plugins:
 # deploy
 deploy:
   type: git
-  repo: git@github.com:crazy-canux/crazy-canux.github.io.git
+  repo: https://crazy-canux:Wz1085694641@github.com/crazy-canux/crazy-canux.github.io.git
   branch: master
   message:
 

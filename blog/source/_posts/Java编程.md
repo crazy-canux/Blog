@@ -160,6 +160,8 @@ char类型可以转换成int类型.
 
 变量的申明最好靠近第一次使用的地方.
 
+java不对局部变量做默认初始化。
+
 ### 常量:
 
     final int <VAR> = <val>
@@ -613,7 +615,7 @@ continue语句：
 
 ***
 
-# 面向对象：
+# 面向对象
 
 类是构造对象的模板或蓝图，由类构造对象的过程称为创建类的实例。
 
@@ -632,10 +634,6 @@ continue语句：
 使用预定义类,java自带几千个类：
 
     <object-type> <object-name> = new <object>()
-
-对实例域做出修改的方法称为更改器方法,一般用set开头。
-
-仅访问实例域而不修改的方法称为访问器方法，一般用get开头。
 
 自定义类：
 
@@ -683,9 +681,29 @@ continue语句：
     private static final type name = value;
     ClassName.name; # 可以通过类来访问
 
+初始化块：
+
+在域中放初始化块，只要构造类对象就会在运行构造器方法之前运行初始化块。
+
+    {
+        var = val;
+        ...
+    }
+
+    / 静态初始化块 /
+    static
+    {
+        var = val;
+        ...
+    }
+
 ## method（方法）
 
 java中所有的方法都要在类的内部定义。
+
+对域进行读取的方法叫域访问器，用getFunction（）表示。
+
+对域进行设置的方法叫域更改器，用setFunction（）表示。
 
 方法的参数有显示参数和隐式参数，类对象（实例）就是隐式参数，用关键字this表示。
 
@@ -752,3 +770,233 @@ java方参数是值调用，不是引用调用。
     {
         this("other argument", name);
     }
+
+## 封装
+
+一个源文件只能包含一个public修饰的公有类，而且文件名要和这个类同名。
+
+编译器找到一个以上的类就报错，因为类必须是唯一的。
+
+编译器还会查看源文件，如果比类文件新就会自动编译源文件。
+
+编译器查找类的顺序：
+1. java.lang包，默认导入的包
+2. 用import导入的其它包中的公有类
+3. 当前包中的公有类，或导入的当前包的非共有类。
+
+类的路径要和包名匹配，需要设置类路径，类路径是所有包含类文件的路径的集合。
+
+jar文件包含多个压缩形式的类文件和子目录。
+
+用classpath当作类路径，linux/unix用冒号：隔开，windows用分号;隔开：
+
+    export CLASSPATH=/class/path:.:/jar/path
+
+    set CLASSPATH=c:\class\path;.;c\jar\path
+
+类设计技巧：
+1. 一定要保证数据似有
+2. 一定要对数据初始化
+3. 不要在类中使用过多的基本类型
+4. 不是所有的域都需要独立的域访问器或更改器。
+5. 将职责过多的类进行分解。
+6. 类名和方法名要能体现职责。
+
+## 继承
+
+关键字extends表示继承,java中的所有继承都是公有继承。
+
+已存在的类称为超类，基类，或父类。
+
+新类称为子类，派生类，或孩子类。
+
+    class SubClass extends Class
+    {
+        ...
+    }
+
+在子类中使用super来调用父类的同名的方法
+
+    public type getFunction()
+    {
+        type var = super.getFunction();
+        ...
+    }
+
+在子类构造器方法中使用super来调用父类同参数的构造器方法
+
+该语句必须放在构造器的第一句，如果没有显示用super调用，默认调用父类的默认构造器
+
+    public SubClass(arguments)
+    {
+        super(arguments);
+        ...
+    }
+
+继承可以是多层继承，由一个公共类派生出来的所有类的集合称为继承层次。
+
+不允许被扩展的类称为final类，用final修饰:
+
+final类中的所有方法(不包括域)自动的成为final方法
+
+    final class SubClass extends ClassName
+    {
+        ...
+    }
+
+类中的特定方法也可以被申明为final，子类就不能覆盖这个方法：
+
+    class ClassName
+    {
+        ...
+        public final type MethodName()
+        {
+            ...
+        }
+        ...
+    }
+
+将父类转换成子类：
+
+只能在继承层次内进行转换，在转换之前应该使用instanceof检查能否检查。
+
+只有父类转换成子类需要强制转换，子类对象引用父类可以直接引用。
+
+    if (FatherObject instanceof SubClass)
+    {
+        SubClass = (SubClass) FatherObject;
+        ...
+    }
+
+抽象类：
+
+用abstract修饰的方法是抽象方法，包含抽象方法的类必须用abstract修饰为抽象类。
+
+最基本的类可以作为抽象类，申明抽象方法，在子类中实现方法。
+
+抽象类不能被实例化，但是可以引用非抽象子类的对象。
+
+    abstract class ClassName
+    {
+        ...
+        public abstract type methodName();
+        ...
+    }
+
+
+
+## 多态
+
+一个对象变量可以指示多种实际类型的现象被称为多态。
+
+java中的对象变量是多态的。
+
+编译器查看对象的申明类型和方法，列出该类中所有同名方法和父类中同名的public方法，再查看调用方法时提供的类型参数，如果找到完全匹配的就调用这个方法，这个过程叫重载解析。
+
+如果是private方法，static方法，final方法，或者构造器方法，编译器可以准确的知道调用哪个方法，这个过程叫静态绑定。
+
+虚拟机预先为每个类创建一个方法表，列出所有方法的签名和实际调用的方法。
+
+# 包
+
+标准java类库分布在多个包中，包方便类的管理。
+
+使用包要确保类名唯一。
+
+sun建议使用公司域名的逆序作为包名。
+
+使用import导入包：
+
+    import java.util.*;
+
+只能用*导入一个包，不能用java.*导入所有包。
+
+导入多个包，有类在使用时重名，写全路径：
+
+    import java.util.*;
+    import java.sql.*;
+    java.util.Date deadline = new java.util.Date();
+    java.sql.Date today = new java.sql.Date();
+
+使用import导入包中的静态域和静态方法：
+
+     import static java.lang.System.*;
+     import static java.lang.System.out;
+
+将类放入包中：
+
+在类的源文件开头添加一行语句,源文件要放到包名对应的目录结构中。
+
+    package package_name;
+
+# 注释
+
+由源文件生成一个html格式的文档。
+
+从下面特性中抽取信息：
+1. 包package
+2. 公有类与接口
+3. 公有的和受保护的构造器及方法
+4. 公有的和受保护的域
+
+文档注释方式：
+
+    /**
+    * summary, javadoc will automatic detect this line as summary.
+    * @param
+    * <em>...</em>
+    * <code>...</code>
+    * <strong>...</strong>
+    * <img>...</img>
+    * ...
+    */
+
+类的注释放在import后面，类定义前面。
+
+方法的注释放到方法前面。
+
+域的注释放到域前面，只需要注释静态常量域。
+
+    import java.util.*;
+
+    /**
+     * Class comment
+     * @author
+     * @version
+     * @since
+     * @deprecated
+     * @see
+     * @link
+     */
+    public Class Comment
+    {
+        /**
+         * Just for public static final field.
+         */
+        public static final NAME = VALUE;
+
+        /**
+         * public Constructor/Method comment
+         * @param
+         * @return
+         * @throws
+         */
+         public type name(param)
+         {
+             ...
+         }
+    }
+
+包注释：
+
+包注释需要在包目录添加单独的文件,有两种方法。
+
+提供一个package.html文件，<body>...</body>之间的会被javadoc提取。
+
+提供一个package-info.java，/**...*/之间的会被javadoc提取。
+
+总注释：
+
+可以为所有源文件提供一个总结性的注释：
+
+提供一个overview.html文件，在<body>...</body>之间的会被javadoc提取。

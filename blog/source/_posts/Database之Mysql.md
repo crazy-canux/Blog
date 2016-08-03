@@ -120,6 +120,25 @@ nowarning (\w) Don't show warnings after every statement.
 
 # Python
 
+## pymysql
+
+<https://github.com/PyMySQL/PyMySQL>
+
+    sudo pip install PyMySQL
+
+    import pymysql.cursors
+    connection = pymysql.connect(host='localhost', user='user', password='password', database='db')
+    # port = 3306 default
+    # charset = utf8
+    # connect_timeout
+    # cursorclass = pymysql.cursors.DictCursor -> return value as dict.
+    # cursorclass = pymysql.cursors.SSCursor -> return value as tupple.
+    cursor = connection.cursor()
+    cursor.execute(<sql query>)
+    ...
+    cursor.close()
+    connection.close()
+
 ## connector/Python
 
 <http://dev.mysql.com/doc/connector-python/en/>
@@ -131,12 +150,6 @@ nowarning (\w) Don't show warnings after every statement.
     sudo yum/apt-get install mysql-connector-python
 
     import mysql.connector
-    cnx = mysql.connector.connect(user='scott', password='tiger', host='127.0.0.1', database='employees')
-    cnx.close()
-
-    from mysql.connector import (connection)
-    cnx = connection.MySQLConnection(user='scott', password='tiger', host='127.0.0.1', database='employees')
-    cnx.close()
 
 ## MySQLdb
 
@@ -145,20 +158,8 @@ MySQLdb 1.X 是旧版本，<https://github.com/farcepest/MySQLdb1>
 MySQLdb 2.X 是新版本，改名为moist， <https://github.com/farcepest/moist>
 
     sudo pip install mysql-python
+
     import MySQLdb
-    cxn = MySQLdb.connect(db='mysql', user='root', passwd='*')
-    cur = cxn.cursor()
-    cur.query(<sql query>)
-    cur.execute(,sql query>)
-    ...
-    cur.close()
-    cxn.close()
-
-## pymysql
-
-<https://github.com/PyMySQL/PyMySQL>
-
-    import pymysql
 
 # Java
 

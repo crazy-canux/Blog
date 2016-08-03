@@ -55,7 +55,7 @@ python代码是对外部库的补充。
 
     使用中括号，列表解释返回一个列表。
 
-        [expression for item in iterable if condition)]
+        [expression for item in iterable if condition]
 
 * 生成器表达式
 

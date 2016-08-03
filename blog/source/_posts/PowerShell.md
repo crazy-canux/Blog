@@ -42,6 +42,14 @@ Install/Update:
 
     >powershell -version 2
 
+# powershell相关项目
+
+## psget
+
+安装powershell的模块
+
+<https://github.com/psget/psget>
+
 # powershell命令
 
     >powershell -?

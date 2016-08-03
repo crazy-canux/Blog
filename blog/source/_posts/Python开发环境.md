@@ -75,6 +75,12 @@ python写的交互式解释器。
 
 运行在.net平台的python解释器。
 
+# pyenv
+
+python版本管理
+
+<https://github.com/yyuu/pyenv>
+
 # virtualenv
 
 分离的虚拟的python环境
