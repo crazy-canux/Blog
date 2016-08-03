@@ -1,6 +1,5 @@
-Canux's Blog
-================
+# Canux's Blog
 
-The blog was build by hexo.
+This is the backup data of my blog, build by hexo, named crazy-canux.
 
-This is the backup data.
+[Blog](http://crazy-canux.github.io/)
