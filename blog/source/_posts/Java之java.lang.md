@@ -31,9 +31,7 @@ java的基础类，不需要用import导入。
 
 # java.lang.Object
 
-Object类是所有类的基类。
-
-Field:
+Object类是所有类的基类, 因此所有的类都有这些方法。
 
 Constructor:
 
@@ -41,23 +39,28 @@ Constructor:
 
 Method:
 
-    protected Object clone()
-    boolean equals(Object obj)
+    protected Object clone() / 返回对象的副本 /
+    boolean equals(Object obj) / 判断obj是否和当前对象相等 /
+    Class<?> getClass() / 返回当前对象的类类型 /
     protected void finalize()
-    Class<?> getClass()
-    int hashCode()
+    int hashCode() / 返回对象的散列码 /
     void notify()
     void notifyAll()
-    String toString()
-    void wait()
-    void wait(long timeout)
-    void wait(long timeout, int nanos)
+    String toString() / 返回用于表示对象值的字符串 /
+    void wait(...)
+
+# java.lang.Class<T>
+
+Method:
+
+    <U> Class<? extends U> asSubclass(class<U> clazz)
+    ...
 
 # java.lang.String
 
 Fields:
 
-    static Comparator<String>    CASE_INSENSITIVE_ORDER
+    static Comparator<String> CASE_INSENSITIVE_ORDER
 
 Constructor:
 

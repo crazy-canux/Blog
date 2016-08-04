@@ -107,7 +107,11 @@ python版本管理
         cd package
         python setup.py install
 
-* setuptools(easy_install)安装：
+* easy_install(setuptools)安装：
+
+    setuptools带的工具,需要安装第三方库setuptools。
+
+    从egg归档格式中安装。
 
     <https://github.com/pypa/setuptools>
 
@@ -116,7 +120,14 @@ python版本管理
 
 * pip安装：
 
-    python自带的安装工具,easy_install的替代版。
+    python自带的安装工具。
+
+    升级pip：
+
+        pip install -U pip # for linux
+        python -m pip install -U pip # for windows
+
+    可以从whell，tarball等归档格式安装。
 
     <https://github.com/pypa/pip>
 

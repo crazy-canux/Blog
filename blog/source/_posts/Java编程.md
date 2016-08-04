@@ -726,7 +726,7 @@ java中所有的方法都要在类的内部定义。
 
 方法参数：
 
-java方参数是值调用，不是引用调用。
+java方法参数是值调用，不是引用调用。
 
 一个方法不可能修改一个基本数据类型的参数的值。
 
@@ -801,6 +801,12 @@ jar文件包含多个压缩形式的类文件和子目录。
 4. 不是所有的域都需要独立的域访问器或更改器。
 5. 将职责过多的类进行分解。
 6. 类名和方法名要能体现职责。
+
+可见性：
+1. private, 仅对本类可见
+2. public， 对所有类可见
+3. protected， 对本包和所有子类可见
+4. default,默认不用修饰符就是对本包可见。
 
 ## 继承
 
@@ -883,7 +889,13 @@ final类中的所有方法(不包括域)自动的成为final方法
         ...
     }
 
+Object类：
 
+Object类是java中所有类的基类，如果一个类没有用extends明确父类，Object就是它的默认父类。
+
+可以用Object类型的变量引用任何类型对象。
+
+参考java.lang.Object的方法。
 
 ## 多态
 
@@ -920,8 +932,8 @@ sun建议使用公司域名的逆序作为包名。
 
 使用import导入包中的静态域和静态方法：
 
-     import static java.lang.System.*;
-     import static java.lang.System.out;
+    import static java.lang.System.*;
+    import static java.lang.System.out;
 
 将类放入包中：
 

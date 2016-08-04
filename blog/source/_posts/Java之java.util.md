@@ -187,3 +187,70 @@ Method:
     long nextLong()
     void setSeed(long seed)
 
+# java.util.Objects
+
+Field:
+
+Constructor:
+
+Method:
+
+    static <T> int compare(T a, T b, Comparator<? super T> c)
+    static boolean deepEquals(Object a, Object b)
+    static boolean equals(Object a, Object b)
+    static int hash(Object... values)
+    static int hashcode(Object o)
+    static boolean isNull(Object obj)
+    static boolean nonNull(Object obj)
+    static <T> t requireNonNull(...)
+    static String toString(...)
+
+# java.util.AbstractCollection<E>
+
+Field:
+
+Constructor:
+
+    protected AbstractCollection()
+
+Method:
+
+    boolean add(E a)
+    ...
+
+# java.util.AbstractList<E> (java.util.AbstractColletion<E>)
+
+Field:
+
+    protected int modCount
+
+Constructor:
+
+    protected AbstractList()
+
+Method:
+
+    boolean add(E e)
+    ...
+
+# java.util.ArrayList<E> (java.util.AbstractList<E>)
+
+Field:
+
+Constructor:
+
+    ArrayList()
+    ArrayList(Collection<? extends E> c)
+    ArrayList(int initialCapacity)
+
+Method:
+
+    boolean add(E e)
+    void add(int index, E element)
+    boolean addAll(Collection<? extends E> c)
+    boolean addAll(int index, Collection<? extends E> c)
+
+
+
+
+
