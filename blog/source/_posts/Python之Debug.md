@@ -1,31 +1,28 @@
 ---
 layout: post
-title: Python之Develop_Debug
+title: Python之Debug
 comments: true
-date: 2016-04-11 22:58:13
+date: 2016-08-06 16:54:08
 updated:
 tags:
-- pdb
+- debug
+- profiling
 categories:
 - Python
 permalink:
 ---
 
-# pydoc
-
-# doctest
-
-# unittest
-
-# test
-
 # bdb
 
 # pdb
 
-# trace
-
 # hotshot
 
 # timeit
+
+# trace
+
+# cProfile
+
+# profile
 

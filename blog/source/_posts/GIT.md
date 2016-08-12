@@ -9,7 +9,7 @@ tags:
 - github
 categories:
 - Develop
-- Git
+- GIT
 permalink:
 ---
 

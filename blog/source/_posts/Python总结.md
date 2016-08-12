@@ -13,9 +13,10 @@ permalink:
 
 # python项目结构
 
-|-- AUTHORS
+|-- AUTHORS.rst
+|-- README.rst
+|-- CONTRIBUTING.rst
 |-- LICENSE
-|-- README.md
 |-- devops     项目源代码目录
 |   |-- tests  测试程序目录
 |-- bin        用来存放将被setup.py安装的二进制脚本
@@ -24,8 +25,6 @@ permalink:
 |-- etc        用来存放配置文件
 |-- tools      用来存放与工具相关shell脚本
 |-- setup.py   标准安装脚本
-|-- requirementstxt 包含所需以来包
-|-- test-requirements.txt 包含测试所需以来包
 
 # python的可用接口
 

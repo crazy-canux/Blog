@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Markdown轻量标记语言
+title: Markdown
 comments: true
 date: 2016-03-28 22:03:15
 updated:

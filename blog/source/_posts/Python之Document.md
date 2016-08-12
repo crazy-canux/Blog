@@ -13,27 +13,32 @@ categories:
 permalink:
 ---
 
-# ReStructuredText
-
-reST是python的文档格式。格式类似markdown。
-
-主标题：
-
-    =====
-
-副标题：
-
-    -----
-
-    # 表示部分
-    * 表示章节
-    =, 小章节
-    -, 子章节
-    ^, 次级子章节
-    ", 段落
-
 # Sphinx
+
+<https://github.com/sphinx-doc/sphinx>
 
 Sphinx就是python处理reST格式的工具。
 
     pip install -U Sphinx
+
+使用sphinx：
+
+    import sphinx
+
+# pandoc
+
+<https://github.com/bebraw/pypandoc>
+
+安装：
+
+    pip install pypandoc
+
+# readthedocs
+
+<https://readthedocs.org/>
+
+一个开源的文档托管站点。
+
+# reStructuredText
+
+参考reStructuredText。

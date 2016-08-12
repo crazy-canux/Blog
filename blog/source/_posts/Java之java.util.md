@@ -239,18 +239,43 @@ Field:
 
 Constructor:
 
-    ArrayList()
+    ArrayList() / 构造一个空数组列表 /
     ArrayList(Collection<? extends E> c)
-    ArrayList(int initialCapacity)
+    ArrayList(int initialCapacity) / 用指定容量构造一个空数组列表 /
+
+    eg:
+    ArrayList<ClassName> var = new ArrayList<>();
 
 Method:
 
-    boolean add(E e)
-    void add(int index, E element)
+    boolean add(E e) / 在数组列表尾端添加一个元素，永远返回true /
+    void add(int index, E element) / 在中间插入一个元素 /
     boolean addAll(Collection<? extends E> c)
     boolean addAll(int index, Collection<? extends E> c)
-
-
-
-
-
+    void clear()
+    Object clone()
+    boolean contains(object o)
+    void ensureCapacity(int minCapacity) /确保数组列表在不重新分配存储空间的情况下就能保存给定数量元素 /
+    void forEach(Consumer<? super E> action)
+    E get(int index) / 获取数组列表中的元素的值 /
+    int indexOf(Object o)
+    boolean isEmpty()
+    Iterator<E> iterator()
+    int lastIndexOf(object o)
+    ListIterator<E> listIterator()
+    ListIterator<E> listIterator(int index)
+    E remove(int index) / 从数组列表中删除一个元素 /
+    boolean remove(Object o)
+    boolean removeAll(Collection<?> c)
+    boolean removeIf(Predicate<? super E> filter)
+    boolean removeRange(int romIndex, int toIndex)
+    void replaceAll(UnaryOperator<E> operator)
+    boolean retainAll(collection<?> c)
+    E set(int index, E element) / 更改数组列表中元素的值 /
+    int size() / 返回存储在数组列表中的当前元素数量 /
+    void sort(Comparator<? super E> c)
+    Spliterator<E> spliterator()
+    List<E> subList(int fromIndex, int toIndex)
+    Object[] toArray()
+    <T> T[] toArray(T[] a) / 将数组元素拷贝到一个数组中 /
+    void trimToSize() / 将数组列表的存储容量削减到当前尺寸 /

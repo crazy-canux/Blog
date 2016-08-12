@@ -664,6 +664,8 @@ continue语句：
 
     private type name;
 
+常量域：
+
 可以将实例域定义为final,构造器必须初始化这个域,并且不能再修改。
 
     private final type name;
@@ -677,6 +679,8 @@ continue语句：
     ClassName.name; # 通过类来访问
 
 静态常量：
+
+static和final修饰的是静态常量
 
     private static final type name = value;
     ClassName.name; # 可以通过类来访问
@@ -733,6 +737,9 @@ java方法参数是值调用，不是引用调用。
 一个方法可以改变一个对象参数的状态。
 
 一个方法不能让对象参数引用一个新的对象。
+
+参数数量可变的方法：
+
 
 ## constructor（构造器）
 

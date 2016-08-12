@@ -67,6 +67,12 @@ python写的交互式解释器。
 
     sudo apt-get install ipython
 
+## stackless
+
+python增强版，支持多线程。
+
+<https://bitbucket.org/stackless-dev/stackless>
+
 ## jpython
 
 运行在java平台的python解释器。
@@ -83,9 +89,16 @@ python版本管理
 
 # virtualenv
 
-分离的虚拟的python环境
+python3.4之后并入了包含pip的虚拟化标准库venv
+
+分离的虚拟的python环境,自动安装setuptools和pip
 
 <https://github.com/pypa/virtualenv>
+
+    $virtualenv myvenv
+    $source ./myvenv/bin/activate
+    pip install ...
+    deactivate
 
 # 第三方库
 
@@ -95,7 +108,7 @@ python版本管理
 
     C:\Python27\Lib\site-packages
     /usr/lib/python2.7/dist-packages
-    /usr/local/lib/python2.7/ dist-packages
+    /usr/local/lib/python2.7/dist-packages
     /usr/local/lib/python2.7/site-packages
 
 * 二进制安装：
@@ -105,36 +118,38 @@ python版本管理
 * 源码安装第三方库：
 
         cd package
-        python setup.py install
+        sudo -E python setup.py install
 
 * easy_install(setuptools)安装：
 
-    setuptools带的工具,需要安装第三方库setuptools。
+    setuptools带的工具,需要安装第三方库setuptools,从egg归档格式中安装。
 
-    从egg归档格式中安装。
+    缺点是不支持卸载。
+
+    安装setuptools：
+
+        sudo apt-get install python-setuptools
 
     <https://github.com/pypa/setuptools>
 
-        easy_install packagename[=version] # 安装
-        easy_install -U packagename[=version] # 升级
+        sudo -E easy_install packagename[=version] # 安装
+        sudo -E easy_install -U packagename[=version] # 升级
 
 * pip安装：
 
-    python自带的安装工具。
+    python自带的安装工具,支持wheel格式和tarball。
 
     升级pip：
 
         pip install -U pip # for linux
         python -m pip install -U pip # for windows
 
-    可以从whell，tarball等归档格式安装。
-
     <https://github.com/pypa/pip>
 
-        pip install packagename[=version] # 安装
-        pip install -U packagename[=version] # 升级
-        pip uninstall packagename # 卸载
-        pip install XXX.whl # 安装wheel包
+        sudo -E pip install packagename[=version] # 安装
+        sudo -E pip install -U packagename[=version] # 升级
+        sudo -E pip uninstall packagename # 卸载
+        sudo -E pip install XXX.whl # 安装wheel包
 
 # python代码检查
 

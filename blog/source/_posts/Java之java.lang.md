@@ -49,13 +49,6 @@ Method:
     String toString() / 返回用于表示对象值的字符串 /
     void wait(...)
 
-# java.lang.Class<T>
-
-Method:
-
-    <U> Class<? extends U> asSubclass(class<U> clazz)
-    ...
-
 # java.lang.String
 
 Fields:
@@ -90,8 +83,7 @@ Method:
     boolean contain(CharSequence s)
     boolean contentEquals(CharSequence cs)
     boolean contentEquals(StringBuffer sb)
-    static String copyValueOf(char[] data)
-    static String copyValueOf(char[] data, int offset, int count)
+    static String copyValueOf(...)
     boolean endsWith(String suffix)
     boolean equals(Object anObject)
     boolean equalsIgnoreCase(String anotherString)
@@ -103,22 +95,15 @@ Method:
     byte[] getBytes(String charsetName)
     void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
     int hashCode()
-    int indexOf(int ch)
-    int indexOf(int ch, int fromIndex)
-    int indexOf(String str)
-    int indexOf(String str, int fromIndex)
+    int indexOf(...)
     String intern()
     boolean isEmpty()
-    static String join(CharSequence delimiter, CharSequence... elements)
-    static String join(CharSequence delimiter, Iteable<? extends CharSequence> elements)
-    int lastIndexOf(int ch)
-    int lastIndexOf(int ch, int fromIndex)
-    int lastIndexOf(String str)
-    int lastIndexOf(String str, int fromIndex)
+    static String join(...)
+    int lastIndexOf(...)
     int length()
     boolean matches(String regex)
     int offsetByCodePoints(int index, int codePointOffset)
-    boolean regionMatched(boolean ignoreCase, int toffset, String other, int ooffset, int len)
+    boolean regionMatched(boolean ignoreCase, int toffset, String other, int offset, int len)
     boolean regionMatches(int toffset, String other, int ooffset, int len)
     String replace(char oldChar, char newChar)
     String replace(CharSeuqence target, CharSequence replacement)
@@ -149,8 +134,6 @@ Method:
     static String valueOf(Object obj)
 
 # java.lang.StringBuffer
-
-Field:
 
 Constructor:
 
@@ -189,8 +172,6 @@ Method:
     void trimToSize()
 
 # java.lang.StringBuilder
-
-Field:
 
 Constructor:
 
@@ -237,8 +218,6 @@ Fields:
     public static final PrintStream out /* 标准输出流 */
     public static final PrintStream err /* 标准错误输出流 */
 
-Constructor:
-
 Method:
 
     static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
@@ -255,4 +234,70 @@ Method:
     static SecurityManager getSecurityManager()
     static int indentityHashCode(Object x)
     ...
+
+# java.lang.Void
+
+void的包装器类。
+
+# java.lang.Boolean
+
+boolean的包装器类。
+
+# java.lang.Character
+
+char的包装器类。
+
+# java.lang.Number
+
+int, long, short, double, float, byte对象包装器类的父类。
+
+Constructor:
+
+    Number()
+
+Method:
+
+    byte byteValue()
+    abstract double doubleValue()
+    abstract float floatValue()
+    abstract int intValue()
+    abstract long longValue()
+    short shortValue()
+
+# java.lang.Byte (java.lang.Number)
+
+# java.lang.Float (java.lang.Number)
+
+# java.lang.Doble (java.lang.Number)
+
+# java.lang.Integer (java.lang.Number)
+
+Field:
+
+    static int BYTES
+    static int MAX_VALUE
+    static int MIN_VALUE
+    static int SIZE
+    static Class<Integer> TYPE
+
+Constructor:
+
+    Integer(int value)
+    Integer(String s)
+
+Method:
+
+    int intValue() / 以int形式返回Integer对象的值 /
+    String toString()
+    static String toString(int i) / 以新String对象的形式返回给定数值i的十进制表示 /
+    static String toString(int i, int radix) / 返回数字i的基于radix参数进制的值 /
+    static int parseInt(String s) / 返回字符串s表示的整型数值 /
+    static int  parseInt(String s, int radix)
+    static Integer valueOf(String s) / 返回s表示的数值进行初始化后的一个新Integer对象 /
+    static Integer valueOf(String s, int radix)
+    ...
+
+# java.lang.Short (java.lang.Number)
+
+# java.lang.Long (java.lang.Number)
 
