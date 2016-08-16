@@ -32,15 +32,15 @@ Tivoli Management Services:
 2. TEPS
 3. TEP client
 4. Historical data collection(warehouse agent)
-    warehouse proxy
-    summarization and pruning agent
+   * warehouse proxy
+   * summarization and pruning agent
 5. OS agent
 
 Optional components:
 1. Dashboard Application Services Hub
-    Tivoli Monitoring dashboards(Infrastructure Management Dashboards for Servers)
-    Tivoli Common Reporting
-    Tivoli Enterprise Monitoring Automation Server
+    * Tivoli Monitoring dashboards(Infrastructure Management Dashboards for Servers)
+    * Tivoli Common Reporting
+    * Tivoli Enterprise Monitoring Automation Server
 2. Tivoli Event Synchronization component
 3. Authorization Policy Components(tivcmd)
 
@@ -57,7 +57,9 @@ Linux/Unix: /opt/IBM/ITM
 1. 需要先为TEPS和TDW安装DB(ODBC/JDBC)。
 
     DB2
+
     MSSQL
+
     Oracle
 
 2. 在windows/linux/unix安装ITM framework
@@ -169,28 +171,44 @@ TEP是GUI界面，分为：
 
 使用TEP client来查看监控结果。
 
+默认用户是sysadmin。
+
 1. Browser版本
-    http://<TEPS Server>:15200/cnp.html
+
+        http://<TEPS Server>:15200/cnp.html
 
 2. Desktop版本
-    http://<TEPS Server>:15200/tep.jnlp
+
+        http://<TEPS Server>:15200/tep.jnlp
+
     安装ITM可以选择安装桌面版。
     也可以从Java Web Start获取桌面版。
 
 3. Java Web Start版本
+
     结合了desktop和browser的优点。
     从web下载，在桌面运行。
 
 TEP的结构：
+
 * Navigator view
+
     Enterprise
+
     Operating Platform(操作系统类型)
+
     Node(一台服务器一个节点)
+
     Agent(一个节点上的agent)
+
     Situation(一个agent上的situation)
+
     Event(一个situation有多个event)
+
     Attribute group(相同的Situation是一个group)
+
 * Navigator workspace
+
     每个view项目都有一个默认的workspace。
 
 ...
@@ -256,6 +274,7 @@ Command Line Interface
 支持windows/linux/unix。
 
 /opt/IBM/ITM/bin/tacmd
+
 C:\IBM\ITM\BIN\tacmd
 
 查看tacmd手册：
@@ -313,7 +332,9 @@ C:\IBM\ITM\BIN\tacmd
 ## Queries(query editor)
 
 DB agent -> normal way to get data source from database servers.
+
 ODBC -> get data source from windows database
+
 JDBC -> get data source from linux/unix database
 
 ## Advanced link topics

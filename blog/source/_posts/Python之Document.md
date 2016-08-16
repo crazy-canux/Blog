@@ -41,4 +41,7 @@ Sphinx就是python处理reST格式的工具。
 
 # reStructuredText
 
+<https://www.python.org/dev/peps/pep-0287/>
+
 参考reStructuredText。
+

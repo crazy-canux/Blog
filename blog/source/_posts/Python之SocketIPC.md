@@ -10,18 +10,35 @@ categories:
 permalink:
 ---
 
-# SocketServer
+# Interprocess Communication and Networking
+
+## SocketServer
 
 python2叫SocketServer,python3改名为socketserver.
 
 用于简化实现网络客户端和服务器的大量样板代码。
 
-# subprocess
+## subprocess
 
-# sh
+    import subprocess
+    call(*popenargs, **kwargs)
+    check_call(*popenargs, **kwargs)
+    check_output(*popenargs, **kwargs)
+
+## sh
 
 <https://github.com/amoffat/sh>
 
     pip install sh
 
     import sh
+
+## asynchat
+
+## asyncore
+
+## socket
+
+## ssl
+
+## signal

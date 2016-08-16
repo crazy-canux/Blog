@@ -10,7 +10,7 @@ categories:
 permalink:
 ---
 
-# Internet相关标准库
+# Internet Protocols and Support
 
 ## webbrowser
 
@@ -20,52 +20,36 @@ permalink:
 
 ## wsgiref
 
-# mail标准库
+## mail标准库
 
 python邮件服务器MTA：smtp协议
 
 python客户端MUA：本地协议pop3, 远程协议imap
 
-## smtplib
+### smtplib
 
     import smtplib
 
-## smtpd
+### smtpd
 
-## poplib
+### poplib
 
-## imaplib
+### imaplib
 
-# nntp标准库
+## nntp标准库
 
 network news transfer protocol
 
-## nntplib
+### nntplib
 
     import nntplib
 
-# telnet标准库
+## telnet标准库
 
-## telnet
+### telnet
 
     import telnetlib
 
-# media标准库
+## ftp标准库
 
-## audioop
-
-## aifc
-
-## sunau
-
-## wave
-
-## chunk
-
-## colorsys
-
-## imghdr
-
-## sndhdr
-
-## ossaudiodev
+### ftplib

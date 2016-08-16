@@ -11,4 +11,4 @@ categories:
 permalink:
 ---
 
-# python内置函数
+# python基础知识

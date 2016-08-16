@@ -16,14 +16,22 @@ permalink:
 # Universal Agent
 
 
-# data providers
+# Data Providers
 
 API Server
+
 API, Socket, File, Script
+
 File
+
 HTTP
+
 ODBC
+
 Post
+
 Script
+
 SNMP
+
 Socket
