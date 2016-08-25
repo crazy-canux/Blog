@@ -15,6 +15,8 @@ Lightweight Directory Access Protocol.
 
 <http://www.openldap.org/>
 
+LDAP的windows工具：LDAPSoft LDAP Browser
+
 # python
 
 ## python-ldap

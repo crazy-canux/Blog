@@ -14,16 +14,29 @@ permalink:
 
 # wmi/cim
 
-windows management instrumentation.
+WMI: windows management instrumentation.
 
-common information model.
+CIM: common information model.
 
 命名空间:
-root\cimv2
-root\microsoftdns
-root\securitycenter
 
-windows自带wmi测试工具wbemtest.
+    root\cimv2
+    root\microsoftdns
+    root\securitycenter
+
+WMI工具：
+1. windows自带wmi测试工具wbemtest.
+2. WMI Explorer用于查找wmi和cim的Class和Properties.
+
+<http://www.ks-soft.net/hostmon.eng/wmi/index.htm#SysReq>
+
+windows怎样设置wmi：
+
+135 (Microsoft RPC), 137-139 (NetBIOS) and 445 (Microsoft DS). These are TCP ports.
+
+设置的用户需要是管理员组。
+
+<https://technet.microsoft.com/en-us/library/cc771551(v=ws.11).aspx>
 
 # wmic
 
@@ -49,29 +62,12 @@ Linux需要自己创建wmic命令，可以通过samba获取，也可以安装ope
     select * from meta_class where __class like '%win32%' # 查询wmi的类
     select * from meta_class where __class like '%cim%' # 查询cim的类
 
-    select * from cim_datafile where drive="c:" and path=\\path\\" and filename like "%%" and extension='doc'
+    select * from cim_datafile where drive="c:" and path="\\path\\" and filename like "%%" and extension like '%%'
     select * from cim_directory where drive="c:" and path="\\path\\"
     select * from cim_logicaldisk
     select * from win32_operationsystem
     select * from win32_service
     select * from win32_process
-
-# SQL Server
-
-MSSQL have 2 wmi provider, configuration management and server events.
-
-* configuration management
-
-* server events
-
-<https://technet.microsoft.com/en-us/library/ms186449.aspx>
-
-        DDL_EVENTS
-        DDL_DATABASE_LEVEL_EVENTS
-        DDL_SERVER_LEVEL_EVENTS
-
-
-        SELECT * FROM DDL_DATABASE_LEVEL_EVENTS WHERE DatabaseName = 'database'
 
 # Python
 

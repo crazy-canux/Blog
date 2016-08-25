@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shell之builtin命令
+title: Shell之内置命令
 comments: true
 date: 2016-03-31 21:51:03
 updated:
@@ -32,7 +32,7 @@ help命令查看所有内置命令：
 
 查看内置命令的帮助：
 
-    help    [command]
+    help [command]
 
 # cd
 

@@ -19,7 +19,7 @@ permalink:
 
 [plugins](https://hexo.io/plugins/)
 
-sudo npm install &lt;plugin-name> --save
+    sudo npm install <plugin-name> --save
 
 # 配置hexo插件
 
@@ -53,7 +53,7 @@ sudo npm install &lt;plugin-name> --save
 
 # 站点地图
 
-npm install hexo-generator-sitemap --save
+    npm install hexo-generator-sitemap --save
 
 >\## sitemap
 
@@ -65,7 +65,7 @@ npm install hexo-generator-sitemap --save
 
 # RSS
 
-npm install hexo-generator-feed --save
+    npm install hexo-generator-feed --save
 
 >\## feed
 
@@ -83,7 +83,7 @@ npm install hexo-generator-feed --save
 
 # SEO优化
 
-npm install hexo-generator-seo-friendly-sitemap --save
+    npm install hexo-generator-seo-friendly-sitemap --save
 
 >        sitemap:
 

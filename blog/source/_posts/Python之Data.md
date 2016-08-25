@@ -14,6 +14,16 @@ permalink:
 
 ## datetime
 
+    import datetime
+    import time
+
+    datetime.datetime.strftime(format[, tuple])
+    datetime.datetime.strftime("%d %B %Y %H:%M:%S")
+
+    datetime.datetime.strptime(string, format)
+    datetime.datetime.strptime('20160824161431', '%Y%m%d%H%M%S') -> 2016, 8, 24, 16, 14, 31
+
+
 ## calendar
 
 ## collections

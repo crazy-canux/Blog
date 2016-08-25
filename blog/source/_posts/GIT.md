@@ -19,6 +19,8 @@ GIT: 分布式版本控制系统。
 
 SVN: subversion并发式版本控制系统。
 
+Mercurial: hg分布式版本控制。
+
 和git相关的产品：
 1. github
 2. gitlab

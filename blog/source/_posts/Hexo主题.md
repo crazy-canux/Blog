@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hexo搭建博客之主题配置
+title: Hexo主题
 comments: true
 date: 2016-03-24 22:10:05
 updated:
@@ -15,7 +15,9 @@ categories:
 permalink:
 ---
 
-# 官方文档：
+# Next
+
+以hexo主题next为例
 
 中文文档：
 

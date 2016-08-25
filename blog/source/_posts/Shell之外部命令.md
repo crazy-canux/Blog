@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shell之coreutils命令
+title: Shell之外部命令
 comments: true
 date: 2016-03-31 21:51:25
 updated:
@@ -26,21 +26,21 @@ Linux外部命令的项目是coreutils。
 
 外部命令在下列目录中：
 
-/sbin
+    /sbin
 
-/bin
+    /bin
 
-/usr/sbin
+    /usr/sbin
 
-/usr/bin
+    /usr/bin
 
-/usr/local/sbin
+    /usr/local/sbin
 
-/usr/local/bin
+    /usr/local/bin
 
-/usr/games
+    /usr/games
 
-/usr/local/games
+    /usr/local/games
 
 查看外部命令手册：
 
@@ -49,7 +49,7 @@ Linux外部命令的项目是coreutils。
 
 自定义外部命令：
 
-添加$PATH变量，然后放到该目录。
+添加\$PATH变量，然后放到该目录。
 
 # man
 

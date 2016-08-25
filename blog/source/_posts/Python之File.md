@@ -39,6 +39,9 @@ permalink:
 
 ## csv
 
+    import csv
+    DictReader(self, f, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)
+
 ## robotparser
 
 ## netrc

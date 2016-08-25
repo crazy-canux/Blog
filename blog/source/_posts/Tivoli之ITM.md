@@ -52,7 +52,7 @@ Windows: C:\IBM\ITM
 
 Linux/Unix: /opt/IBM/ITM
 
-使用Tivoli Monitoring Startup Center安装，分为本地安装和分布式安装。
+分为本地安装和分布式安装。
 
 1. 需要先为TEPS和TDW安装DB(ODBC/JDBC)。
 
@@ -64,17 +64,21 @@ Linux/Unix: /opt/IBM/ITM
 
 2. 在windows/linux/unix安装ITM framework
 
+    TEMA
+
+    Warehouse Proxy agent
+
+    Summarization and Pruning agent
+
+    Tivoli performance Analyzer
+
     TEMS
 
     TEPS
 
-    TEP Desktop/Browser client
+    TEPD
 
-    Tivoli Enterprise Monitoring Agent Framework
-
-    Warehouse Proxy
-
-    Summarization and Pruning agent
+    TEMAS
 
 3. 安装agent
 
@@ -85,6 +89,8 @@ Linux/Unix: /opt/IBM/ITM
     安装数据库的agent：
 
     TEMA/TEMS/TEPS同时勾选DB的agent。
+
+    安装agent builder的agent。
 
 <http://www-933.ibm.com/support/fixcentral/swg/downloadFixes?parent=ibm%2FTivoli&product=ibm/Tivoli/IBM+Tivoli+Monitoring&release=All&platform=All&function=fixId&fixids=6.3.0-TIV-ITM-FP0005&includeRequisites=1&includeSupersedes=0&downloadMethod=http>
 
@@ -106,7 +112,7 @@ RTEMS: Remote Tivoli Enterprise Monitoring Server
 
 TEMA: Tivoli Enterprise Monitoring Agent
 
-安装agent之后有一个Manage Monitoring Services(Agent Management Services)用来管理本地agent。
+安装agent之后有一个Manage Tivoli Monitoring Services用来管理本地agent。
 
 ## Agentless
 
@@ -156,11 +162,11 @@ TEPS: Tivoli Enterprise Portal Server
 
 使用MTEMS来配置TEPS,添加DB。
 
-# TEP(client)
+# TEPD(TEP client)
 
 TEP -> TEPS
 
-TEP: Tivoli Enterprise Portal
+TEP: Tivoli Enterprise Portal client
 
 TEP是GUI界面，分为：
 1. Desktop
@@ -169,7 +175,7 @@ TEP是GUI界面，分为：
 
 需要安装IBM的java，在C:\Program Files\IBM\Java70。
 
-使用TEP client来查看监控结果。
+使用TEP来查看监控结果。
 
 默认用户是sysadmin。
 
@@ -257,13 +263,13 @@ TDW使用该agent控制数据库大小。
 
 # Management
 
-管理所有组件一般使用GUI叫MTEMS(manage tivoli enterprise monitoring services)
+管理所有组件一般使用GUI叫manage tivoli monitoring services
 
 windows/linux/unix都可以用GUI。
 
 也可以使用CLI（命令行）,见后文.
 
-一般使用MTEMS来启动、停止和配置组件。
+一般使用GUI来启动、停止和配置组件。
 
 # CLI
 

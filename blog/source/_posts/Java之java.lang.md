@@ -5,7 +5,7 @@ comments: true
 date: 2016-04-28 22:36:57
 updated:
 tags:
-- jvaa
+- java
 - lang
 categories:
 - Java
@@ -301,3 +301,15 @@ Method:
 
 # java.lang.Long (java.lang.Number)
 
+# java.lang.Enum<E>
+
+java的枚举类型
+
+Constructor:
+
+    protected Enum(String name, int ordinal)
+
+Method:
+
+    protected Object clone()
+    ...

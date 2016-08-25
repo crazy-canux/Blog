@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hexo搭建个人主页
+title: Hexo
 comments: true
 date: 2016-03-22 12:59:10
 updated:
@@ -16,12 +16,9 @@ categories:
 permalink:
 ---
 
+# Hexo
 
-# 简单介绍
-
-## Hexo
-
-### 什么是hexo
+## 什么是hexo
 
 >Hexo是用nodejs开发的快速、简洁且高效的博客框架，
 >Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
@@ -38,7 +35,7 @@ octpress是ruby开发的kekyll的升级版。
 
 wordpress是php开发的博客框架。
 
-### 安装hexo
+## 安装hexo
 
 需要安装依赖nodejs和git。
 
@@ -130,30 +127,33 @@ ubuntu/debian安装：
     sudo npm install
 
 默认安装下列依赖：
-hexo
-hexo-server
-hexo-generator-index
-hexo-generator-archive
-hexo-generator-category
-hexo-generator-tag
-hexo-renderer-ejs
-hexo-renderer-marked
-hexo-renderer-stylus
+
+    hexo
+    hexo-server
+    hexo-generator-index
+    hexo-generator-archive
+    hexo-generator-category
+    hexo-generator-tag
+    hexo-renderer-ejs
+    hexo-renderer-marked
+    hexo-renderer-stylus
 
 ## 查看文件和目录
 
 安装完成后有下列
 
 文件：
-_config.yml
-db.json
-package.json
+
+    _config.yml
+    db.json
+    package.json
 
 目录：
-node_modules
-scaffolds
-source
-themes
+
+    node_modules
+    scaffolds
+    source
+    themes
 
 ## 生成静态文件
 

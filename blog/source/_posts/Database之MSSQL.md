@@ -387,6 +387,21 @@ THROW error, 'msg', number;
 
 ***
 
+# wmi
+
+安装mssql之后提供mssql的wmi的类：
+
+    select * from Win32_PerfFormattedData_MSSQLSERVER_SQLServerLocks
+
+# powershell
+
+安装mssql之后提供mssql的powershell模块：
+
+    import-module sqlps
+    get-command -module sqlps
+
+***
+
 # freeTDS
 
 > FreeTDS is a set of libraries for Unix and Linux that allows your programs to natively talk to Microsoft SQL Server and Sybase databases.
