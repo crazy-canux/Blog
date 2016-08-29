@@ -601,20 +601,6 @@ continue语句：
 
 ***
 
-# 函数：
-
-函数也叫方法。
-
-一种特殊函数，如果函数没有返回值，用修饰符void代替返回值。
-
-    <decorate>... <type> <function_name>(<type> <argument>, ...)
-    {
-        statements;
-        return <value>;
-    }
-
-***
-
 # 类(Class)
 
 类是构造对象的模板或蓝图，由类构造对象的过程称为创建类的实例。
@@ -638,6 +624,8 @@ continue语句：
 自定义类：
 
 包含三个部分，域（field），构造器（constructor），方法（method）。
+
+类名如果有多个单词组成，每个单词的首字母都要大写。
 
     class ClassName
     {
@@ -705,16 +693,29 @@ static和final修饰的是静态常量
 
 java中所有的方法都要在类的内部定义。
 
+方法有修饰符，返回值类型，方法名和参数组成。
+
+一种特殊方法，如果方法没有返回值，return后面直接分号，用修饰符void代替返回值类型。
+
+方法名如果有多个单词组成，首字母小写，后面的单词首字母大写。
+
+    <decorate>... <type> <function_name>(<type> <argument>, ...)
+    {
+        statements;
+        return <value>;
+    }
+
+    <decorate>... void <functionName>(<type> <arguments>, ...)
+    {
+        statements;
+        return;
+    }
+
 对域进行读取的方法叫域访问器，用getFunction（）表示。
 
 对域进行设置的方法叫域更改器，用setFunction（）表示。
 
 方法的参数有显示参数和隐式参数，类对象（实例）就是隐式参数，用关键字this表示。
-
-    public type name(arguments)
-    {
-        ...
-    }
 
 静态方法：
 

@@ -17,12 +17,12 @@ permalink:
     import datetime
     import time
 
-    datetime.datetime.strftime(format[, tuple])
-    datetime.datetime.strftime("%d %B %Y %H:%M:%S")
-
     datetime.datetime.strptime(string, format)
-    datetime.datetime.strptime('20160824161431', '%Y%m%d%H%M%S') -> 2016, 8, 24, 16, 14, 31
+    format_time = datetime.datetime.strptime('20160824161431', '%Y%m%d%H%M%S') # return: datetime.datetime(2016, 8, 24, 16, 14, 31)
+    format_time = datetime.datetime.strptime('24 August 2016 16:14:31', '%Y%m%d%H%M%S') # return: datetime.datetime(2016, 8, 24, 16, 14, 31)
 
+    datetime.datetime.strftime(format[, tuple])
+    string_datetime = format_datetime.strftime("%d %B %Y %H:%M:%S") # return: '24 August 2016 16:14:31'
 
 ## calendar
 

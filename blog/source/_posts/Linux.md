@@ -65,8 +65,6 @@ kDM(kde)
 
 lightDM
 
-Slim
-
 # Linux的shell
 
 查看shell内置命令：

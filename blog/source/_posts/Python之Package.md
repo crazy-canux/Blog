@@ -59,7 +59,7 @@ setuotppls是第三方模块, 高级包管理工具，需要安装：
 
     from setuptools import setup, find_packages
 
-    import yourlib
+    import project
 
     def read(readme):
         extend = os.path.splitext(readme)[1]
@@ -70,12 +70,11 @@ setuotppls是第三方模块, 高级包管理工具，需要安装：
         # pypandoc可以将markdown格式转换成reST格式
         elif (extend == ".md"):
             import pypandoc
-            import codecs
-            return codecs.open(pypandoc.convert(readme, 'rst'), 'r', 'utf-8').read()
+            return pypandoc.convert(readme, 'rst')
 
     setup(
-        name=NAME,
-        version=VERSION,
+        name=project,
+        version=project.__version__,
         author='',
         author_email='',
         maintainer='',
@@ -101,6 +100,37 @@ setuotppls是第三方模块, 高级包管理工具，需要安装：
         test_suite='',
         test_require='',
     )
+
+创建README文件：
+
+可以是rst格式也可是是md格式。
+
+如果是md格式不要使用类似于***的分割线。
+
+创建__init__.py文件：
+
+位于project/project/__init__.py，安装后用import导入，help(project)看到的信息。
+
+    NAME: 自动获取的项目名字 - 该文件注释的总结部分
+    FILE: /install_path/project/project/__init__.py
+    DESCRIPTION: 该文件的注释，除总结部分
+    PACKAGE CONTENTS: 在project/project/自动获取的py文件名
+    DATA: __开头和结尾的变量
+    VERSION: __version__变量的值
+    AUTHOR: __author__变量的值
+
+    #!/usr/bin/env python
+    # -*- coding: utf-8 -*-
+    """
+    SUMMARY
+
+    Descriptions
+    """
+
+    __version__ = ''
+    __author__ = ''
+
+    ...
 
 发布到pypi主服务器pypi：
 

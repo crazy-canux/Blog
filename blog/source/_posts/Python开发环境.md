@@ -122,29 +122,26 @@ python3.4之后并入了包含pip的虚拟化标准库venv
 
 * easy_install(setuptools)安装：
 
+    <https://github.com/pypa/setuptools>
+
     setuptools带的工具,需要安装第三方库setuptools,从egg归档格式中安装。
 
     缺点是不支持卸载。
 
-    安装setuptools：
-
         sudo apt-get install python-setuptools
-
-    <https://github.com/pypa/setuptools>
 
         sudo -E easy_install packagename[=version] # 安装
         sudo -E easy_install -U packagename[=version] # 升级
 
 * pip安装：
 
+    <https://github.com/pypa/pip>
+
     python自带的安装工具,支持wheel格式和tarball。
 
-    升级pip：
-
+        sudo apt-gete install python-pip
         pip install -U pip # for linux
         python -m pip install -U pip # for windows
-
-    <https://github.com/pypa/pip>
 
         sudo -E pip install packagename[=version] # 安装
         sudo -E pip install -U packagename[=version] # 升级

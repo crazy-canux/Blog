@@ -15,28 +15,22 @@ permalink:
 
 安装一个中文输入法框架fcitx(IBus, SCIM, UIM)：
 
-    sudo add-apt-repository ppa:fcitx-team/nightly
-    sudo apt-get update
     sudo apt-get install fcitx
 
-安装适用于这种框架的输入法：
+安装一种输入法引擎：
 
+    sudo apt-get install fcitx-googlepinyin
     sudo apt-get install fcitx-sunpinyin
     sudo apt-get install fcitx-libpinyin
-    sudo apt-get install fcitx-googlepinyin
-
-安装云拼音：
-
-    sudo apt-get install fcitx-module-cloudpinyin
-
-输入法模块(包括gtk2/3，qt4/5)：
-
-    fcitx-im
+    sudo apt-get install fcitx-sougoupinyin
+    sudo apt-get install fcitx-cloudpinyin
 
 配置程序：
 
-    kcm-fcitx(qt)
-    fcitx-configtool(gtk)
+    kcm-fcitx - for qt - <https://github.com/fcitx/kcm-fcitx>
+    fcitx-configtool - for gtk - <https://github.com/fcitx/fcitx-configtool>
+
+在键盘输入方式系统从ibus改为fcitx，然后重启。
 
 # gedit打开txt文件乱码
 
