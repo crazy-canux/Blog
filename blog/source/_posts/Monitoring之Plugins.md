@@ -13,7 +13,9 @@ categories:
 permalink:
 ---
 
-# Monitoring(Nagios/naemon/icinga/shinken/sensu) Plugins
+# Monitoring Plugins
+
+Nagios/naemon/icinga/shinken/centreon/opsview/sensu
 
 Office project:
 
@@ -23,9 +25,7 @@ Office project:
 
 My project:
 
-<https://github.com/crazy-canux/xPlugin_Monitoring>
-
-<http://crazy-canux.github.io/2016/04/08/Monitoring%E4%B9%8BPlugins/>
+<https://github.com/crazy-canux/xplugin>
 
 Open source project:
 
@@ -100,11 +100,11 @@ Nagios不是基于agent的，所以插件都是通过协议来获取监控信息
 
 ## threshold and ranges
 
-10    |    <0 or >10 alert
-10:    |    <10 alert
-~:10    |    >10 alert
-10:20    |    <10 or >20 alert
-@10:20    |    >=10 and <=20 alert
+    10    |    <0 or >10 alert
+    10:    |    <10 alert
+    ~:10    |    >10 alert
+    10:20    |    <10 or >20 alert
+    @10:20    |    >=10 and <=20 alert
 
 ***
 

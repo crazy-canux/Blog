@@ -10,7 +10,7 @@ tags:
 - naemon
 - icinga
 - shinken
-- sensu
+- centreon
 categories:
 - DevOps
 - Monitor
@@ -118,43 +118,7 @@ Dashboard
 
 ***
 
-# **check_MK**
-
-For more informations, see here:
-
-<http://crazy-canux.github.io/2016/05/12/Monitoring%E4%B9%8Bcheck_MK/>
-
-***
-
-# **Sensu**
-
-<https://github.com/sensu>
-
-<https://sensuapp.org/>
-
-<https://sensuapp.org/plugins#categories>
-
-## sensu(core)
-
-Monitoring for today's infrastructure, written in ruby.
-
-<https://github.com/sensu/sensu>
-
-## RabbitMQ
-
-Secure Transport data from server and client.
-
-<http://www.rabbitmq.com/>
-
-## uchiwa
-
-Dashboard
-
-<https://github.com/sensu/uchiwa>
-
-***
-
-# **Centreon**
+# Centreon
 
 <https://www.centreon.com>
 
@@ -181,3 +145,13 @@ Dashboard.
 <https://github.com/centreon/centreon>
 
 ***
+
+# Opsview
+
+<https://www.opsview.com/>
+
+## opsview core
+
+Extend from nagios core, written in perl.
+
+<https://www.openhub.net/p/opsview>

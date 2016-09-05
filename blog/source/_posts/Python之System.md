@@ -50,11 +50,14 @@ permalink:
 
 ## time
 
+    # 获取当前unix时间戳
+    time.time()
+
     # 将时间2011-09-27 10:50:00转换成时间戳（从1970开始的秒数）
     time.mktime(time.strptime("2016-01-01 00:00:00", "%Y-%m-%d %H:%M:%S"))
 
     # 将时间戳转换成时间2011-09-27 10:50:00
-    time.strftime("%Y %m %d %H %H:%M:%S", time.localtime(2016010100000000))
+    time.gmtime(1472540718.340721)
 
 ## io
 

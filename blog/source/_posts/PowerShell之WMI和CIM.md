@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PowerShell之wmi和cim
+title: PowerShell之WMI和CIM
 comments: true
 date: 2016-07-18 14:54:39
 updated:
@@ -14,7 +14,7 @@ categories:
 permalink:
 ---
 
-# wmi
+# WMI
 
     Get-WmiObject
     Invoke-WmiMethod
@@ -22,7 +22,10 @@ permalink:
     Remove-WmiObject
     Set-WmiInstance
 
-# cim
+    # 用powershell跑一个wql。
+    Get-WmiObject -Query "select * from win32_service where name='winRM'" | Format-List -Property Name,status
+
+# CIM
 
 powershell建议使用cim。
 
