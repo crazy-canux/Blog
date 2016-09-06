@@ -1052,7 +1052,7 @@ sun建议使用公司域名的逆序作为包名。
 
 怎样让类实现一个接口：
 1. 用implements将类申明为实现给定的接口
-2. 对接口中所有方法定义
+2. 对接口中所有方法定义(在自定义类中实现接口中的方法)
 
         Class <Class_Name> implements <Interface_Name>
         {

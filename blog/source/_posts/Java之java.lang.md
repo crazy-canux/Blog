@@ -313,3 +313,11 @@ Method:
 
     protected Object clone()
     ...
+
+# java.lang.Comparable<T>
+
+    public interface Comparable<T>
+
+Method:
+
+    int compareTo(T o)
