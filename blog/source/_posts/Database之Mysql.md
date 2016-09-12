@@ -27,6 +27,8 @@ CLI工具： mysql
 
 GUI工具： mysql workbench
 
+安装完成默认的数据库是 mysql。
+
 # mysql命令
 
     mysql db_name
@@ -109,6 +111,10 @@ nowarning (\w) Don't show warnings after every statement.
 
     FLUSH PRIVILEGES;
 
+查看所有数据库：
+
+    show databases;
+
 查看当前数据库：
 
     SELECT DATABASE();
@@ -117,6 +123,14 @@ nowarning (\w) Don't show warnings after every statement.
 
     CREATE DATABASE databasename;
     DROP DATABASE databasename;
+
+查看所有表：
+
+    show tables;
+
+查看表结构：
+
+    desc tablename;
 
 # Python
 

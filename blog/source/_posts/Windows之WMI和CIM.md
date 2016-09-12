@@ -184,6 +184,7 @@ python标准库subprocess
 
     import subprocess
     wmi_output = subprocess.check_output(command)
+    command = ['wmic', '-U', domain\\user%password, //host, wql]
 
 ### sh
 
@@ -193,4 +194,5 @@ sh是subprocess的升级版。
 
     from sh import wmic
     output = sh.wmic(arguments)
+    arguments = ['-U', domain\\user%password, //host, wql]
 

@@ -1,12 +1,11 @@
 ---
 layout: post
-title: Bigdata之Hadoop
+title: BigData总结
 comments: true
-date: 2016-04-05 21:42:19
+date: 2016-04-05 21:55:53
 updated:
 tags:
 - bigdata
-- hadoop
 categories:
 - Bigdata
 permalink:

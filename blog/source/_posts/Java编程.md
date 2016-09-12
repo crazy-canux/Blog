@@ -641,7 +641,7 @@ continue语句：
         ...
     }
 
-一般的一个类放到一个java文件中。
+一般的一个类放到一个java文件中,类名和文件同名。
 
 编译时编译main函数所在的文件即可，会自动编译包含的类的源文件。
 
@@ -854,6 +854,8 @@ jar文件包含多个压缩形式的类文件和子目录。
 
 继承可以是多层继承，由一个公共类派生出来的所有类的集合称为继承层次。
 
+java没有多继承，继承不能扩展多个类，一个子类只能继承一个父类，一个父类可以被多个子类继承。
+
 不允许被扩展的类称为final类，用final修饰:
 
 final类中的所有方法(不包括域)自动的成为final方法
@@ -991,6 +993,8 @@ sun建议使用公司域名的逆序作为包名。
 
 域的注释放到域前面，只需要注释静态常量域。
 
+    package <packageName>;
+
     import java.util.*;
 
     /**
@@ -1062,4 +1066,27 @@ sun建议使用公司域名的逆序作为包名。
             }
         }
 
+接口的特性：
+1. 接口不是类，不能用new实例化一个接口。
+2. 可以申明接口变量， Comparable x;
+3. 接口变量必须引用实现了接口的类对象。
+4. 检查一个对象是否实现了某个特定的接口，if (anObject instanceof Comparable) {...}
+5. 接口像类一样可以用extends扩展。
+6. 接口中不能用实例域和静态方法，但是可以有常量。
+7. 一个类中可以实现多个接口，implements Interface1, Interface2。
+
 # 异常和错误(Exceptions&Error)
+
+# 打包
+
+## jar文件
+
+用jar命令打包， 可以包含图像，声音，源代码等文件，并进行压缩。
+
+    jar cvf JarFile.jar File1 File2 ... # 将指定文件压缩归档到JarFileName这个jar包。
+    jar cvfm JareFile.jar manifest.mf File ... # 根据清单文件mainfest.mf压缩归档。
+    jar uvfm JarFile.jar mainfest-additions.mf # 更新已有jar包。
+
+运行jar包：
+
+    java -jar JarFile.jar

@@ -79,7 +79,7 @@ Like: k00-k99, k{0-9}{A-Z}.
 
 Three ways to instal the agent.
 
-You must install the TEMS and TEPS support on TEMS and TEPS server.
+You must install the TEMS and TEPS support on TEMS(HTEMS) and TEPS server.
 
 1. generate the agent files in an ITM installation on this machine
 
@@ -94,9 +94,8 @@ You must install the TEMS and TEPS support on TEMS and TEPS server.
     命令行安装。
     生成一个.zip和一个.tgz文件。
     包括windows的.bat和linux/unix的.sh安装文件
-    installIra.sh/bat 安装下面三个文件和第一种方式一样。
 
-    安装下面三个包：
+    安装下面三个包(等效方法一）：
 
         InstallIra.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
         InstallIra.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password> # for windows
@@ -108,7 +107,7 @@ You must install the TEMS and TEPS support on TEMS and TEPS server.
         installIraAgent.bat C:\IBM\ITM # for windows
         ./installIraAgent.sh /opt/IBM/ITM # for linux
 
-    在TEMS服务器安装对agent的支持：
+    在TEMS(HTEMS)服务器安装对agent的支持：
 
         installIraAgentTEMS.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
         installIraAgentTEMS.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password> # for windows
@@ -124,13 +123,17 @@ You must install the TEMS and TEPS support on TEMS and TEPS server.
 
 可以通过MTEMS来配置和启动，也可以通过命令行。
 
+查看所有agent信息：
+
+    /opt/IBM/ITM/bin/cinfo -i # check the productcode and platformCode.
+
 config agent:
 
-    ./itmcmd config -A <product code>
+    ./itmcmd config -A productcode
 
 start agent:
 
-    ./tacmd agent start <product code>
+    ./tacmd agent start productcode
 
 # uninstall agent
 
@@ -145,8 +148,7 @@ start agent:
 
     linux/unix:
 
-        /opt/IBM/ITM/bin/cinfo -i # check the product and platformCode.
-        /opt/IBM/ITM/bin/uninstall.sh [-f] [-i] [-h install_dir] product platformCode
+        /opt/IBM/ITM/bin/uninstall.sh [-f] [-i] [-h install_dir] productcode platformCode
 
 2. Remove from TEP client(clear offline entry)
 

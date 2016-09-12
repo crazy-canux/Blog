@@ -13,6 +13,7 @@ permalink:
 
 # python项目结构
 
+.
 |-- AUTHORS.rst
 |-- README.rst
 |-- CONTRIBUTING.rst

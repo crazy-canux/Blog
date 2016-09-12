@@ -48,22 +48,30 @@ get-help/help的选项:
     -showwindow
     -online
 
-# helpfile
+***
+
+# Helpfile
 
 3.0/4.0 需要先下载帮助手册：
 
     update-help
 
-查看helpfile：
+所有helpfile：
 
     Get-Help/Help about_*
+
+查看具体helpfile：
+
     Get-Help/Help about_<name>
 
-# cmdlets:
+# Cmdlets
 
 powershell的内置命令
 
-    Get-Command -CommandType cmdlet # 查看所有cmdlet命令
+    Get-Command -CommandType cmdlet # 查看所有cmdlet
+
+所有cmdlets：
+
     Get-Command
     Get-Service
     Get-Process
@@ -85,13 +93,67 @@ powershell的内置命令
     Invoke-Command
     ...
 
-# function
+# Function
 
-# alias
+powershell内置函数
 
+    Get-Command -CommandType function # 查看所有function
+
+所有function：
+
+    prompt
+    TabExpansion2
+    Clear-Host
+    more
+    help
+    mkdir
+    Get-Verb
+    oss
+    A:
+    ...
+    Z:
+    cd..
+    cd\
+    ImportSystemModules
+    Pause
+
+    New-IseSnippet
+    Import-IseSnippet
+    Get-IseSnippet
+
+    Get-FileHash
+
+    Configuration
+    Get-DscConfiguration
+    Test-DscConfiguration
+    Get-DscLocalConfigurationManager
+    Restore-DscConfiguration
+    New-DscCheckSum
+    Get-DscResource
+    Disable-PSTrace
+    Disable-PSWSManCombinedTrace
+    Disable-WSManTrace
+    Enable-PSTrace
+    Enable-PSWSManCombinedTrace
+    Enable-WSManTrace
+    Get-LogProperties
+    Set-LogProperties
+    Start-Trace
+    Stop-Trace
+
+    New-PSWorkflowSession
+    Invoke-Asworkflow
+
+# Alias
+
+powershell内置别名
+
+    Get-Command -CommandType alias # 查看所有alias
     Get-Alias # 查看所有alias
     Set-Alias
     New-Alias
+
+所有alias：
 
     ForEach-Object    %/foreach
     Where-Object    ?/where
@@ -144,7 +206,33 @@ powershell的内置命令
     mkdir    md
     ...
 
-## object
+# Provider
+
+provider相关cmdlet：
+
+    Get-PSProvider # 查看provider
+    Get-PSDrive    # 查看驱动器
+    New-PSDrive    # 新建驱动器
+    Remove-PSDrive    # 删除驱动器
+
+所有provider：
+
+    Alias
+    Environment
+    FileSystem
+    Function
+    Registry
+    Variable
+
+    help/get-help <provider_name>    # 查看provider帮助
+    help Alias
+
+    cd <drive_name>:    # 进入到某个provider的驱动器
+    cd/chdir Alias:
+
+***
+
+# object
 
 object主要通过管道|使用。
 
@@ -177,26 +265,6 @@ object转化：
 
     get-command -verb *import*
     ...
-
-# provider
-
-    Get-PSProvider # 查看provider
-    Get-PSDrive    # 查看驱动器
-    New-PSDrive    # 新建驱动器
-    Remove-PSDrive    # 删除驱动器
-
-    Alias
-    Environment
-    FileSystem
-    Function
-    Registry
-    Variable
-
-    help/get-help <provider_name>    # 查看provider帮助
-    help Alias
-
-    cd <drive_name>:    # 进入到某个provider的驱动器
-    cd/chdir Alias:
 
 # module
 

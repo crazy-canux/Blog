@@ -5,6 +5,7 @@ comments: true
 date: 2016-07-20 17:10:34
 updated:
 tags:
+- dell
 - vmware
 - vsphere
 categories:

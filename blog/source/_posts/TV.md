@@ -43,7 +43,7 @@ E01 - E13
 
 <http://cn163.net/archives/19774/>
 
-# 末日孤舰
+# 末日孤舰S03
 
 13 June 2016
 
@@ -53,12 +53,22 @@ E01 - E13
 
 <http://cn163.net/archives/23679/>
 
-# 黑客军团S02
+# 血族S03
 
-23 July 2016
+29 August 2016
 
-E01 - E10
+E01 - E13
 
 下载地址：
 
-<http://cn163.net/archives/23658/>
+<http://cn163.net/archives/23963/#tab-widget1>
+
+# 罪恶之夜S01
+
+2016
+
+E01 - E08
+
+下载地址：
+
+<http://cn163.net/archives/23956/?_t=t>

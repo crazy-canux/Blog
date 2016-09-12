@@ -28,7 +28,7 @@ front-end：JavaScript/Html/Css
 
 Database：Sql/Mysql/MSSQL/Oracle
 
-Interested：BigData、DevOps、Web。
+Interested：BigData、CloudComputing、DevOps、Web。
 
 ***
 
