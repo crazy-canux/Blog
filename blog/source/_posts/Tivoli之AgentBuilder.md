@@ -11,7 +11,7 @@ tags:
 - Monitoring
 - Agent Builder
 categories:
-- DevOps
+- Operation
 - Tivoli
 permalink:
 ---

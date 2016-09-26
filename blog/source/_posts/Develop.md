@@ -13,23 +13,29 @@ permalink:
 
 # Develop
 
-开发的一些知识点随记。
+开发的一些工具
 
-同时有password和port时，-p表示password，-P表示port，只有一个时，都用-p表示即可。
+# Integration
 
-# 持续集成
+## continuous integration
 
-## travis CI
+* travis CI
 
 测试和部署
 
-# 代码质量
+* jenkins
 
-## coveralls
+## Code quality
+
+* coveralls
 
 代码覆盖率
 
-# 文档工具
+## project management
+
+* redmine
+
+# 文档阅读工具
 
 ## zeal
 

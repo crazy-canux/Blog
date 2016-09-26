@@ -10,7 +10,7 @@ tags:
 - Tivoli
 - Monitoring
 categories:
-- DevOps
+- Operation
 - Tivoli
 permalink:
 ---

@@ -8,7 +8,7 @@ tags:
 - nagios
 - monitoring
 categories:
-- DevOps
+- Operation
 - Monitor
 permalink:
 ---

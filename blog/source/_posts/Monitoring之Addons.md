@@ -8,7 +8,7 @@ tags:
 - addons
 - monitoring
 categories:
-- DevOps
+- Operation
 - Monitor
 permalink:
 ---
@@ -42,14 +42,29 @@ data stored.
 
 # pnp4nagios
 
-> PNP is an addon to Nagios which analyzes performance data provided by plugins
-and stores them automatically into RRD-databases.
+> PNP is an addon to Nagios which analyzes performance data provided by plugins and stores them automatically into RRD-databases.
 
 基于RRD，绘制nagios的性能图。
 
 <http://docs.pnp4nagios.org/>
 
 <https://github.com/lingej/pnp4nagios>
+
+可以在nagios的service配置中添加“ostpl_enable-graph"启用图形。
+
+templates.dist是自带模板
+
+templates是用户自定义模板
+
+XXX.php需要和nagios的service的command_name同名，默认查找这个同名的模板.
+
+测试就是scp XXX.php nagios-server:/usr/share/pnp4nagios/html/templates/然后去nagios查看结果
+
+pnp4nagios查找顺序：
+1. templates/check_XXX.php
+2. templates.dist/check_XXX.php
+3. templates/default.php
+4. templates.dist/default.php
 
 # Nagvis
 

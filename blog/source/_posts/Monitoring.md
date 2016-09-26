@@ -12,7 +12,7 @@ tags:
 - shinken
 - centreon
 categories:
-- DevOps
+- Operation
 - Monitor
 permalink:
 ---

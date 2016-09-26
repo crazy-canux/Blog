@@ -63,7 +63,7 @@ git配置：
 在~/.gitconfig添加include可以调用其它配置文件
 
     [include]
-        path = ~/myCode/xDevOps/etc/git/gitcofig
+        path = ~/myCode/xdevops/etc/git/gitcofig
 
 # git remote (git 协议)
 

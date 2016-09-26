@@ -10,7 +10,7 @@ tags:
 - OMNIbus
 - Monitoring
 categories:
-- DevOps
+- Operation
 - Tivoli
 permalink:
 ---

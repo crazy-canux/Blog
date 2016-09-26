@@ -9,7 +9,7 @@ tags:
 - livestatus
 - Multisite
 categories:
-- DevOps
+- Operation
 - Monitor
 permalink:
 ---
