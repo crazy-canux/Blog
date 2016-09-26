@@ -15,7 +15,6 @@ permalink:
 ## datetime
 
     import datetime
-    import time
 
     datetime.datetime.strptime(string, format)
     format_time = datetime.datetime.strptime('20160824161431', '%Y%m%d%H%M%S') # return: datetime.datetime(2016, 8, 24, 16, 14, 31)
@@ -54,6 +53,8 @@ permalink:
 
 ## repr
 
+***
+
 # Data Persistence
 
 ## pickle
@@ -78,6 +79,8 @@ permalink:
 
 ## dumbdbm
 
+***
+
 # Data Compression and Archiving
 
 ## gzip
@@ -89,6 +92,8 @@ permalink:
 ## zipfile
 
 ## tarfile
+
+***
 
 # Database
 

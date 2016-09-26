@@ -20,8 +20,6 @@ classes (a string tokenizer, a random-number generator, and a bit array
 
 # java.util.Scanner
 
-Field:
-
 Constructor:
 
     Scanner(File source) /* 构造一个从给定文件读取数据的对象 */

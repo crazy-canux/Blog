@@ -177,6 +177,20 @@ github的windows版本包含windows的git和对powershell的支持
 
         ssh -T git@github.com
 
+### projcet/.gitignore
+
+忽略文件
+
+<https://github.com/github/gitignore>
+
+### project/.gitattributes
+
+github现实编程语言
+
+*.py linguist-language=Python
+
+<https://github.com/github/linguist>
+
 ## post-git
 
 powershell的git
@@ -265,3 +279,5 @@ git的结构：
 ## stash      Stash the changes in a dirty working directory away
 
 ## tag        object signed with GPG
+
+

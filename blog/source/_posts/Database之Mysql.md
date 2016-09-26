@@ -124,6 +124,10 @@ nowarning (\w) Don't show warnings after every statement.
     CREATE DATABASE databasename;
     DROP DATABASE databasename;
 
+使用数据库：
+
+    use databasename
+
 查看所有表：
 
     show tables;

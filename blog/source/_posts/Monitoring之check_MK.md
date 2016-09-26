@@ -16,8 +16,7 @@ permalink:
 
 # check_MK
 
-> Welcome to the official Homepage of Check_MK. Check_MK is comprehensive IT
-monitoring solution in the tradition of Nagios.
+> Welcome to the official Homepage of Check_MK. Check_MK is comprehensive IT monitoring solution in the tradition of Nagios.
 
 check_Mk有两个版本：
 1. Raw edition(开源版本)
@@ -59,26 +58,6 @@ Event broker,是NDO/IDO的升级版,不需要数据库。
 
 ***
 
-# Multisite
-
-check_MK的Dashboard。
-
-***
-
-# WATO
-
-check_mk的配置工具。
-
-***
-
-# Notify
-
-***
-
-# Event Console
-
-***
-
 # install check_mk
 
 安装正确的版本：
@@ -93,15 +72,21 @@ check_mk的配置工具。
 
 # Use check_mk
 
+需要root权限：
+
     sudo -i
 
-创建一个instances：
+创建一个site：
 
     omd create mysite
 
-启动instances：
+启动site：
 
     omd start mysite
+
+切换到site的admin：
+
+    su - mysite
 
 登陆Multisite:
 
@@ -113,11 +98,25 @@ password: omd
 
 ***
 
-# Use WATO and Multisite
+# WATO
+
+check_mk的GUI配置工具。
 
 1. Install Monitoring Agents on monitoring server
+
+    通过WATO的Monitoring Agents下载check-mk-agent安装到被监控机器上。
+
 2. Activating servers
+
+    通过WATO的Hosts创建一台被监控的server。
+
 3. Activating services
+
+***
+
+# Multisite
+
+check_mk 的dashboard。
 
 ***
 

@@ -62,3 +62,7 @@ Linux外部命令的项目是coreutils。
 # whatis
 
 # logrotate
+
+# find
+
+

@@ -29,6 +29,8 @@ type void.
 
 java的基础类，不需要用import导入。
 
+***
+
 # java.lang.Object
 
 Object类是所有类的基类, 因此所有的类都有这些方法。
@@ -316,8 +318,21 @@ Method:
 
 # java.lang.Comparable<T>
 
+Interface:
+
     public interface Comparable<T>
 
 Method:
 
     int compareTo(T o)
+
+# java.lang.Class<T>
+
+Method:
+
+    <U> Class<? extends U> asSubclass(Class<U> clazz)
+    Class<?>[] getClass()
+    URL getResource(String name)
+    URL getResourceAsStream(String name)
+    ...
+

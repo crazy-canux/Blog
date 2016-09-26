@@ -110,18 +110,20 @@ You must install the TEMS and TEPS support on TEMS(HTEMS) and TEPS server.
     在TEMS(HTEMS)服务器安装对agent的支持：
 
         installIraAgentTEMS.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
-        installIraAgentTEMS.bat C:\IBM\ITM -h <HTEMS> -u <username> -p <password> # for windows
-        ./installIraAgentTEMS.sh /opt/IBM/ITM -h <HTEMS> -u <username> -p <password> # for linux
+        installIraAgentTEMS.bat C:\IBM\ITM # for local HTEMS windows server.
+        ./installIraAgentTEMS.sh /opt/IBM/ITM # for local HTEMS linux server.
 
     在TEPS服务器安装对agent的支持：
 
-        installIraAgentTEPS.bat/.sh itm_install_location
-        installIraAgentTEPS.bat C:\IBM\ITM # for windows
-        ./installIraAgentTEPS.sh /opt/IBM/ITM # for linux
+        installIraAgentTEPS.bat/.sh itm_install_location [[-h TEPS_hostname] -u TEPS_username -p TEPS_password]
+        installIraAgentTEPS.bat C:\IBM\ITM # for local TEPS windows server.
+        ./installIraAgentTEPS.sh /opt/IBM/ITM # for local TEPS linux server.
 
 # config agent
 
-可以通过MTEMS来配置和启动，也可以通过命令行。
+需要为agent指定HTEMS服务器，并重启agent，然后重启TEPD。
+
+可以通过Tivoli Enterprise Monitoring Service来配置和启动，也可以通过命令行。
 
 查看所有agent信息：
 

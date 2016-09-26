@@ -49,42 +49,44 @@ python实现的，需要导入才能使用的。
 
 python代码是对外部库的补充。
 
-# 函数式编程
+# 控制流
 
-* 列表解析
+* with as上下文管理
 
-    使用中括号，列表解释返回一个列表。
+* 迭代器
 
-        [expression for item in iterable if condition]
+# 函数
+
+* lambda与匿名函数
+
+* global变量
+
+* 列表表达式
+
+    使用中括号，列表表达式返回一个列表。
+
+        list = [expression for item in iterable if condition]
 
 * 生成器表达式
 
+    不必创建完整的列表，而是一边循环一边计算，这种就是生成器。
+
     使用小括号,生成器表达式返回一个生成器。
 
-        (expression for item1 in iterable1 if condition1
-                    for item2 in iterable2 if condition2
-                    ...)
+        generator = (expression for item1 in iterable1 if condition1
+                        for item2 in iterable2 if condition2
+                        ...
+        )
+        generator.next() # 获取下一个值
 
 * 生成器与yield
 
 任何使用yield的函数都称为生成器。
 
+* 协程
+
 * 协程与yield
 
 * 装饰器
 
-@decorator
-
-* 匿名函数和lambda
-
-* global
-
-# 控制流
-
-* with as上下文管理器
-
-# 异常
-
-* assert断言
-
-# 类与面向对象
+# 类

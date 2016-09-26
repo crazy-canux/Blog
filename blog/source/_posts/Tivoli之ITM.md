@@ -112,7 +112,11 @@ RTEMS: Remote Tivoli Enterprise Monitoring Server
 
 TEMA: Tivoli Enterprise Monitoring Agent
 
-安装agent之后有一个Manage Tivoli Monitoring Services用来管理本地agent。
+安装agent之后通过GUI工具Tivoli Enterprise Monitoring Service来配置和启动agent。
+
+也可以通过命令行来配置和启动agent。
+
+agent配置需要指定HTEMS服务器。
 
 ## Agentless
 
@@ -177,7 +181,7 @@ TEP是GUI界面，分为：
 
 使用TEP来查看监控结果。
 
-默认用户是sysadmin。
+默认用户是sysadmin, 需要为TEPD指定TEPS服务器。
 
 1. Browser版本
 
@@ -187,13 +191,12 @@ TEP是GUI界面，分为：
 
         http://<TEPS Server>:15200/tep.jnlp
 
-    安装ITM可以选择安装桌面版。
-    也可以从Java Web Start获取桌面版。
+    安装ITM可以选择安装桌面版,也可以从Java Web Start获取桌面版。
+
 
 3. Java Web Start版本
 
-    结合了desktop和browser的优点。
-    从web下载，在桌面运行。
+    结合了desktop和browser的优点,从web下载，在桌面运行。
 
 TEP的结构：
 

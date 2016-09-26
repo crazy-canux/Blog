@@ -26,7 +26,7 @@ back-end：C/Java/Python
 
 front-end：JavaScript/Html/Css
 
-Database：Sql/Mysql/MSSQL/Oracle
+Database：Sql/Mysql/MSSQL
 
 Interested：BigData、CloudComputing、DevOps、Web。
 

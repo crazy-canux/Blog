@@ -1,13 +1,13 @@
 ---
 layout: post
-title: SOFTWARE
+title: Sofeware
 comments: true
 date: 2016-04-03 14:55:13
 updated:
 tags:
 - software
 categories:
-- SOFTWARE
+- Develop
 permalink:
 ---
 

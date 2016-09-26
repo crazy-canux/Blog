@@ -132,3 +132,5 @@ paramiko依赖pycrypto
     shutdown(self, how)
     shutdown_read(self)
     shutdown_write(self)
+
+# Java

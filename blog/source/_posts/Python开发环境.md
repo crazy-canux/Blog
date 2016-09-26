@@ -143,8 +143,8 @@ python3.4之后并入了包含pip的虚拟化标准库venv
         pip install -U pip # for linux
         python -m pip install -U pip # for windows
 
-        sudo -E pip install packagename[=version] # 安装
-        sudo -E pip install -U packagename[=version] # 升级
+        sudo -E pip install packagename[==version] # 安装
+        sudo -E pip install -U packagename[==version] # 升级
         sudo -E pip uninstall packagename # 卸载
         sudo -E pip install XXX.whl # 安装wheel包
 

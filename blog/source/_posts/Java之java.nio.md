@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Java之java.nio.file
+title: Java之java.nio
 comments: true
-date: 2016-05-13 14:17:28
+date: 2016-09-13 03:22:59
 updated:
 tags:
-- java
 categories:
-- Java
 permalink:
 ---
+
+# java.nio
 
 # java.nio.file
 

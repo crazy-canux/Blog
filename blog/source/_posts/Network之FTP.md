@@ -22,6 +22,8 @@ ftp的网页浏览格式：
 ftp://host/path
 ftp://username:password@host/path
 
+windows开启ftp服务即可。
+
 # python
 
 ## ftplib
