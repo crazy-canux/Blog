@@ -7,7 +7,7 @@ updated:
 tags:
 - software
 categories:
-- Develop
+- Software
 permalink:
 ---
 

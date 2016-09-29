@@ -18,14 +18,18 @@ permalink:
 |-- README.rst
 |-- CONTRIBUTING.rst
 |-- LICENSE
-|-- devops     项目源代码目录
-|   |-- tests  测试程序目录
-|-- bin        用来存放将被setup.py安装的二进制脚本
-|-- data       用来存放其它类型文件
-|-- docs       用来存放文档
-|-- etc        用来存放配置文件
+|-- project    项目源代码目录
+|-- bin        //用来存放将被setup.py安装的二进制脚本
+|-- data       //用来存放其它类型文件
+|-- etc        //用来存放配置文件
 |-- tools      用来存放与工具相关shell脚本
+|-- docs       用来存放文档
+|-- scripts    用来存放安装相关的脚本
+|-- tests      用来存放测试相关的文件
+|-- examples   用来存放使用本包相关的例子
 |-- setup.py   标准安装脚本
+|-- setup.cfg
+|-- MANIFEST.in
 
 # python的可用接口
 

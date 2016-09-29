@@ -35,13 +35,15 @@ django的1.8和1.11是长期支持版。
 
 从1.7开始支持python3。
 
-django采用MVC框架。
+django采用MTV框架。
 
-M: model模型，数据存取部分。
+M: model,数据存取
 
-V：view视图，显示数据。
+T: template，如何展现数据
 
-C：controller控制器，根据用户输入委派视图的部分。
+V: view，展现哪些数据
+
+***
 
 # project
 
@@ -125,6 +127,8 @@ django包含下列默认应用:
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        # 在下面注册你的所有应用,django会自动查找应用的templates和static目录中的文件。
+        'register your application here',
     }
 
 > admin: 管理站点
@@ -143,9 +147,35 @@ django包含下列默认应用:
 
     $python manage.py migrate
 
+## urls.py
+
+    from django.conf.urls import include, url
+    from django.contrib import admin
+
+    urlpatterns = [
+        # 默认的项目的admin的url
+        url(r'^admin/', include(admin.site.urls)),
+        # 在项目URL添加链接到应用URL：
+        # 在下面添加你的所有应用的url
+        url(r'^polls/', include('polls.urls', namespace='polls')),
+        ...,
+    ]
+
+在项目的urls添加所有应用的urls，为每个应用独立创建urls，方便管理。
+
+项目的admin的url应该是: http://domain.com/admin/ ，这个默认设置
+
+应用的主url就应该是： http://domain.com/application/ , 需要设置r'^application/'.
+
+然后这个url链接到application.urls，需要设置include('application.urls').
+
+***
+
 # application
 
 应用，一个项目可以有多个应用，一个应用可以用到多个项目中。
+
+可以单独打包应用发布到pypi，包名格式django-project，参考python的打包方法。
 
 创建一个名为polls的应用：
 
@@ -159,13 +189,6 @@ django包含下列默认应用:
     |- models.py
     |- tests.py
     |- views.py
-
-在settings.py注册应用：
-
-    INSTALLED_APPS = {
-        ...
-        'register your project',
-    }
 
 ## admin.py
 
@@ -201,15 +224,19 @@ django包含下列默认应用:
         ]
     admin.site.register(Question, QuestionAdmin)
 
-# models.py
+## models.py
 
     from django.db import models
 
 创建应用的模型，定义模型对应的数据库设计及其附带的元数据。
 
-模型中的类对应数据库中的一张表。
+每个模型都是django.db.models.Models的一个python子类。
 
-* 在项目的settings.py中激活应用。
+每个模型(一个类）对应数据库中唯一的一张表。
+
+模型的每个属性都表示为数据库中的一个字段。
+
+* 在项目的settings.py中激活应用，并设置数据库相关参数。
 
 * 让django包含你的应用：
 
@@ -229,13 +256,14 @@ django包含下列默认应用:
 
         $python manage.py migrate
 
-# views.py
+## views.py
 
     from django.shortcuts import render
 
 定义自己的视图：
 
     from django.http import HttpResponse
+
     from .models import Question
 
     def index(request):
@@ -245,11 +273,21 @@ django包含下列默认应用:
 
 在视图中使用模板：
 
-默认模板放在应用/templates/应用/
+默认django会在项目的所有应用的templates中查找模板，所以为了防止多个应用有同名的模板，需要在templates下新建application同名的目录来存放模板。
+
+应用的模板文件需要在应用目录创建templates文件夹
+
+默认模板放在polls/templates/polls/XXX.html
+
+应用的静态文件需要在应用目录创建static文件夹
+
+默认静态文件存放在polls/static/polls/XXX.css
+
+静态文件夹用来集中存放和管理图片，js脚本和css样式表等静态文件。
 
     def index(request):
         ...
-        return render(request, 'polls/index.html', context)
+        return render(request, 'polls/index.html', {'name': 'value',...})
 
 引发404错误：
 
@@ -259,45 +297,95 @@ django包含下列默认应用:
         question = get_object_or_404(Question, pk=question_id)
         return render(request, 'polls/detail.html', {'question': question})
 
-# URL
+render的使用：
 
-一个项目有两个url，一个在项目目录，一个在应用目录。
+    render(request, template_name, context=None, context_instance=<object object>, content_type=None, status=None, current_app=<object object>, dirs=<object object>, dictionary=<object object>, using=None)
+    render(request, XXX.html, {'name': value}) # value传给html中同名的变量。
+
+## tests.py
+
+    from django.test import TestCase
+
+应用的测试程序一般放在tests.py文件中。
+
+测试应用：
+
+    $python manage.py test polls
+
+## urls.py
+
+应用通过url和项目链接在一起。
 
 将应用的视图映射到URL：
 
-需要在应用目录新建urls.py文件
+需要在应用目录新建urls.py文件,然后在项目的url中包含应用的url。
 
     from django.conf.urls import url
     from . import views
 
     urlpatterns = [
-        url(r'^$', views.index, name='index')
+        url(r'^$', views.index, name='index'),
+        ...,
     ]
 
-在项目URL添加链接到应用URL：
+应用的url应该是： http://domain.com/application/ 加上你在应用的url的正则部分，这个url调用views里面的对应视图。
 
-    from django.conf.urls import include, url
-    from django.contrib import admin
+***
 
-    urlpatterns = [
-        url(r'^polls/', include('polls.urls', namespace='polls')),
-        url(r'^admin/', include(admin.site.urls)),
-    ]
+# manage.py
 
-定义一个名字：
+manage.py有下面子命令：
 
-    ?P<var>
-    r'^P<var>pattern/$'
+    [staticfiles]
+        collectstatic # 设置STATIC_ROOT = '/var/www/static/project/'用来收集静态文件
+        findstatic
+        runserver # 启动django自带的web开发服务器
 
-# templates
+    [sessions]
+        clearsessions
 
-在settings.py添加自定义模板的DIR:
+    [server]
+        runmodwsgi #
 
-    'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    [auth]
+        changepassword
+        createsuperuser
 
-项目的模板默认需要在manage.py目录中创建templates文件夹
+    [django]
+        check
+        compilemessages
+        createcachetable
+        dbshell # 数据库命令行
+        diffsettings
+        dumpdata # 导出数据
+        flush # 清空数据库
+        inspectdb
+        loaddata # 导入数据
+        makemessages
+        makemigrations # 创建迁移文件
+        migrate # 执行迁移文件
+        runfcgi
+        shell # 项目环境终端
+        showmigrations
+        sql
+        sqlall
+        sqlclear
+        sqlcustom
+        sqldropindexes
+        sqlflush
+        sqlindexes
+        sqlmigrate # 查看迁移文件会执行哪些sql
+        sqlsequencereset
+        squashmigrations
+        startapp
+        startproject
+        syncdb
+        test
+        testserver
+        validate
 
-应用的模板需要在应用目录下创建templates文件夹
+***
 
+# 模板
 
 

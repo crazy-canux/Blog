@@ -173,11 +173,9 @@ nowarning (\w) Don't show warnings after every statement.
 
 MySQLdb 1.X 是旧版本，<https://github.com/farcepest/MySQLdb1>
 
-MySQLdb 2.X 是新版本，改名为moist， <https://github.com/farcepest/moist>
+MySQLdb 2.X 是MySQLdb1的升级版，改名为moist，不稳定， <https://github.com/farcepest/moist>
 
-    sudo pip install mysql-python
-
-    import MySQLdb
+mysqlclient 是MySQLdb1的升级版, <https://github.com/PyMySQL/mysqlclient-python>
 
 # Java
 

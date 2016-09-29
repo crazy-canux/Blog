@@ -59,3 +59,26 @@ E01 - E08
 
 <http://cn163.net/archives/23956/?_t=t>
 
+# 瓦妮莎海辛
+
+E01 - E13
+
+下载地址：
+
+<http://cn163.net/archives/24046/?t=1474726062555>
+
+# 驱魔人
+
+E01 - E13
+
+下载地址：
+
+<http://cn163.net/archives/24063/>
+
+# 致命武器
+
+E01 - E10
+
+下载地址：
+
+<http://cn163.net/archives/24044/>

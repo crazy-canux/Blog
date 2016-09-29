@@ -11,6 +11,7 @@ tags:
 - javadoc
 - jar
 - ant
+- maven
 categories:
 - Java
 permalink:
@@ -21,6 +22,8 @@ permalink:
 IBM -> eclipse
 
 Oracle -> NetBeans
+
+Jetbrains -> InteLLiJ IDEA
 
 Linux: Vim + javac + jdb
 
@@ -123,8 +126,19 @@ file:\\\C:\Program Files\Java\jdk_version\docs\index.html
 
 # javaws
 
+***
+
+# tomcat(apache)
+
+应用服务器。
+
 # ant(apache)
 
-    sudo apt-get install ant
-
 # maven(apache)
+
+# Jenkins
+
+<https://github.com/jenkinsci/jenkins>
+
+持续集成工具。
+

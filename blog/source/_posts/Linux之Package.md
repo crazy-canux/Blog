@@ -39,8 +39,8 @@ dpkg的本地前端工具。
 
 使用gdebi安装deb包会自动解决依赖问题。
 
-    sudo apt-get install gdebi-core # install gdebi itself
-    sudo apt-get install gdebi-gtk # install gdebi GUI
+    sudo aptitude install gdebi-core # install gdebi itself
+    sudo aptitude install gdebi-gtk # install gdebi GUI
     sudo gdebi XXX.deb # install package
 
 ## apt - command-line interface
@@ -48,8 +48,12 @@ dpkg的本地前端工具。
 dpkg的远程前端工具。
 
 apt - command-line interface
+
 apt-get - APT package handling utility -- command-line interface
+
 aptitude - high-level interface to the package manager
+
+    sudo aptitude install package
 
 ***
 

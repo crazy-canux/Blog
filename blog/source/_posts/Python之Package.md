@@ -101,11 +101,30 @@ setuotppls是第三方模块, 高级包管理工具，需要安装：
         test_require='',
     )
 
-创建README文件：
+创建setup.cfg文件：
+
+    [wheel]
+    universal = 1
+
+创建README.rst文件：
 
 可以是rst格式也可是是md格式。
 
 如果是md格式不要使用类似于***的分割线。
+
+    参考rst和md的文档
+
+创建MAINFEST.in文件：
+
+默认只有python模块和包会被打包，如果需要其它文件需要添加到这个文件中。
+
+    include LICENSE README.rst AUTHORS.rst CONTRIBUTING.rst
+    recursive-include docs * OR graft docs
+    graft tests
+    graft examples
+    global-exclude *.py[co]
+    prune docs/_build
+    prune docs/_themes
 
 创建__init__.py文件：
 
