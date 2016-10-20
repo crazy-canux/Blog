@@ -109,7 +109,6 @@ python3.4之后并入了包含pip的虚拟化标准库venv
     C:\Python27\Lib\site-packages
     /usr/lib/python2.7/dist-packages
     /usr/local/lib/python2.7/dist-packages
-    /usr/local/lib/python2.7/site-packages
 
 * 二进制安装：
 
@@ -139,7 +138,7 @@ python3.4之后并入了包含pip的虚拟化标准库venv
 
     python自带的安装工具,支持wheel格式和tarball。
 
-        sudo apt-gete install python-pip
+        sudo apt-get install python-pip
         pip install -U pip # for linux
         python -m pip install -U pip # for windows
 

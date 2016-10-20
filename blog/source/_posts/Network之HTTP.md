@@ -39,8 +39,9 @@ https port: 443
 
     import requests
 
-    get(url, params=None, **kwargs) # 返回一个Response类型的对象
-    r = requests.get('http://www.goole.com')
+    get(url=None, headers=None, files=None, data=None, params=None, auth=None, cookies=None, hooks=None, json=None) # 返回一个Response类型的对象
+    headers = { 'User-Agent' : 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)' }
+    r = requests.get('http://www.goole.com', headers=headers)
     # Method:
     r.close()
     r.iter_content(chunk_size=1, decode_unicode=False)
@@ -55,7 +56,7 @@ https port: 443
     r.is_redirect
     r.links
     r.ok
-    r.status_code
+    r.status_code # ok:200
     r.headers
     r.url
     r.history
@@ -92,10 +93,10 @@ https port: 443
 
     # BeautifulSoup
     BeautifulSoup(markup='', features=None, builder=None, parse_only=None, from_encoding=None, exclude_encodings=None, **kwargs)
-    soup = BeautifulSoup(r.text, 'lxml') # 返回BeautifulSoup类型对象, 默认html格式
-    soup = BeautifulSoup(r.text, "xml") # xml格式
-    soup = BeautifulSoup(r.text, ["lxml-xml"]) # 同上
-    soup = BeautifulSoup(r.text, "html5lib") # html5格式
+    soup = BeautifulSoup(r.content, 'lxml') # 返回BeautifulSoup类型对象, 默认html格式
+    soup = BeautifulSoup(r.content, "xml") # xml格式
+    soup = BeautifulSoup(r.content, ["lxml-xml"]) # 同上
+    soup = BeautifulSoup(r.content, "html5lib") # html5格式
     # BeautifulSoup 解析出的python对象有四类： Tag, NavigableString, BeautifulSoup, Comment
     prettify(self, encoding=None, formatter='minimal')
     print(soup.prettify()) # 格式化后以unicode编码输出
@@ -137,6 +138,13 @@ https port: 443
 <https://github.com/lxml/lxml>
 
 XML和HTML的解析器
+
+    from lxml import etree
+    etree.fromstring(text, parser=None, base_url=None) # text是一个string，返回xml的根节点lxml.etree._Element类型的迭代器
+    etree.Element(_tag, attrib=None, nsmap=None, **_extra) # 创建一个Element对象, _tag指定节点，比如xml。
+    root = etree.Element('xml')
+    etree.SubElement(_parent, _tag, attrib=None, nsmap=None, **_extra) # 网父节点添加子节点，返回Element实例
+    tmproot = etree.SubElement(root, _tag)
 
 ## html5lib
 

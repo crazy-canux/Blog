@@ -15,6 +15,8 @@ permalink:
 
 # vim-plugins-manager
 
+vim的插件管理器
+
 ## pathogen
 
 <https://github.com/tpope/vim-pathogen>
@@ -77,6 +79,11 @@ dein已经取代neobundle, 可以用于vim和neovim。
 
 <https://github.com/amix/vimrc>
 
-# YCM
+# vim-plugins
 
-# syntastic
+vim常用的插件
+
+## YCM
+
+## syntastic
+

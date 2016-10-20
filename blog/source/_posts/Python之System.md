@@ -18,6 +18,17 @@ permalink:
 
 ## __future__
 
+把下一个版本的心特性导入到当前版本。
+
+    absolute_import
+    all_feature_names
+    division
+    generators
+    nested_scopes
+    print_function
+    unicode_literals # python2中u'string'才表示unicode, 'string'表示str，python3中所有字符串都是unicode。
+    with_statement
+
 ## sys
 
 ## sysconfig

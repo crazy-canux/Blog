@@ -68,6 +68,10 @@ Event broker,是NDO/IDO的升级版,不需要数据库。
 
     omd version
 
+查看帮助：
+
+    omd help
+
 ***
 
 # Use check_mk

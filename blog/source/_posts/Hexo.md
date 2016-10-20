@@ -351,4 +351,18 @@ theme: &lt;your-favourite-theme-name>
 
 ***
 
-*详细的主题配置请看下回分解。*
+# 部署
+
+正常部署到github：
+
+    hexo clean
+    hexo g
+    hexo d
+
+访问http://<your-github-name>.github.io即可。
+
+绑定自己的域名：
+1. 在域名供应商购买域名后添加解析，记录类型A或者CNAME，主机类型@或者www，记录值可以是http://<your-github-name>.github.io或者通过ping获取的ip地址。
+2. 在<your-blog>/source/新建文件CNAME，添加你购买的域名<your-domain>.com。
+3. 正常部署到github。
+4. 访问http://<your-doamin>.com即可。

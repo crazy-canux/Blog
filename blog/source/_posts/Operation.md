@@ -25,9 +25,8 @@ KeePassX
 
 <https://github.com/keepassx/keepassx>
 
-# puppet
-
 # ansible
 
 # dokuwiki
 
+# fabric

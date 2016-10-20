@@ -11,22 +11,26 @@ categories:
 permalink:
 ---
 
-# TPL
-
-Third Party Library
-
-# Excel
-
-<https://github.com/python-excel>
-
-# fabric
-
-<https://github.com/fabric>
-
-# ansible
-
-<https://github.com/ansible/ansible>
-
 # pexpect
 
 <https://github.com/pexpect>
+
+控制终端的交互。
+
+# XlsxWriter
+
+<https://github.com/jmcnamara/XlsxWriter>
+
+写xlsx格式的excel,取代xlwt。
+
+# xlrd
+
+<https://github.com/python-excel/xlrd>
+
+读excel文件。
+
+# xlwings
+
+<https://github.com/ZoomerAnalytics/xlwings>
+
+对excel的操作。

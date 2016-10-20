@@ -29,14 +29,14 @@ pyVmomi is the Python SDK for the VMware vSphere API that allows you to manage E
 
     from pyVmomi import vim
     from pyVim import connect
-    si = connect.SmartConnect(host='euedcvcr0001.edc.eu.corp', user='CORP\9NagiosESX', pwd='Nagios4Esx', port='443')
+    si = connect.SmartConnect(host='hostname', user='username', pwd='password', port='port')
 
     def find_vm(si, name):
         ct = si.content
         ov = ct.viewManager.CreatecontainerView(ct.rootFolder, [vim.VirtualMachine], true)
         vm_list = ov.view
         for vm in vm_list:
-            if vm.name == "cnshawlt2190":
+            if vm.name == "vmname":
                 return vm
         return None
 

@@ -118,18 +118,18 @@ git有四个协议：
     man git-remote
     git remote -v # 查看远程仓库的详细信息
     git remote add [-t <branch>] [-m <master>] [-f] [--[no-]tags] [--mirror=<fetch|push>] <name> <url>
-    git remote add origin <url> # 给新仓库添加url
-    git remote rename <old> <new> # 重命名远程仓库
+    git remote add origin <url> # 给远程仓库origin添加url, 一个仓库可以添加多个url。
+    git remote rename <oldname> <newname> # 重命名远程仓库
     git remote remove/rm <name> # 删除和远程仓库相关的所有信息
     git remote set-head
     git remote set-branches
     git remote [-v | --verbose] show [-n] <name>...
-    git remote -v show origin # 查看远程仓库详细信息
+    git remote -v show origin # 查看远程仓库origin详细信息
     git remote prune
     git remote update
     git remote set-url [--push] <name> <newurl> [<oldurl>]
-    git remote set-url origin <newurl> # 修改url
-    git remote set-url --add [--push] <name> <newurl> # 一个仓库可以有多个url
+    git remote set-url origin <newurl> # 修改远程仓库origin的url
+    git remote set-url --add [--push] <name> <newurl>
     git remote set-url --delete [--push] <name> <url>
 
 # git相关项目
