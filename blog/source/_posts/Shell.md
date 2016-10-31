@@ -31,11 +31,19 @@ Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。
 2. zsh
 3. fish
 
+***
+
+# shell相关项目
+
+## bash-it
+
 大部分发行版默认使用bash,无需额外安装。
 
 bash的优化项目bash-it：
 
 <https://github.com/Bash-it/bash-it>
+
+## oh-my-zsh
 
 安装zsh：
 
@@ -45,9 +53,13 @@ zsh的优化项目oh-my-zsh:
 
 <https://github.com/robbyrussell/oh-my-zsh>
 
+***
+
 # bash命令
 
     bash --help
+
+***
 
 # bash script
 

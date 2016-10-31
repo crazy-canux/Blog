@@ -12,3 +12,14 @@ categories:
 - PowerShell
 permalink:
 ---
+
+# 外部命令
+
+powershell可以执行外部命令，像cmd。
+
+# netstat
+
+# ipconfig
+
+# route
+

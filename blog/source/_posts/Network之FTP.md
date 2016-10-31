@@ -55,8 +55,13 @@ ftplib模块用来编写ftp客户端程序：
     putcmd(self, line)
     putline(self, line)
     rename(self, fromname, toname)
+
     retrbinary(self, cmd, callback, blocksize=8192, rest=None)
+    # cmd: a RETR command, like "RETR filename"
+
     retrlines(self, cmd, callback=None)
+    # cmd: a RETR, LIST, NLST, or MLSD command.
+
     rmd(self, dirname)
     sanitize(self, s)
     sendcmd(self, cmd)
@@ -64,15 +69,18 @@ ftplib模块用来编写ftp客户端程序：
     sendport(self, host, port)
     set_debuglevel(self, level)
     set_pasv(self, val)
+
     storbinary(self, cmd, fp, blocksize=8192, callback=None, rest=None)
+    # 二进制上传文件
+
     storlines(self, cmd, fp, callback=None)
+    # 文本上传文件
+
     transfercmd(self, cmd, rest=None)
     voidcmd(self, cmd)
     voidresp(self)
     close(self)    关闭连接
     quit(self) 退出并关闭连接
-    retrlines(command[, callback])
-    command: LIST, NLST, MLSD
 
     # get the directory and file
     data = []

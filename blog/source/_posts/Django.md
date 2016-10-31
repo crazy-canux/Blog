@@ -21,21 +21,7 @@ django是python的web框架。
 
 <https://www.djangoproject.com/>
 
-安装：
-
-    $pip install diango==1.8.2
-    $sudo apt-get install python-django
-
-验证安装：
-
-    $python
-    >>>import django
-    >>>django.VERSION
-    >>>django.get_version()
-
-django的1.8(2018.4)是长期支持版。
-
-从1.7开始支持python3。
+<http://python.usyiyi.cn/translate/django_182/index.html>
 
 django遵守MVC设计模式，采用MTV框架。
 
@@ -44,6 +30,38 @@ M: model,数据存取
 T: template，如何展现数据
 
 V: view，展现哪些数据
+
+# 安装
+
+django的1.8(2018.4)是长期支持版。
+
+从1.7开始支持python3。
+
+全局安装：
+
+    $pip install diango==1.8.2
+    $sudo apt-get install python-django
+
+virtualenv中安装：
+
+    $mkdir mysite
+    $cd mysite
+    $virtualenv venv
+    $. venv/bin/activate
+    $pip install django==1.8.2
+
+验证安装：
+
+    $python
+    >>>import django
+    >>>django.VERSION
+    >>>django.get_version()
+
+安装使用的数据库引擎的库：
+
+    $pip install mysql-python # MySQLdb
+    $pip install psycopg2
+    $pip install cx_Oracle
 
 ***
 

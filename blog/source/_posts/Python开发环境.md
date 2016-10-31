@@ -95,10 +95,10 @@ python3.4之后并入了包含pip的虚拟化标准库venv
 
 <https://github.com/pypa/virtualenv>
 
-    $virtualenv myvenv
-    $source ./myvenv/bin/activate
-    pip install ...
-    deactivate
+    $cd project
+    $virtualenv venv
+    $. venv/bin/activate
+    $pip install ...
 
 # 第三方库
 

@@ -17,7 +17,7 @@ Windows Remote Management
 
 <https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx>
 
-windows自带winrm，但是需要设置一个listener.
+windows自带winrm，但是需要设置一个listener, 默认端口5985,建立一个http的连接。
 
 <https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx>
 
@@ -95,4 +95,3 @@ Protocol使用：
     std_out, std_err, status_code = p.get_command_output(shell_id, command_id)
     p.cleanup_command(shell_id, command_id)
     p.close_shell(shell_id)
-

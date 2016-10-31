@@ -12,3 +12,7 @@ permalink:
 ---
 
 # python基础知识
+
+# 控制流
+
+python没有switch。

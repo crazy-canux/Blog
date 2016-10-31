@@ -106,6 +106,8 @@ django的asset management的application。
 
 <https://github.com/django-compressor/django-compressor>
 
+***
+
 # Others
 
 ## django-extensions

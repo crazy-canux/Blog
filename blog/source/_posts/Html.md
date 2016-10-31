@@ -25,6 +25,8 @@ XHTML是更严谨的更纯净的HTML
 
 HTML5是下一代HTML
 
+***
+
 # html元素和属性
 
 html元素指从开始标签到结束标签的所有代码,包括元素内容：
@@ -41,17 +43,42 @@ html标签可以拥有属性，属性总是以name='value'的形式出现，属�
 
 html属性和值大小写不敏感，推荐使用小写,始终给属性值加引号。
 
+## html的全局属性(标准属性)
+
+参考：
+
+<http://www.w3school.com.cn/tags/html_ref_standardattributes.asp>
+
+## html的事件属性
+
+参考：
+
+<http://www.w3school.com.cn/tags/html_ref_eventattributes.asp>
+
+***
+
 # html标题
 
     # 文档类型
     <!DOCTYPE html>
+    <html>
 
-## <!-- -->
+    <head>
+    ...
+    </head>
 
-    # 注释, 浏览器会忽略注释,支持标准属性和事件属性
+    <body>
+    ...
+    </body>
+
+    </html>
+
+## 注释
+
+    # 注释, 浏览器会忽略注释,没有任何属性
     <!-- This is a comment -->
 
-## <html>
+## html
 
     # html文档,支持全局属性
     <html>
@@ -62,55 +89,68 @@ html属性和值大小写不敏感，推荐使用小写,始终给属性值加引
 
     # xmlns属性，定义XML的namespace属性
 
-## <head>
+## head
 
-可以在head标签中使用的标签：
-
-base, link, meta, script, style, title.
+可以在head标签中使用的标签： link, style, base, meta, script, title.
 
     # html文档的头部, head支持全局属性
     <head>
+    <base>
+    <meta>
+    <script>
+    <title>
     ...
     </head>
 
     # profile属性
 
-## <body>
+## body
 
-    # html文档的主体, body标签支持全局属性和事件属性
+    # html文档的主体, 支持样式，支持全局属性和事件属性
     <body>
     ...
     </body>
 
-## <h1> - <h6>
+## h1-h6
 
-    # 标题,浏览器会自动在标题前后添加空行,支持标准属性和事件属性。
+    # 标题,浏览器会自动在标题前后添加空行,支持样式
     <h1>This is the max heading</h1>
     ...
     <h6>This is the min heading</h6>
 
-## <hr />
+    # 支持部分全局属性
+    # id,class,title,style,dir,lang,xml:lang
 
-    # 水平线分割线，支持全局属性和事件属性
+    # 支持部分事件属性
+    # onclick,ondblclick,onmousedown,onmouseup,onmouseover,
+    # onmousemove, ommouseout,onkeypress,onkeydown,onkeyup
+
+## hr
+
+    # 水平线分割线，支持样式，支持全局属性和事件属性
     <hr />
+
+***
 
 # html段落
 
-## <p>
+## p
 
-    # 段落, 浏览器会自动在段落前后添加空行,支持全局属性和事件属性
+    # 段落, 浏览器会自动在段落前后添加空行,支持样式，支持全局属性和事件属性
     <p>This is a paragraph</p>
 
-## <br />
+## br
 
     # 空行, 支持全局属性和事件属性
     <br />
 
     # clear属性
 
+***
+
 # 链接和图像
 
-## <a>
+## a
 
 支持全局属性和事件属性
 
@@ -133,7 +173,7 @@ base, link, meta, script, style, title.
 
     # type
 
-## <img>
+## img
 
 支持全局属性和事件属性
 
@@ -153,7 +193,7 @@ base, link, meta, script, style, title.
 
     # width
 
-## <map>
+## map
 
 支持全局属性和事件属性
 
@@ -164,20 +204,34 @@ base, link, meta, script, style, title.
 
     # name属性为image-map规定的名称
 
-## <area>
+## area
+
+支持全局属性和事件属性
+
+    # alt
+    # coords
+    # href
+    # nohref
+    # shape
+    # target
+
+***
 
 # html样式
 
-内联样式,style样式属性可以包含任何的css属性。
+内联样式,定义在html元素内部。style样式属性可以包含任何的css属性。
+
+内联样式优先级最高。
 
     <h1 style="font-family:verdana">A heading</h1>
     <p style="font-family:arial;color:red;font-size:20px">A paragraph</p>
 
-## <style>
+## style
 
-内部样式表
+内部样式表,位于head标签内部。支持全局属性和事件属性
 
-    <style> 定义样式定义
+优先级仅次于内联样式。
+
     <head>
     <style type="text/css">
     h1 {color: red}
@@ -185,26 +239,44 @@ base, link, meta, script, style, title.
     </style>
     </head>
 
-## <link>
+    # type属性规定样式表的MIME类型
 
-外部样式表
+    # media属性规定不同的媒体类型
 
-    <link> 定义资源引用
+## link
+
+外部样式表,支持全局属性和事件属性
+
+优先级仅高于浏览器缺省值。
+
     <head>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     </head>
 
-## <div>
+    # href属性规定被链接文档的位置
+    # hreflang属性规定被链接文档中文本的语言
+    # media属性规定被链接文档被显示在什么设备
+    # rel属性规定当前文档与被链接文档的关系
+    # sizes属性规定rel='icon'的尺寸
+    # type属性规定被链接文档的MINE类型
 
-    <div> 定义文档中的块
+## div
 
-## <span>
+分类块级元素,支持样式，支持全局属性和事件属性
+
+    <div> 使用样式属性
+
+## span
+
+分类行内元素，支持样式，支持全局属性和事件属性
 
     <span> 定义文档中的行内的块
 
+***
+
 # html格式化
 
-文本格式化标签：
+## 文本格式化标签
 
     <b> 定义粗体文本
     <big> 定义大号字
@@ -217,7 +289,7 @@ base, link, meta, script, style, title.
     <ins> 定义插入字
     <del> 定义删除字
 
-计算机输出标签：
+## 计算机输出标签
 
     <code> 定义计算机代码
     <kbd> 定义键盘码
@@ -226,7 +298,7 @@ base, link, meta, script, style, title.
     <var> 定义变量
     <pre> 定义预格式文本
 
-引用和术语标签：
+## 引用和术语标签
 
     <abbr> 定义缩写
     <p><abbr title="Hyper Text Markup Language">HTML</abbr>is perfect.</p>
@@ -239,7 +311,240 @@ base, link, meta, script, style, title.
     <cite> 定义著作的标题
     <dfn> 定义一个项目或缩写
 
+***
+
 # 表格
+
+    <table border="1">
+    <caption>The title</caption>
+      <tr>
+        <th>Month</th>
+        <th>Saving</th>
+      </tr>
+      <tr>
+        <td>Jan.</td>
+        <td>$100</td>
+      </tr>
+    </table>
+
+## table
+
+定义表格,支持事件属性和全局属性
+
+    # border属性规定表格边框宽度
+    # cellpadding属性规定单元边沿与其内容之间的空白
+    # cellspacing属性规定单元格之间的空白
+    # frame属性规定外侧边框的哪个部分是可见的
+    # rules属性规定内侧边框的哪个部分是可见的
+    # summary属性规定表格的摘要
+    # width属性规定表格的宽度
+
+## caption
+
+定义表格标题,支持样式，支持事件属性和全局属性
+
+## tr
+
+定义表格的行,支持事件属性和全局属性
+
+    # align属性定义表格内容对齐方式
+    # char属性规定根据哪个字符来进行文本对齐
+    # charoff属性规定第一个对齐字符的偏移量
+    # valign属性规定表格中内容的垂直对齐方式
+
+## th td
+
+th定义表格表头,支持全局属性和事件属性
+
+td定义表格单元,支持全局属性和事件属性
+
+    # abbr属性规定单元格中内容的缩写版本
+    # align属性规定单元格内容的水平对齐方式
+    # axis属性对单元进行分类
+    # char
+    # charoff
+    # colspan
+    # headers
+    # rowspan
+    # scope
+    # valign
+
+## col
+
+定义用于表格的属性
+
+## colgroup
+
+定义表格的组
+
+***
 
 # 列表
 
+## ol
+
+定义有序列表,支持全局属性和事件属性
+
+    <ol>
+      <li>first one</li>
+      <li>second one</li>
+    </ol>
+
+    # reversed属性规定列表顺序为降序
+    # start属性有序列表的起始值
+    # type属性规定在列表中使用的标记类型
+
+## ul
+
+定义无序列表,支持样式，支持全局属性和事件属性
+
+    <ul>
+      <li>coffee</li>
+      <li>tea</li>
+    <ul>
+
+## li
+
+定义列表项,支持样式，支持全局属性和事件属性
+
+## dl dt dd
+
+dl定义定义列表,dt定义定义项目,dd定义定义的描述,都支持全局属性和事件属性
+
+    <dl>
+      <dt>computer</dt>
+      <dd>used to monitor...</dd>
+    </dl>
+
+***
+
+# 网站布局
+
+使用html5的网站布局标签.
+
+    <head>
+    <style>
+    header {}
+    nav {}
+    section {}
+    footer {}
+    </style>
+    </head>
+
+    <body>
+    <header>...</header>
+    ...
+    <footer>...</footer>
+    </body>
+
+也可以使用id选择器：
+
+    <head>
+    <style>
+    #header {}
+    ...
+    #footer {}
+    </head>
+    </style>
+
+    <body>
+    <div id="header">...</div>
+    ...
+    <div id="footer">...</div>
+    </body>
+
+## header标签
+
+## nav标签
+
+## section标签
+
+## article标签
+
+## aside标签
+
+## footer标签
+
+## details标签
+
+## summary标签
+
+***
+
+# 框架
+
+框架可以在一个html添加多个页面。
+
+垂直框架：
+
+    <frameset cols="50%, 50%">
+      <frame src="a.html">
+      <frame src="b.html">
+    </frameset>
+
+水平框架：
+
+    <frameset rows="50%, 50%">
+      <frame src="a.html">
+      <frame src="b.html">
+    </frameset>
+
+混合框架：
+
+    <frameset rows="50%, 50%">
+    <frame src="a.html">
+
+    <frameset cols="%25, 75%">
+    <frame src="b.html">
+    <frame src="c.html">
+    </frameset>
+
+    </frameset>
+
+## frameset标签
+
+    # cols属性定义框架中列的数目和尺寸
+    # rows属性定义框架中行的数目和尺寸
+
+    # 标准属性：
+    id,class,title,style
+
+## frame标签
+
+定义frameset中的一个特定的窗口。
+
+    # frameborder属性规定是否现实框架周围的边框
+    # longdesc属性
+    # marginheight属性
+    # marginwidth属性
+    # name属性
+    # scrolling属性
+    # src属性
+
+    # 标准属性：
+    id,class,title,style
+
+## iframe标签
+
+内联框架。
+
+把内容放在iframe标签中，在无法理解iframe的浏览器显示。
+
+支持事件属性和全局属性。
+
+    # frameborder属性
+    # height属性
+    # width属性
+    # longdesc属性
+    # marginheight属性
+    # marginwidth属性
+    # name属性
+    # scrolling属性
+    # src属性
+    # sandbox
+    # seamless
+    # srcdoc
+
+***
+
+# 脚本

@@ -44,11 +44,9 @@ get-help/help的选项:
     -examples # 查看示例
     -full # 查看所有帮助
     -parameter # 查看选项的帮助
-    -detailed
-    -showwindow
-    -online
-
-***
+    -detailed # 查看详细信息
+    -online # 打开文档中的link
+    -showwindow # 用窗口打开
 
 # Helpfile
 
@@ -64,40 +62,92 @@ get-help/help的选项:
 
     Get-Help/Help about_<name>
 
+***
+
 # Cmdlets
 
-powershell的内置命令
+cmdlets是powershell的内置命令,类型是System.Management.Automation.CmdletInfo
+
+cmdlets的方法：
+
+    Equals
+    GetHashCode
+    GetType
+    ToString
+
+cmdlets的属性：
+
+    CommandType
+    DefaultParameterSet
+    Definition
+    HelpFile
+    ImplementingType
+    Module
+    ModuleName
+    Name
+    Noun
+    OutputType
+    Parameters
+    ParameterSets
+    PSSnapln
+    Verb
+    Visibility
+    DLL
+    HelpUri
+
+常用cmdlets命令：
 
     Get-Command -CommandType cmdlet # 查看所有cmdlet
 
-所有cmdlets：
-
     Get-Command
-    Get-Service
-    Get-Process
-    Get-Host
-    Get-Date
-    Get-Eventlog
-    Get-Random
-    Get-Hotfix
-    Get-Member
-    Out-File    # 重定向，也可以用>, >>
-    Out-Host
-    Out-Printer
-    Out-Default
-    Out-String
-    Out-Null
-    Out-GridView
-    Start-Transcript
-    Stop-Transcript
     Invoke-Command
-    ...
+    Measure-Command
+    Show-Command
+    Trace-Command
+
+    Get-Service
+    New-Service
+    Restart-Service
+    Resume-Service
+    Set-Service
+    Stop-Service
+    Suspend-Service
+
+    Get-Process
+    Debug-Process
+    Start-Process
+    Stop-Process
+    Wait-Process
+
+    Get-Member  # 查看属性
+    Add-Member
+
+    Get-Host
+    Read-Host
+    Write-Host
+    Out-Host
+
+    Out-Default
+    Out-File    # 重定向，也可以用>, >>
+    Out-GridView
+    Out-Null
+    Out-Printer
+    Out-String
+
+    Write-Debug
+    Write-Error
+    Write-EventLog
+    Write-Output
+    Write-Progress
+    Write-Verbose
+    Write-Warning
 
 # Function
 
 powershell内置函数
 
     Get-Command -CommandType function # 查看所有function
+    ls function:
 
 所有function：
 
@@ -109,102 +159,76 @@ powershell内置函数
     mkdir
     Get-Verb
     oss
-    A:
-    ...
-    Z:
     cd..
     cd\
     ImportSystemModules
     Pause
-
-    New-IseSnippet
-    Import-IseSnippet
-    Get-IseSnippet
-
+    A:
+    ...
+    Z:
     Get-FileHash
-
-    Configuration
-    Get-DscConfiguration
-    Test-DscConfiguration
-    Get-DscLocalConfigurationManager
-    Restore-DscConfiguration
-    New-DscCheckSum
-    Get-DscResource
-    Disable-PSTrace
-    Disable-PSWSManCombinedTrace
-    Disable-WSManTrace
-    Enable-PSTrace
-    Enable-PSWSManCombinedTrace
-    Enable-WSManTrace
-    Get-LogProperties
-    Set-LogProperties
-    Start-Trace
-    Stop-Trace
-
-    New-PSWorkflowSession
-    Invoke-Asworkflow
 
 # Alias
 
 powershell内置别名
 
     Get-Command -CommandType alias # 查看所有alias
+    dir alias: # 查看所有alias
+    ls alias: | where {$_.Definition.Startswith("Start")}
+
     Get-Alias # 查看所有alias
     Set-Alias
     New-Alias
+    Import-Alias
+    Export-Alias
 
-所有alias：
+常用alias：
 
     ForEach-Object    %/foreach
     Where-Object    ?/where
-    Add-Content    ac
-    Add-PSSnapin    asnp
-    Get-Content    cat
-    Set-Location    cd/chdir
+    Select-Object    select
+    Compare-Object    compare/diff
+    Tee-Object    tee
+    Sort-Object    sort
+
+    Set-Location    cd/chdir/sl
+    Get-Location    pwd/gl
+
     Clear-Content    clc
-    Clear-Host    clear/cls
+    Get-Content    cat/type/gc
+
     Clear-History    clhy
+    Get-History    h/history/ghy
+    Invoke-History    ihy/r
+
+    Clear-Variable    clv
+    Set-Variable    set/sv
+
     Clear-Item    cli
     Clear-ItemProperty    clp
-    Clear-Variable    clv
-    Connect-PSSession    cnsn
-    Compare-Object    compare/diff
     Copy-Item    copy/cp/cpi
-    Copy-ItemProperty    cpp
-    Invoke-WebRequest    curl
-    Convert-Path    cvpa
-    Disable-PSBreakpoint    dbp
-    Remove-Item    del/erase
-    Get-ChildItem    dir
-    Disconnect-PSSession    dnsn
-    Enable-PSBreakpoint    ebp
-    Write-Output    echo
-    Export-Alias    epal
-    Export-Csv    epcsv
-    Export-PSSession    epsn
-    Enter-PSSession    etsn
-    Exit-PSSession    exsn
-    Format-Custom    fc
-    Format-List    fl
-    Format-Table    ft
-    Format-Wide    fw
-    Get-Alis    gal
-    Get-PSBreakpoint    gbp
-    Get-Content    gc
-    Get-ChildItem    gci
-    Get-Command    gcm
-    Get-PSCallStack    gcs
-    Get-PSDrive    gdr
-    Get-History    ghy
-    Get-Item    gi
-    Get-Job    gjb
-    Get-Location    gl
-    Get-Member    gm
-    Get-Module    gmo
-    ...
+    Remove-Item    del/erase/rd/ri/rm/rmdir
+    Move-Item    mv/move/mi
+    Get-ChildItem    dir/ls/gci
+
+    Get-Process    ps/gps
+    Stop-Process    kill/spps
+    Start-Process    start/saps
+
+    Clear-Host    clear/cls
+
+    Write-Output    echo/write
+
+    New-PSDrive    mount
+
+    Invoke-WebRequest    curl/wget
+
+    Start-Sleep    sleep
+
     help    man
     mkdir    md
-    ...
+
+***
 
 # Provider
 
@@ -217,18 +241,19 @@ provider相关cmdlet：
 
 所有provider：
 
-    Alias
+    # 这三个驱动器可以用ls或dir直接查看内容
+    ls alias:
+    dir function:
+    Alias   # 别名驱动器
+    Function    # 函数驱动器
+    Variable    # 变量驱动器
+
+    # 这三个驱动器需要具体的驱动器,然后cd进去查看
+    FileSystem    # 文件系统驱动器
     Environment
-    FileSystem
-    Function
     Registry
-    Variable
 
     help/get-help <provider_name>    # 查看provider帮助
-    help Alias
-
-    cd <drive_name>:    # 进入到某个provider的驱动器
-    cd/chdir Alias:
 
 ***
 
@@ -240,12 +265,9 @@ object相关的cmdlet：
 
     Compare-Object
     ForEach-Object
-    Get-Wmiobject
     Group-Object
     Measure-Object
     New-Object
-    Register-ObjectEvent
-    Remove-WmiObject
     Select-Object
     Sort-Object
     Tee-Object
@@ -271,7 +293,7 @@ object转化：
     Get-Module
     get-module -listavailable # 查找安装的模块
     Import-Module
-    import-module sqlps # 导入mssql模块
+    import-module sqlps # 导入第三方mssql模块
     get-command -module sqlps # 查看模块中所有命令
     New-Module
     Remove-Module

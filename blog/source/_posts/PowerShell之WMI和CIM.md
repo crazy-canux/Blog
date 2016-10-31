@@ -17,9 +17,9 @@ permalink:
 # WMI
 
     Get-WmiObject
+    Remove-WmiObject
     Invoke-WmiMethod
     Register-WmiEvent
-    Remove-WmiObject
     Set-WmiInstance
 
     # 用powershell跑一个wql。

@@ -37,7 +37,7 @@ reST是易读所见即所得的文本标记语言，格式类似markdown。
     Subtitle
     --------
 
-三个以上的-表示分割线：
+四个或以上的-表示分割线：
 
     ----
 
@@ -59,9 +59,56 @@ reST是易读所见即所得的文本标记语言，格式类似markdown。
         :heigh: 781
         :align: center
 
-四个空格表示代码块：
 
-    source code
+原样引用块：
+
+双冒号加四个空格
+
+    source code::
 
         print("source")
         return 0
+
+文档测试块：
+
+    >>> print doctest block.
+
+无序列表：
+
+    bullet lists:
+
+    - This is item 1
+    - This is item 2
+
+有序列表：
+
+    enumerated lists:
+
+    1. this is first item
+    2. this is second item
+
+定义列表：
+
+    definition lists:
+
+    what
+        Definition lists.
+
+    how
+        The term is a one-line phrase.
+
+域列表：
+
+    field lists:
+
+    :Authors:
+        Canux
+
+    :Version: 1.0.0
+
+选项列表：
+
+    option lists:
+
+    -a    option "a"
+    -b file    option for filename

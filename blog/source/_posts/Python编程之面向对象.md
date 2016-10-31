@@ -11,4 +11,16 @@ categories:
 permalink:
 ---
 
+# 面向对象
+
 # 类
+
+# 封装
+
+# 继承
+
+## 多继承
+
+<https://github.com/crazy-canux/pythonMy/blob/master/misc/multiple_inherit.py>
+
+# 多态

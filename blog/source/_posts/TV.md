@@ -47,13 +47,21 @@ E01 - E13
 
 <http://cn163.net/archives/23963/#tab-widget1>
 
-## 西部世界
+## 西部世界S01
 
 E01 - E10
 
 下载地址：
 
 <http://www.ttmeiju.com/meiju/Westworld.html>
+
+## 行尸走肉S07
+
+E01 - E16
+
+下载地址：
+
+<http://cn163.net/archives/23683/>
 
 ## 罪恶之夜S01
 

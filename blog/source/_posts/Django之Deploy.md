@@ -67,8 +67,8 @@ Fedora创建网站的配置文件/etc/httpd/conf.d/mysite.conf:
 
     # Include the project dir, can not inside VirtualHost section.
     WSGIPythonPath /home/user/mysite
-    # If use virtualenv
-    # WSGIPythonPath /home/user/mysite:/home/user/mysite/mysite/lib/python2.7/site-packages
+    # If use virtualenv and named venv
+    # WSGIPythonPath /home/user/mysite:/home/user/mysite/venv/lib/python2.7/site-packages
 
     <VirtualHost *:80>
         ServerName localhost
@@ -91,8 +91,8 @@ Fedora创建网站的配置文件/etc/httpd/conf.d/mysite.conf:
 
         # If use daemon mode to run WSGI process.
         WSGIDaemonProcess mysite python-path=/home/user/mysite
-        # If use virtualenv.
-        # WSGIDaemonProcess mysite python-path=/home/user/mysite:/home/user/mysite/mysite/lib/python2.7/site-packages
+        # If use virtualenv and named venv
+        # WSGIDaemonProcess mysite python-path=/home/user/mysite:/home/user/mysite/venv/lib/python2.7/site-packages
 
         WSGIScriptAlias / /home/user/mysite/mysite/wsgi.py
 
