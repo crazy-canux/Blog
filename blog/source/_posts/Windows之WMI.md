@@ -12,7 +12,7 @@ categories:
 permalink:
 ---
 
-# WMI/CIM
+# WMI
 
 WMI: windows management instrumentation.
 

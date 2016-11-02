@@ -55,9 +55,15 @@ html属性和值大小写不敏感，推荐使用小写,始终给属性值加引
 
 <http://www.w3school.com.cn/tags/html_ref_eventattributes.asp>
 
+## html字符实体
+
+参考：
+
+<http://www.w3school.com.cn/tags/html_ref_entities.html>
+
 ***
 
-# html标题
+# DOCTYPE
 
     # 文档类型
     <!DOCTYPE html>
@@ -73,12 +79,12 @@ html属性和值大小写不敏感，推荐使用小写,始终给属性值加引
 
     </html>
 
-## 注释
+# 注释
 
     # 注释, 浏览器会忽略注释,没有任何属性
     <!-- This is a comment -->
 
-## html
+# html
 
     # html文档,支持全局属性
     <html>
@@ -88,6 +94,10 @@ html属性和值大小写不敏感，推荐使用小写,始终给属性值加引
     # mainfest属性，定义一个url，描述文档缓存信息
 
     # xmlns属性，定义XML的namespace属性
+
+***
+
+# html头部
 
 ## head
 
@@ -103,6 +113,32 @@ html属性和值大小写不敏感，推荐使用小写,始终给属性值加引
     </head>
 
     # profile属性
+
+## title
+
+定义文档标题，支持全局属性。
+
+    # dir属性规定元素中内容的文本方向
+    # lang属性规定元素中内容的语言编码
+    # xml:lang属性规定xhtml文档中元素内容的语言编码
+
+## base
+
+定义页面所有的链接的默认地址和默认目标。
+
+    # href属性规定页面中所有相对链接的基准url
+    # target属性规定在何处打开页面中的链接
+
+## meta
+
+定义元数据,支持全局属性
+
+    # content属性
+    # http-equiv
+    # name
+    # scheme
+
+***
 
 ## body
 
@@ -149,6 +185,17 @@ html属性和值大小写不敏感，推荐使用小写,始终给属性值加引
 ***
 
 # 链接和图像
+
+URL: Uniform Resource Locator
+
+    scheme://host.domain:port/path/filename
+    scheme: http/https/ftp/file
+
+url只能使用ASCII字符集。
+
+参考：
+
+<http://www.w3school.com.cn/tags/html_ref_urlencode.html>
 
 ## a
 
@@ -548,3 +595,25 @@ dl定义定义列表,dt定义定义项目,dd定义定义的描述,都支持全�
 ***
 
 # 脚本
+
+在html中插入javascript脚本。
+
+## script标签
+
+定义客户端脚本，支持全局属性
+
+    <script type="text/javascript">
+    document.write("hello javascript")
+    </script>
+
+    # type属性指定脚本MIME类型
+    # async
+    # charset
+    # defer
+    # src
+
+## noscript标签
+
+为不支持客户端脚本的浏览器定义替代内容,支持全局属性
+
+    <noscript>Your browser does not support javascript</noscript>

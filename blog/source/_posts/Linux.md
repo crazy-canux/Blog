@@ -125,3 +125,11 @@ lightDM
 查看C和Linux的标准
 
     man standards
+
+# Grub
+
+引导程序。
+
+windows的引导程序是NTloader。
+
+linux/unix的引导程序有lilo和grub。

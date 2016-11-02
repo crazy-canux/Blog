@@ -120,15 +120,14 @@ setuotppls是第三方模块, 高级包管理工具，需要安装：
 
     include LICENSE README.rst AUTHORS.rst CONTRIBUTING.rst
     recursive-include docs * OR graft docs
-    graft tests
     graft examples
     global-exclude *.py[co]
     prune docs/_build
     prune docs/_themes
 
-创建__init__.py文件：
+创建\_\_init\_\_.py文件：
 
-位于project/project/__init__.py，安装后用import导入，help(project)看到的信息。
+位于project/project/\_\_init\_\_.py，安装后用import导入，help(project)看到的信息。
 
     NAME: 自动获取的项目名字 - 该文件注释的总结部分
     FILE: /install_path/project/project/__init__.py
@@ -166,7 +165,7 @@ setuotppls是第三方模块, 高级包管理工具，需要安装：
     username = <username>
     password = <password>
 
-在索引中注册项目：
+在索引中注册项目(不再支持，直接upload)：
 
     $python setup.py register -r pypi
 
