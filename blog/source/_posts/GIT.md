@@ -75,7 +75,14 @@ git有四个协议：
 
         file:///path/to/project.git
 
-2. http协议
+2. SSH协议
+
+    拷贝ssh的公钥后不需要输入用户名和密码
+
+        ssh://git@github.com/<username>/<project>.git
+        git@github.com:<username>/<project>.git
+
+3. http协议
 
     默认需要手动输入远程仓库的用户名和密码
 
@@ -90,13 +97,6 @@ git有四个协议：
         # In gitconfig file
         [http]
             proxy = http://<proxy>:<port>
-
-3. SSH协议
-
-    拷贝ssh的公钥后不能输入用户名和密码
-
-        ssh://git@github.com/<username>/<project>.git
-        git@github.com:<username>/<project>.git
 
 4. Git协议
 

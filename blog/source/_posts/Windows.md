@@ -29,15 +29,19 @@ FAT是msdos的文件系统
 
 NTFS是msnt的文件系统
 
+***
+
 # windows相关项目：
 
 ## choco
 
-windows的apt。
+<https://github.com/chocolatey>
 
-replacement of [chocolatey](https://github.com/chocolatey/chocolatey)
+windows的apt/yum。
 
-<https://github.com/chocolatey/choco>
+[choco](https://github.com/chocolatey/choco) is replacement of [chocolatey](https://github.com/chocolatey/chocolatey)
+
+    choco install openssh
 
 ## cmder
 

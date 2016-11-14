@@ -22,20 +22,31 @@ reST是易读所见即所得的文本标记语言，格式类似markdown。
     Title
     =====
 
+    =====
+    Title
+    =====
+
 副标题：
 
     Subtitle
     -----
 
-下划线或者上下划线：
-
-    =====
-    Title
-    =====
-
     --------
     Subtitle
     --------
+
+次级标题：
+
+    Content
+    ^^^^^^^
+
+星号斜体强调：
+
+    *text*
+
+双星号加粗重点强调：
+
+    **text**
 
 四个或以上的-表示分割线：
 
@@ -58,7 +69,6 @@ reST是易读所见即所得的文本标记语言，格式类似markdown。
         :width: 679
         :heigh: 781
         :align: center
-
 
 原样引用块：
 
@@ -112,3 +122,8 @@ reST是易读所见即所得的文本标记语言，格式类似markdown。
 
     -a    option "a"
     -b file    option for filename
+
+评论：
+
+    .. This is commnet.
+       As well.

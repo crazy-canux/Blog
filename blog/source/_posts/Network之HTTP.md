@@ -39,10 +39,35 @@ https port: 443
 
     import requests
 
-    get(url=None, headers=None, files=None, data=None, params=None, auth=None, cookies=None, hooks=None, json=None) # 返回一个Response类型的对象
-    headers = { 'User-Agent' : 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)' }
-    r = requests.get('http://www.goole.com', headers=headers)
-    # Method:
+    # Method Request, 返回requests.Response类型的对象。
+    get(url, params=None, **kwargs)
+    post(url, data=None, json=None, **kwargs)
+    put(url, data=None, **kwargs)
+    patch(url, data=None, **kwargs)
+    delete(url, **kwargs)
+    head(url, **kwargs)
+    options(url, **kwargs)
+
+    # **kwargs
+    # dict
+    params=None
+    data=None
+    headers=None
+    cookies=None
+    files=None
+    proxies=None
+    # str/json
+    json=None
+    # tuple
+    auth=('user', 'password')
+    timeout=(connect timeout, read timeout)
+    cert=(cert.pem, key.pem)
+    # bool
+    allow_redirects=True
+    verify=True
+    stream=True
+
+    # Method Response:
     r.close()
     r.iter_content(chunk_size=1, decode_unicode=False)
     r.iter_lines(chunk_size=512, decode_unicode=None, delimiter=None)
@@ -50,8 +75,8 @@ https port: 443
     r.raise_for_status()
     # Data:
     r.apparent_encoding
-    r.content # 响应内容的bytes形式
-    r.text # 响应内容的unicode形式
+    r.content # 返回str类型
+    r.text # 返回unicode类型
     r.is_permanent_redirect
     r.is_redirect
     r.links

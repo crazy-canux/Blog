@@ -23,6 +23,10 @@ My monitoring project on github:
 
 <https://github.com/crazy-canux/awesome-monitoring>
 
+My monitoring plugin project on github:
+
+<https://github.com/crazy-canux/pymonitoringplugins>
+
 ***
 
 # **Nagios**

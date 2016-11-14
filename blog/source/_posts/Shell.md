@@ -43,23 +43,29 @@ bash的优化项目bash-it：
 
 <https://github.com/Bash-it/bash-it>
 
+## zsh
+
+<http://www.zsh.org/>
+
 ## oh-my-zsh
-
-安装zsh：
-
-    sudo apt-get install zsh
-
-zsh的优化项目oh-my-zsh:
 
 <https://github.com/robbyrussell/oh-my-zsh>
 
+## fish-shell
+
+<https://github.com/fish-shell/fish-shell>
+
+## oh-myfish
+
+<https://github.com/oh-my-fish/oh-my-fish>
+
 ***
 
-# bash命令
+# shell(bash)命令
 
     bash --help
 
 ***
 
-# bash script
+# shell(bash) script
 

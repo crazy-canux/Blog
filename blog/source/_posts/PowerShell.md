@@ -21,7 +21,7 @@ ISE: script editor and console combination
 
 Version:
 
-2.0,3.0,4.0.
+2.0,3.0,4.0,5.0
 
 C:\windows\System32\powershell 存放64位powershell
 
@@ -46,11 +46,17 @@ Install/Update:
 
 # powershell相关项目
 
-## psget
+<https://github.com/Microsoft>
 
-安装powershell的模块
+<https://github.com/PowerShell>
 
-<https://github.com/psget/psget>
+<https://github.com/PowerShellOrg>
+
+## win32-openssh
+
+windows的SSH。
+
+<https://github.com/PowerShell/Win32-OpenSSH>
 
 ***
 

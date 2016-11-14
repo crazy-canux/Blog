@@ -185,7 +185,7 @@ C写的wsgi应用服务器。
 
 ***
 
-# Gunicon
+# nginx + Gunicon
 
 <https://github.com/benoitc/gunicorn>
 

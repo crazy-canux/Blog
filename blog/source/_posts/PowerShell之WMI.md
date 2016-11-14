@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PowerShell之WMI和CIM
+title: PowerShell之WMI
 comments: true
 date: 2016-07-18 14:54:39
 updated:

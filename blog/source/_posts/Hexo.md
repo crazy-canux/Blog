@@ -169,7 +169,7 @@ ubuntu/debian安装：
 
 ## 写博文
 
-    hexo new post test
+    hexo new post <article-name>
 
 编辑这篇文章。
 

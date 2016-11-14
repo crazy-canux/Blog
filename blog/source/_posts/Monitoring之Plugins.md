@@ -23,9 +23,9 @@ Office project:
 
 <https://www.monitoring-plugins.org/>
 
-My project:
+My plugin project:
 
-<https://github.com/crazy-canux/xplugin>
+<https://github.com/crazy-canux/pymonitoringplugins>
 
 Open source project:
 
@@ -109,6 +109,12 @@ Open source project:
 # Storage monitoring
 
 * check_snmp_storage.pl
+
+    返回用了多少空间。
+
+* check_disk
+
+    返回剩余多少空间。
 
 # Log monitoring
 

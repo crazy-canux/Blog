@@ -391,14 +391,27 @@ THROW error, 'msg', number;
 
 安装mssql之后提供mssql的wmi的类：
 
+通过运行wql获取数据库属性。
+
     select * from Win32_PerfFormattedData_MSSQLSERVER_SQLServerLocks
 
 # powershell
 
-安装mssql之后提供mssql的powershell模块：
+通过powershell运行sql语句或store procedure：
+
+    $connection = new-object System.Data.SqlClient.SqlConnection "Server=$server;Database=$database";Trusted_Connection=True"
+    $connection.Open()
+    $sql = "select @@version"
+    $command = new-object System.Data.SqlClient.SqlCommand $sql $connection
+    $return = $command.ExecuteReader()
+
+安装mssql之后提供mssql的powershell模块sqlps：
+
+通过模块的命令运行sql语句和store procedure。
 
     import-module sqlps
     get-command -module sqlps
+    invoke-sqlcmd -ServerInstance $serverinstance -Database $database -Query $sql
 
 ***
 
@@ -425,6 +438,8 @@ THROW error, 'msg', number;
             host = ntmachine.domain.com
             port = 1433
             tds version = 7.0
+
+***
 
 # Python
 
@@ -485,6 +500,8 @@ linux连接
     ...
     cursor.close()
     cnxn.close()
+
+***
 
 # java
 
