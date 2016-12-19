@@ -5,7 +5,10 @@ comments: true
 date: 2016-09-13 01:39:34
 updated:
 tags:
+- http
+- https
 categories:
+- Network
 permalink:
 ---
 
@@ -14,6 +17,8 @@ permalink:
 http port: 80
 
 https port: 443
+
+***
 
 # Python处理协议的第三方库
 
@@ -89,6 +94,9 @@ https port: 443
     r.encoding # 查看或设置编码
     r.raw
     r.cookies
+    r.elapsed.seconds/microseconds/days
+
+***
 
 # Python处理数据的第三方库
 
@@ -120,7 +128,7 @@ https port: 443
     BeautifulSoup(markup='', features=None, builder=None, parse_only=None, from_encoding=None, exclude_encodings=None, **kwargs)
     soup = BeautifulSoup(r.content, 'lxml') # 返回BeautifulSoup类型对象, 默认html格式
     soup = BeautifulSoup(r.content, "xml") # xml格式
-    soup = BeautifulSoup(r.content, ["lxml-xml"]) # 同上
+    soup = BeautifulSoup(r.content, "lxml-xml") # 同上
     soup = BeautifulSoup(r.content, "html5lib") # html5格式
     # BeautifulSoup 解析出的python对象有四类： Tag, NavigableString, BeautifulSoup, Comment
     prettify(self, encoding=None, formatter='minimal')
@@ -128,7 +136,7 @@ https port: 443
     get_text(self, separator=u'', strip=False, types=(<class 'bs4.element.NavigableString'>, <class 'bs4.element.CData'>))
     soup.get_text() # 获取tag中所有内容，以unicode字符串返回
     find(self, name=None, attrs={}, recursive=True, text=None, **kwargs) # 搜索当前节点和子孙节点，查找第一个,返回一个Tag对象
-    find_all(self, name=None, attrs={}, recursive=True, text=None, limit=None, **kwargs) # 搜索当前节点和子孙节点，查找所有的, 返回Tag对象的列表
+    find_all(self, name=None, attrs={}, recursive=True, text=None, limit=None, **kwargs) # 搜索所有节点，返回Tag对象的列表
     find_parent(self, name=None, attrs={}, **kwargs) # 搜索当前节点的父辈节点
     find_parents(self, name=None, attrs={}, limit=None, **kwargs) # 搜索当前节点的父辈节点
     find_next_sibling(self, name=None, attrs={}, text=None, **kwargs) # 往后搜索当前节点兄弟节点
@@ -165,11 +173,14 @@ https port: 443
 XML和HTML的解析器
 
     from lxml import etree
+
     etree.fromstring(text, parser=None, base_url=None) # text是一个string，返回xml的根节点lxml.etree._Element类型的迭代器
     etree.Element(_tag, attrib=None, nsmap=None, **_extra) # 创建一个Element对象, _tag指定节点，比如xml。
-    root = etree.Element('xml')
-    etree.SubElement(_parent, _tag, attrib=None, nsmap=None, **_extra) # 网父节点添加子节点，返回Element实例
-    tmproot = etree.SubElement(root, _tag)
+
+    xml_root = etree.Element('xml')
+    html_root = etree.Element('html')
+    etree.SubElement(_parent, _tag, attrib=None, nsmap=None, **_extra) # 往父节点添加子节点，返回Element实例
+    tmp_root = etree.SubElement(xml_root, _tag)
 
 ## html5lib
 

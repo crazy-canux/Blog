@@ -26,6 +26,8 @@ ANSI C 和 ISO C是对通用C语言的接口的定义。
 
 <http://www.open-std.org/jtc1/sc22/wg14/www/standards>
 
+***
+
 # C89和C99支持的头文件和函数
 
 ## <assert.h>
@@ -75,6 +77,8 @@ ANSI C 和 ISO C是对通用C语言的接口的定义。
 ## <wchar.h>
 
 ## <wctype.h>
+
+***
 
 # C11支持的头文件和函数
 

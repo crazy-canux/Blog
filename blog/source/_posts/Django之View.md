@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Django之View
+title: Django之View&URL
 comments: true
 date: 2016-10-04 04:20:39
 updated:

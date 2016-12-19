@@ -51,10 +51,13 @@ Open source project:
     --ssl=1/-S # https需要ssl
     -s SEARCH
     -e SEARCH,SEARCH...
-    -l # 用在-r或-R前面
+    -l # 用在-r或-R前面,表示可以在多行进行正则匹配
     -r # 正则匹配
     -R # 大小写不敏感的正则匹配
-    -C # 检查证书
+    -C # 检查证书, 不检查URL
+    -t # timeout.
+    -w # warning response time
+    -c # critical response time
 
 ***
 

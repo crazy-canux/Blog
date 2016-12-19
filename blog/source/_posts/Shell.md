@@ -7,6 +7,8 @@ updated:
 tags:
 - Shell
 - Bash
+- Zsh
+- Fish
 categories:
 - Linux
 - Shell
@@ -59,6 +61,10 @@ bash的优化项目bash-it：
 
 <https://github.com/oh-my-fish/oh-my-fish>
 
+## shellcheck
+
+<https://github.com/koalaman/shellcheck>
+
 ***
 
 # shell(bash)命令
@@ -68,4 +74,17 @@ bash的优化项目bash-it：
 ***
 
 # shell(bash) script
+
+# shell注释
+
+单行注释：
+
+    # comment
+
+多行注释：
+
+    :<<!EOF!
+    comment
+    !EOF! can be any symbol and character.
+    !EOF!
 

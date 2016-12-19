@@ -12,11 +12,19 @@ categories:
 permalink:
 ---
 
-# WMI
+# WMI/CIM
 
 WMI: windows management instrumentation.
 
+<https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx>
+
 CIM: common information model.
+
+<https://msdn.microsoft.com/en-us/library/aa389234(v=vs.85).aspx>
+
+DCOM: distributed COM.
+
+wmi通过DCOM远程连接，但是DCOM不能绕过防火墙。
 
 命名空间:
 
@@ -38,7 +46,9 @@ windows怎样设置wmi：
 
 <https://technet.microsoft.com/en-us/library/cc771551(v=ws.11).aspx>
 
-给wmi设置端口：
+给wmi设置fix port(server in DMZ)：
+
+使用过程中不需要指定端口。
 
 <https://msdn.microsoft.com/zh-cn/library/bb219447(v=vs.85).aspx>
 

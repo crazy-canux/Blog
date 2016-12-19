@@ -15,6 +15,10 @@ permalink:
 
 Windows Remote Management
 
+WinRM是WSMAN(WS-Management Protocol)的增强版。
+
+WinRM是基于SOAP的防火墙友好的远程协议。
+
 <https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx>
 
 windows自带winrm，但是需要设置一个listener, 默认端口5985,建立一个http的连接。

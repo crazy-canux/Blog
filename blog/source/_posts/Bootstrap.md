@@ -7,7 +7,6 @@ updated:
 tags:
 categories:
 - Web
-- Bootstrap
 permalink:
 ---
 

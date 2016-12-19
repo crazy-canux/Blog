@@ -5,24 +5,31 @@ comments: true
 date: 2016-07-28 16:08:54
 updated:
 tags:
-- vsftp
+- ftp
 categories:
 - Network
 permalink:
 ---
 
-# vsftpd
+# ftp
 
-<https://security.appspot.com/vsftpd.html>
+ftp服务器有很多：
+1. vsftpd
+2. proftpd
+3. pyftpdlib
+
+安装ftp:
 
     sudo apt-get install vsftpd
 
 ftp的网页浏览格式：
 
 ftp://host/path
-ftp://username:password@host/path
+ftp://username:password@host:port/path
 
 windows开启ftp服务即可。
+
+***
 
 # python
 
@@ -34,12 +41,20 @@ ftplib模块用来编写ftp客户端程序：
 
     from ftplib import FTP
 
-    ftp = FTP(self, host='', user='', passwd='', acct='', timeout=<object>)
+    FTP(self, host='', user='', passwd='', acct='', timeout=<object>)
+    ftp = FTP()
+
+    # ftp实例的方法
     connect(self, host='', port=0, timeout=-999)    连接到主机
     login(self, user='', passwd='', acct='')    登录
     acct(self, password)
     cwd(self, dirname)    更改工作路径
+
     dir(self, *args)    列出路径（文件也会输出）, 类似于LIST
+    # 获取ftp一个路径下的文件和子目录
+    data = []
+    ftp.dir(path, data.append)
+
     nlst(self, *args)   列出给定路径的文件（目录也会输出）， 类似于NLST
     pwd(self) 返回当前工作路径
     size(self, filename) 获取文件大小
@@ -57,9 +72,15 @@ ftplib模块用来编写ftp客户端程序：
     rename(self, fromname, toname)
 
     retrbinary(self, cmd, callback, blocksize=8192, rest=None)
+    # 二进制下载文件
     # cmd: a RETR command, like "RETR filename"
+    # 下载ftp服务器的文件
+    f = open(filename, 'wb')
+    ftp.retrbinary("RETR %s" filename, f.write)
+    f.close()
 
     retrlines(self, cmd, callback=None)
+    # 文本下载文件
     # cmd: a RETR, LIST, NLST, or MLSD command.
 
     rmd(self, dirname)
@@ -82,8 +103,6 @@ ftplib模块用来编写ftp客户端程序：
     close(self)    关闭连接
     quit(self) 退出并关闭连接
 
-    # get the directory and file
-    data = []
-    ftp.dir(path, data.append)
+***
 
 # java

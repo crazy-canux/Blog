@@ -23,6 +23,8 @@ SMI
 
     sudo apt-get install snmp snmpd
 
+***
+
 # Python
 
 ## pysnmp
@@ -35,7 +37,9 @@ python的snmp包[pysnmp](https://github.com/etingof/pysnmp)
 
 [netsnmp](http://net-snmp.sourceforge.net/wiki/index.php/Python_Bindings)是[net-snmp](http://www.net-snmp.org/)内置的包。
 
-    import netsnmp
+需要安装net-snmp才能安装使用python包netsnmp。
+
+***
 
 # java
 

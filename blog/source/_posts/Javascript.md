@@ -11,3 +11,10 @@ categories:
 - Javascript
 permalink:
 ---
+
+# JavaScript
+
+javascript包括三部分:
+1. ECMAScript核心
+2. DOM文档对象模型
+3. BOM浏览器对象模型

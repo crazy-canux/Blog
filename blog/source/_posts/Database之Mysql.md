@@ -96,20 +96,12 @@ nowarning (\w) Don't show warnings after every statement.
 
 创建/删除用户：
 
-    CREATE USER 'username'@'mysqlserver' IDENTIFIED BY 'password';
+    CREATE USER 'username'@'hostname' IDENTIFIED BY 'password';
     DROP USER 'username'@'hostname';
-
-对本地登陆的用户授权/撤回：
-
-    GRANT ALL ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';
 
 设置和更改密码：
 
     UPDATE mysql.user SET PASSWORD('password') WHRER USER='username' AND HOST='hostname';
-
-重载权限表：
-
-    FLUSH PRIVILEGES;
 
 查看所有数据库：
 
@@ -127,6 +119,11 @@ nowarning (\w) Don't show warnings after every statement.
 使用数据库：
 
     use databasename
+
+指定数据库对用户授权：
+
+    GRANT ALL PRIVILEGES ON databasename.* TO "username"@"hostname";
+    FLUSH PRIVILEGES;
 
 查看所有表：
 

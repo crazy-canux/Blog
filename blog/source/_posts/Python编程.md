@@ -16,3 +16,18 @@ permalink:
 # 控制流
 
 python没有switch。
+
+# 注释
+
+单行注释：
+
+    # comment
+
+多行注释(文档注释)：
+
+    """
+    comment1
+
+    comment2
+    comment3
+    """

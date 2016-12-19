@@ -52,6 +52,8 @@ POSIX.1-2008/SUSv4
 
 <https://cygwin.com/index.html>
 
+***
+
 # POSIX标准定义的必须头文件
 
 ## <dirent.h>
@@ -104,6 +106,8 @@ POSIX.1-2008/SUSv4
 
 ## <wait.h>
 
+***
+
 # POSIX标准定义的可选头文件
 
 ## <aio.h>
@@ -121,6 +125,8 @@ POSIX.1-2008/SUSv4
 ## <strops.h>
 
 ## <trace.h>
+
+***
 
 # POSIX标准定义的XSI扩展头文件
 

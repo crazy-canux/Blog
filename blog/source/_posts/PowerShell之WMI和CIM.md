@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PowerShell之WMI
+title: PowerShell之WMI和CIM
 comments: true
 date: 2016-07-18 14:54:39
 updated:
@@ -27,7 +27,7 @@ permalink:
 
 # CIM
 
-powershell建议使用cim。
+powershell建议使用CIM。
 
     Get-CimClass
     Get-CimInstance

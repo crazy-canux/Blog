@@ -22,13 +22,17 @@ Linux：Shell
 
 Tools：Vim/Git/Tmux
 
-back-end：C/Java/Python
+back-end：Python/Java/C
 
 front-end：JavaScript/Html/Css
 
-Database：Sql/Mysql/MSSQL
+Database：Mysql/MSSQL/Oracle
 
-Interested：BigData、CloudComputing、DevOps、Web。
+
+
+Be good at: DevOps, Web
+
+Interested in：BigData、CloudComputing
 
 ***
 

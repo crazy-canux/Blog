@@ -13,6 +13,38 @@ categories:
 permalink:
 ---
 
-# C语言简介
+# C语言概述
 
-# C语言语法
+***
+
+# C基本语法
+
+# C注释
+
+单行注释：
+
+    // comment
+
+    /* comment */
+
+多行注释：
+
+    /*
+     * comment1
+     * commenet2
+     */
+
+# 文档
+
+C程序可以用doxygen从程序中提取文档。
+
+文档注释：
+
+    /**
+     * @file
+     * @brief
+     * @author
+     * @date
+     * @version
+     * @copyright
+     */

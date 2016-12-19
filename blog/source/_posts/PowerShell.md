@@ -83,11 +83,11 @@ powershell的安全策略：
 
 # 注释
 
-行注释：
+单行注释：
 
     # comment
 
-块注释/多行注释：
+多行注释(文档注释)：
 
     <#
     comment1
@@ -218,6 +218,8 @@ hash类型。
     -or
     -xor
 
+***
+
 # 控制流
 
 powershell支持foreach循环。
@@ -281,6 +283,8 @@ continue语句：
 
 continue用于循环语句。
 
+***
+
 # 函数
 
 函数：
@@ -311,6 +315,8 @@ continue用于循环语句。
     [ValidateSet(1,3,8)] # 给出参数的可选值
     [alias("id", "nunber")] # 给参数指定别名
 
+***
+
 # 模块
 
 系统模块路径：
@@ -324,6 +330,8 @@ continue用于循环语句。
 导入用户自己路径下的模块：
 
     Import-Module -name C:\Modules\mytools
+
+***
 
 # 异常和错误处理
 
@@ -359,6 +367,8 @@ continue用于循环语句。
 
     $Condition = {if ($a -is [int] -and $a -gt 100) {Write-Host "`$a was modified"}}
     $Breakpoint = Set-PSBreakpoint -Variable a -Mode Write -Script $psise.CurrentFile.FullPath -Action $Condition
+
+***
 
 # 远程处理
 

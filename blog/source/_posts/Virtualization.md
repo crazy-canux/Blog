@@ -1,31 +1,40 @@
 ---
 layout: post
-title: Virtualization之vSphere
+title: Virtualization
 comments: true
-date: 2016-07-20 17:10:34
+date: 2016-04-05 21:47:54
 updated:
 tags:
-- dell
-- vmware
-- vsphere
+- docker
+- vagrant
 categories:
 - Virtualization
 permalink:
 ---
 
-# vSphere
+# Vagrant
+
+# Docker
+
+***
+
+# Kvm
+
+# Xen(Citrix)
+
+# HyperV(MicroSoft)
+
+# vSphere(Vmware/Dell)
 
 vmware的虚拟化平台。
 
+## python
+
 pyVmomi is the Python SDK for the VMware vSphere API that allows you to manage ESX, ESXi, and vCenter.
-
-
-# python
 
 <https://github.com/vmware/pyvmomi>
 
     pip install pyvmomi
-
 
     from pyVmomi import vim
     from pyVim import connect
@@ -39,12 +48,3 @@ pyVmomi is the Python SDK for the VMware vSphere API that allows you to manage E
             if vm.name == "vmname":
                 return vm
         return None
-
-
-
-
-
-
-
-
-

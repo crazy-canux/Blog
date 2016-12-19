@@ -1,12 +1,10 @@
 ---
 layout: post
-title: BigData总结
+title: Shell之awk
 comments: true
-date: 2016-04-05 21:55:53
+date: 2016-12-14 00:55:37
 updated:
 tags:
-- bigdata
 categories:
-- Bigdata
 permalink:
 ---
