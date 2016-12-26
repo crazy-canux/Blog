@@ -28,6 +28,22 @@ The Open Monitoring Distribution
 4. 基于mod-gearman/MK Livestatus/thruk的分布式监控。
 5. 其它组件。
 
+# Gearman
+
+Gearman is the nervous system for how distributed processing communicates.
+
+Gearman Job Server:
+
+<http://gearman.org/>
+
+<https://github.com/gearman/gearmand>
+
+Gearman worker:
+
+<http://www.mod-gearman.org/>
+
+<https://github.com/sni/mod_gearman>
+
 # rrdtools
 
 >RRDtool is a little program for easily maintaining a database of time-series

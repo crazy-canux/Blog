@@ -45,6 +45,10 @@ GUI工具： mysql workbench
     mysql -u username -p
     mysql -u <mysql server> -P <port> -u <username> -p
 
+导出数据命令:
+
+    $mysqldump -u username -p databasename > dump.sql
+
 # mysql的命令
 
 先用mysql命令进入mysql的命令行。
@@ -68,6 +72,9 @@ print     (\p) Print current command.
 prompt    (\R) Change your mysql prompt.
 rehash    (\#) Rebuild completion hash.
 source    (\.) Execute an SQL script file. Takes a file name as an argument.
+
+    mysql> source /path/to/dump.sql # 从sql导入数据
+
 status    (\s) Get status information from the server.
 system    (\!) Execute a system shell command.
 tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.

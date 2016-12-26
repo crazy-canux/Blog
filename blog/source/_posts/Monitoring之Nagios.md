@@ -278,7 +278,7 @@ graphic reports from the data.
 
 ## Mod gearman
 
-labs consol的分布式监控组件。
+labs consol的分布式监控组件, gearman的worker。
 
 <http://www.mod-gearman.org/>
 

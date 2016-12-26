@@ -38,7 +38,13 @@ windows自带winrm，但是需要设置一个listener, 默认端口5985,建立�
 
     cmd> winrm enumerate winrm/config/listener
 
-设置auth：
+# 权限管理
+
+windows的三种网络安全协议。
+
+basic是基本的明文协议, NTLM是早期的安全协议,Kerberos是最新的安全协议.
+
+设置basic的auth(默认关闭)：
 
     cmd> winrm set winrm/config/client/auth @{Basic="true"}
     cmd> winrm set winrm/config/service/auth @{Basic="true"}
@@ -48,9 +54,13 @@ windows自带winrm，但是需要设置一个listener, 默认端口5985,建立�
 
     cmd> winrm get winrm/config/service
 
-# ntlm和kerberos
+Kerberos和ntlm默认是打开的:
 
-windows的网络安全协议。
+    Basic = true
+    Kerberos = true
+    Negotiate = true
+
+Negotiate默认选择NTLM,除非这个应用指明使用Kerberos认证.
 
 # python
 

@@ -15,25 +15,39 @@ permalink:
 
 开发的一些工具
 
-# Integration
+***
 
-## continuous integration
+# continuous integration
 
 * travis CI
 
-测试和部署
+<https://travis-ci.org/>
+
+基于github的测试和部署工具.
 
 * jenkins
 
-## Code quality
+<https://jenkins.io/>
+
+基于java的测试和部署工具.
+
+# Code quality
 
 * coveralls
 
-代码覆盖率
+<https://coveralls.io/>
 
-## project management
+代码覆盖率,需要和CI一起使用.
+
+# project management
 
 * redmine
+
+# procedure
+
+* wiki
+
+***
 
 # 文档阅读工具
 

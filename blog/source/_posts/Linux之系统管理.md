@@ -76,6 +76,30 @@ org->gnome->gedit->preferences->encodings->auto-detected
 
 手册位于/usr/share/man
 
+# 记录终端操作
+
+安装相关工具:
+
+    $sudo apt-get install ttyrec
+    $sudo apt-get install imagemagick
+    $hg clone https://bitbucket.org/antocuni/tty2gif
+
+开始记录:
+
+    $ttyrec
+
+在终端播放记录文件ttyrecord:
+
+    $ttyplay ttyrecord
+
+将ttyrecord文件转化成gif文件:
+
+    $tty2gif.py typing ttyrecord
+
+将多个gif文件合并成一个文件:
+
+    $convert -limit memory 2mb -limit map 2mb -delay 2 -loop 0 *.gif example.gif
+
 # ufw & iptables
 
 # upstart & systemd

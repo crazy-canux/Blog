@@ -29,12 +29,6 @@ hexo有大量的插件和主题。
 
 [themes](https://hexo.io/themes/)
 
-jekyll是ruby开发的博客框架，github官方支持这个框架。
-
-octpress是ruby开发的kekyll的升级版。
-
-wordpress是php开发的博客框架。
-
 ## 安装hexo
 
 需要安装依赖nodejs和git。

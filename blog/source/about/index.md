@@ -32,7 +32,7 @@ Database：Mysql/MSSQL/Oracle
 
 Be good at: DevOps, Web
 
-Interested in：BigData、CloudComputing
+Interested in：BigData, CloudComputing, Virtualization
 
 ***
 

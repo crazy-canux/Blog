@@ -37,3 +37,35 @@ LNMP: Linux+nginx+mysql+php
     http://localhost:80
 
 # nginx
+
+***
+
+# 静态站点
+
+pelican是python开发的静态站点生成器.
+
+hexo是nodejs开发的静态站点生成器.
+
+jekyll是ruby开发的静态站点生成器.
+
+octopress是ruby开发的kekyll的升级版.
+
+# Blog/CMS系统
+
+wordpress是php开发的website, blog, app框架。
+
+joomla是php开发的内容管理系统.
+
+drupal是php开发的内容管理系统.
+
+django-cms是python开发的基于django的内容管理系统.
+
+wagtail是python开发的基于django的内容管理系统.
+
+mezzanine是python开发的基于django的内容管理系统.
+
+# Forum系统
+
+vanilla是php开发的论坛系统.
+
+phpbb是php开发的论坛系统.
