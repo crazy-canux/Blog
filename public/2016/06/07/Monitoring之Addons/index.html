@@ -1,0 +1,937 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="monitoring,addons," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="OMDhttp://omdistro.org/
+http://git.mathias-kettner.de/git/?p=omd.git;a=tree
+The Open Monitoring Distribution
+用于快速部署基于nagios的分布式监控，包括：
+
+Icinga
+Shinken
+check_mk
+基于mod-gearman/MK Livestatus/thruk的分布式监控。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Monitoring之Addons">
+<meta property="og:url" content="http://canuxcheng.com/2016/06/07/Monitoring之Addons/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="OMDhttp://omdistro.org/
+http://git.mathias-kettner.de/git/?p=omd.git;a=tree
+The Open Monitoring Distribution
+用于快速部署基于nagios的分布式监控，包括：
+
+Icinga
+Shinken
+check_mk
+基于mod-gearman/MK Livestatus/thruk的分布式监控。">
+<meta property="og:updated_time" content="2016-12-19T06:10:35.847Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Monitoring之Addons">
+<meta name="twitter:description" content="OMDhttp://omdistro.org/
+http://git.mathias-kettner.de/git/?p=omd.git;a=tree
+The Open Monitoring Distribution
+用于快速部署基于nagios的分布式监控，包括：
+
+Icinga
+Shinken
+check_mk
+基于mod-gearman/MK Livestatus/thruk的分布式监控。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/06/07/Monitoring之Addons/"/>
+
+
+  <title> Monitoring之Addons | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Monitoring之Addons
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-07T21:46:47-04:00" content="2016-06-08">
+              2016-06-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Operation/" itemprop="url" rel="index">
+                    <span itemprop="name">Operation</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Operation/Monitor/" itemprop="url" rel="index">
+                    <span itemprop="name">Monitor</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/07/Monitoring之Addons/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/07/Monitoring之Addons/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="OMD"><a href="#OMD" class="headerlink" title="OMD"></a>OMD</h1><p><a href="http://omdistro.org/" target="_blank" rel="external">http://omdistro.org/</a></p>
+<p><a href="http://git.mathias-kettner.de/git/?p=omd.git;a=tree" target="_blank" rel="external">http://git.mathias-kettner.de/git/?p=omd.git;a=tree</a></p>
+<p>The Open Monitoring Distribution</p>
+<p>用于快速部署基于nagios的分布式监控，包括：</p>
+<ol>
+<li>Icinga</li>
+<li>Shinken</li>
+<li>check_mk</li>
+<li>基于mod-gearman/MK Livestatus/thruk的分布式监控。</li>
+<li>其它组件。</li>
+</ol>
+<h1 id="Gearman"><a href="#Gearman" class="headerlink" title="Gearman"></a>Gearman</h1><p>Gearman is the nervous system for how distributed processing communicates.</p>
+<p>Gearman Job Server:</p>
+<p><a href="http://gearman.org/" target="_blank" rel="external">http://gearman.org/</a></p>
+<p><a href="https://github.com/gearman/gearmand" target="_blank" rel="external">https://github.com/gearman/gearmand</a></p>
+<p>Gearman worker:</p>
+<p><a href="http://www.mod-gearman.org/" target="_blank" rel="external">http://www.mod-gearman.org/</a></p>
+<p><a href="https://github.com/sni/mod_gearman" target="_blank" rel="external">https://github.com/sni/mod_gearman</a></p>
+<h1 id="rrdtools"><a href="#rrdtools" class="headerlink" title="rrdtools"></a>rrdtools</h1><blockquote>
+<p>RRDtool is a little program for easily maintaining a database of time-series<br>data. It comes with a charting program for drawing pretty graphs based on the<br>data stored.</p>
+</blockquote>
+<p>存储性能数据。</p>
+<p><a href="http://oss.oetiker.ch/rrdtool/" target="_blank" rel="external">http://oss.oetiker.ch/rrdtool/</a></p>
+<p><a href="https://github.com/oetiker/rrdtool-1.x" target="_blank" rel="external">https://github.com/oetiker/rrdtool-1.x</a></p>
+<h1 id="pnp4nagios"><a href="#pnp4nagios" class="headerlink" title="pnp4nagios"></a>pnp4nagios</h1><blockquote>
+<p>PNP is an addon to Nagios which analyzes performance data provided by plugins and stores them automatically into RRD-databases.</p>
+</blockquote>
+<p>基于RRD，绘制nagios的性能图。</p>
+<p><a href="http://docs.pnp4nagios.org/" target="_blank" rel="external">http://docs.pnp4nagios.org/</a></p>
+<p><a href="https://github.com/lingej/pnp4nagios" target="_blank" rel="external">https://github.com/lingej/pnp4nagios</a></p>
+<p>可以在nagios的service配置中添加“ostpl_enable-graph”启用图形。</p>
+<p>templates.dist是自带模板</p>
+<p>templates是用户自定义模板</p>
+<p>XXX.php需要和nagios的service的command_name同名，默认查找这个同名的模板.</p>
+<p>测试就是scp XXX.php nagios-server:/usr/share/pnp4nagios/html/templates/然后去nagios查看结果</p>
+<p>pnp4nagios查找顺序：</p>
+<ol>
+<li>templates/check_XXX.php</li>
+<li>templates.dist/check_XXX.php</li>
+<li>templates/default.php</li>
+<li>templates.dist/default.php</li>
+</ol>
+<h1 id="Nagvis"><a href="#Nagvis" class="headerlink" title="Nagvis"></a>Nagvis</h1><blockquote>
+<p>NagVis is a program for visualizing the data the monitoring core of your<br>choice, for example Nagios, Naemon, Icinga or Shinken, in a human friendly way.</p>
+</blockquote>
+<p>绘制监控地图。</p>
+<p><a href="http://www.nagvis.org/" target="_blank" rel="external">http://www.nagvis.org/</a></p>
+<p><a href="https://github.com/NagVis/nagvis" target="_blank" rel="external">https://github.com/NagVis/nagvis</a></p>
+<h1 id="dokuwiki"><a href="#dokuwiki" class="headerlink" title="dokuwiki"></a>dokuwiki</h1><blockquote>
+<p>DokuWiki is a simple to use and highly versatile Open Source wiki software<br>that doesn’t require a database. It is loved by users for its clean and readable<br>syntax. The ease of maintenance, backup and integration makes it an<br>administrator’s favorite. Built in access controls and authentication connectors<br>make DokuWiki especially useful in the enterprise context and the large number<br>of plugins contributed by its vibrant community allow for a broad range of use<br>cases beyond a traditional wiki.</p>
+</blockquote>
+<p>创建监控的procedure。</p>
+<p><a href="https://www.dokuwiki.org/dokuwiki/" target="_blank" rel="external">https://www.dokuwiki.org/dokuwiki/</a></p>
+<p><a href="https://github.com/splitbrain/dokuwiki" target="_blank" rel="external">https://github.com/splitbrain/dokuwiki</a></p>
+<h1 id="graphite"><a href="#graphite" class="headerlink" title="graphite"></a>graphite</h1><p><a href="https://github.com/graphite-project" target="_blank" rel="external">https://github.com/graphite-project</a></p>
+<p><a href="http://graphite.readthedocs.io/en/latest/index.html" target="_blank" rel="external">http://graphite.readthedocs.io/en/latest/index.html</a></p>
+<p>Zabbix,Sensu,Ganglia,Nagios/Naemon/Icinga/Shinken都可以配合使用。</p>
+<p>绘制性能图。</p>
+<p>graphite-web</p>
+<blockquote>
+<p>A highly scalable real-time graphing system</p>
+</blockquote>
+<p>carbon</p>
+<blockquote>
+<p>Carbon is responsible for receiving metrics over the network, caching them in<br>memory for “hot queries” from the Graphite-Web application, and persisting them<br>to disk using the Whisper time-series library.</p>
+</blockquote>
+<p>whisper/ceres</p>
+<p>ceres会替代whisper。</p>
+<blockquote>
+<p>Whisper is a fixed-size database, similar in design and purpose to RRD<br>(round-robin-database). It provides fast, reliable storage of numeric data over<br>time. Whisper allows for higher resolution (seconds per point) of recent data to<br>degrade into lower resolutions for long-term retention of historical data.</p>
+</blockquote>
+<h1 id="grafana"><a href="#grafana" class="headerlink" title="grafana"></a>grafana</h1><blockquote>
+<p>Grafana is an open source, feature rich metrics dashboard and graph editor for<br>Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.</p>
+</blockquote>
+<p>为graphite提供更好的可视化图形。</p>
+<p><a href="https://github.com/grafana/grafana" target="_blank" rel="external">https://github.com/grafana/grafana</a></p>
+<p><a href="http://grafana.org/" target="_blank" rel="external">http://grafana.org/</a></p>
+<h1 id="graphios"><a href="#graphios" class="headerlink" title="graphios"></a>graphios</h1><blockquote>
+<p>A program to send nagios perf data to graphite(carbon)/statsd/librato/influxdb</p>
+</blockquote>
+<p>发送nagios性能数据到Graphite。</p>
+<p><a href="https://github.com/shawn-sterling/graphios" target="_blank" rel="external">https://github.com/shawn-sterling/graphios</a></p>
+<h1 id="Ledbetter"><a href="#Ledbetter" class="headerlink" title="Ledbetter"></a>Ledbetter</h1><blockquote>
+<p>A simple script for gathering Nagios problem statistics and submitting them to<br>Graphite. It focuses on summary (overall, servicegroup and hostgroup) statistics<br>and writes them to the nagios.problems metrics namespace within Graphite.</p>
+</blockquote>
+<p>发送nagios性能数据到Graphite。</p>
+<p><a href="https://github.com/github/ledbetter" target="_blank" rel="external">https://github.com/github/ledbetter</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/monitoring/" rel="tag">#monitoring</a>
+          
+            <a href="/tags/addons/" rel="tag">#addons</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/07/Linux之Package/" rel="next" title="Linux之Package">
+                <i class="fa fa-chevron-left"></i> Linux之Package
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/18/TMUX/" rel="prev" title="TMUX">
+                TMUX <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/07/Monitoring之Addons/"
+           data-title="Monitoring之Addons" data-url="http://canuxcheng.com/2016/06/07/Monitoring之Addons/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OMD"><span class="nav-number">1.</span> <span class="nav-text">OMD</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gearman"><span class="nav-number">2.</span> <span class="nav-text">Gearman</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rrdtools"><span class="nav-number">3.</span> <span class="nav-text">rrdtools</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pnp4nagios"><span class="nav-number">4.</span> <span class="nav-text">pnp4nagios</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nagvis"><span class="nav-number">5.</span> <span class="nav-text">Nagvis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dokuwiki"><span class="nav-number">6.</span> <span class="nav-text">dokuwiki</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#graphite"><span class="nav-number">7.</span> <span class="nav-text">graphite</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#grafana"><span class="nav-number">8.</span> <span class="nav-text">grafana</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#graphios"><span class="nav-number">9.</span> <span class="nav-text">graphios</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ledbetter"><span class="nav-number">10.</span> <span class="nav-text">Ledbetter</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

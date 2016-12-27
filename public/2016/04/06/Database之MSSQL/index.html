@@ -1,0 +1,1204 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="database,mssql,pymssql,pyodbc,freetds," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="MSSQL商业版：
+
+企业版
+商业智能版
+标准版
+
+免费版：
+
+Express
+Developer
+Compact
+Web
+SQL Azure
+
+安装配置参考文档。
+mssql基本属性system databases:
+
+master 主数据库
+model  模板数据库
+msdb   自动机数据库
+tempdb 零时交换数据库,不需要备份,挂载到独立的子系统。
+resource
+
+default">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Database之MSSQL">
+<meta property="og:url" content="http://canuxcheng.com/2016/04/06/Database之MSSQL/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="MSSQL商业版：
+
+企业版
+商业智能版
+标准版
+
+免费版：
+
+Express
+Developer
+Compact
+Web
+SQL Azure
+
+安装配置参考文档。
+mssql基本属性system databases:
+
+master 主数据库
+model  模板数据库
+msdb   自动机数据库
+tempdb 零时交换数据库,不需要备份,挂载到独立的子系统。
+resource
+
+default">
+<meta property="og:updated_time" content="2016-11-10T08:00:55.071Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Database之MSSQL">
+<meta name="twitter:description" content="MSSQL商业版：
+
+企业版
+商业智能版
+标准版
+
+免费版：
+
+Express
+Developer
+Compact
+Web
+SQL Azure
+
+安装配置参考文档。
+mssql基本属性system databases:
+
+master 主数据库
+model  模板数据库
+msdb   自动机数据库
+tempdb 零时交换数据库,不需要备份,挂载到独立的子系统。
+resource
+
+default">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/04/06/Database之MSSQL/"/>
+
+
+  <title> Database之MSSQL | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Database之MSSQL
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-06T03:33:42-04:00" content="2016-04-06">
+              2016-04-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/06/Database之MSSQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/06/Database之MSSQL/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="MSSQL"><a href="#MSSQL" class="headerlink" title="MSSQL"></a>MSSQL</h1><p>商业版：</p>
+<ol>
+<li>企业版</li>
+<li>商业智能版</li>
+<li>标准版</li>
+</ol>
+<p>免费版：</p>
+<ol>
+<li>Express</li>
+<li>Developer</li>
+<li>Compact</li>
+<li>Web</li>
+<li>SQL Azure</li>
+</ol>
+<p>安装配置参考文档。</p>
+<h1 id="mssql基本属性"><a href="#mssql基本属性" class="headerlink" title="mssql基本属性"></a>mssql基本属性</h1><p>system databases:</p>
+<ol>
+<li>master 主数据库</li>
+<li>model  模板数据库</li>
+<li>msdb   自动机数据库</li>
+<li>tempdb 零时交换数据库,不需要备份,挂载到独立的子系统。</li>
+<li>resource</li>
+</ol>
+<p>default port：1433</p>
+<p>2008: max instance 16</p>
+<p>2012: max instance 256</p>
+<p>Client -&gt; SNAC(OLE DB/ODBC) -&gt; Network Libraries -&gt; TDS &lt;=&gt; Server -&gt; Endpoints -&gt; SQL OS(relational engine/storage engine)</p>
+<h2 id="XX-mdf-amp-XX-ldf"><a href="#XX-mdf-amp-XX-ldf" class="headerlink" title="XX.mdf &amp; XX.ldf"></a>XX.mdf &amp; XX.ldf</h2><p>sql server存储数据放在data file, 叫.mdf/.ndf,日志文件存放在log file，叫.ldf。</p>
+<p>只能有一个.mdf。</p>
+<p>Shinking, 自动收缩，不推荐。<br>database-file-dbcc-shrinks<br>database-file-auto-shrinks<br>database-datafile-auto-shrinks<br>database-logfile-auto-shrinks</p>
+<p>Expanding,自动扩展。<br>database-file-auto-growths<br>database-datafile-auto-growths<br>database-logfile-auto-growths</p>
+<p>connection-time<br>cpy-busy<br>io-busy<br>full-scans<br>connected-users<br>transactions<br>batch-requests<br>latches-waits<br>latches-wait-time<br>locks-waits<br>locks-timeouts<br>locks-deadlocks<br>sql-recompilations<br>sql-initcompilations<br>total-server-memory<br>mem-pool-data-buffer-hit-ratio<br>lazy-writes<br>page-life-expectancy<br>free-list-stalls<br>checkpoint-pages<br>database-online<br>database-free<br>database-used<br>database-backup-age<br>database-logbackup-age<br>failed-jobs<br>jobs-enabled<br>list-databases<br>list-datafiles<br>list-locks</p>
+<hr>
+<h1 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h1><h2 id="SSMS"><a href="#SSMS" class="headerlink" title="SSMS"></a>SSMS</h2><p>SQL Server Management Studio是mssql的图形化管理界面。</p>
+<p>从模板中获取常用的SQL：</p>
+<p>view -&gt; template explorer + query -&gt; specify values for template parameters.</p>
+<h2 id="SSIS"><a href="#SSIS" class="headerlink" title="SSIS"></a>SSIS</h2><p>数据集成服务。</p>
+<h2 id="cliconfg-exe"><a href="#cliconfg-exe" class="headerlink" title="cliconfg.exe"></a>cliconfg.exe</h2><p>用于给数据库取别名并分发。</p>
+<hr>
+<h1 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h1><h2 id="sqlcmd"><a href="#sqlcmd" class="headerlink" title="sqlcmd"></a>sqlcmd</h2><p>SQL Server的命令行界面。</p>
+<pre><code>sqlcmd -? # 查看帮助
+sqlcmd /?
+
+sqlcmd -A # 管理员专用模式。
+</code></pre><h2 id="bcp"><a href="#bcp" class="headerlink" title="bcp"></a>bcp</h2><p>数据库import/export工具</p>
+<pre><code>bcp -? # 查看帮助
+bcp XXX out XXX -T -c
+</code></pre><h2 id="sqlps"><a href="#sqlps" class="headerlink" title="sqlps"></a>sqlps</h2><p>SQL Server的PowerShell命令行模式。</p>
+<hr>
+<h1 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h1><p>设置权限：</p>
+<ol>
+<li>数据库服务器级别权限</li>
+<li>数据库权限</li>
+<li>表级权限(schema)</li>
+<li>列级权限</li>
+</ol>
+<ul>
+<li><p>数据库服务器的security</p>
+<ol>
+<li>可以创建Logins用户，包括sa帐号和windows的AD帐号。</li>
+</ol>
+</li>
+<li><p>数据库的security</p>
+<ol>
+<li>可以创建Users用户，用于连接这个数据库。</li>
+<li>可以创建和设置schemas,默认dbo。</li>
+</ol>
+</li>
+</ul>
+<p>权限的设置在SSMS的 属性-&gt;权限 里面设置。</p>
+<hr>
+<h1 id="data-type"><a href="#data-type" class="headerlink" title="data type"></a>data type</h1><p>三种数据类型：</p>
+<ol>
+<li>system data types</li>
+<li>alias data types</li>
+<li>user-defined data types</li>
+</ol>
+<p>system data有下面类型：</p>
+<p>可以通过SSMS查看。</p>
+<pre><code>tinyint: 8bits
+smallint: 16bits
+int: 32bits
+bigint: 64
+decimal:
+numeric:
+smallmoney: 32bits
+money: 64bits
+bit: 0/1
+
+float: &lt;=53bits
+real: 32bits
+
+date:
+datetime2:
+datetime:
+datetimeoffset:
+smalldatetime:
+time:
+
+char:
+nchar:
+varchar:
+nvarchar:
+varchar(max): &lt;=2GB
+nvarchar(max): &lt;=2GB
+
+rowversion:
+</code></pre><h2 id="data-attribution"><a href="#data-attribution" class="headerlink" title="data attribution"></a>data attribution</h2><pre><code>uniqueidentifer
+
+null
+not null
+
+unicode
+
+collate
+</code></pre><h2 id="modfy-data-type"><a href="#modfy-data-type" class="headerlink" title="modfy data type"></a>modfy data type</h2><pre><code>cast
+
+convert
+
+try_convert
+
+parse
+
+try_parse
+
+Implicit data conversion(隐式的数据转换)。
+</code></pre><hr>
+<h1 id="data-structure"><a href="#data-structure" class="headerlink" title="data structure"></a>data structure</h1><h2 id="tables"><a href="#tables" class="headerlink" title="tables"></a>tables</h2><p>创建create，更新alert，删除drop都是标准sql。</p>
+<p>插入insert，更改update，删除delete表的内容都是标准sql。</p>
+<ul>
+<li>merge</li>
+</ul>
+<p>使用merge来快速插入，没有就insert，有就update。</p>
+<h2 id="views"><a href="#views" class="headerlink" title="views"></a>views</h2><p>创建create，更新alert，删除drop都是标准sql。</p>
+<ul>
+<li><p>system views</p>
+<p>  系统视图都是以sys开头的。</p>
+<pre><code>SELECT * FROM [dbname].sys.databases # 查询所有数据库信息。
+SELECT * FROM [dbname].sys.servers
+SELECT * FROM [dbname].sys.services
+</code></pre></li>
+<li><p>用户自定义的view</p>
+</li>
+</ul>
+<h2 id="index"><a href="#index" class="headerlink" title="index"></a>index</h2><p>创建create，更新alert，删除drop都是标准sql。</p>
+<p>table和view都有index。</p>
+<hr>
+<h1 id="database-actions"><a href="#database-actions" class="headerlink" title="database actions"></a>database actions</h1><h2 id="administrator-command"><a href="#administrator-command" class="headerlink" title="administrator command"></a>administrator command</h2><p>sa是数据库默认的管理员,dbcc需要sa权限执行。</p>
+<pre><code>DBCC HELP(&apos;?&apos;) # 查询所有DBCC命令
+DBCC HELP(&apos;command&apos;) # 查询具体命令的帮助
+</code></pre><p>创建/删除数据库：</p>
+<pre><code>CREATE DATABASE databasename;
+DROP DATABASE databasename;
+</code></pre><h2 id="replication"><a href="#replication" class="headerlink" title="replication"></a>replication</h2><p>在不同的数据库服务器之间导数据。</p>
+<h2 id="transaction-log-ship"><a href="#transaction-log-ship" class="headerlink" title="transaction log ship"></a>transaction log ship</h2><p>在不同的数据库服务器之间导数据。</p>
+<h2 id="db-gt-tasks-gt-import-export-copy"><a href="#db-gt-tasks-gt-import-export-copy" class="headerlink" title="db-&gt;tasks-&gt;import/export/copy"></a>db-&gt;tasks-&gt;import/export/copy</h2><p>导入/导出/复制，以表为单位进行复制。</p>
+<h1 id="programmability-T-SQL"><a href="#programmability-T-SQL" class="headerlink" title="programmability(T-SQL)"></a>programmability(T-SQL)</h1><h2 id="sql-query"><a href="#sql-query" class="headerlink" title="sql query"></a>sql query</h2><p>和标准SQL操作一样。</p>
+<pre><code>bulk insert
+</code></pre><h2 id="Stored-Procedures"><a href="#Stored-Procedures" class="headerlink" title="Stored Procedures"></a>Stored Procedures</h2><ul>
+<li><p>system stored Procedures(系统自带的SP)</p>
+<p>  sys.sp_XXX是系统SP。<br>  sys.xp_XXX是扩展SP。</p>
+</li>
+<li><p>用户自定义的SP</p>
+</li>
+</ul>
+<ol>
+<li><p>创建SP</p>
+<pre><code>CREATE PROCEDURE &lt;schema&gt;.&lt;procedure&gt;
+    @p1 type = value1
+    @p2 type = value2
+    ...
+AS
+BEGIN
+    SELECT @p1, @p2, ...
+END
+GO
+</code></pre></li>
+</ol>
+<ol>
+<li><p>修改SP</p>
+<pre><code>ALERT PROCEURE &lt;schema&gt;.&lt;procedure&gt;
+    @p1 type2 = value1
+    @p2 type2 = value2
+    ...
+AS
+    SELECT @p1, @p2 ...
+GO
+</code></pre></li>
+<li><p>执行SP</p>
+<pre><code>EXECUTE/EXEC &lt;Schema&gt;.&lt;Procedure&gt; &lt;value1&gt; &lt;value2&gt; ...
+GO
+</code></pre></li>
+<li><p>删除SP</p>
+<pre><code>DROP PROCEDURE &lt;procedure&gt;
+</code></pre></li>
+</ol>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><ul>
+<li><p>system functions</p>
+<p>  系统自带的函数。</p>
+<pre><code>SELECT @@VERSION
+SELECT @@SERVERNAME
+SELECT @@SERVICENAME
+</code></pre></li>
+<li><p>scalar functions</p>
+<p>  scalar-valued: 标量函数，返回单一值。</p>
+</li>
+<li><p>table-valued functions</p>
+<p>  表值函数，返回一个数据和类型对的表。<br>  inline table-valued: 内嵌的表值函数。<br>  multi-statement table-valued:</p>
+</li>
+</ul>
+<ol>
+<li><p>创建scalar-valued函数</p>
+<p> CREATE FUNCTION <schema>.<function> (@p1 type1)<br> RETURNS return_value_datatype<br> WITH EXECUTE AS CALLER<br> AS<br> BEGIN</function></schema></p>
+<pre><code>body of the function
+</code></pre><p> END<br> GO</p>
+</li>
+<li><p>创建inline table-valued函数</p>
+</li>
+<li><p>创建multi-statement table-valued函数</p>
+</li>
+<li><p>删除函数</p>
+<p> DROP FUNCTION <schema>.<function><br> GO</function></schema></p>
+</li>
+</ol>
+<h2 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h2><p>11-16</p>
+<p>RAISE ERROR</p>
+<p>THROW error, ‘msg’, number;</p>
+<hr>
+<h1 id="wmi"><a href="#wmi" class="headerlink" title="wmi"></a>wmi</h1><p>安装mssql之后提供mssql的wmi的类：</p>
+<p>通过运行wql获取数据库属性。</p>
+<pre><code>select * from Win32_PerfFormattedData_MSSQLSERVER_SQLServerLocks
+</code></pre><h1 id="powershell"><a href="#powershell" class="headerlink" title="powershell"></a>powershell</h1><p>通过powershell运行sql语句或store procedure：</p>
+<pre><code>$connection = new-object System.Data.SqlClient.SqlConnection &quot;Server=$server;Database=$database&quot;;Trusted_Connection=True&quot;
+$connection.Open()
+$sql = &quot;select @@version&quot;
+$command = new-object System.Data.SqlClient.SqlCommand $sql $connection
+$return = $command.ExecuteReader()
+</code></pre><p>安装mssql之后提供mssql的powershell模块sqlps：</p>
+<p>通过模块的命令运行sql语句和store procedure。</p>
+<pre><code>import-module sqlps
+get-command -module sqlps
+invoke-sqlcmd -ServerInstance $serverinstance -Database $database -Query $sql
+</code></pre><hr>
+<h1 id="freeTDS"><a href="#freeTDS" class="headerlink" title="freeTDS"></a>freeTDS</h1><blockquote>
+<p>FreeTDS is a set of libraries for Unix and Linux that allows your programs to natively talk to Microsoft SQL Server and Sybase databases.</p>
+</blockquote>
+<p><a href="http://www.freetds.org/" target="_blank" rel="external">http://www.freetds.org/</a></p>
+<p><a href="https://github.com/FreeTDS/freetds" target="_blank" rel="external">https://github.com/FreeTDS/freetds</a></p>
+<pre><code>sudo apt-get install freetds*
+</code></pre><p>配置freetds，/etc/freetds/freetds.conf:</p>
+<pre><code># A typical Sybase server
+[egServer50]
+        host = symachine.domain.com
+        port = 5000
+        tds version = 5.0
+
+# A typical Microsoft server
+[egServer70]
+        host = ntmachine.domain.com
+        port = 1433
+        tds version = 7.0
+</code></pre><hr>
+<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><p>通过python访问mssql需要安装相应的包，linux还需要安装freeTDS。</p>
+<h2 id="pymssql"><a href="#pymssql" class="headerlink" title="pymssql"></a>pymssql</h2><pre><code>import pymssql
+conn = pymssql.connect(server, user, password, database, timeout, login_timeout, charset, as_dict, appname, port)
+# charset=&apos;utf-8&apos;
+# as_dict, appname, port 三个是关键字选项。
+# as_dict=true 表示每行以字典的形式返回，而不是默认的元组。
+cursor = conn.cursor()
+cursor.execute(SQL)
+...
+cursor.close()
+conn.close()
+</code></pre><p>debug:</p>
+<p><a href="https://msdn.microsoft.com/en-us/library/dd327979.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="external">https://msdn.microsoft.com/en-us/library/dd327979.aspx?f=255&amp;MSPPError=-2147217396</a></p>
+<p>(7391, ‘The operation could not be performed because OLE DB provider “SQLNCLI10”<br>for linked server “euedcapp0049.edc.eu.corp” was unable to begin a distributed<br>transaction.DB-Lib error message 7391, severity 16:\nGeneral SQL Server error:<br>Check messages from the SQL Server\n’)</p>
+<h2 id="pyodbc"><a href="#pyodbc" class="headerlink" title="pyodbc"></a>pyodbc</h2><p>windows配置odbc即可，linux需要安装配置ODBC.</p>
+<p><a href="https://msdn.microsoft.com/en-us/library/hh568449.aspx" target="_blank" rel="external">https://msdn.microsoft.com/en-us/library/hh568449.aspx</a><br><a href="http://www.unixodbc.org/" target="_blank" rel="external">http://www.unixodbc.org/</a><br><a href="https://msdn.microsoft.com/en-us/library/hh568454.aspx" target="_blank" rel="external">https://msdn.microsoft.com/en-us/library/hh568454.aspx</a><br><a href="https://msdn.microsoft.com/en-us/library/hh568451.aspx" target="_blank" rel="external">https://msdn.microsoft.com/en-us/library/hh568451.aspx</a><br><a href="https://www.devart.com/odbc/sqlserver/download.html" target="_blank" rel="external">https://www.devart.com/odbc/sqlserver/download.html</a></p>
+<p>导入</p>
+<pre><code>import pyodbc
+</code></pre><p>windows连接</p>
+<pre><code>cnxn = pyodbc.connect(&apos;DRIVER={SQL Server};SERVER=localhost;PORT=1433;DATABASE=testdb;UID=me;PWD=pass&apos;)
+</code></pre><p>linux连接</p>
+<pre><code>cnxn = pyodbc.connect(&apos;DRIVER={FreeTDS};SERVER=localhost;PORT=1433;DATABASE=testdb;UID=me;PWD=pass;TDS_Version=7.0&apos;)
+</code></pre><p>通过ODBC配置了DSN的连接</p>
+<pre><code>cnxn = pyodbc.connect(&apos;DSN=DataSourceName;UID=user;PWD=password&apos;)
+</code></pre><p>使用</p>
+<pre><code>cursor = cnxn.cursor()
+cursor.execute(SQL)
+...
+cursor.close()
+cnxn.close()
+</code></pre><hr>
+<h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><p><a href="https://msdn.microsoft.com/library/mt484311.aspx" target="_blank" rel="external">https://msdn.microsoft.com/library/mt484311.aspx</a></p>
+<p>需要安装sqljdbc才能通过java访问mssql数据库</p>
+<pre><code>Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+String connectionUrl = &quot;jdbc:sqlserver://localhost;database=AdventureWorks;integratedSecurity=true;&quot;
+Connection con = DriverManager.getConnection(connectionUrl);
+</code></pre><h2 id="Installation-Instructions-for-the-Microsoft-Windows-version-of-the-JDBC-Driver"><a href="#Installation-Instructions-for-the-Microsoft-Windows-version-of-the-JDBC-Driver" class="headerlink" title="Installation Instructions for the Microsoft Windows version of the JDBC Driver"></a>Installation Instructions for the Microsoft Windows version of the JDBC Driver</h2><p>Note: By downloading the Microsoft JDBC Driver 6.0 (Preview), 4.2, 4.1, or 4.0<br>for SQL Server, you are accepting the terms and conditions of the End-User<br>License Agreement (EULA) for this component. Please review the End-User License<br>Agreement (EULA) located on this page and print a copy of the EULA for your<br>records.</p>
+<ol>
+<li><p>Download sqljdbc<em><version></version></em><language>.exe to a temporary directory.</language></p>
+</li>
+<li><p>Run sqljdbc<em><version></version></em><language>.exe.</language></p>
+</li>
+<li><p>Enter an installation directory when prompted. We recommend that you unpack<br>this zip file in %ProgramFiles% with the default directory: “Microsoft JDBC<br>Driver x.x for SQL Server”.</p>
+</li>
+</ol>
+<h2 id="Installation-Instructions-for-the-UNIX-version-of-the-JDBC-Driver"><a href="#Installation-Instructions-for-the-UNIX-version-of-the-JDBC-Driver" class="headerlink" title="Installation Instructions for the UNIX version of the JDBC Driver"></a>Installation Instructions for the UNIX version of the JDBC Driver</h2><ol>
+<li><p>Download sqljdbc<em><version></version></em><language>.tar.gz to a temporary directory.</language></p>
+</li>
+<li><p>To unpack the zipped tar file, navigate to the directory where you want<br>the driver unpacked and type gzip -d sqljdbc<em><version></version></em><language>.tar.gz.</language></p>
+</li>
+<li><p>To unpack the tar file, move it to the directory where you want the<br>driver installed and type tar –xf sqljdbc<em><version></version></em><language>.tar.</language></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/database/" rel="tag">#database</a>
+          
+            <a href="/tags/mssql/" rel="tag">#mssql</a>
+          
+            <a href="/tags/pymssql/" rel="tag">#pymssql</a>
+          
+            <a href="/tags/pyodbc/" rel="tag">#pyodbc</a>
+          
+            <a href="/tags/freetds/" rel="tag">#freetds</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/05/CloudComputing/" rel="next" title="CloudComputing">
+                <i class="fa fa-chevron-left"></i> CloudComputing
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/06/Hexo插件/" rel="prev" title="Hexo插件">
+                Hexo插件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/06/Database之MSSQL/"
+           data-title="Database之MSSQL" data-url="http://canuxcheng.com/2016/04/06/Database之MSSQL/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MSSQL"><span class="nav-number">1.</span> <span class="nav-text">MSSQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mssql基本属性"><span class="nav-number">2.</span> <span class="nav-text">mssql基本属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#XX-mdf-amp-XX-ldf"><span class="nav-number">2.1.</span> <span class="nav-text">XX.mdf & XX.ldf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GUI"><span class="nav-number">3.</span> <span class="nav-text">GUI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSMS"><span class="nav-number">3.1.</span> <span class="nav-text">SSMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSIS"><span class="nav-number">3.2.</span> <span class="nav-text">SSIS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cliconfg-exe"><span class="nav-number">3.3.</span> <span class="nav-text">cliconfg.exe</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CLI"><span class="nav-number">4.</span> <span class="nav-text">CLI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlcmd"><span class="nav-number">4.1.</span> <span class="nav-text">sqlcmd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bcp"><span class="nav-number">4.2.</span> <span class="nav-text">bcp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlps"><span class="nav-number">4.3.</span> <span class="nav-text">sqlps</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security"><span class="nav-number">5.</span> <span class="nav-text">Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#data-type"><span class="nav-number">6.</span> <span class="nav-text">data type</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data-attribution"><span class="nav-number">6.1.</span> <span class="nav-text">data attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#modfy-data-type"><span class="nav-number">6.2.</span> <span class="nav-text">modfy data type</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#data-structure"><span class="nav-number">7.</span> <span class="nav-text">data structure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tables"><span class="nav-number">7.1.</span> <span class="nav-text">tables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#views"><span class="nav-number">7.2.</span> <span class="nav-text">views</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index"><span class="nav-number">7.3.</span> <span class="nav-text">index</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#database-actions"><span class="nav-number">8.</span> <span class="nav-text">database actions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#administrator-command"><span class="nav-number">8.1.</span> <span class="nav-text">administrator command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#replication"><span class="nav-number">8.2.</span> <span class="nav-text">replication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transaction-log-ship"><span class="nav-number">8.3.</span> <span class="nav-text">transaction log ship</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#db-gt-tasks-gt-import-export-copy"><span class="nav-number">8.4.</span> <span class="nav-text">db->tasks->import/export/copy</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#programmability-T-SQL"><span class="nav-number">9.</span> <span class="nav-text">programmability(T-SQL)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql-query"><span class="nav-number">9.1.</span> <span class="nav-text">sql query</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stored-Procedures"><span class="nav-number">9.2.</span> <span class="nav-text">Stored Procedures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">9.3.</span> <span class="nav-text">Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#debug"><span class="nav-number">9.4.</span> <span class="nav-text">debug</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wmi"><span class="nav-number">10.</span> <span class="nav-text">wmi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell"><span class="nav-number">11.</span> <span class="nav-text">powershell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#freeTDS"><span class="nav-number">12.</span> <span class="nav-text">freeTDS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">13.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pymssql"><span class="nav-number">13.1.</span> <span class="nav-text">pymssql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyodbc"><span class="nav-number">13.2.</span> <span class="nav-text">pyodbc</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java"><span class="nav-number">14.</span> <span class="nav-text">java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation-Instructions-for-the-Microsoft-Windows-version-of-the-JDBC-Driver"><span class="nav-number">14.1.</span> <span class="nav-text">Installation Instructions for the Microsoft Windows version of the JDBC Driver</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation-Instructions-for-the-UNIX-version-of-the-JDBC-Driver"><span class="nav-number">14.2.</span> <span class="nav-text">Installation Instructions for the UNIX version of the JDBC Driver</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

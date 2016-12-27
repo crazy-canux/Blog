@@ -1,0 +1,1057 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ITM,IBM,Tivoli,Monitoring," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="ITMITM: IBM Tivoli Monitoring
+是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。
+Architecture Overview:
+
+ITM主要由管理组件和可选组件组成。
+Tivoli Management Services:
+
+TEMS
+TEPS
+TEP client
+Historical data collection(wareh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tivoli之ITM">
+<meta property="og:url" content="http://canuxcheng.com/2016/04/20/Tivoli之ITM/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="ITMITM: IBM Tivoli Monitoring
+是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。
+Architecture Overview:
+
+ITM主要由管理组件和可选组件组成。
+Tivoli Management Services:
+
+TEMS
+TEPS
+TEP client
+Historical data collection(wareh">
+<meta property="og:image" content="http://canuxcheng.com/images/tivoli.png">
+<meta property="og:updated_time" content="2016-09-26T02:24:20.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tivoli之ITM">
+<meta name="twitter:description" content="ITMITM: IBM Tivoli Monitoring
+是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。
+Architecture Overview:
+
+ITM主要由管理组件和可选组件组成。
+Tivoli Management Services:
+
+TEMS
+TEPS
+TEP client
+Historical data collection(wareh">
+<meta name="twitter:image" content="http://canuxcheng.com/images/tivoli.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/04/20/Tivoli之ITM/"/>
+
+
+  <title> Tivoli之ITM | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Tivoli之ITM
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-20T01:57:31-04:00" content="2016-04-20">
+              2016-04-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Operation/" itemprop="url" rel="index">
+                    <span itemprop="name">Operation</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Operation/Tivoli/" itemprop="url" rel="index">
+                    <span itemprop="name">Tivoli</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/20/Tivoli之ITM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/Tivoli之ITM/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ITM"><a href="#ITM" class="headerlink" title="ITM"></a>ITM</h1><p>ITM: IBM Tivoli Monitoring</p>
+<p>是IBM的Cloud &amp; Smart Infrastructure监控解决方案。</p>
+<p>Architecture Overview:</p>
+<p><img src="/images/tivoli.png" alt="pic"></p>
+<p>ITM主要由管理组件和可选组件组成。</p>
+<p>Tivoli Management Services:</p>
+<ol>
+<li>TEMS</li>
+<li>TEPS</li>
+<li>TEP client</li>
+<li>Historical data collection(warehouse agent)<ul>
+<li>warehouse proxy</li>
+<li>summarization and pruning agent</li>
+</ul>
+</li>
+<li>OS agent</li>
+</ol>
+<p>Optional components:</p>
+<ol>
+<li>Dashboard Application Services Hub<ul>
+<li>Tivoli Monitoring dashboards(Infrastructure Management Dashboards for Servers)</li>
+<li>Tivoli Common Reporting</li>
+<li>Tivoli Enterprise Monitoring Automation Server</li>
+</ul>
+</li>
+<li>Tivoli Event Synchronization component</li>
+<li>Authorization Policy Components(tivcmd)</li>
+</ol>
+<p><a href="http://www.ibm.com/support/knowledgecenter/SSTFXA_6.3.0/com.ibm.itm.doc_6.3/welcome_63.htm" target="_blank" rel="external">http://www.ibm.com/support/knowledgecenter/SSTFXA_6.3.0/com.ibm.itm.doc_6.3/welcome_63.htm</a></p>
+<h2 id="安装ITM"><a href="#安装ITM" class="headerlink" title="安装ITM"></a>安装ITM</h2><p>Windows: C:\IBM\ITM</p>
+<p>Linux/Unix: /opt/IBM/ITM</p>
+<p>分为本地安装和分布式安装。</p>
+<ol>
+<li><p>需要先为TEPS和TDW安装DB(ODBC/JDBC)。</p>
+<p> DB2</p>
+<p> MSSQL</p>
+<p> Oracle</p>
+</li>
+<li><p>在windows/linux/unix安装ITM framework</p>
+<p> TEMA</p>
+<p> Warehouse Proxy agent</p>
+<p> Summarization and Pruning agent</p>
+<p> Tivoli performance Analyzer</p>
+<p> TEMS</p>
+<p> TEPS</p>
+<p> TEPD</p>
+<p> TEMAS</p>
+</li>
+<li><p>安装agent</p>
+<p> 安装操作系统的agent：</p>
+<p> monitoring agent for your OS。</p>
+<p> 安装数据库的agent：</p>
+<p> TEMA/TEMS/TEPS同时勾选DB的agent。</p>
+<p> 安装agent builder的agent。</p>
+</li>
+</ol>
+<p><a href="http://www-933.ibm.com/support/fixcentral/swg/downloadFixes?parent=ibm%2FTivoli&amp;product=ibm/Tivoli/IBM+Tivoli+Monitoring&amp;release=All&amp;platform=All&amp;function=fixId&amp;fixids=6.3.0-TIV-ITM-FP0005&amp;includeRequisites=1&amp;includeSupersedes=0&amp;downloadMethod=http" target="_blank" rel="external">http://www-933.ibm.com/support/fixcentral/swg/downloadFixes?parent=ibm%2FTivoli&amp;product=ibm/Tivoli/IBM+Tivoli+Monitoring&amp;release=All&amp;platform=All&amp;function=fixId&amp;fixids=6.3.0-TIV-ITM-FP0005&amp;includeRequisites=1&amp;includeSupersedes=0&amp;downloadMethod=http</a></p>
+<p>…</p>
+<h1 id="TEMS"><a href="#TEMS" class="headerlink" title="TEMS"></a>TEMS</h1><p>TEMS:  Tivoli Enterprise Monitoing Server</p>
+<p>TEMS分为remote和hub，remote最后都汇总到hub。</p>
+<p>HTEMS: Hub Tivoli Enterprise Monitoring Server</p>
+<p>RTEMS: Remote Tivoli Enterprise Monitoring Server</p>
+<p>一个TEMS建议管理700个agent</p>
+<h1 id="TEMA"><a href="#TEMA" class="headerlink" title="TEMA"></a>TEMA</h1><p>TEMA: Tivoli Enterprise Monitoring Agent</p>
+<p>安装agent之后通过GUI工具Tivoli Enterprise Monitoring Service来配置和启动agent。</p>
+<p>也可以通过命令行来配置和启动agent。</p>
+<p>agent配置需要指定HTEMS服务器。</p>
+<h2 id="Agentless"><a href="#Agentless" class="headerlink" title="Agentless"></a>Agentless</h2><p>TEMS -&gt; Agentless server -&gt; servers</p>
+<p>就是用一个中间服务器通过snmp等协议来监控不需要安装agent的被监控服务器。</p>
+<p>一个agentless可以设置10个实例(操作系统)，一个实例可以监控100个节点(被监控服务器)。</p>
+<p>Agentless OS agents:</p>
+<ol>
+<li>Agentless Monitoring for AIX OS - SNMP</li>
+<li>Agentless Monitoring for HP-UX OS - SNMP</li>
+<li>Agentless Monitoring for Linux OS - SNMP</li>
+<li>Agentless Monitoring for Solaris OS - SNMP,CIM-XML</li>
+<li>Agentless Monitoring for Windows OS - SNMP,WMI</li>
+</ol>
+<h2 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h2><p>TEMS -&gt; servers(agent)</p>
+<p>一个agent连2个TEMS,一个primary，一个backup。</p>
+<p>agent分为：</p>
+<ol>
+<li>Operating System agent</li>
+<li>specialized agent</li>
+<li>Application agent</li>
+</ol>
+<p>OS agent：</p>
+<ol>
+<li>Windows</li>
+<li>Unix</li>
+<li>Linux</li>
+<li>IBM i5/OS</li>
+</ol>
+<p>specialized agent：</p>
+<ol>
+<li>warehouse proxy agent</li>
+<li>warehouse summarization and pruning agent</li>
+<li>Log file agent</li>
+<li>System p® agents (AIX Premium, CEC Base, HMC Base, VIOS Premium)</li>
+<li>Systems Director base agent</li>
+<li>Tivoli zEnterprise® Agent</li>
+<li>Performance Analyzer</li>
+</ol>
+<h1 id="TEPS-DB"><a href="#TEPS-DB" class="headerlink" title="TEPS+DB"></a>TEPS+DB</h1><p>TEPS: Tivoli Enterprise Portal Server</p>
+<p>使用MTEMS来配置TEPS,添加DB。</p>
+<h1 id="TEPD-TEP-client"><a href="#TEPD-TEP-client" class="headerlink" title="TEPD(TEP client)"></a>TEPD(TEP client)</h1><p>TEP -&gt; TEPS</p>
+<p>TEP: Tivoli Enterprise Portal client</p>
+<p>TEP是GUI界面，分为：</p>
+<ol>
+<li>Desktop</li>
+<li>Browser</li>
+<li>JavaWS: java web start</li>
+</ol>
+<p>需要安装IBM的java，在C:\Program Files\IBM\Java70。</p>
+<p>使用TEP来查看监控结果。</p>
+<p>默认用户是sysadmin, 需要为TEPD指定TEPS服务器。</p>
+<ol>
+<li><p>Browser版本</p>
+<pre><code>http://&lt;TEPS Server&gt;:15200/cnp.html
+</code></pre></li>
+<li><p>Desktop版本</p>
+<pre><code>http://&lt;TEPS Server&gt;:15200/tep.jnlp
+</code></pre><p> 安装ITM可以选择安装桌面版,也可以从Java Web Start获取桌面版。</p>
+</li>
+</ol>
+<ol>
+<li><p>Java Web Start版本</p>
+<p> 结合了desktop和browser的优点,从web下载，在桌面运行。</p>
+</li>
+</ol>
+<p>TEP的结构：</p>
+<ul>
+<li><p>Navigator view</p>
+<p>  Enterprise</p>
+<p>  Operating Platform(操作系统类型)</p>
+<p>  Node(一台服务器一个节点)</p>
+<p>  Agent(一个节点上的agent)</p>
+<p>  Situation(一个agent上的situation)</p>
+<p>  Event(一个situation有多个event)</p>
+<p>  Attribute group(相同的Situation是一个group)</p>
+</li>
+<li><p>Navigator workspace</p>
+<p>  每个view项目都有一个默认的workspace。</p>
+</li>
+</ul>
+<p>…</p>
+<h1 id="History-data-collection-TDW"><a href="#History-data-collection-TDW" class="headerlink" title="History data collection(TDW)"></a>History data collection(TDW)</h1><p>TDW: Tivoli Data Warehouse</p>
+<p>存储历史数据。支持DB2，Oracle， MSSQL。</p>
+<p>也就是将agent收集的数据存到数据库。</p>
+<h2 id="Warehouse-Proxy"><a href="#Warehouse-Proxy" class="headerlink" title="Warehouse Proxy"></a>Warehouse Proxy</h2><p>TDW使用该agent从agents收集和加载数据。</p>
+<p>使用MTEMS配置warehouse proxy。</p>
+<h2 id="Summarization-and-Pruning-agent"><a href="#Summarization-and-Pruning-agent" class="headerlink" title="Summarization and Pruning agent"></a>Summarization and Pruning agent</h2><p>TDW使用该agent控制数据库大小。</p>
+<p>使用MTEMS配置summarization and pruning agent。</p>
+<h1 id="Jazz-for-Service-Management-Visualization"><a href="#Jazz-for-Service-Management-Visualization" class="headerlink" title="Jazz for Service Management(Visualization)"></a>Jazz for Service Management(Visualization)</h1><h2 id="Dashboard-Application-Services-Hub-DASH-visualization-services"><a href="#Dashboard-Application-Services-Hub-DASH-visualization-services" class="headerlink" title="Dashboard Application Services Hub(DASH)(visualization services)"></a>Dashboard Application Services Hub(DASH)(visualization services)</h2><h2 id="IBM-Tivoli-Common-Reporting-reporting-services"><a href="#IBM-Tivoli-Common-Reporting-reporting-services" class="headerlink" title="IBM Tivoli Common Reporting(reporting services)"></a>IBM Tivoli Common Reporting(reporting services)</h2><h2 id="Registry-Services"><a href="#Registry-Services" class="headerlink" title="Registry Services"></a>Registry Services</h2><h2 id="Security-Services"><a href="#Security-Services" class="headerlink" title="Security Services"></a>Security Services</h2><h2 id="Administration-Services"><a href="#Administration-Services" class="headerlink" title="Administration Services"></a>Administration Services</h2><h2 id="Tivoli-Directory-Integrator"><a href="#Tivoli-Directory-Integrator" class="headerlink" title="Tivoli Directory Integrator"></a>Tivoli Directory Integrator</h2><h2 id="IBM-HTTP-Server"><a href="#IBM-HTTP-Server" class="headerlink" title="IBM HTTP Server"></a>IBM HTTP Server</h2><h2 id="IBM-WebSphere®-Application-Server"><a href="#IBM-WebSphere®-Application-Server" class="headerlink" title="IBM WebSphere® Application Server"></a>IBM WebSphere® Application Server</h2><h2 id="Web-Server-Plug-ins-for-IBM-WebSphere-Application-Server"><a href="#Web-Server-Plug-ins-for-IBM-WebSphere-Application-Server" class="headerlink" title="Web Server Plug-ins for IBM WebSphere Application Server"></a>Web Server Plug-ins for IBM WebSphere Application Server</h2><p>…</p>
+<h1 id="Management"><a href="#Management" class="headerlink" title="Management"></a>Management</h1><p>管理所有组件一般使用GUI叫manage tivoli monitoring services</p>
+<p>windows/linux/unix都可以用GUI。</p>
+<p>也可以使用CLI（命令行）,见后文.</p>
+<p>一般使用GUI来启动、停止和配置组件。</p>
+<h1 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h1><p>Command Line Interface</p>
+<h2 id="tacmd"><a href="#tacmd" class="headerlink" title="tacmd"></a>tacmd</h2><p>支持windows/linux/unix。</p>
+<p>/opt/IBM/ITM/bin/tacmd</p>
+<p>C:\IBM\ITM\BIN\tacmd</p>
+<p>查看tacmd手册：</p>
+<pre><code>./tacmd help
+./tacmd ?
+</code></pre><p>登陆和登出HTEMS:</p>
+<pre><code>./tacmd login -s [PROTOCOL://]HOST[:PORT] -u [USERNAME] -p [PASSWORD] -t [TIMEOUT]
+./tacmd logout
+</code></pre><p>登陆和登出TEPS：</p>
+<pre><code>./tacmd tepsLogin -s [TEPS_HOSTNAME] -u [USERNAME] -p [TEPS_PASSWORD] -t [TIMEOUT] -i [IGNORE]
+./tacmd tepsLogout
+</code></pre><p>管理agent：</p>
+<pre><code>./tacmd startAgent/stopAgent/restartAgent/viewAgent/updateAgent ...
+</code></pre><p>刷新Netcool/OMNIbus：</p>
+<pre><code>./tacmd refreshTECinfo {-t|--type} {eif|maps|attr|all}
+</code></pre><h2 id="itmcmd"><a href="#itmcmd" class="headerlink" title="itmcmd"></a>itmcmd</h2><p>用于Linux/Unix系统的命令</p>
+<p>/opt/IBM/ITM/bin/itmcmd</p>
+<p>查看itmcmd手册：</p>
+<pre><code>./itmcmd help
+./itmcmd ?
+</code></pre><p>启动或停止TEMS:</p>
+<pre><code>./itmcmd server [-options] {start|stop} tems_name
+</code></pre><p>启动或停止agent：</p>
+<pre><code>./itmcmd agent [-options] {start|stop} {pc ...|all}
+</code></pre><p>启动MTEMS:</p>
+<pre><code>./itmcmd manage &amp;
+</code></pre><h2 id="tivcmd"><a href="#tivcmd" class="headerlink" title="tivcmd"></a>tivcmd</h2><p>…</p>
+<h1 id="Advanced-Administration"><a href="#Advanced-Administration" class="headerlink" title="Advanced Administration"></a>Advanced Administration</h1><h2 id="Queries-query-editor"><a href="#Queries-query-editor" class="headerlink" title="Queries(query editor)"></a>Queries(query editor)</h2><p>DB agent -&gt; normal way to get data source from database servers.</p>
+<p>ODBC -&gt; get data source from windows database</p>
+<p>JDBC -&gt; get data source from linux/unix database</p>
+<h2 id="Advanced-link-topics"><a href="#Advanced-link-topics" class="headerlink" title="Advanced link topics"></a>Advanced link topics</h2><p>Simple link:</p>
+<p>Just used to navigate portal workspaces without using the navigator.</p>
+<p>Advanced link:</p>
+<p>Can be used to manipulate data that is displayed in the target workspace.</p>
+<h2 id="Advanced-situation-techniques-situation-editor"><a href="#Advanced-situation-techniques-situation-editor" class="headerlink" title="Advanced situation techniques(situation editor)"></a>Advanced situation techniques(situation editor)</h2><h2 id="Agent-autonomy"><a href="#Agent-autonomy" class="headerlink" title="Agent autonomy"></a>Agent autonomy</h2><h2 id="Policy-workflow-editor"><a href="#Policy-workflow-editor" class="headerlink" title="Policy(workflow editor)"></a>Policy(workflow editor)</h2><h2 id="Agentless-monitoring"><a href="#Agentless-monitoring" class="headerlink" title="Agentless monitoring"></a>Agentless monitoring</h2><p>TEPS -&gt; Agentless Monitoring Serve -&gt; Servers</p>
+<h2 id="Agent-Managent-Services-AMS"><a href="#Agent-Managent-Services-AMS" class="headerlink" title="Agent Managent Services(AMS)"></a>Agent Managent Services(AMS)</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ITM/" rel="tag">#ITM</a>
+          
+            <a href="/tags/IBM/" rel="tag">#IBM</a>
+          
+            <a href="/tags/Tivoli/" rel="tag">#Tivoli</a>
+          
+            <a href="/tags/Monitoring/" rel="tag">#Monitoring</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/20/Shell之grep/" rel="next" title="Shell之grep">
+                <i class="fa fa-chevron-left"></i> Shell之grep
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/21/Tivoli之OMNIbus/" rel="prev" title="Tivoli之OMNIbus">
+                Tivoli之OMNIbus <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/20/Tivoli之ITM/"
+           data-title="Tivoli之ITM" data-url="http://canuxcheng.com/2016/04/20/Tivoli之ITM/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ITM"><span class="nav-number">1.</span> <span class="nav-text">ITM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装ITM"><span class="nav-number">1.1.</span> <span class="nav-text">安装ITM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TEMS"><span class="nav-number">2.</span> <span class="nav-text">TEMS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TEMA"><span class="nav-number">3.</span> <span class="nav-text">TEMA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Agentless"><span class="nav-number">3.1.</span> <span class="nav-text">Agentless</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agent"><span class="nav-number">3.2.</span> <span class="nav-text">Agent</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TEPS-DB"><span class="nav-number">4.</span> <span class="nav-text">TEPS+DB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TEPD-TEP-client"><span class="nav-number">5.</span> <span class="nav-text">TEPD(TEP client)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-data-collection-TDW"><span class="nav-number">6.</span> <span class="nav-text">History data collection(TDW)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warehouse-Proxy"><span class="nav-number">6.1.</span> <span class="nav-text">Warehouse Proxy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summarization-and-Pruning-agent"><span class="nav-number">6.2.</span> <span class="nav-text">Summarization and Pruning agent</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jazz-for-Service-Management-Visualization"><span class="nav-number">7.</span> <span class="nav-text">Jazz for Service Management(Visualization)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dashboard-Application-Services-Hub-DASH-visualization-services"><span class="nav-number">7.1.</span> <span class="nav-text">Dashboard Application Services Hub(DASH)(visualization services)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IBM-Tivoli-Common-Reporting-reporting-services"><span class="nav-number">7.2.</span> <span class="nav-text">IBM Tivoli Common Reporting(reporting services)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Registry-Services"><span class="nav-number">7.3.</span> <span class="nav-text">Registry Services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security-Services"><span class="nav-number">7.4.</span> <span class="nav-text">Security Services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Administration-Services"><span class="nav-number">7.5.</span> <span class="nav-text">Administration Services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tivoli-Directory-Integrator"><span class="nav-number">7.6.</span> <span class="nav-text">Tivoli Directory Integrator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IBM-HTTP-Server"><span class="nav-number">7.7.</span> <span class="nav-text">IBM HTTP Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IBM-WebSphere®-Application-Server"><span class="nav-number">7.8.</span> <span class="nav-text">IBM WebSphere® Application Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Server-Plug-ins-for-IBM-WebSphere-Application-Server"><span class="nav-number">7.9.</span> <span class="nav-text">Web Server Plug-ins for IBM WebSphere Application Server</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Management"><span class="nav-number">8.</span> <span class="nav-text">Management</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CLI"><span class="nav-number">9.</span> <span class="nav-text">CLI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tacmd"><span class="nav-number">9.1.</span> <span class="nav-text">tacmd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itmcmd"><span class="nav-number">9.2.</span> <span class="nav-text">itmcmd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tivcmd"><span class="nav-number">9.3.</span> <span class="nav-text">tivcmd</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advanced-Administration"><span class="nav-number">10.</span> <span class="nav-text">Advanced Administration</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Queries-query-editor"><span class="nav-number">10.1.</span> <span class="nav-text">Queries(query editor)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-link-topics"><span class="nav-number">10.2.</span> <span class="nav-text">Advanced link topics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-situation-techniques-situation-editor"><span class="nav-number">10.3.</span> <span class="nav-text">Advanced situation techniques(situation editor)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agent-autonomy"><span class="nav-number">10.4.</span> <span class="nav-text">Agent autonomy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Policy-workflow-editor"><span class="nav-number">10.5.</span> <span class="nav-text">Policy(workflow editor)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agentless-monitoring"><span class="nav-number">10.6.</span> <span class="nav-text">Agentless monitoring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agent-Managent-Services-AMS"><span class="nav-number">10.7.</span> <span class="nav-text">Agent Managent Services(AMS)</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

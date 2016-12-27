@@ -1,0 +1,1088 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="powershell,windows," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="Get-Help和Help:get-help查看帮助信息,help分页查看帮助信息，man是help的别名
+命令说明：
+Get-Help
+Help
+查看所有命令和概念：
+Get-Help *
+Help *
+模糊查找命令和概念：
+Get-Help *&amp;lt;name&amp;gt;*
+Help *&amp;lt;name&amp;gt;*
+查看具体命令帮助：
+Get-Help {&amp;lt;CmdletName&amp;gt; | &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PowerShell之内置命令">
+<meta property="og:url" content="http://canuxcheng.com/2016/05/23/PowerShell之内置命令/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="Get-Help和Help:get-help查看帮助信息,help分页查看帮助信息，man是help的别名
+命令说明：
+Get-Help
+Help
+查看所有命令和概念：
+Get-Help *
+Help *
+模糊查找命令和概念：
+Get-Help *&amp;lt;name&amp;gt;*
+Help *&amp;lt;name&amp;gt;*
+查看具体命令帮助：
+Get-Help {&amp;lt;CmdletName&amp;gt; | &amp;">
+<meta property="og:updated_time" content="2016-10-25T14:29:51.115Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PowerShell之内置命令">
+<meta name="twitter:description" content="Get-Help和Help:get-help查看帮助信息,help分页查看帮助信息，man是help的别名
+命令说明：
+Get-Help
+Help
+查看所有命令和概念：
+Get-Help *
+Help *
+模糊查找命令和概念：
+Get-Help *&amp;lt;name&amp;gt;*
+Help *&amp;lt;name&amp;gt;*
+查看具体命令帮助：
+Get-Help {&amp;lt;CmdletName&amp;gt; | &amp;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/05/23/PowerShell之内置命令/"/>
+
+
+  <title> PowerShell之内置命令 | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PowerShell之内置命令
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-23T22:44:44-04:00" content="2016-05-24">
+              2016-05-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Windows/PowerShell/" itemprop="url" rel="index">
+                    <span itemprop="name">PowerShell</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/23/PowerShell之内置命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/PowerShell之内置命令/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Get-Help和Help"><a href="#Get-Help和Help" class="headerlink" title="Get-Help和Help:"></a>Get-Help和Help:</h1><p>get-help查看帮助信息,help分页查看帮助信息，man是help的别名</p>
+<p>命令说明：</p>
+<pre><code>Get-Help
+Help
+</code></pre><p>查看所有命令和概念：</p>
+<pre><code>Get-Help *
+Help *
+</code></pre><p>模糊查找命令和概念：</p>
+<pre><code>Get-Help *&lt;name&gt;*
+Help *&lt;name&gt;*
+</code></pre><p>查看具体命令帮助：</p>
+<pre><code>Get-Help {&lt;CmdletName&gt; | &lt;TopicName&gt;}
+Help {&lt;CmdletName&gt; | &lt;TopicName&gt;}
+&lt;CmdletName&gt; -?
+</code></pre><p>get-help/help的选项:</p>
+<pre><code>get-help get-help
+-examples # 查看示例
+-full # 查看所有帮助
+-parameter # 查看选项的帮助
+-detailed # 查看详细信息
+-online # 打开文档中的link
+-showwindow # 用窗口打开
+</code></pre><h1 id="Helpfile"><a href="#Helpfile" class="headerlink" title="Helpfile"></a>Helpfile</h1><p>3.0/4.0 需要先下载帮助手册：</p>
+<pre><code>update-help
+</code></pre><p>所有helpfile：</p>
+<pre><code>Get-Help/Help about_*
+</code></pre><p>查看具体helpfile：</p>
+<pre><code>Get-Help/Help about_&lt;name&gt;
+</code></pre><hr>
+<h1 id="Cmdlets"><a href="#Cmdlets" class="headerlink" title="Cmdlets"></a>Cmdlets</h1><p>cmdlets是powershell的内置命令,类型是System.Management.Automation.CmdletInfo</p>
+<p>cmdlets的方法：</p>
+<pre><code>Equals
+GetHashCode
+GetType
+ToString
+</code></pre><p>cmdlets的属性：</p>
+<pre><code>CommandType
+DefaultParameterSet
+Definition
+HelpFile
+ImplementingType
+Module
+ModuleName
+Name
+Noun
+OutputType
+Parameters
+ParameterSets
+PSSnapln
+Verb
+Visibility
+DLL
+HelpUri
+</code></pre><p>常用cmdlets命令：</p>
+<pre><code>Get-Command -CommandType cmdlet # 查看所有cmdlet
+
+Get-Command
+Invoke-Command
+Measure-Command
+Show-Command
+Trace-Command
+
+Get-Service
+New-Service
+Restart-Service
+Resume-Service
+Set-Service
+Stop-Service
+Suspend-Service
+
+Get-Process
+Debug-Process
+Start-Process
+Stop-Process
+Wait-Process
+
+Get-Member  # 查看属性
+Add-Member
+
+Get-Host
+Read-Host
+Write-Host
+Out-Host
+
+Out-Default
+Out-File    # 重定向，也可以用&gt;, &gt;&gt;
+Out-GridView
+Out-Null
+Out-Printer
+Out-String
+
+Write-Debug
+Write-Error
+Write-EventLog
+Write-Output
+Write-Progress
+Write-Verbose
+Write-Warning
+</code></pre><h1 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h1><p>powershell内置函数</p>
+<pre><code>Get-Command -CommandType function # 查看所有function
+ls function:
+</code></pre><p>所有function：</p>
+<pre><code>prompt
+TabExpansion2
+Clear-Host
+more
+help
+mkdir
+Get-Verb
+oss
+cd..
+cd\
+ImportSystemModules
+Pause
+A:
+...
+Z:
+Get-FileHash
+</code></pre><h1 id="Alias"><a href="#Alias" class="headerlink" title="Alias"></a>Alias</h1><p>powershell内置别名</p>
+<pre><code>Get-Command -CommandType alias # 查看所有alias
+dir alias: # 查看所有alias
+ls alias: | where {$_.Definition.Startswith(&quot;Start&quot;)}
+
+Get-Alias # 查看所有alias
+Set-Alias
+New-Alias
+Import-Alias
+Export-Alias
+</code></pre><p>常用alias：</p>
+<pre><code>ForEach-Object    %/foreach
+Where-Object    ?/where
+Select-Object    select
+Compare-Object    compare/diff
+Tee-Object    tee
+Sort-Object    sort
+
+Set-Location    cd/chdir/sl
+Get-Location    pwd/gl
+
+Clear-Content    clc
+Get-Content    cat/type/gc
+
+Clear-History    clhy
+Get-History    h/history/ghy
+Invoke-History    ihy/r
+
+Clear-Variable    clv
+Set-Variable    set/sv
+
+Clear-Item    cli
+Clear-ItemProperty    clp
+Copy-Item    copy/cp/cpi
+Remove-Item    del/erase/rd/ri/rm/rmdir
+Move-Item    mv/move/mi
+Get-ChildItem    dir/ls/gci
+
+Get-Process    ps/gps
+Stop-Process    kill/spps
+Start-Process    start/saps
+
+Clear-Host    clear/cls
+
+Write-Output    echo/write
+
+New-PSDrive    mount
+
+Invoke-WebRequest    curl/wget
+
+Start-Sleep    sleep
+
+help    man
+mkdir    md
+</code></pre><hr>
+<h1 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h1><p>provider相关cmdlet：</p>
+<pre><code>Get-PSProvider # 查看provider
+Get-PSDrive    # 查看驱动器
+New-PSDrive    # 新建驱动器
+Remove-PSDrive    # 删除驱动器
+</code></pre><p>所有provider：</p>
+<pre><code># 这三个驱动器可以用ls或dir直接查看内容
+ls alias:
+dir function:
+Alias   # 别名驱动器
+Function    # 函数驱动器
+Variable    # 变量驱动器
+
+# 这三个驱动器需要具体的驱动器,然后cd进去查看
+FileSystem    # 文件系统驱动器
+Environment
+Registry
+
+help/get-help &lt;provider_name&gt;    # 查看provider帮助
+</code></pre><hr>
+<h1 id="object"><a href="#object" class="headerlink" title="object"></a>object</h1><p>object主要通过管道|使用。</p>
+<p>object相关的cmdlet：</p>
+<pre><code>Compare-Object
+ForEach-Object
+Group-Object
+Measure-Object
+New-Object
+Select-Object
+Sort-Object
+Tee-Object
+Where-Object
+</code></pre><p>object转化：</p>
+<pre><code>get-command -verb *convert*
+...
+</code></pre><p>导出object：</p>
+<pre><code>get-command -verb *export*
+...
+</code></pre><p>导入object：</p>
+<pre><code>get-command -verb *import*
+...
+</code></pre><h1 id="module"><a href="#module" class="headerlink" title="module"></a>module</h1><pre><code>Get-Module
+get-module -listavailable # 查找安装的模块
+Import-Module
+import-module sqlps # 导入第三方mssql模块
+get-command -module sqlps # 查看模块中所有命令
+New-Module
+Remove-Module
+</code></pre><h1 id="format"><a href="#format" class="headerlink" title="format"></a>format</h1><p>安装路径有一些xml文件已经做了一些默认的格式化。</p>
+<p>格式化的数据只能传给Out-File/out-host/out-printer/out-null/out-string/out-default.</p>
+<pre><code>Export-FormatData
+Get-FormatData
+Update-FormatData
+Format-Custom
+Format-List
+Format-Table
+Format-Wide
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/powershell/" rel="tag">#powershell</a>
+          
+            <a href="/tags/windows/" rel="tag">#windows</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/18/Monitoring/" rel="next" title="Monitoring">
+                <i class="fa fa-chevron-left"></i> Monitoring
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/25/Database之Mysql/" rel="prev" title="Database之Mysql">
+                Database之Mysql <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/23/PowerShell之内置命令/"
+           data-title="PowerShell之内置命令" data-url="http://canuxcheng.com/2016/05/23/PowerShell之内置命令/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-Help和Help"><span class="nav-number">1.</span> <span class="nav-text">Get-Help和Help:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Helpfile"><span class="nav-number">2.</span> <span class="nav-text">Helpfile</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cmdlets"><span class="nav-number">3.</span> <span class="nav-text">Cmdlets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Function"><span class="nav-number">4.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Alias"><span class="nav-number">5.</span> <span class="nav-text">Alias</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Provider"><span class="nav-number">6.</span> <span class="nav-text">Provider</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#object"><span class="nav-number">7.</span> <span class="nav-text">object</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#module"><span class="nav-number">8.</span> <span class="nav-text">module</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#format"><span class="nav-number">9.</span> <span class="nav-text">format</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

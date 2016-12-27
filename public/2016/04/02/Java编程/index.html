@@ -1,0 +1,1314 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="java概述Java的三个体系:
+
+J2SE: 标准版
+J2EE: 企业版(包括J2SE)
+J2ME: 微型版
+
+Java的版本：
+
+OpenJDK
+Oracle JDK
+IBM JDK
+
+java命令:
+
+java      运行程序
+javac     编译器
+jdb       调试器
+jar       归档工具
+javadoc   文档工具
+
+java的ide:
+
+eclipse(IBM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java编程">
+<meta property="og:url" content="http://canuxcheng.com/2016/04/02/Java编程/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="java概述Java的三个体系:
+
+J2SE: 标准版
+J2EE: 企业版(包括J2SE)
+J2ME: 微型版
+
+Java的版本：
+
+OpenJDK
+Oracle JDK
+IBM JDK
+
+java命令:
+
+java      运行程序
+javac     编译器
+jdb       调试器
+jar       归档工具
+javadoc   文档工具
+
+java的ide:
+
+eclipse(IBM">
+<meta property="og:image" content="http://canuxcheng.com/images/java.PNG">
+<meta property="og:updated_time" content="2016-12-16T03:50:39.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java编程">
+<meta name="twitter:description" content="java概述Java的三个体系:
+
+J2SE: 标准版
+J2EE: 企业版(包括J2SE)
+J2ME: 微型版
+
+Java的版本：
+
+OpenJDK
+Oracle JDK
+IBM JDK
+
+java命令:
+
+java      运行程序
+javac     编译器
+jdb       调试器
+jar       归档工具
+javadoc   文档工具
+
+java的ide:
+
+eclipse(IBM">
+<meta name="twitter:image" content="http://canuxcheng.com/images/java.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/04/02/Java编程/"/>
+
+
+  <title> Java编程 | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java编程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-02T22:49:07-04:00" content="2016-04-03">
+              2016-04-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/02/Java编程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/Java编程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="java概述"><a href="#java概述" class="headerlink" title="java概述"></a>java概述</h1><p>Java的三个体系:</p>
+<ol>
+<li>J2SE: 标准版</li>
+<li>J2EE: 企业版(包括J2SE)</li>
+<li>J2ME: 微型版</li>
+</ol>
+<p>Java的版本：</p>
+<ol>
+<li>OpenJDK</li>
+<li>Oracle JDK</li>
+<li>IBM JDK</li>
+</ol>
+<p>java命令:</p>
+<ol>
+<li>java      运行程序</li>
+<li>javac     编译器</li>
+<li>jdb       调试器</li>
+<li>jar       归档工具</li>
+<li>javadoc   文档工具</li>
+</ol>
+<p>java的ide:</p>
+<ol>
+<li>eclipse(IBM)</li>
+<li>netbeans(Oracle)</li>
+</ol>
+<p>Java的架构：</p>
+<p><img src="/images/java.PNG" alt="pic"></p>
+<hr>
+<h1 id="java基本语法"><a href="#java基本语法" class="headerlink" title="java基本语法"></a>java基本语法</h1><p>java源程序叫Xxx.java</p>
+<p>java是强类型语言。</p>
+<p>java大小写敏感。</p>
+<p>java使用骆驼命名法，单词首字母大写。</p>
+<p>java语句要用分号；结尾, 用{}表示一个代码块, import语句也需要分号;。</p>
+<p>java程序以类的形式出现，类名单词首字母大写。</p>
+<p>java源代码文件名要和公共类的名字相同。</p>
+<p>java标识符：字母和下划线开头，可以包含数字，不能是关键字。</p>
+<p>一个类要独立运行需要main函数。</p>
+<h1 id="java注释"><a href="#java注释" class="headerlink" title="java注释"></a>java注释</h1><p>单行注释:</p>
+<pre><code>// comment
+
+/* comment */
+</code></pre><p>多行注释:</p>
+<pre><code>/*
+ * comment1
+ * comment2
+ */
+</code></pre><h1 id="java关键字"><a href="#java关键字" class="headerlink" title="java关键字"></a>java关键字</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>boolean, int, long, short, byte, float, double, char, class, interface</p>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><p>if, else, for, do, while, switch, case, default, break, continue, return, try, catch, finally.</p>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>public, protect，private，final，void， static， staticfp， abstract， transient， synchronized， volatile, native,</p>
+<h2 id="动作相关"><a href="#动作相关" class="headerlink" title="动作相关"></a>动作相关</h2><p>package, import, throw, throws, extends, implements, this, super, instanceof, new.</p>
+<h2 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h2><p>true, false, null, goto, const.</p>
+<h1 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h1><p>java有8种基本数据类型</p>
+<h2 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h2><ol>
+<li><p>byte 1 字节</p>
+</li>
+<li><p>short 2字节</p>
+</li>
+<li><p>int 4字节</p>
+</li>
+<li><p>long 8字节，后缀为L</p>
+</li>
+</ol>
+<p>byte可以转换成short, short可以转换成int, int可以转换成long.</p>
+<p>int和long都可以转换成浮点型.</p>
+<h2 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h2><ol>
+<li><p>float  4字节</p>
+</li>
+<li><p>double  8字节，后缀为F</p>
+</li>
+</ol>
+<p>float可以转换成double类型.</p>
+<p>三个表示出错和溢出的浮点数:</p>
+<p>正无穷</p>
+<p>负无穷</p>
+<p>NaN</p>
+<h2 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h2><ol>
+<li>char 表示单个字符</li>
+</ol>
+<p>char类型可以转换成int类型.</p>
+<h2 id="布尔型："><a href="#布尔型：" class="headerlink" title="布尔型："></a>布尔型：</h2><ol>
+<li>Boolean 两个值true和false表示真和假。</li>
+</ol>
+<p>在java中整形值和布尔值不能转换。</p>
+<h2 id="进制："><a href="#进制：" class="headerlink" title="进制："></a>进制：</h2><p>前缀0b表示二进制</p>
+<p>前缀0表示八进制</p>
+<p>前缀0x表示十六进制</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>也就是局部变量，和类中的域有区别。</p>
+<p>局部变量定义在局部代码块中，只在所属区域有效。</p>
+<p>局部变量存放在栈内存的方法中。</p>
+<p>局部变量随着所属区域的执行而存在，随着所属区域结束而释放。</p>
+<p>局部变量没有默认初始值，必须手动初始化。</p>
+<pre><code>int &lt;variable&gt; = &lt;value&gt;
+</code></pre><p>变量需要先申明类型,然后再初始化, 最后才能使用.</p>
+<p>最好逐一申明每个变量.</p>
+<p>变量的申明最好靠近第一次使用的地方.</p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量:"></a>常量:</h2><p>使用final修饰的是常量，只能被赋值一次。</p>
+<pre><code>final int &lt;VAR&gt; = &lt;val&gt;
+</code></pre><h1 id="java运算符"><a href="#java运算符" class="headerlink" title="java运算符"></a>java运算符</h1><h2 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h2><blockquote>
+<p>+</p>
+<p>-</p>
+<p>*</p>
+<p>/    当除法两个操作数都是整数时结果是整数，否则是浮点数。</p>
+<p>&amp;    求余数</p>
+</blockquote>
+<h2 id="自增运算-自减运算"><a href="#自增运算-自减运算" class="headerlink" title="自增运算/自减运算"></a>自增运算/自减运算</h2><blockquote>
+<blockquote>
+<p>++n/–n    当前表达式n的值就要加1。</p>
+<p>n++/n–    当前表达式n的值不变，下一个表达式n的值加1。</p>
+</blockquote>
+</blockquote>
+<h2 id="赋值运算"><a href="#赋值运算" class="headerlink" title="赋值运算"></a>赋值运算</h2><blockquote>
+<blockquote>
+<p>=</p>
+<p>+=</p>
+<p>-=</p>
+<p>*=</p>
+<p>/=</p>
+<p>&amp;=</p>
+</blockquote>
+</blockquote>
+<h2 id="关系运算"><a href="#关系运算" class="headerlink" title="关系运算"></a>关系运算</h2><blockquote>
+<blockquote>
+<p>==</p>
+<p>!=</p>
+<p>&lt;</p>
+<p>&gt;</p>
+<p>&lt;=</p>
+<blockquote>
+<p>=</p>
+</blockquote>
+<p>instanceof(检查是否是类的对象）</p>
+</blockquote>
+</blockquote>
+<h2 id="逻辑运算-boolean运算符"><a href="#逻辑运算-boolean运算符" class="headerlink" title="逻辑运算(boolean运算符)"></a>逻辑运算(boolean运算符)</h2><blockquote>
+<blockquote>
+<p>&amp;&amp; (AND短路)</p>
+<p>|| (OR短路)</p>
+<p>! (NOT)</p>
+</blockquote>
+</blockquote>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><blockquote>
+<blockquote>
+<p>&amp; (AND)</p>
+<p>| (OR)</p>
+<p>^ (XOR)</p>
+<p>~ (非)</p>
+<p>a&lt;&lt;b (a左移b位),地位补0。</p>
+<p>a&gt;&gt;b (a右移b位)，高位是符号位。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>(无符号右移，高位始终补0)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="三目运算："><a href="#三目运算：" class="headerlink" title="三目运算："></a>三目运算：</h2><blockquote>
+<blockquote>
+<p>x?y:z</p>
+</blockquote>
+</blockquote>
+<hr>
+<h1 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h1><p>变量的值只在一个有限的集合内，可以定义枚举类型。</p>
+<p>定义枚举类型:</p>
+<pre><code>enum &lt;enum_name&gt; { val1, val2, ..., valN };
+</code></pre><p>申明枚举类型</p>
+<pre><code>&lt;enum_name&gt; &lt;variable&gt; = &lt;enum_name&gt;.varX
+</code></pre><hr>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组就是一个容器，存储相同数据类型的集合。</p>
+<p>数组大小不能改变，只能改变数组元素的大小。</p>
+<h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><p>申明数组两种方法：</p>
+<pre><code>int[] array; // 推荐
+int array[];
+</code></pre><p>使用new初始化数组：</p>
+<p>需要用new创建一个数组,n可以是变量,也可以是0.</p>
+<p>数字数组初始化为0,布尔类型初始化为false，对象类型初始化为null（包括String类型）。</p>
+<pre><code>int[] array =  new int[n];
+</code></pre><p>直接初始化数组：</p>
+<pre><code>int[] array = new int[]{&lt;val1&gt;, &lt;val2&gt;, ...};
+int[] array = {&lt;val1&gt;, &lt;val2&gt;, ...};
+</code></pre><p>创建并初始化匿名数组,可以直接将匿名数组赋值给别的数组:</p>
+<pre><code>new int[]{&lt;val1&gt;, &lt;val2&gt;, ...};
+</code></pre><p>用for访问数组元素，下标从0开始,下标不能越界:</p>
+<pre><code>for (int i = 0; i &lt; n; i++)
+    array[i] = &lt;value&gt;;
+</code></pre><p>使用for each访问数组元素：</p>
+<pre><code>for (int &lt;variable&gt; : array)
+    System.out.println(&lt;variable&gt;)
+</code></pre><p>length函数求数组长度：</p>
+<pre><code>array.length
+</code></pre><p>数组拷贝：</p>
+<p>将一个数组变量拷贝给另一个数组变量，两个变量引用同一个数组,</p>
+<p>也就是说任意改变一个元素的值，另一个数组的对应元素值也改变。</p>
+<pre><code>int[] array1 = array;
+</code></pre><p>将一个数组所有值拷贝给一个新数组：</p>
+<p>java.util.Arrays.copyOf()仅仅是把一个数组的所有值拷贝给另一个数组。</p>
+<pre><code>int[] array1 = Arrays.copyOf(array, array.length);
+</code></pre><p>数组排序：</p>
+<pre><code>Arrays.sort(array); / 优化的快速排序 /
+</code></pre><h2 id="多维数组："><a href="#多维数组：" class="headerlink" title="多维数组："></a>多维数组：</h2><p>申明二维数组：</p>
+<pre><code>double[][] arrays;
+</code></pre><p>用new初始化数组：</p>
+<pre><code>double[][] arrays = new double[m][n];
+</code></pre><p>直接初始化：</p>
+<pre><code>double[][] arrays = {｛...｝，｛...｝, ...}；
+</code></pre><p>访问数组元素：</p>
+<pre><code>for (double[] row : arrays)
+    for (double col : row)
+        System.out.println(col)
+</code></pre><p>参考java.util.Arrays类。</p>
+<hr>
+<h1 id="字符串-java-lang-String-："><a href="#字符串-java-lang-String-：" class="headerlink" title="字符串(java.lang.String)："></a>字符串(java.lang.String)：</h1><p>java字符串就是unicode字符序列。</p>
+<p>任何一个java对象都可以转换成字符串。</p>
+<p>java没有字符串类型，而是用标准库中预定义的类Spring。</p>
+<p>每个用双引号””括起来的字符串都是Spring类的一个实例。</p>
+<p>不能修改java字符串中的字符，所以String类对象是不可变字符串。</p>
+<p>子串:</p>
+<p>String类的substring方法可以获取子串</p>
+<pre><code>String greeting = &quot;hello&quot;;
+String s = greeting.substring(0, 3);
+</code></pre><p>substring(start, end)，下标从0开始，从start到end，但是不包括end。</p>
+<p>拼接:</p>
+<p>java可以用+连接两个字符串。</p>
+<pre><code>String expletive = &quot;Expletive&quot;;
+String PG13 = &quot;deleted&quot;;
+String message = expletive + PG13;
+</code></pre><p>字符串比较:</p>
+<p>equals函数比较相等,相等返回true,s和t可以是字符串变量也可以常量:</p>
+<pre><code>s.equals(t)
+</code></pre><p>equalsIgnoreCase函数比较字符串是否相等，不区分大小写：</p>
+<pre><code>s.equalsIgnoreCase(t)
+</code></pre><p>length函数返回字符串长度：</p>
+<pre><code>s.length()
+</code></pre><p>空串：</p>
+<pre><code>if (s.length() == 0)
+if (s.equals(&quot;&quot;))
+</code></pre><p>Null:</p>
+<pre><code>if (str == null)
+</code></pre><p>判断一个字符串既不时空串又不是null，先判断是否为null，对null调用方法会出现错误：</p>
+<pre><code>if (str != null &amp;&amp; str.length() != 0)
+</code></pre><p>String类的方法:</p>
+<p>参考java.lang.String。</p>
+<h2 id="用StringBuilder构建字符串"><a href="#用StringBuilder构建字符串" class="headerlink" title="用StringBuilder构建字符串:"></a>用StringBuilder构建字符串:</h2><p>构建一个空字符串构建器:</p>
+<pre><code>StringBuilder builder = new StringBuilder();
+</code></pre><p>修改内容:</p>
+<pre><code>builder.append(String str)
+builder.append(char c)
+builder.delete(int startIndex, int endIndex)
+builder.insert(int offset, String str)
+builder.insert(int offset, Char c)
+</code></pre><p>构建新字符串：</p>
+<pre><code>String completeString = builder.toString();
+</code></pre><p>参考 java.lang.StringBuilder 类的方法。</p>
+<h2 id="用StringBuffer构建字符串缓冲区"><a href="#用StringBuffer构建字符串缓冲区" class="headerlink" title="用StringBuffer构建字符串缓冲区"></a>用StringBuffer构建字符串缓冲区</h2><p>参考 java.lang.StringBuffer 类的方法。</p>
+<hr>
+<h1 id="输入输出："><a href="#输入输出：" class="headerlink" title="输入输出："></a>输入输出：</h1><h2 id="标准输出流：System-out"><a href="#标准输出流：System-out" class="headerlink" title="标准输出流：System.out"></a>标准输出流：System.out</h2><p>输出控制流的方法：</p>
+<pre><code>System.out.print();
+System.out.println();
+</code></pre><p>参考 java.io.PrintStream 的方法。</p>
+<h2 id="标准输入流：System-in"><a href="#标准输入流：System-in" class="headerlink" title="标准输入流：System.in"></a>标准输入流：System.in</h2><p>导入Scanner类：</p>
+<pre><code>import java.util.Scanner;
+</code></pre><p>构造Scanner对象，然后和System.in关联：</p>
+<pre><code>Scanner in = new Scanner(System.in);
+</code></pre><p>输入控制流的方法：</p>
+<pre><code>String name = in.nextLine(); / 读取输入的下一行内容 /
+String firstName = in.next(); / 读取输入的下一个单词 /
+int age = in.nextInt(); / 读取一个整数 /
+double number = in.nextDouble(); / 读取一个浮点数 /
+boolean test = in.hasNext(); / 检测输入中是否还有其他单词 /
+boolean test = in.hasNextInt(); / 检测输入中是否还有其他int类型 /
+boolean test = in.hasNextDouble(); / 检测输入中是否还有其他double类型 /
+</code></pre><p>参考 java.util.Scanner 的方法。</p>
+<h2 id="控制台输入System-console"><a href="#控制台输入System-console" class="headerlink" title="控制台输入System.console()"></a>控制台输入System.console()</h2><p>返回一个Console类型对象：</p>
+<pre><code>Console cons = System.console();
+</code></pre><p>Console类型对象的方法：</p>
+<pre><code>String username = cons.readLine(&quot;User name: &quot;);
+char[] password = cons.readPassword(&quot;Password: &quot;);
+</code></pre><p>参考 java.io.Console 的方法。</p>
+<h2 id="文件输出（读）："><a href="#文件输出（读）：" class="headerlink" title="文件输出（读）："></a>文件输出（读）：</h2><pre><code>Scanner in = new Scanner(Paths.get(“myfile.txt”));
+</code></pre><h2 id="文件输入（写）："><a href="#文件输入（写）：" class="headerlink" title="文件输入（写）："></a>文件输入（写）：</h2><pre><code>PrintWriter out = new PrintWriter(“myfile.txt”));
+</code></pre><hr>
+<h1 id="java控制流"><a href="#java控制流" class="headerlink" title="java控制流"></a>java控制流</h1><p>由{}括起来的若干简单语句构成块作用域。</p>
+<p>不能在嵌套的两个块中申明同名的变量。</p>
+<h2 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h2><p>条件语句if - else if - else:</p>
+<pre><code>if (condition)
+{
+    statement；
+}; / if 只有一条语句，{}可以省略 /
+
+if (condition)
+{
+    statement;
+}
+else
+{
+    statement;
+}; / else与最近的if构成一组 /
+
+if(condition)
+{
+    statement;
+}
+else if (condition)
+{
+    statement;
+}
+else
+{
+    expression;
+};
+</code></pre><h2 id="switch条件语句"><a href="#switch条件语句" class="headerlink" title="switch条件语句"></a>switch条件语句</h2><p>条件语句switch-case, variable只能是 byte， short， int，char的常量表达式或枚举常量，也可以是字符串字面量。</p>
+<p>default不管在哪里都是最后运行。</p>
+<p>从第一个匹配的case开始执行，直到遇到break停止。</p>
+<p>编译时加javac -Xlint:fallthrough会给出没有break的警告。</p>
+<p>不提倡使用switch-case语句。</p>
+<pre><code>switch (variable)
+{
+    case value1:
+        statement1;
+        break;
+    …
+    case valueN:
+        statementN;
+        break;
+    default:
+        statement;
+        break;
+}
+</code></pre><h2 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h2><p>循环语句while,条件为真进入循环。</p>
+<pre><code>while (condition)
+{
+    statement;
+}
+</code></pre><h2 id="do-while循环语句"><a href="#do-while循环语句" class="headerlink" title="do while循环语句"></a>do while循环语句</h2><p>循环语句do – while,先执行一次，再判断条件为真，进入循环。</p>
+<pre><code>do
+{
+    statement;
+}
+while (condition)
+</code></pre><h2 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h2><p>循环语句for,init最先执行且只执行一次，condition为真进入循环，执行statement1，然后再执行statement，最后在condition-statement1-statement之间循环。</p>
+<p>for循环体内申明和定义的变量不能在外部使用，除非在外部申明和定义。</p>
+<pre><code>for (init; condition; statement) {
+    statement1;
+}
+</code></pre><h2 id="中断控制流程语句"><a href="#中断控制流程语句" class="headerlink" title="中断控制流程语句"></a>中断控制流程语句</h2><p>break语句:</p>
+<p>只能用于循环语句，跳出循环，不能用于选择语句。</p>
+<p>continue语句：</p>
+<p>只能用于循环语句，继续下一次循环，不能用于选择语句。</p>
+<p>带标签的break语句：</p>
+<p>标签放在希望跳出的最外层循环/选择块 之前， 标签需要紧跟一个冒号。</p>
+<p>带标签的break语句可以用于任何语句。</p>
+<pre><code>label:
+{
+    ...
+    break label;
+}
+</code></pre><hr>
+<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p>由源文件生成一个html格式的文档。</p>
+<p>从下面特性中抽取信息：</p>
+<ol>
+<li>包package</li>
+<li>公有类与接口</li>
+<li>公有的和受保护的构造器及方法</li>
+<li>公有的和受保护的域</li>
+</ol>
+<p>文档注释方式：</p>
+<pre><code>/**
+* summary, javadoc will automatic detect this line as summary.
+* @param
+* &lt;em&gt;...&lt;/em&gt;
+* &lt;code&gt;...&lt;/code&gt;
+* &lt;strong&gt;...&lt;/strong&gt;
+* &lt;img&gt;...&lt;/img&gt;
+* ...
+*/
+</code></pre><p>类的注释放在import后面，类定义前面。</p>
+<p>方法的注释放到方法前面。</p>
+<p>域的注释放到域前面，只需要注释静态常量域。</p>
+<pre><code>package &lt;packageName&gt;;
+
+import java.util.*;
+
+/**
+ * Class comment
+ * @author
+ * @version
+ * @since
+ * @deprecated
+ * @see
+ * @link
+ */
+public Class Comment
+{
+    /**
+     * Just for public static final field.
+     */
+    public static final NAME = VALUE;
+
+    /**
+     * public Constructor/Method comment
+     * @param
+     * @return
+     * @throws
+     */
+     public type name(param)
+     {
+         ...
+     }
+}
+</code></pre><p>包注释：</p>
+<p>包注释需要在包目录添加单独的文件,有两种方法。</p>
+<p>提供一个package.html文件，<body>…</body>之间的会被javadoc提取。</p>
+<p>提供一个package-info.java，/<em>*…</em>/之间的会被javadoc提取。</p>
+<p>总注释：</p>
+<p>可以为所有源文件提供一个总结性的注释：</p>
+<p>提供一个overview.html文件，在<body>…</body>之间的会被javadoc提取。</p>
+<hr>
+<h1 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h1><h2 id="jar文件"><a href="#jar文件" class="headerlink" title="jar文件"></a>jar文件</h2><p>用jar命令打包， 可以包含图像，声音，源代码等文件，并进行压缩。</p>
+<pre><code>jar cvf JarFile.jar File1 File2 ... # 将指定文件压缩归档到JarFileName这个jar包。
+jar cvfm JareFile.jar manifest.mf File ... # 根据清单文件mainfest.mf压缩归档。
+jar uvfm JarFile.jar mainfest-additions.mf # 更新已有jar包。
+</code></pre><p>运行jar包：</p>
+<pre><code>java -jar JarFile.jar
+</code></pre><h2 id="Java-Web-Start"><a href="#Java-Web-Start" class="headerlink" title="Java Web Start"></a>Java Web Start</h2><p>jws是一项通过internet发布应用程序的技术。</p>
+<p>JWS程序需要打包一个或多个jar文件，然后创建一个JNLP格式的描述符文件，将这些文件放到web服务器。</p>
+<p>JWS特性：</p>
+<ol>
+<li>通过浏览器发布，下载到本地就可以启动，不再需要浏览器。</li>
+<li>应用程序不在浏览器窗口内，显示在浏览器外的一个属于自己的框架中。</li>
+<li>应用程序不使用浏览器的java实现，浏览器只是在加载应用程序描述符时启动一个外部应用程序。</li>
+<li>数字签名用用程序可以被赋予访问本地机器的任意权限，未签名的应用程序只能在沙箱中运行。</li>
+</ol>
+<h2 id="applet"><a href="#applet" class="headerlink" title="applet"></a>applet</h2><p>applet是一种包含在html网页中的java应用程序。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/02/Java编程之面向对象/" rel="next" title="Java编程之面向对象">
+                <i class="fa fa-chevron-left"></i> Java编程之面向对象
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/02/Java总结/" rel="prev" title="Java总结">
+                Java总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/02/Java编程/"
+           data-title="Java编程" data-url="http://canuxcheng.com/2016/04/02/Java编程/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java概述"><span class="nav-number">1.</span> <span class="nav-text">java概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java基本语法"><span class="nav-number">2.</span> <span class="nav-text">java基本语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java注释"><span class="nav-number">3.</span> <span class="nav-text">java注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java关键字"><span class="nav-number">4.</span> <span class="nav-text">java关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">4.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">4.2.</span> <span class="nav-text">流程控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰符"><span class="nav-number">4.3.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动作相关"><span class="nav-number">4.4.</span> <span class="nav-text">动作相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保留字"><span class="nav-number">4.5.</span> <span class="nav-text">保留字</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型-1"><span class="nav-number">5.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#整数类型"><span class="nav-number">5.1.</span> <span class="nav-text">整数类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点类型"><span class="nav-number">5.2.</span> <span class="nav-text">浮点类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符类型"><span class="nav-number">5.3.</span> <span class="nav-text">字符类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔型："><span class="nav-number">5.4.</span> <span class="nav-text">布尔型：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进制："><span class="nav-number">5.5.</span> <span class="nav-text">进制：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">5.6.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量"><span class="nav-number">5.7.</span> <span class="nav-text">常量:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java运算符"><span class="nav-number">6.</span> <span class="nav-text">java运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算"><span class="nav-number">6.1.</span> <span class="nav-text">算术运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自增运算-自减运算"><span class="nav-number">6.2.</span> <span class="nav-text">自增运算/自减运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值运算"><span class="nav-number">6.3.</span> <span class="nav-text">赋值运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算"><span class="nav-number">6.4.</span> <span class="nav-text">关系运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算-boolean运算符"><span class="nav-number">6.5.</span> <span class="nav-text">逻辑运算(boolean运算符)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算"><span class="nav-number">6.6.</span> <span class="nav-text">位运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三目运算："><span class="nav-number">6.7.</span> <span class="nav-text">三目运算：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举类型"><span class="nav-number">7.</span> <span class="nav-text">枚举类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">8.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一维数组"><span class="nav-number">8.1.</span> <span class="nav-text">一维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多维数组："><span class="nav-number">8.2.</span> <span class="nav-text">多维数组：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串-java-lang-String-："><span class="nav-number">9.</span> <span class="nav-text">字符串(java.lang.String)：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用StringBuilder构建字符串"><span class="nav-number">9.1.</span> <span class="nav-text">用StringBuilder构建字符串:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用StringBuffer构建字符串缓冲区"><span class="nav-number">9.2.</span> <span class="nav-text">用StringBuffer构建字符串缓冲区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入输出："><span class="nav-number">10.</span> <span class="nav-text">输入输出：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准输出流：System-out"><span class="nav-number">10.1.</span> <span class="nav-text">标准输出流：System.out</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准输入流：System-in"><span class="nav-number">10.2.</span> <span class="nav-text">标准输入流：System.in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制台输入System-console"><span class="nav-number">10.3.</span> <span class="nav-text">控制台输入System.console()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件输出（读）："><span class="nav-number">10.4.</span> <span class="nav-text">文件输出（读）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件输入（写）："><span class="nav-number">10.5.</span> <span class="nav-text">文件输入（写）：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java控制流"><span class="nav-number">11.</span> <span class="nav-text">java控制流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if条件语句"><span class="nav-number">11.1.</span> <span class="nav-text">if条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#switch条件语句"><span class="nav-number">11.2.</span> <span class="nav-text">switch条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while循环语句"><span class="nav-number">11.3.</span> <span class="nav-text">while循环语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#do-while循环语句"><span class="nav-number">11.4.</span> <span class="nav-text">do while循环语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环语句"><span class="nav-number">11.5.</span> <span class="nav-text">for循环语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断控制流程语句"><span class="nav-number">11.6.</span> <span class="nav-text">中断控制流程语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档"><span class="nav-number">12.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打包"><span class="nav-number">13.</span> <span class="nav-text">打包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jar文件"><span class="nav-number">13.1.</span> <span class="nav-text">jar文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Web-Start"><span class="nav-number">13.2.</span> <span class="nav-text">Java Web Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#applet"><span class="nav-number">13.3.</span> <span class="nav-text">applet</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,970 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="django,apache,nginx," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="发布django项目django内置一个轻量级web开发服务器。
+如果要发布django项目需要另外的操作。
+WSGI: web server gateway interface
+WSGI是python web服务器和应用的标准，PEP3333.
+django默认会生成wsgi.py文件。
+wsgi.py -&amp;gt; settings.py -&amp;gt; urls.py -&amp;gt; applicat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django之Deploy">
+<meta property="og:url" content="http://canuxcheng.com/2016/09/26/Django之Deploy/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="发布django项目django内置一个轻量级web开发服务器。
+如果要发布django项目需要另外的操作。
+WSGI: web server gateway interface
+WSGI是python web服务器和应用的标准，PEP3333.
+django默认会生成wsgi.py文件。
+wsgi.py -&amp;gt; settings.py -&amp;gt; urls.py -&amp;gt; applicat">
+<meta property="og:updated_time" content="2016-11-08T09:27:53.878Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django之Deploy">
+<meta name="twitter:description" content="发布django项目django内置一个轻量级web开发服务器。
+如果要发布django项目需要另外的操作。
+WSGI: web server gateway interface
+WSGI是python web服务器和应用的标准，PEP3333.
+django默认会生成wsgi.py文件。
+wsgi.py -&amp;gt; settings.py -&amp;gt; urls.py -&amp;gt; applicat">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/09/26/Django之Deploy/"/>
+
+
+  <title> Django之Deploy | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Django之Deploy
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-26T22:23:22-04:00" content="2016-09-27">
+              2016-09-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/26/Django之Deploy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/26/Django之Deploy/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="发布django项目"><a href="#发布django项目" class="headerlink" title="发布django项目"></a>发布django项目</h1><p>django内置一个轻量级web开发服务器。</p>
+<p>如果要发布django项目需要另外的操作。</p>
+<p>WSGI: web server gateway interface</p>
+<p>WSGI是python web服务器和应用的标准，PEP3333.</p>
+<p>django默认会生成wsgi.py文件。</p>
+<p>wsgi.py -&gt; settings.py -&gt; urls.py -&gt; application</p>
+<p>也可以发布到其它的云平台。</p>
+<hr>
+<h1 id="deploy时django的设置"><a href="#deploy时django的设置" class="headerlink" title="deploy时django的设置"></a>deploy时django的设置</h1><p>settings.py中的设置：</p>
+<pre><code>ALLOWED_HOSTS = [&apos;*&apos;]
+DEBUG = False
+</code></pre><hr>
+<h1 id="apache2-4-mod-wsgi"><a href="#apache2-4-mod-wsgi" class="headerlink" title="apache2.4 + mod_wsgi"></a>apache2.4 + mod_wsgi</h1><p><a href="https://github.com/GrahamDumpleton/mod_wsgi" target="_blank" rel="external">https://github.com/GrahamDumpleton/mod_wsgi</a></p>
+<p>mod_wsgi是C写的apache的模块，实现了兼容WSGI接口，用来部署python的web应用。</p>
+<p>作为apache2的模块安装</p>
+<pre><code># ubuntu/debian
+sudo aptitude install apache2 # 安装apache2
+sudo aptitude install libapache2-mod-wsgi # for python2
+sudo aptitude install libapache2-mod-wsgi-py3 # for python3
+
+# redhat/centos/fedora
+sudo yum install httpd2
+sudo yum install httpd-devel
+sudo yum install mod_wsgi
+</code></pre><p>Ubuntu创建网站的配置文件/etc/apache2/sites-available/mysite.conf:</p>
+<p>Fedora创建网站的配置文件/etc/httpd/conf.d/mysite.conf:</p>
+<p>一般部署到web服务器，/home/user/修改为/var/www/<project-name>/</project-name></p>
+<pre><code># Include the project dir, can not inside VirtualHost section.
+WSGIPythonPath /home/user/mysite
+# If use virtualenv and named venv
+# WSGIPythonPath /home/user/mysite:/home/user/mysite/venv/lib/python2.7/site-packages
+
+&lt;VirtualHost *:80&gt;
+    ServerName localhost
+    # ServerName yoursite.domain
+    ServerAdmin canuxcheng@gmail.com
+
+    Alias /robots.txt /home/user/mysite/static/robots.txt
+    Alias /favicon.ico /home/user/mysite/static/favicon.ico
+
+    Alias /media/ /home/user/mysite/media/
+    Alias /static/ /home/user/mysite/static/
+
+    &lt;Directory /home/user/mysite/media&gt;
+    Required all granted
+    &lt;/Directory&gt;
+
+    &lt;Directory /home/user/mysite/static&gt;
+    Required all granted
+    &lt;/Directory&gt;
+
+    # If use daemon mode to run WSGI process.
+    WSGIDaemonProcess mysite python-path=/home/user/mysite
+    # If use virtualenv and named venv
+    # WSGIDaemonProcess mysite python-path=/home/user/mysite:/home/user/mysite/venv/lib/python2.7/site-packages
+
+    WSGIScriptAlias / /home/user/mysite/mysite/wsgi.py
+
+    &lt;Directory /home/user/mysite/mysite&gt;
+    &lt;Files wsgi.py&gt;
+    Required all granted
+    &lt;/Files&gt;
+    &lt;/Directory&gt;
+
+    # check the log in /var/log/apache2/error_mysite.log or access_mysite.log
+    ErrorLog ${APACHE_LOG_DIR}/error_mysite.log
+    CustomLog ${APACHE_LOG_DIR}/access_mysite.log combined
+&lt;/VirtualHost&gt;
+</code></pre><p>修改项目的wsgi.py:</p>
+<p>因为环境变量是进程范围的，在同一个进程运行多个站点会出问题，所以推荐多站点使用mod_wsgi的守护进程模式,也可以在单进程中覆盖DJANGO_SETTINGS_MODULE这个变量。</p>
+<pre><code>import os
+
+from django.core.wsgi import get_wsgi_application
+
+# If you have more than 1 django project you need to change this.
+# Or you can use daemon mode for WSGI process.
+# os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;mysite.settings&quot;)
+os.environ[&quot;DIANGO_SETTINGS_MODULE&quot;] = &quot;mysite.settings&quot;
+
+application = get_wsgi_application()
+</code></pre><p>修改项目的settings.py:</p>
+<p>ROOT表示存放位置，URL表示对应网址。</p>
+<pre><code>DEBUG = False
+
+ALLOWED_HOSTS = [&apos;*&apos;]
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = &apos;/static/&apos;
+
+STATIC_ROOT = os.path.join(BASE_DIR, &apos;static&apos;)
+
+# Media files (upload files)
+MEDIA_URL = &apos;/media/&apos;
+
+MEDIA_ROOT = os.path.join(BASE_DIR, &apos;media&apos;)
+</code></pre><p>收集静态文件和迁移：</p>
+<pre><code>$python manage.py makemigration
+$python mamage.py migrate
+$python manage.py collectstatic
+</code></pre><p>设置权限：</p>
+<p>Ubuntu默认用户和组是www-data,Fedora默认用户和组是apache。</p>
+<pre><code>$cd /home/user
+$sudo chgrp www-data mysite
+$sudo chmod g+w mysite
+$sudo chgrp www-data mysite/db.sqlite3
+$sudo chmod g+w mysite/db.sqlite3
+$sudo chgrp -R www-data mysite/media/uploads
+$sudo chmod -R g+w mysite/media/uploads
+</code></pre><p>Ubuntu激活网站：</p>
+<pre><code>$sudo a2ensite &lt;newsite&gt;
+$sudo service apache2 restart
+</code></pre><p>Fedora激活网站：</p>
+<pre><code>$sudo systemctl restart  httpd
+</code></pre><hr>
+<h1 id="nginx-uWSGI"><a href="#nginx-uWSGI" class="headerlink" title="nginx + uWSGI"></a>nginx + uWSGI</h1><p><a href="https://github.com/unbit/uwsgi" target="_blank" rel="external">https://github.com/unbit/uwsgi</a></p>
+<p>C写的wsgi应用服务器。</p>
+<p>安装：</p>
+<pre><code>pip install uwsgi
+</code></pre><p>测试：</p>
+<pre><code>uwsgi --http :8000 --chdir /path/to/project --module mysite.wsgi
+</code></pre><hr>
+<h1 id="nginx-Gunicon"><a href="#nginx-Gunicon" class="headerlink" title="nginx + Gunicon"></a>nginx + Gunicon</h1><p><a href="https://github.com/benoitc/gunicorn" target="_blank" rel="external">https://github.com/benoitc/gunicorn</a></p>
+<p>纯python写的WSGI服务器。</p>
+<p>安装：</p>
+<pre><code>pip install gunicorn
+</code></pre><p>在manage.py目录测试：</p>
+<pre><code>gunicorn mysite.wsgi
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/django/" rel="tag">#django</a>
+          
+            <a href="/tags/apache/" rel="tag">#apache</a>
+          
+            <a href="/tags/nginx/" rel="tag">#nginx</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/26/NodeJS/" rel="next" title="NodeJS">
+                <i class="fa fa-chevron-left"></i> NodeJS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/03/Django之Template/" rel="prev" title="Django之Template">
+                Django之Template <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/26/Django之Deploy/"
+           data-title="Django之Deploy" data-url="http://canuxcheng.com/2016/09/26/Django之Deploy/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#发布django项目"><span class="nav-number">1.</span> <span class="nav-text">发布django项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#deploy时django的设置"><span class="nav-number">2.</span> <span class="nav-text">deploy时django的设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apache2-4-mod-wsgi"><span class="nav-number">3.</span> <span class="nav-text">apache2.4 + mod_wsgi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nginx-uWSGI"><span class="nav-number">4.</span> <span class="nav-text">nginx + uWSGI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nginx-Gunicon"><span class="nav-number">5.</span> <span class="nav-text">nginx + Gunicon</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

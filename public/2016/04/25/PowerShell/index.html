@@ -1,0 +1,1104 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="powershell,windows," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="PowershellConsole: command line interface
+ISE: script editor and console combination
+Version:
+2.0,3.0,4.0,5.0
+C:\windows\System32\powershell 存放64位powershell
+C:\windows\SysWOW64\powershell 存放32位powersh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PowerShell">
+<meta property="og:url" content="http://canuxcheng.com/2016/04/25/PowerShell/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="PowershellConsole: command line interface
+ISE: script editor and console combination
+Version:
+2.0,3.0,4.0,5.0
+C:\windows\System32\powershell 存放64位powershell
+C:\windows\SysWOW64\powershell 存放32位powersh">
+<meta property="og:updated_time" content="2016-12-16T05:36:21.721Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PowerShell">
+<meta name="twitter:description" content="PowershellConsole: command line interface
+ISE: script editor and console combination
+Version:
+2.0,3.0,4.0,5.0
+C:\windows\System32\powershell 存放64位powershell
+C:\windows\SysWOW64\powershell 存放32位powersh">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/04/25/PowerShell/"/>
+
+
+  <title> PowerShell | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PowerShell
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-25T21:52:02-04:00" content="2016-04-26">
+              2016-04-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Windows/PowerShell/" itemprop="url" rel="index">
+                    <span itemprop="name">PowerShell</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/25/PowerShell/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/25/PowerShell/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Powershell"><a href="#Powershell" class="headerlink" title="Powershell"></a>Powershell</h1><p>Console: command line interface</p>
+<p>ISE: script editor and console combination</p>
+<p>Version:</p>
+<p>2.0,3.0,4.0,5.0</p>
+<p>C:\windows\System32\powershell 存放64位powershell</p>
+<p>C:\windows\SysWOW64\powershell 存放32位powershell</p>
+<pre><code>&gt;$PSVersionTable
+&gt;$HOST
+</code></pre><p>Install/Update:</p>
+<p><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=40855" target="_blank" rel="external">https://www.microsoft.com/zh-CN/download/details.aspx?id=40855</a></p>
+<p>安装Windows Management Framework4.0即可。</p>
+<pre><code>&gt;$PSHOME
+</code></pre><p>多版本时切换版本:</p>
+<pre><code>&gt;powershell -version 2
+</code></pre><hr>
+<h1 id="powershell相关项目"><a href="#powershell相关项目" class="headerlink" title="powershell相关项目"></a>powershell相关项目</h1><p><a href="https://github.com/Microsoft" target="_blank" rel="external">https://github.com/Microsoft</a></p>
+<p><a href="https://github.com/PowerShell" target="_blank" rel="external">https://github.com/PowerShell</a></p>
+<p><a href="https://github.com/PowerShellOrg" target="_blank" rel="external">https://github.com/PowerShellOrg</a></p>
+<h2 id="win32-openssh"><a href="#win32-openssh" class="headerlink" title="win32-openssh"></a>win32-openssh</h2><p>windows的SSH。</p>
+<p><a href="https://github.com/PowerShell/Win32-OpenSSH" target="_blank" rel="external">https://github.com/PowerShell/Win32-OpenSSH</a></p>
+<hr>
+<h1 id="powershell命令"><a href="#powershell命令" class="headerlink" title="powershell命令"></a>powershell命令</h1><pre><code>&gt;powershell -?
+&gt;powershell /?
+&gt;powershell -help
+</code></pre><hr>
+<h1 id="powershell-script"><a href="#powershell-script" class="headerlink" title="powershell script"></a>powershell script</h1><p>powershell是默认大小写不敏感的。</p>
+<p>同一行多个命令需要用分号;隔开。</p>
+<p>powershell的安全策略：</p>
+<ol>
+<li>restricted(default)</li>
+<li>allsigned</li>
+<li>remotesigned</li>
+<li>unrestricted</li>
+<li>bypass</li>
+</ol>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>单行注释：</p>
+<pre><code># comment
+</code></pre><p>多行注释(文档注释)：</p>
+<pre><code>&lt;#
+comment1
+comment2
+...
+#&gt;
+</code></pre><p>帮助文档:</p>
+<p>在脚本开头的注释中用下面关键字插入文档。</p>
+<pre><code>&lt;#
+.SYNOPSIS
+Write your synopsis here.
+
+.DESCRIPTION
+Write your description here.
+
+.PARAMETER param1
+Write your param1 information here.
+
+.EXAMPLE
+Write your example1 here.
+
+.NOTES
+Write your notes here.
+
+.LINK
+http://test.com
+#&gt;
+</code></pre><h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>所有的变量都存储在Variable驱动器中,可以用Variable驱动器对变量操作。</p>
+<pre><code>ls Variable: # 查看所有变量
+</code></pre><p>系统变量：</p>
+<pre><code>$_    # 表示管道中的当前对象
+?    # True表示上一个命令成功执行,False失败
+</code></pre><p>自定义变量：</p>
+<p>变量以\$开头定义,但是\$不是变量名的一部分。</p>
+<p>变量包含数字，字母和小划线。</p>
+<pre><code>$var1=&quot;test&quot;
+$var1
+
+# 交换两个变量的值
+$var1,$var2=$var2,$var1
+</code></pre><p>变量类型：</p>
+<p>可以不用指定变量类型。</p>
+<pre><code>[string]$str=&quot;123&quot;
+[int]$num=123
+[boolean]bool=&quot;True&quot;
+</code></pre><p>判断变量类型：</p>
+<pre><code>$str -is [string]
+$num -as [int]
+</code></pre><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>包含多个变量就是一个数组。</p>
+<pre><code>$var2=1,2,3
+$var2[index]
+$var2[0] # 数组第一个元素
+$var2[-1] # 数组最后一个元素
+</code></pre><h2 id="字典："><a href="#字典：" class="headerlink" title="字典："></a>字典：</h2><p>hash类型。</p>
+<pre><code>@{L=&lt;key&gt;;
+E={$_.&lt;value&gt;};
+formatstring=&lt;format&gt;}
+
+@{N=&lt;key&gt;;E={$_.&lt;value&gt;}}
+@{Label=&lt;key&gt;;E={$_.&lt;value&gt;}}
+@{Name=&lt;key&gt;;E={$_.&lt;value&gt;}}
+</code></pre><h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><p>基本运算符：</p>
+<pre><code>= # 赋值运算符，可以把任何数据类型包括对象赋值给变量
++ # 加法和字符串拼接
+- # 减法
+* # 乘法
+/ # 除法
+() # 优先运算符
+</code></pre><p>特殊运算符：</p>
+<pre><code>$($procs[0].name) # 子变量
+&apos;$var&apos; # 单引号中的变量原样输出
+&quot;$var&quot; # 双引号中的变量被替换
+&quot;`$var&quot; # `重音符可以用在双引号中转义
+`t    # 制表符
+`n    # 换行符
+kb/mb/gt/tb/pb # 单位可以运算
+</code></pre><p>比较运算符：</p>
+<pre><code>-eq
+-ne
+-gt
+-ge
+-lt
+-le
+-contains 包含
+-notcontains
+</code></pre><p>布尔运算符：</p>
+<pre><code>-not 求反
+-and
+-or
+-xor
+</code></pre><hr>
+<h1 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h1><p>powershell支持foreach循环。</p>
+<p>if条件语句：</p>
+<pre><code>if ($this -eq $that) {
+    expression
+} elseif ($those -gt $these) {
+    expression2
+} else {
+    expression3
+}
+</code></pre><p>switch条件语句：</p>
+<pre><code>switch ($condition) {
+    val1 {
+        expression
+        break
+    }
+    val2 {
+        expression2; break
+    }
+    default {
+        default_expression
+    }
+}
+</code></pre><p>foreach循环语句：</p>
+<pre><code>foreach ($name in $names) {
+    expression
+}
+</code></pre><p>for循环语句：</p>
+<pre><code>for ($loop=1; condition; $loop++)
+{
+    expression
+}
+</code></pre><p>while循环语句:</p>
+<pre><code>while (condition)
+{
+    expression
+}
+</code></pre><p>do-while循环语句：</p>
+<pre><code>do {
+    expression
+} while (condition)
+</code></pre><p>break语句：</p>
+<p>break用于循环和switch语句。</p>
+<p>continue语句：</p>
+<p>continue用于循环语句。</p>
+<hr>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>函数：</p>
+<pre><code>function name {
+    ...
+}
+</code></pre><p>调用函数:</p>
+<pre><code>.\file.ps1
+name
+</code></pre><p>选项：</p>
+<pre><code>[CmdletBinding()]
+Param(
+    [Parameter(Mandatory=$True)]
+    [String]$ComputerName, # ComputerName强制为通过命令行输入参数
+
+    [int]$EventID=1234, # EventID有默认参数
+
+    [Parameter(Mandatory=$True)][ValidateRange(0,23)]
+    [int]$Number # 给出参数的范围
+)
+
+[CmdletBinding(SupportsShouldProcess$True)] # 支持-whatif和-confirm
+[ValidateSet(1,3,8)] # 给出参数的可选值
+[alias(&quot;id&quot;, &quot;nunber&quot;)] # 给参数指定别名
+</code></pre><hr>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>系统模块路径：</p>
+<pre><code>c:\Windows\System32\WindowsPowershell\v1.0\Modules\
+</code></pre><p>函数可以打包成模块放在系统模块路径或用户自己的模块路径。</p>
+<p>模块放到同名的目录mytools下，取名mytools.psm1</p>
+<p>导入用户自己路径下的模块：</p>
+<pre><code>Import-Module -name C:\Modules\mytools
+</code></pre><hr>
+<h1 id="异常和错误处理"><a href="#异常和错误处理" class="headerlink" title="异常和错误处理"></a>异常和错误处理</h1><p>调试语句：</p>
+<pre><code>Write-Verbose &quot;print verbose information.&quot; # 打印调试信息
+
+Write-Debug &quot;print debug information.&quot; # 使用-Debug进入debug模式，exit退出。
+</code></pre><p>调试相关系统变脸：</p>
+<pre><code>$ErrorActionPreference=&apos;Continue&apos; # 调试的系统变量，默认报错继续执行
+
+$DebugPreference=&apos;SilentlyContinue&apos;
+
+$ErrorView=&apos;NormalView&apos;
+
+$Error 存储整个shell的错误。
+</code></pre><p>异常捕获：</p>
+<pre><code>Try {
+    expressions
+}
+Catch {
+    &quot;execute when catch the error.&quot;
+}
+Finally {
+    &quot;execute anyway.&quot;
+}
+</code></pre><p>断点调试：</p>
+<pre><code>$Condition = {if ($a -is [int] -and $a -gt 100) {Write-Host &quot;`$a was modified&quot;}}
+$Breakpoint = Set-PSBreakpoint -Variable a -Mode Write -Script $psise.CurrentFile.FullPath -Action $Condition
+</code></pre><hr>
+<h1 id="远程处理"><a href="#远程处理" class="headerlink" title="远程处理"></a>远程处理</h1><p>远程连接: 用RPC等方法，在发起远程连接的机器上执行命令.</p>
+<p>远程处理：远程处理用winrm等方法，在远程机器上执行命令.</p>
+<p>一对一远程处理:</p>
+<p>类似于linux的ssh。</p>
+<pre><code>Enter-PSSession -ComputerName name
+...
+Exit-PSSession
+</code></pre><p>一对多远程处理:</p>
+<p>同时远程到多台机器执行命令或脚本。</p>
+<p>Invoke-Command一次创建一个连接对象，返回PSComputerName属性，执行完后就关闭连接。</p>
+<pre><code>Invoke-Command -ComputerName name1,name2 -ScriptBlock {command1;command2}
+
+Invoke-Command -ComputerName name1,name2 -FilePath filepath
+
+Invoke-Command -ComputerName (Get-Content hosts.txt) ...
+</code></pre><p>通过argumentlist把本地的参数传给远程的命令:</p>
+<pre><code>$lvar1=&quot;value1&quot;
+$lvar2=&quot;value2&quot;
+Invoke-Command -ComputerName name
+-ScriptBlock {
+Param($var1, $var2)
+...
+}
+-ArgumentList $lvar1, $lvar2
+</code></pre><p>通过\$using:传本地参数到远程机器：</p>
+<pre><code>$var1=&quot;value1&quot;
+Invoke-Command -ComputerName name
+-ScriptBlock {
+... $using:var1
+}
+</code></pre><p>创建持久的远程处理：</p>
+<pre><code>$session1=New-PSSession -ComputerName server1
+Enter-PSSession -Session $session1 ...
+Invoke-Command -Session $session1 ...
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/powershell/" rel="tag">#powershell</a>
+          
+            <a href="/tags/windows/" rel="tag">#windows</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/24/Tivoli之AgentBuilder/" rel="next" title="Tivoli之AgentBuilder">
+                <i class="fa fa-chevron-left"></i> Tivoli之AgentBuilder
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/25/Windows之系统管理/" rel="prev" title="Windows之系统管理">
+                Windows之系统管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/25/PowerShell/"
+           data-title="PowerShell" data-url="http://canuxcheng.com/2016/04/25/PowerShell/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Powershell"><span class="nav-number">1.</span> <span class="nav-text">Powershell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell相关项目"><span class="nav-number">2.</span> <span class="nav-text">powershell相关项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#win32-openssh"><span class="nav-number">2.1.</span> <span class="nav-text">win32-openssh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell命令"><span class="nav-number">3.</span> <span class="nav-text">powershell命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell-script"><span class="nav-number">4.</span> <span class="nav-text">powershell script</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">5.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">6.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">6.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">6.2.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典："><span class="nav-number">6.3.</span> <span class="nav-text">字典：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number">7.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制流"><span class="nav-number">8.</span> <span class="nav-text">控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">9.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">10.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常和错误处理"><span class="nav-number">11.</span> <span class="nav-text">异常和错误处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程处理"><span class="nav-number">12.</span> <span class="nav-text">远程处理</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

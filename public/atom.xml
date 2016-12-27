@@ -1,0 +1,1664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Canux&#39;s Blog</title>
+  <subtitle>DevOps Software/Architect Engineer</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://canuxcheng.com/"/>
+  <updated>2016-12-25T05:13:33.811Z</updated>
+  <id>http://canuxcheng.com/</id>
+  
+  <author>
+    <name>Canux CHENG</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pelican</title>
+    <link href="http://canuxcheng.com/2016/12/24/Pelican/"/>
+    <id>http://canuxcheng.com/2016/12/24/Pelican/</id>
+    <published>2016-12-24T15:37:09.000Z</published>
+    <updated>2016-12-25T05:13:33.811Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Pelican&quot;&gt;&lt;a href=&quot;#Pelican&quot; class=&quot;headerlink&quot; title=&quot;Pelican&quot;&gt;&lt;/a&gt;Pelican&lt;/h1&gt;&lt;p&gt;python开发的静态站点生成器.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.getpelican.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.getpelican.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/getpelican/pelican&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/getpelican/pelican&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Pelican&quot;&gt;&lt;a href=&quot;#Pelican&quot; class=&quot;headerlink&quot; title=&quot;Pelican&quot;&gt;&lt;/a&gt;Pelican&lt;/h1&gt;&lt;p&gt;python开发的静态站点生成器.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.getp
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Pelican" scheme="http://canuxcheng.com/categories/Python/Pelican/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Shell之awk</title>
+    <link href="http://canuxcheng.com/2016/12/13/Shell%E4%B9%8Bawk/"/>
+    <id>http://canuxcheng.com/2016/12/13/Shell之awk/</id>
+    <published>2016-12-13T16:55:37.000Z</published>
+    <updated>2016-12-14T05:55:37.429Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>BigData之Spark</title>
+    <link href="http://canuxcheng.com/2016/12/13/BigData%E4%B9%8BSpark/"/>
+    <id>http://canuxcheng.com/2016/12/13/BigData之Spark/</id>
+    <published>2016-12-13T16:27:31.000Z</published>
+    <updated>2016-12-14T05:28:05.087Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Bigdata" scheme="http://canuxcheng.com/categories/Bigdata/"/>
+    
+    
+      <category term="spark" scheme="http://canuxcheng.com/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Wordpress</title>
+    <link href="http://canuxcheng.com/2016/11/17/Wordpress/"/>
+    <id>http://canuxcheng.com/2016/11/17/Wordpress/</id>
+    <published>2016-11-17T16:06:31.000Z</published>
+    <updated>2016-12-18T11:21:27.208Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;WordPress&quot;&gt;&lt;a href=&quot;#WordPress&quot; class=&quot;headerlink&quot; title=&quot;WordPress&quot;&gt;&lt;/a&gt;WordPress&lt;/h1&gt;&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;安装依赖：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install apache2
+sudo apt install mysql-server
+sudo apt install php5
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下载wordpress：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$cd /var/www/html
+$git clone https://github.com/WordPress/WordPress.git
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h1&gt;&lt;p&gt;添加mysql数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$mysql -u root -p
+mysql&amp;gt; create user &amp;apos;wordpress&amp;apos;@&amp;apos;localhost&amp;apos; identified by &amp;apos;******&amp;apos;;
+mysql&amp;gt; create database &amp;apos;wordpress&amp;apos;;
+mysql&amp;gt; GRANT ALL PRIVILEGES ON wordpress.* TO &amp;quot;wordpress&amp;quot;@&amp;quot;localhost&amp;quot;;
+mysql&amp;gt; FLUSH PRIVILEGES;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;登陆并安装站点：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://localhost/WordPress/wp-admin/install.php
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;主题&quot;&gt;&lt;a href=&quot;#主题&quot; class=&quot;headerlink&quot; title=&quot;主题&quot;&gt;&lt;/a&gt;主题&lt;/h1&gt;&lt;p&gt;修改wp-config.php安装主题不用输入ftp信息：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;define(&amp;quot;FS_METHOD&amp;quot;, &amp;quot;direct&amp;quot;);
+define(&amp;quot;FS_CHMOD_DIR&amp;quot;, 0777);
+define(&amp;quot;FS_CHMOD_FILE&amp;quot;, 0777);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;主题安装在：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wordpress/wp-content/themes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;主题数据导入到:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wordpress/wp-content/uploads
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class=&quot;headerlink&quot; title=&quot;插件&quot;&gt;&lt;/a&gt;插件&lt;/h1&gt;&lt;p&gt;插件安装在：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wordpress/wp-content/plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;WordPress-Reset&quot;&gt;&lt;a href=&quot;#WordPress-Reset&quot; class=&quot;headerlink&quot; title=&quot;WordPress Reset&quot;&gt;&lt;/a&gt;WordPress Reset&lt;/h2&gt;&lt;p&gt;一款可以重置所有数据库数据的插件。&lt;/p&gt;
+&lt;h2 id=&quot;widget-settings-importexport&quot;&gt;&lt;a href=&quot;#widget-settings-importexport&quot; class=&quot;headerlink&quot; title=&quot;widget-settings-importexport&quot;&gt;&lt;/a&gt;widget-settings-importexport&lt;/h2&gt;&lt;h2 id=&quot;wordpress-importer&quot;&gt;&lt;a href=&quot;#wordpress-importer&quot; class=&quot;headerlink&quot; title=&quot;wordpress-importer&quot;&gt;&lt;/a&gt;wordpress-importer&lt;/h2&gt;&lt;h2 id=&quot;wordpress-move&quot;&gt;&lt;a href=&quot;#wordpress-move&quot; class=&quot;headerlink&quot; title=&quot;wordpress-move&quot;&gt;&lt;/a&gt;wordpress-move&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;WordPress&quot;&gt;&lt;a href=&quot;#WordPress&quot; class=&quot;headerlink&quot; title=&quot;WordPress&quot;&gt;&lt;/a&gt;WordPress&lt;/h1&gt;&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; 
+    
+    </summary>
+    
+      <category term="Web" scheme="http://canuxcheng.com/categories/Web/"/>
+    
+    
+      <category term="wordpress" scheme="http://canuxcheng.com/tags/wordpress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Html之Form</title>
+    <link href="http://canuxcheng.com/2016/10/30/Html%E4%B9%8BForm/"/>
+    <id>http://canuxcheng.com/2016/10/30/Html之Form/</id>
+    <published>2016-10-30T20:00:49.000Z</published>
+    <updated>2016-11-01T09:00:18.639Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;html表单&quot;&gt;&lt;a href=&quot;#html表单&quot; class=&quot;headerlink&quot; title=&quot;html表单&quot;&gt;&lt;/a&gt;html表单&lt;/h1&gt;&lt;p&gt;html表单用于搜集不同类型的用户输入。&lt;/p&gt;
+&lt;h1 id=&quot;form&quot;&gt;&lt;a href=&quot;#form&quot; class=&quot;headerlink&quot; title=&quot;form&quot;&gt;&lt;/a&gt;form&lt;/h1&gt;&lt;p&gt;form元素定义html表单。支持全局属性和事件属性。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;form action=&amp;quot;action_page.py&amp;quot;&amp;gt;
+&amp;lt;fieldset&amp;gt;
+&amp;lt;legend&amp;gt;Form information:&amp;lt;/legend&amp;gt;
+First name:&amp;lt;br&amp;gt;
+&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;firstname&amp;quot;&amp;gt;
+&amp;lt;br&amp;gt;
+Last name:&amp;lt;br&amp;gt;
+&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;lastname&amp;quot;&amp;gt;
+&amp;lt;/fieldset&amp;gt;
+&amp;lt;/form&amp;gt;
+
+# accept-charset属性规定服务器可处理的表单数据字符集。
+
+# action属性规定当提交表单时向何处发送表单数据。
+&amp;lt;form action=&amp;quot;action_page.py&amp;quot;&amp;gt;
+
+# autocomplete属性规定是否启用表单的自动完成功能
+on/off
+
+# enctype属性规定在发送表单数据之前如何编码
+application/x-www-form-urlencoded
+multipart/form-data
+text/plain
+
+# method属性规定用于发送form-data的http方法
+get/post
+
+# name属性规定表单名称
+# novalidate属性规定提交表单时不验证
+
+# target属性规定在何处打开URL。
+_blank/_self/_parent/_top
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;input&quot;&gt;&lt;a href=&quot;#input&quot; class=&quot;headerlink&quot; title=&quot;input&quot;&gt;&lt;/a&gt;input&lt;/h1&gt;&lt;p&gt;input元素是最重要的表单元素。支持全局属性和事件属性。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# type属性规定输入元素类型
+button
+checkbox
+file
+hidden
+image
+password
+radio
+reset
+submit
+text
+
+# name属性定义input元素名称
+# value属性定义input元素默认值
+readonly
+disabled
+size
+maxlength
+alt
+accept
+checked
+src
+
+autocomplete
+autofocus
+form
+formaction
+formenctype
+formmethod
+formnovalidate
+formtarget
+height
+width
+list
+max
+min
+multiple
+pattern
+placeholder
+required
+step
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;fieldset&quot;&gt;&lt;a href=&quot;#fieldset&quot; class=&quot;headerlink&quot; title=&quot;fieldset&quot;&gt;&lt;/a&gt;fieldset&lt;/h1&gt;&lt;p&gt;fieldset元素组合表单中的相关数据，支持全局属性和事件属性&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# disable属性规定应该禁用fieldset
+# form属性规定fieldset所属的一个或多个表单。
+# name属性规定fieldset名称。
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;legend&quot;&gt;&lt;a href=&quot;#legend&quot; class=&quot;headerlink&quot; title=&quot;legend&quot;&gt;&lt;/a&gt;legend&lt;/h1&gt;&lt;p&gt;legend元素为fieldset元素定义标题，支持全局属性和事件属性,支持样式。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;select&quot;&gt;&lt;a href=&quot;#select&quot; class=&quot;headerlink&quot; title=&quot;select&quot;&gt;&lt;/a&gt;select&lt;/h1&gt;&lt;p&gt;定义下拉列表。支持全局属性和事件属性。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;form action=&amp;quot;action_page.py&amp;quot;&amp;gt;
+&amp;lt;select name=&amp;quot;cars&amp;quot;&amp;gt;
+&amp;lt;option value=&amp;quot;volvo&amp;quot;&amp;gt;volvo&amp;lt;/option&amp;gt;
+&amp;lt;option value=&amp;quot;audi&amp;quot;&amp;gt;audi&amp;lt;/option&amp;gt;
+&amp;lt;/select&amp;gt;
+&amp;lt;/form&amp;gt;
+
+# autofocus属性规定在页面加载后文本区域自动获得焦点
+# disable
+# form
+# multiple
+# name
+# required
+# size
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;option&quot;&gt;&lt;a href=&quot;#option&quot; class=&quot;headerlink&quot; title=&quot;option&quot;&gt;&lt;/a&gt;option&lt;/h1&gt;&lt;p&gt;定义选项。支持全局属性和事件属性。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# disabled
+# label
+# selected
+# value
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;button&quot;&gt;&lt;a href=&quot;#button&quot; class=&quot;headerlink&quot; title=&quot;button&quot;&gt;&lt;/a&gt;button&lt;/h1&gt;&lt;p&gt;定义可点击的按钮，支持全局属性和事件属性。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;button type=&amp;quot;button&amp;quot; onclick=&amp;quot;alert(&amp;quot;hello world&amp;quot;)&amp;quot;&amp;gt;Click Me&amp;lt;/button&amp;gt;
+
+# name属性规定按钮名称
+# type属性规定按钮类型
+# value属性规定按钮初始值
+# autofocus
+# disabled
+# form
+# formaction
+# formenctype
+# formmethod
+# formnovalidate
+# formtarget
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;textarea&quot;&gt;&lt;a href=&quot;#textarea&quot; class=&quot;headerlink&quot; title=&quot;textarea&quot;&gt;&lt;/a&gt;textarea&lt;/h1&gt;&lt;hr&gt;
+&lt;h1 id=&quot;datalist&quot;&gt;&lt;a href=&quot;#datalist&quot; class=&quot;headerlink&quot; title=&quot;datalist&quot;&gt;&lt;/a&gt;datalist&lt;/h1&gt;&lt;h1 id=&quot;keygen&quot;&gt;&lt;a href=&quot;#keygen&quot; class=&quot;headerlink&quot; title=&quot;keygen&quot;&gt;&lt;/a&gt;keygen&lt;/h1&gt;&lt;h1 id=&quot;output&quot;&gt;&lt;a href=&quot;#output&quot; class=&quot;headerlink&quot; title=&quot;output&quot;&gt;&lt;/a&gt;output&lt;/h1&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;html表单&quot;&gt;&lt;a href=&quot;#html表单&quot; class=&quot;headerlink&quot; title=&quot;html表单&quot;&gt;&lt;/a&gt;html表单&lt;/h1&gt;&lt;p&gt;html表单用于搜集不同类型的用户输入。&lt;/p&gt;
+&lt;h1 id=&quot;form&quot;&gt;&lt;a href=&quot;#form&quot;
+    
+    </summary>
+    
+      <category term="Web" scheme="http://canuxcheng.com/categories/Web/"/>
+    
+      <category term="Html" scheme="http://canuxcheng.com/categories/Web/Html/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Bootstrap</title>
+    <link href="http://canuxcheng.com/2016/10/27/Bootstrap/"/>
+    <id>http://canuxcheng.com/2016/10/27/Bootstrap/</id>
+    <published>2016-10-27T14:19:20.000Z</published>
+    <updated>2016-12-18T11:21:07.673Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Bootstrap&quot;&gt;&lt;a href=&quot;#Bootstrap&quot; class=&quot;headerlink&quot; title=&quot;Bootstrap&quot;&gt;&lt;/a&gt;Bootstrap&lt;/h1&gt;&lt;p&gt;HTML,CSS,JavaScript的框架&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Bootstrap&quot;&gt;&lt;a href=&quot;#Bootstrap&quot; class=&quot;headerlink&quot; title=&quot;Bootstrap&quot;&gt;&lt;/a&gt;Bootstrap&lt;/h1&gt;&lt;p&gt;HTML,CSS,JavaScript的框架&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Web" scheme="http://canuxcheng.com/categories/Web/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python之WeChat</title>
+    <link href="http://canuxcheng.com/2016/10/07/Python%E4%B9%8BWeChat/"/>
+    <id>http://canuxcheng.com/2016/10/07/Python之WeChat/</id>
+    <published>2016-10-07T14:01:44.000Z</published>
+    <updated>2016-11-11T07:32:49.776Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;python开发微信公众号&quot;&gt;&lt;a href=&quot;#python开发微信公众号&quot; class=&quot;headerlink&quot; title=&quot;python开发微信公众号&quot;&gt;&lt;/a&gt;python开发微信公众号&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;注册微信公众号(订阅号，服务号，企业号, 小程序)&lt;/li&gt;
+&lt;li&gt;在微信公众平台（开发-&amp;gt;基本配置）修改服务器配置，URL添加你的代码的URL，Token添加你代码中的Token。&lt;/li&gt;
+&lt;li&gt;用git管理代码提交到URL，或者部署到云服务器。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;微信开发文档：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://mp.weixin.qq.com/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wechat user &amp;lt;=&amp;gt; send/receive message &amp;lt;=&amp;gt; wechat server &amp;lt;=&amp;gt; POST XML message &amp;lt;=&amp;gt; your server
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;SAE-BAE云平台部署python-django项目&quot;&gt;&lt;a href=&quot;#SAE-BAE云平台部署python-django项目&quot; class=&quot;headerlink&quot; title=&quot;SAE/BAE云平台部署python/django项目&quot;&gt;&lt;/a&gt;SAE/BAE云平台部署python/django项目&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.sinacloud.com/doc/sae/python/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.sinacloud.com/doc/sae/python/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://cloud.baidu.com/doc/BAE/QuickGuide.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://cloud.baidu.com/doc/BAE/QuickGuide.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SAE添加第三方依赖：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.sinacloud.com/doc/sae/python/tools.html#tian-jia-di-san-fang-yi-lai-bao&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.sinacloud.com/doc/sae/python/tools.html#tian-jia-di-san-fang-yi-lai-bao&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;BAE添加第三方依赖：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$vim requirements.txt
+django==1.8.2
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用mysql：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.sinacloud.com/doc/sae/python/mysql.html#api-shi-yong-shou-ce&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.sinacloud.com/doc/sae/python/mysql.html#api-shi-yong-shou-ce&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SAE平台需要config.yaml和index.wsgi两个文件.&lt;/p&gt;
+&lt;p&gt;BAE平台需要app.conf,favicon.ico和index.py三个文件。&lt;/p&gt;
+&lt;p&gt;SAE的入口就是index.wsgi文件中名叫application的可调用对象。&lt;/p&gt;
+&lt;p&gt;BAE的入口就是index.py文件中名叫application的可调用对象。&lt;/p&gt;
+&lt;h2 id=&quot;创建一个django项目wechat。&quot;&gt;&lt;a href=&quot;#创建一个django项目wechat。&quot; class=&quot;headerlink&quot; title=&quot;创建一个django项目wechat。&quot;&gt;&lt;/a&gt;创建一个django项目wechat。&lt;/h2&gt;&lt;p&gt;app.conf和conf.yaml添加配置文件。&lt;/p&gt;
+&lt;p&gt;index.wsgi和index.py添加云平台入口。&lt;/p&gt;
+&lt;p&gt;wechat/settings.py添加mysql数据库信息。&lt;/p&gt;
+&lt;p&gt;在BAE/SAE设置mysql，在项目添加mysql的参数。&lt;/p&gt;
+&lt;p&gt;用migrate同步本地数据库后，用mysqldump -u &lt;username&gt; -p &lt;databasename&gt; &amp;gt; &lt;filename&gt;.sql到出本地数据为sql文件。&lt;/filename&gt;&lt;/databasename&gt;&lt;/username&gt;&lt;/p&gt;
+&lt;p&gt;在BAE/SAE上传sql文件把数据同步到BAE/SAE的mysql。&lt;/p&gt;
+&lt;h2 id=&quot;创建一个django的应用django-wechat-api&quot;&gt;&lt;a href=&quot;#创建一个django的应用django-wechat-api&quot; class=&quot;headerlink&quot; title=&quot;创建一个django的应用django-wechat-api&quot;&gt;&lt;/a&gt;创建一个django的应用django-wechat-api&lt;/h2&gt;&lt;p&gt;在wechat/settings.py中添加应用。&lt;/p&gt;
+&lt;p&gt;在wechat/urls.py中添加应用的url。&lt;/p&gt;
+&lt;p&gt;在django-wechat-api/views.py添加微信接口。&lt;/p&gt;
+&lt;h2 id=&quot;修改wechat公众平台配置&quot;&gt;&lt;a href=&quot;#修改wechat公众平台配置&quot; class=&quot;headerlink&quot; title=&quot;修改wechat公众平台配置&quot;&gt;&lt;/a&gt;修改wechat公众平台配置&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;SAE_URL: http://mysite.applinzi.com/wechat/
+BAE_URL: http://mysite.duapp.com/wechat/
+TOKEN: yourtoken
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;django开发的wechat接口开源项目&quot;&gt;&lt;a href=&quot;#django开发的wechat接口开源项目&quot; class=&quot;headerlink&quot; title=&quot;django开发的wechat接口开源项目&quot;&gt;&lt;/a&gt;django开发的wechat接口开源项目&lt;/h2&gt;&lt;p&gt;源码参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/crazy-canux/django-wechat-api&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/crazy-canux/django-wechat-api&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;python开发微信公众号&quot;&gt;&lt;a href=&quot;#python开发微信公众号&quot; class=&quot;headerlink&quot; title=&quot;python开发微信公众号&quot;&gt;&lt;/a&gt;python开发微信公众号&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;注册微信公众号(订阅号，服务号，企业号,
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+      <category term="wechat" scheme="http://canuxcheng.com/tags/wechat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django之Test</title>
+    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BTest/"/>
+    <id>http://canuxcheng.com/2016/10/03/Django之Test/</id>
+    <published>2016-10-03T20:51:30.000Z</published>
+    <updated>2016-10-05T05:38:38.754Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;tests-py&quot;&gt;&lt;a href=&quot;#tests-py&quot; class=&quot;headerlink&quot; title=&quot;tests.py&quot;&gt;&lt;/a&gt;tests.py&lt;/h1&gt;&lt;h1 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h1&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;tests-py&quot;&gt;&lt;a href=&quot;#tests-py&quot; class=&quot;headerlink&quot; title=&quot;tests.py&quot;&gt;&lt;/a&gt;tests.py&lt;/h1&gt;&lt;h1 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+      <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django之Form</title>
+    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BForm/"/>
+    <id>http://canuxcheng.com/2016/10/03/Django之Form/</id>
+    <published>2016-10-03T20:30:02.000Z</published>
+    <updated>2016-11-01T09:22:57.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;forms-py&quot;&gt;&lt;a href=&quot;#forms-py&quot; class=&quot;headerlink&quot; title=&quot;forms.py&quot;&gt;&lt;/a&gt;forms.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django import forms
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;表单&quot;&gt;&lt;a href=&quot;#表单&quot; class=&quot;headerlink&quot; title=&quot;表单&quot;&gt;&lt;/a&gt;表单&lt;/h1&gt;&lt;p&gt;用户在浏览器中输入数据提交，对数据验证以及输入框的生成等。&lt;/p&gt;
+&lt;p&gt;django的表单系统的核心类是django.forms.Form类,所有的构建的表单都是这个类的子类。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;forms-py&quot;&gt;&lt;a href=&quot;#forms-py&quot; class=&quot;headerlink&quot; title=&quot;forms.py&quot;&gt;&lt;/a&gt;forms.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django import forms
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+      <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django之Admin</title>
+    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BAdmin/"/>
+    <id>http://canuxcheng.com/2016/10/03/Django之Admin/</id>
+    <published>2016-10-03T20:29:37.000Z</published>
+    <updated>2016-10-05T05:39:26.832Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;admin-py&quot;&gt;&lt;a href=&quot;#admin-py&quot; class=&quot;headerlink&quot; title=&quot;admin.py&quot;&gt;&lt;/a&gt;admin.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.contrib import admin
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建一个管理员用户：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py createsuperuser
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;管理员登陆界面：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://localhost:8080/admin/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在admin.py中注册模型，然后就可以在登陆界面管理模型了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from .models import Question
+admin.site.register(Question)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自定义管理表单：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from .models import Question
+class QuestionAdmin(admin.ModelAdmin):
+    fileds = [&amp;apos;pub_date&amp;apos;, &amp;apos;question_date&amp;apos;]
+admin.site.register(Question, QuestionAdmin)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;把表单分割成字段集：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from .models import Question
+class QuestionAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None,               {&amp;apos;fields&amp;apos;: [&amp;apos;question_text&amp;apos;]}),
+        (&amp;apos;Date information&amp;apos;, {&amp;apos;fields&amp;apos;: [&amp;apos;pub_date&amp;apos;]}),
+    ]
+admin.site.register(Question, QuestionAdmin)
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;后台&quot;&gt;&lt;a href=&quot;#后台&quot; class=&quot;headerlink&quot; title=&quot;后台&quot;&gt;&lt;/a&gt;后台&lt;/h1&gt;&lt;p&gt;django的后台管理程序。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;admin-py&quot;&gt;&lt;a href=&quot;#admin-py&quot; class=&quot;headerlink&quot; title=&quot;admin.py&quot;&gt;&lt;/a&gt;admin.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.contrib import admin
+&lt;/cod
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+      <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django之View</title>
+    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BView/"/>
+    <id>http://canuxcheng.com/2016/10/03/Django之View/</id>
+    <published>2016-10-03T20:20:39.000Z</published>
+    <updated>2016-12-19T04:18:56.898Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;views-py&quot;&gt;&lt;a href=&quot;#views-py&quot; class=&quot;headerlink&quot; title=&quot;views.py&quot;&gt;&lt;/a&gt;views.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.shortcuts import render
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;定义自己的视图函数：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.http import HttpResponse
+from django.template import RequestContext, loader
+
+# 导入模板中的类
+from .models import Question
+
+def index(request):
+    ...
+    t = loader.get_template(&amp;apos;application/index.html&amp;apos;)
+    c = RequestContext(request, {&amp;apos;foo&amp;apos;: &amp;apos;bar&amp;apos;})
+    return HttpResponse(t.render(c), content_type=&amp;quot;text/html&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当请求一个页面时django会建立一个包含请求元数据的HttpRequest对象，当django加载对应视图时，这个对象作为视图第一个参数。&lt;/p&gt;
+&lt;p&gt;每个视图会返回一个HttpResponse对象。&lt;/p&gt;
+&lt;p&gt;每个视图函数都用HttpRequest对象（通常用request）作为第一个参数。&lt;/p&gt;
+&lt;p&gt;每个视图函数都返回一个HttpResponse对象，包含生成的响应。&lt;/p&gt;
+&lt;p&gt;HttpRquest和HttpResponse在django.http包中，参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://python.usyiyi.cn/documents/django_182/ref/request-response.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.usyiyi.cn/documents/django_182/ref/request-response.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;HttpRequest对象属性：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;request.scheme # http/https
+request.body
+request.path
+request.path_info
+request.method # GET/POST
+request.encoding
+request.user
+request.session
+request.urlconf
+request.GET
+request.POST
+request.REQUEST
+request.COOKIES
+request.FILES
+request.META
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;HttpRequest对象方法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;request.get_host()
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;HttpResponse对象属性：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;response.content
+response.charset
+response.status_code
+response.reason_phrase
+response.streaming
+response.closed
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;HttpResponse对象的方法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;response.getvalue()
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;返回错误：&lt;/p&gt;
+&lt;p&gt;HttpResponse的子类提供了对不同类型HTTP响应。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpResponseForbidden, HttpResponseServerError,
+return HttpResponseNotFound(&amp;quot;&amp;lt;h1&amp;gt;Page not found&amp;lt;/h1&amp;gt;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;http404异常：&lt;/p&gt;
+&lt;p&gt;在应用的模板目录顶层定义一个404.html模板文件，当跑出Http404异常就会调用这个模板文件展示。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.http import Http404
+
+def index(request):
+    try:
+        ...
+    except Application.DoesNotExist:
+        raise Http404(&amp;quot;Application does not exist&amp;quot;)
+    return HttpResponse(...)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自定义错误视图：&lt;/p&gt;
+&lt;p&gt;参考urls中的内容。&lt;/p&gt;
+&lt;h1 id=&quot;快捷函数&quot;&gt;&lt;a href=&quot;#快捷函数&quot; class=&quot;headerlink&quot; title=&quot;快捷函数&quot;&gt;&lt;/a&gt;快捷函数&lt;/h1&gt;&lt;p&gt;django.shortcuts中定义了多个快捷函数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.shortcuts import render
+render(request, template_name, context=None, context_instance=&amp;lt;object object&amp;gt;, content_type=None, status=None, current_app=&amp;lt;object object&amp;gt;, dirs=&amp;lt;object object&amp;gt;, dictionary=&amp;lt;object object&amp;gt;, using=None)
+# render第一个参数是request，根据给定模板和上下文字典，返回一个渲染后的HttpResponse对象。
+return render(request, &amp;apos;application/index.html&amp;apos;, {&amp;apos;foo&amp;apos;: &amp;apos;bar&amp;apos;}, content_type=&amp;quot;text/html&amp;quot;)
+
+from django.shortcuts import get_object_or_404
+get_object_or_404(klass, *args, **kwargs)
+# 在给定的模型管理器调用get()，如果不存在引发Http404异常。
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;基于类的视图&quot;&gt;&lt;a href=&quot;#基于类的视图&quot; class=&quot;headerlink&quot; title=&quot;基于类的视图&quot;&gt;&lt;/a&gt;基于类的视图&lt;/h1&gt;&lt;p&gt;基于类的视图的基类在django.views.generic中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.views.generic import View
+def MyView(View):
+    def get(self, request):
+        return HttpResponse(...)
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;TemplateResponse和SimpleTemplateResponse&quot;&gt;&lt;a href=&quot;#TemplateResponse和SimpleTemplateResponse&quot; class=&quot;headerlink&quot; title=&quot;TemplateResponse和SimpleTemplateResponse&quot;&gt;&lt;/a&gt;TemplateResponse和SimpleTemplateResponse&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.template.response import TemplateResponse, SimpleTemplateResponse
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;视图装饰器&quot;&gt;&lt;a href=&quot;#视图装饰器&quot; class=&quot;headerlink&quot; title=&quot;视图装饰器&quot;&gt;&lt;/a&gt;视图装饰器&lt;/h1&gt;&lt;p&gt;django.views.decorators包中定义了视图的装饰器。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.views.decorators import *
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;内建的视图&quot;&gt;&lt;a href=&quot;#内建的视图&quot; class=&quot;headerlink&quot; title=&quot;内建的视图&quot;&gt;&lt;/a&gt;内建的视图&lt;/h1&gt;&lt;p&gt;django.views.static.serve定义了开发环境的文件服务器视图，仅用于开发。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.views.static import serve
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django.views.defaults定义了内建的错误处理的视图&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.views.defaults import *
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;views-py&quot;&gt;&lt;a href=&quot;#views-py&quot; class=&quot;headerlink&quot; title=&quot;views.py&quot;&gt;&lt;/a&gt;views.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.shortcuts import render
+&lt;/
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Django之URL</title>
+    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BURL/"/>
+    <id>http://canuxcheng.com/2016/10/03/Django之URL/</id>
+    <published>2016-10-03T20:20:39.000Z</published>
+    <updated>2016-12-19T04:19:50.232Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;urls-py&quot;&gt;&lt;a href=&quot;#urls-py&quot; class=&quot;headerlink&quot; title=&quot;urls.py&quot;&gt;&lt;/a&gt;urls.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.conf.urls import url
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django请求站点的方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ROOT_URLCONF，在settings.py中设置。&lt;/li&gt;
+&lt;li&gt;寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。&lt;/li&gt;
+&lt;li&gt;dnango依次匹配每个URL模式，在第一个匹配停下。&lt;/li&gt;
+&lt;li&gt;一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。&lt;/li&gt;
+&lt;li&gt;如果没有匹配到或者过程跑出异常，django调用合适的错误处理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;将应用的视图映射到URL：&lt;/p&gt;
+&lt;p&gt;需要在应用目录新建urls.py文件,然后在项目的url中包含应用的url。&lt;/p&gt;
+&lt;p&gt;urlpatterns是url()实例类型的python列表。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from . import views
+
+urlpatterns = [
+    # views内的内容不要引号。
+    url(r&amp;apos;^$&amp;apos;, views.index, name=&amp;apos;index&amp;apos;),
+    # 基于类的视图
+    url(r&amp;apos;^$&amp;apos;, views.IndexView.as_view(), name=&amp;apos;index&amp;apos;),
+    ...,
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;没有命名的组：&lt;/p&gt;
+&lt;p&gt;视图函数只有request参数，匹配的正则表达式作为位置参数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;url(r&amp;apos;^pattern1/pattern2/$&amp;apos;, views.index, name=&amp;apos;index&amp;apos;),
+
+def index(request):
+    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命名组：&lt;/p&gt;
+&lt;p&gt;视图函数除了request参数还有关键字参数，匹配的命名表达式组作为关键字参数,覆盖默认的关键字参数。&lt;/p&gt;
+&lt;p&gt;使用命名的正则表达式组： (?P&lt;name&gt;pattern)&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt;name就是关键字参数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;url(r&amp;apos;^pattern1/(?P&amp;lt;name&amp;gt;pattern)/pattern2/$), views.index, name=&amp;apos;index),
+
+def index(request, name):
+    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;错误处理：&lt;/p&gt;
+&lt;p&gt;django会调用一个错误处理视图处理异常。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;handler404 页面没找到&lt;/li&gt;
+&lt;li&gt;handler500 服务器错误&lt;/li&gt;
+&lt;li&gt;handler403 权限被拒绝&lt;/li&gt;
+&lt;li&gt;handler400 无效的请求&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;你也可以在项目的urls.py中重新定义这些默认视图：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;handler404 = &amp;apos;mysite.views.your_custom_page_not_found_view&amp;apos;
+handler500 = &amp;apos;mysite.views.your_custom_error_view&amp;apos;
+handler403 = &amp;apos;mysite.views.your_custom_permission_denied_view&amp;apos;
+handler400 = &amp;apos;mysite.views.your_custom_bad_request_view&amp;apos;
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;urls-py&quot;&gt;&lt;a href=&quot;#urls-py&quot; class=&quot;headerlink&quot; title=&quot;urls.py&quot;&gt;&lt;/a&gt;urls.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.conf.urls import url
+&lt;/code&gt;&lt;/
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Django之Module</title>
+    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BModule/"/>
+    <id>http://canuxcheng.com/2016/10/03/Django之Module/</id>
+    <published>2016-10-03T20:20:31.000Z</published>
+    <updated>2016-10-13T07:51:31.501Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;models-py&quot;&gt;&lt;a href=&quot;#models-py&quot; class=&quot;headerlink&quot; title=&quot;models.py&quot;&gt;&lt;/a&gt;models.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.db import models
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django模型是和数据库关联的，代码放在models.py，数据库信息在settings.py中统一配置即可。&lt;/p&gt;
+&lt;p&gt;每个模型对应数据库唯一的一张表，是django.db.models.Model的子类。&lt;/p&gt;
+&lt;p&gt;模型的每个属性都表示为数据库中的一个字段。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在项目的settings.py中激活应用，并设置数据库相关参数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;让django包含你的应用：&lt;/p&gt;
+&lt;p&gt;  告诉django你对模型做了更改，并且将这些更改存储为迁移文件polls/migrations/0001_initial.py:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py makemigrations polls
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  可以查看迁移文件执行了哪些sql语句,并不真的在数据库执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py sqlmigrate polls 0001
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  可以检查项目中的模型是否存在问题：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py check
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  在数据库中创建模型,查找还没有被应用的迁移文件然后和数据库同步：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py migrate
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;模型的字段类型和字段选项&quot;&gt;&lt;a href=&quot;#模型的字段类型和字段选项&quot; class=&quot;headerlink&quot; title=&quot;模型的字段类型和字段选项&quot;&gt;&lt;/a&gt;模型的字段类型和字段选项&lt;/h1&gt;&lt;p&gt;模型的每个属性都表示为数据库的一个字段,是Field子类的某个实例。&lt;/p&gt;
+&lt;p&gt;模型的字段还有一些选项。&lt;/p&gt;
+&lt;p&gt;模型字段类型和选项参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://python.usyiyi.cn/documents/django_182/ref/models/fields.html#common-model-field-options&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.usyiyi.cn/documents/django_182/ref/models/fields.html#common-model-field-options&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;字段命名规则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不能是python的保留关键字。&lt;/li&gt;
+&lt;li&gt;字段名中连续的下划线不能超过一个。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;字段的类型都是Field类的子类：&lt;/p&gt;
+&lt;p&gt;每个字段都接受一个可选的位置参数(一般是第一个），叫字段的自述名,如果不指定就默认是字段名字（下划线换成空格）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AutoField
+# 默认django会每个模型添加一个自增主键字段,如果你显示设置一个自增主键字段就不会默认再添加,每个模型只能有一个主键字段。
+# id = models.AutoField(primary_key=True)
+BigIntegerField
+BinaryField
+BooleanField
+CharField
+CommaSeparatedIntegerField
+DateField
+DateTimeField
+DecimalField
+DurationField
+EmailField
+FileField
+FilePathField
+FloatField
+GenericIPAddressField
+IPAddressField
+ImageField
+IntegerField
+NullBooleanField
+PositiveIntegerField
+PositiveSmallIntegerField
+SlugField
+SmallIntegerField
+TextField
+TimeField
+URLField
+UUIDField
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django定义了一系列字段类型描述数据库之间的关联:&lt;/p&gt;
+&lt;p&gt;这三个字段要求第一个参数是模型类，用verbose_name选项才能指定自述名。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ForeignKey 定义多对一关系
+OneToOneField 定义一对一关系
+ManyToManyField 定义多对多关系
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django定义的字段的通用的选项：&lt;/p&gt;
+&lt;p&gt;每个字段都有特定的选项，也有通用的选项,特定参数参考文档。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;null
+blank
+choices
+default
+help_text
+primary_key
+unique
+db_column
+db_index
+db_tablespace
+editable
+error_messages
+unique_for_date
+unique_for_month
+unique_for_year
+verbose_name
+validators
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;访问其它应用的模型,导入即可：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from &amp;lt;other-aplication&amp;gt;.models import &amp;lt;module-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;模型元数据&quot;&gt;&lt;a href=&quot;#模型元数据&quot; class=&quot;headerlink&quot; title=&quot;模型元数据&quot;&gt;&lt;/a&gt;模型元数据&lt;/h1&gt;&lt;p&gt;使用内部class Meta定义模型的元数据。&lt;/p&gt;
+&lt;p&gt;模型元数据是任何不是字段的数据，比如排序选项等。&lt;/p&gt;
+&lt;p&gt;模型的元数据选项：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://python.usyiyi.cn/translate/django_182/ref/models/options.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.usyiyi.cn/translate/django_182/ref/models/options.html&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.db import models
+class Ox(models.Model):
+    horn_length = models.IntegerField()
+    ...
+    class Meta:
+        ordering = [&amp;quot;horn_length&amp;quot;]
+        verbose_name_plural = &amp;quot;oxen&amp;quot;
+
+abstract = True # 表示模型是抽象基类，数据库不会创建这个表.
+ordering # 对象的默认顺序。
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;模型的属性&quot;&gt;&lt;a href=&quot;#模型的属性&quot; class=&quot;headerlink&quot; title=&quot;模型的属性&quot;&gt;&lt;/a&gt;模型的属性&lt;/h1&gt;&lt;p&gt;每个类都要添加一个Manager实例，如果不显示添加，django就会默认添加objects属性，包含Manager实例。&lt;/p&gt;
+&lt;p&gt;Manager或object属性是模型进行数据库查询操作的接口,并用于从数据库获取实例。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from django.db import models
+class Foo(models.Model):
+    bar = models.Manager()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;DoesNotExist属性：&lt;/p&gt;
+&lt;p&gt;django为每个类提供这个异常属性，可以捕获这个异常。&lt;/p&gt;
+&lt;h1 id=&quot;模型的方法&quot;&gt;&lt;a href=&quot;#模型的方法&quot; class=&quot;headerlink&quot; title=&quot;模型的方法&quot;&gt;&lt;/a&gt;模型的方法&lt;/h1&gt;&lt;p&gt;模型中可以自定义方法，可以使用预定义的自动生成的方法，也可以覆盖预定义的方法。&lt;/p&gt;
+&lt;p&gt;预定义方法参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://python.usyiyi.cn/translate/django_182/ref/models/instances.html#model-instance-methods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.usyiyi.cn/translate/django_182/ref/models/instances.html#model-instance-methods&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;预定义方法&lt;strong&gt;str&lt;/strong&gt;()和&lt;strong&gt;unicode&lt;/strong&gt;():&lt;/p&gt;
+&lt;p&gt;python3中所有字段都是unicode，只需要str方法，python2中用unicode方法。&lt;/p&gt;
+&lt;p&gt;这段代码兼容python2和python3.&lt;/p&gt;
+&lt;p&gt;python_2_unicode_compatible是一个用于类的装饰器，在类中定义&lt;strong&gt;str&lt;/strong&gt;并返回文本.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# -*- encoding: utf-8 -*-
+from __future__ import unicode_literals
+from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
+
+@python_2_unicode_compatible
+class Question(models.Model):
+    title = models.CharField(&amp;apos;title&amp;apos;, max_length=256)
+    ...
+    def __str__(self):
+        return self.title
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;查询集&quot;&gt;&lt;a href=&quot;#查询集&quot; class=&quot;headerlink&quot; title=&quot;查询集&quot;&gt;&lt;/a&gt;查询集&lt;/h1&gt;&lt;p&gt;查询集参考QuerySet类的方法：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://python.usyiyi.cn/translate/django_182/ref/models/querysets.html#queryset-api&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.usyiyi.cn/translate/django_182/ref/models/querysets.html#queryset-api&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;查询集求值：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;迭代&lt;/li&gt;
+&lt;li&gt;切片&lt;/li&gt;
+&lt;li&gt;序列化&lt;/li&gt;
+&lt;li&gt;repr()&lt;/li&gt;
+&lt;li&gt;len()&lt;/li&gt;
+&lt;li&gt;list()&lt;/li&gt;
+&lt;li&gt;bool()&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;创建一个对象：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;q = Question(question_text=&amp;apos;content&amp;apos;, pub_date=&amp;apos;date&amp;apos;)
+q.save()
+
+q = Question(question_text=&amp;apos;content&amp;apos;)
+q.pub_date=&amp;apos;date&amp;apos;
+q.save()
+
+Question.objects.create(question_text=&amp;quot;content&amp;quot;, pub_date=&amp;apos;date&amp;apos;)
+
+# 防止重复,不存在就创建，返回(object, True),存在返回(object, False)
+Question.objects.get_or_create(question_text=&amp;apos;content&amp;apos;, pub_date=&amp;apos;date&amp;apos;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;获取对象：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 获取所有
+Question.objects.all()
+# 切片获取部分
+Question.objects.all()[:10]
+# 获取单个
+Question.objects.get(question_text=&amp;apos;content&amp;apos;)
+# 过滤
+Question.objects.filter(**kwargs)
+Question.objects.exclude(**kwargs)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查询集的链式处理：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Question.objects.all().exists()
+Question.objects.all().order_by(&amp;apos;name&amp;apos;)
+Question.objects.filter(**kwargs).filter(**kwargs)
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;models-py&quot;&gt;&lt;a href=&quot;#models-py&quot; class=&quot;headerlink&quot; title=&quot;models.py&quot;&gt;&lt;/a&gt;models.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.db import models
+&lt;/cod
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+      <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django之Template</title>
+    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BTemplate/"/>
+    <id>http://canuxcheng.com/2016/10/03/Django之Template/</id>
+    <published>2016-10-03T20:12:49.000Z</published>
+    <updated>2016-11-14T07:21:56.939Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;模板设置&quot;&gt;&lt;a href=&quot;#模板设置&quot; class=&quot;headerlink&quot; title=&quot;模板设置&quot;&gt;&lt;/a&gt;模板设置&lt;/h1&gt;&lt;p&gt;模板引擎在settings.py设置, django有两套模板引擎：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;TEMPLATES = [
+    # DjangoTemplates
+    {
+        &amp;apos;BACKEND&amp;apos;: &amp;apos;django.template.backends.django.DjangoTemplates&amp;apos;,
+        # 定义项目的通用模板, mysite/templates
+        &amp;apos;DIRS&amp;apos;: [os.path.join(BASE_DIR, &amp;apos;templates&amp;apos;)],
+        # True 表示在所有安装应用的application/templates中查找。
+        &amp;apos;APP_DIRS&amp;apos;: True,
+        # 模板的选项：
+        &amp;apos;OPTIONS&amp;apos;: {
+        &amp;apos;context_processors&amp;apos;:
+        &amp;apos;debug&amp;apos;:
+        &amp;apos;loaders&amp;apos;:
+        &amp;apos;string_if_invalid&amp;apos;:
+        &amp;apos;file_charset&amp;apos;: &amp;apos;utf-8&amp;apos;
+        },
+    },
+
+    # Jinja2
+    {
+        &amp;apos;BACKEND&amp;apos;: &amp;apos;django.template.backends.jinja2.Jinja2&amp;apos;,
+        # 定义项目的通用模板, mysite/templates
+        &amp;apos;DIRS&amp;apos;: [os.path.join(BASE_DIR, &amp;apos;templates&amp;apos;)],
+        # True表示在所有已安装应用的application/jinja2中查找。
+        &amp;apos;APP_DIRS&amp;apos;: True,
+        # 模板的选项：
+        &amp;apos;OPTIONS&amp;apos;: {
+        &amp;apos;autoescape&amp;apos;: True
+        &amp;apos;loader&amp;apos;:
+        &amp;apos;auto_reload&amp;apos;:
+        &amp;apos;undefined&amp;apos;:
+        },
+    },
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;BACKEND定义模板引擎,django内置的模板引擎有两个django.template.backends.django.DjangoTemplates(默认)和django.template.backends.jinja2.Jinja2&lt;/p&gt;
+&lt;p&gt;DIRS存放自定义的不在应用路径的模板，模板引擎按列表顺序搜索查找模板源文件,默认就是默认引擎的默认路径。&lt;/p&gt;
+&lt;p&gt;APP_DIRS告诉模板引擎是否进入安装应用的templates(jinja2的目录是jinja2)查找模板。&lt;/p&gt;
+&lt;p&gt;在视图中使用模板：&lt;/p&gt;
+&lt;p&gt;默认django会在项目的所有应用的templates中查找模板，所以为了防止多个应用有同名的模板，需要在templates下新建application同名的目录来存放模板&lt;/p&gt;
+&lt;p&gt;应用的模板文件需要在应用目录创建templates文件夹&lt;/p&gt;
+&lt;p&gt;默认模板放在polls/templates/polls/XXX.html&lt;/p&gt;
+&lt;p&gt;应用的静态文件需要在应用目录创建static文件夹&lt;/p&gt;
+&lt;p&gt;默认静态文件存放在polls/static/polls/XXX.css&lt;/p&gt;
+&lt;p&gt;静态文件夹用来集中存放和管理图片，js脚本和css样式表等静态文件。&lt;/p&gt;
+&lt;p&gt;django.template.loader定义了两个函数加载模板。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;get_template(template_name, dirs=&amp;lt;object object&amp;gt;, using=None)
+select_template(template_name_list, dirs=&amp;lt;object object&amp;gt;, using=None)
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;模板语言&quot;&gt;&lt;a href=&quot;#模板语言&quot; class=&quot;headerlink&quot; title=&quot;模板语言&quot;&gt;&lt;/a&gt;模板语言&lt;/h1&gt;&lt;p&gt;django模板语言由四部分组成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量&lt;/li&gt;
+&lt;li&gt;标签&lt;/li&gt;
+&lt;li&gt;过滤器&lt;/li&gt;
+&lt;li&gt;评论&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;变量&quot;&gt;&lt;a href=&quot;#变量&quot; class=&quot;headerlink&quot; title=&quot;变量&quot;&gt;&lt;/a&gt;变量&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;{{ var }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示字符串：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;string = &amp;quot;test string&amp;quot;
+return render(request, &amp;apos;index.html&amp;apos;, {&amp;apos;string&amp;apos;: string})
+
+{{ string }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示字典：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dict = {&amp;quot;key1&amp;quot;: &amp;quot;value1&amp;quot;, &amp;quot;key2&amp;quot;: &amp;quot;value2&amp;quot;}
+return render(request, &amp;apos;index.html&amp;apos;, {&amp;apos;dict&amp;apos;: dict})
+
+{{ dict.name1 }}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;标签&quot;&gt;&lt;a href=&quot;#标签&quot; class=&quot;headerlink&quot; title=&quot;标签&quot;&gt;&lt;/a&gt;标签&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;{% tag %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考内置标签：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://python.usyiyi.cn/translate/django_182/ref/templates/builtins.html#ref-templates-builtins-tags&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.usyiyi.cn/translate/django_182/ref/templates/builtins.html#ref-templates-builtins-tags&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;for标签：&lt;/p&gt;
+&lt;p&gt;遍历列表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list = [&amp;apos;val1&amp;apos;, &amp;apos;val2&amp;apos;, &amp;apos;val3&amp;apos;]
+return render(request, &amp;apos;index.html&amp;apos;, {&amp;apos;list&amp;apos;: &amp;apos;list&amp;apos;})
+
+{% for i in list %}
+    {{ i }}
+    {% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;遍历字典：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% for key, value in dict.items %}
+    {{ key }}: {{ value }}
+    {% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;empty列表可能为空：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% for i in list %}
+    ...
+    {% empty %}
+    ...
+    {% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;reversed反向循环：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% for i in list reversed %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;for循环有用的变量：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;forloop.counter    # 1 - indexed
+forloop.counter0    # 0 - indexed
+forloop.revcounter    # 1 - indexed
+forloop.revcounter0    # 0 - indexed
+forloop.first
+forloop.last
+forloop.parentloop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;if标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% if expression %}
+    ...
+    {% else %}
+    ...
+    {% endif %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;if可用的布尔操作符：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% if expression1 and expression2 %}
+{% if not expression %}
+{% if expression1 or expression2 %}
+{% if not expression1 or expression2 %} # not优先级高于or
+{% if expression1 and not expression2 %} # not优先级高于and
+{% if expression1 and expression2 or expression3 %} # and优先级高于or
+{% if var == value %}
+{% if var != value %}
+{% if var &lt; value %}
+{% if var &gt; value %}
+{% if var &lt;= value=&quot;&quot; %}=&quot;&quot; {%=&quot;&quot; if=&quot;&quot; var=&quot;&quot;&gt;= value %}
+{% if var in value %}
+{% if a &gt; b and b &gt; c %}
+{% if var|filter&quot;arguments expression %} # if中使用过滤器
+&lt;/=&gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;布尔操作符的优先级：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;or
+and
+not
+in
+==, !=, &amp;lt;, &amp;gt;, &amp;lt;=, &amp;gt;=
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;include标签：&lt;/p&gt;
+&lt;p&gt;加载模板并以标签内的参数渲染。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% include &#39;XXX.html&#39; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;load标签：&lt;/p&gt;
+&lt;p&gt;加载自定义模板标签集。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% load foo bar from somelibrary %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;now标签：&lt;/p&gt;
+&lt;p&gt;显示最近的日期和事件。&lt;/p&gt;
+&lt;p&gt;spaceless标签：&lt;/p&gt;
+&lt;p&gt;删除html标签之间的空白格，包括制表符和换行。&lt;/p&gt;
+&lt;p&gt;url标签：&lt;/p&gt;
+&lt;p&gt;返回一个绝对路径的引用，该引用匹配一个给定的视图函数和一些可选的参数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% &#39;some-url-name&#39; v1 v2 %}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;模板继承&quot;&gt;&lt;a href=&quot;#模板继承&quot; class=&quot;headerlink&quot; title=&quot;模板继承&quot;&gt;&lt;/a&gt;模板继承&lt;/h3&gt;&lt;p&gt;block标签：&lt;/p&gt;
+&lt;p&gt;在底层模板定义一些通用的内容，block标签可以被子模板覆盖。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% block XXX %}
+    This is default content
+    {% endblock %}}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;extends标签：&lt;/p&gt;
+&lt;p&gt;表示当前模板继承自父模板。&lt;/p&gt;
+&lt;p&gt;extends标签必须放在子模板第一行。&lt;/p&gt;
+&lt;p&gt;extends用来调用底层的模板，然后修改block标签内容。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% extends &quot;XXX.html&quot;/variable %}
+{% block XXX %}
+    This is rewrite content
+    {% endblock %}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;block.super:&lt;/p&gt;
+&lt;p&gt;如果需要获取父模板的block中的内容，可以用block.super。&lt;/p&gt;
+&lt;p&gt;可以在父模板的block中增加内容，而不是完全覆盖。&lt;/p&gt;
+&lt;h2 id=&quot;过滤器&quot;&gt;&lt;a href=&quot;#过滤器&quot; class=&quot;headerlink&quot; title=&quot;过滤器&quot;&gt;&lt;/a&gt;过滤器&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;{{ var|filter:arguments }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考内置过滤器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://python.usyiyi.cn/translate/django_182/ref/templates/builtins.html#ref-templates-builtins-filters&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.usyiyi.cn/translate/django_182/ref/templates/builtins.html#ref-templates-builtins-filters&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;add过滤器：&lt;/p&gt;
+&lt;p&gt;把add后的参数加给value。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{ value|add:&quot;2&quot; }} # value -&amp;gt; value+2
+{{ value|addslashes }} # &amp;quot;I&amp;apos;m string&amp;quot; -&amp;gt; &amp;quot;I\&amp;apos;m string&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;addslashed过滤器：&lt;/p&gt;
+&lt;p&gt;在引号前面加\&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{ value|addslashes }} # I&amp;apos;m canux -&amp;gt; I\&amp;apos;m canux
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;capfirst过滤器：&lt;/p&gt;
+&lt;p&gt;变量的第一个字母大写。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{ value|capfirst }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;center过滤器：&lt;/p&gt;
+&lt;p&gt;使value在给定的宽度范围内居中。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{ value|center:&quot;15&quot; }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;cut过滤器：&lt;/p&gt;
+&lt;p&gt;移除value中所有的与给出的变量相同的字符串。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{ value|cut:&quot;cut&quot; }} # 移除value中的字符串&amp;quot;cut&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;date过滤器：&lt;/p&gt;
+&lt;p&gt;根据给定格式对一个date变量格式化。&lt;/p&gt;
+&lt;p&gt;default过滤器：&lt;/p&gt;
+&lt;p&gt;给value设定默认值，如果value没有赋值，就用默认值。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{ value|default:&quot;default-value&quot; }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;default_if_none过滤器：&lt;/p&gt;
+&lt;p&gt;仅当value是None使用默认值。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{ value:default_if_none:&quot;nothing&quot; }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;dictsort过滤器：&lt;/p&gt;
+&lt;p&gt;dictsortreversed过滤器：&lt;/p&gt;
+&lt;p&gt;divisibleby过滤器：&lt;/p&gt;
+&lt;p&gt;如果value可以被给出的参数整除，返回True。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{ value|divisibleby:&quot;3&quot; }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;escape过滤器：&lt;/p&gt;
+&lt;p&gt;escapejs过滤器：&lt;/p&gt;
+&lt;p&gt;filesizeformat过滤器：&lt;/p&gt;
+&lt;p&gt;格式化为人类可读的文件大小。&lt;/p&gt;
+&lt;p&gt;first过滤器：&lt;/p&gt;
+&lt;p&gt;返回迭代器的第一个元素。&lt;/p&gt;
+&lt;p&gt;floatformat过滤器：&lt;/p&gt;
+&lt;p&gt;force_escape过滤器：&lt;/p&gt;
+&lt;p&gt;get_digit过滤器：&lt;/p&gt;
+&lt;p&gt;iriencode过滤器：&lt;/p&gt;
+&lt;p&gt;join过滤器：&lt;/p&gt;
+&lt;p&gt;last过滤器：&lt;/p&gt;
+&lt;p&gt;length过滤器：&lt;/p&gt;
+&lt;p&gt;length_is过滤器：&lt;/p&gt;
+&lt;p&gt;linebreaks过滤器：&lt;/p&gt;
+&lt;p&gt;linebreaksbr过滤器：&lt;/p&gt;
+&lt;p&gt;linenumbers过滤器：&lt;/p&gt;
+&lt;p&gt;ljust过滤器：&lt;/p&gt;
+&lt;p&gt;lower过滤器：&lt;/p&gt;
+&lt;p&gt;把字符串转换成小写。&lt;/p&gt;
+&lt;p&gt;make_list过滤器：&lt;/p&gt;
+&lt;p&gt;phone2numeric过滤器：&lt;/p&gt;
+&lt;p&gt;pluralize过滤器：&lt;/p&gt;
+&lt;p&gt;pprint过滤器：&lt;/p&gt;
+&lt;p&gt;random过滤器：&lt;/p&gt;
+&lt;p&gt;romevetags过滤器：&lt;/p&gt;
+&lt;p&gt;rjust过滤器：&lt;/p&gt;
+&lt;p&gt;slice过滤器：&lt;/p&gt;
+&lt;p&gt;slugify过滤器：&lt;/p&gt;
+&lt;p&gt;stringformat过滤器：&lt;/p&gt;
+&lt;p&gt;striptags过滤器：&lt;/p&gt;
+&lt;p&gt;time过滤器：&lt;/p&gt;
+&lt;p&gt;timesince过滤器：&lt;/p&gt;
+&lt;p&gt;timeuntil过滤器：&lt;/p&gt;
+&lt;p&gt;title过滤器：&lt;/p&gt;
+&lt;p&gt;truncatechars过滤器：&lt;/p&gt;
+&lt;p&gt;truncatechars_html过滤器：&lt;/p&gt;
+&lt;p&gt;truncatewords过滤器：&lt;/p&gt;
+&lt;p&gt;truncatewords_html过滤器;&lt;/p&gt;
+&lt;p&gt;unordered_list过滤器：&lt;/p&gt;
+&lt;p&gt;upper过滤器：&lt;/p&gt;
+&lt;p&gt;将字符串转换成大写形式。&lt;/p&gt;
+&lt;p&gt;urlencode过滤器：&lt;/p&gt;
+&lt;p&gt;urlize过滤器：&lt;/p&gt;
+&lt;p&gt;urlizetrunc过滤器：&lt;/p&gt;
+&lt;p&gt;wordcount过滤器：&lt;/p&gt;
+&lt;p&gt;wordwrap过滤器：&lt;/p&gt;
+&lt;p&gt;yesno过滤器：&lt;/p&gt;
+&lt;p&gt;i18n过滤器：&lt;/p&gt;
+&lt;p&gt;l10n过滤器：&lt;/p&gt;
+&lt;p&gt;tz过滤器：&lt;/p&gt;
+&lt;h2 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h2&gt;&lt;p&gt;单行注释：&lt;/p&gt;
+&lt;p&gt;多行注释：&lt;/p&gt;
+&lt;p&gt;也可以用comment标签表示多行注释。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% comment %}
+    line1
+    line2
+    ...
+    {% endcomment %}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;自动html转义&quot;&gt;&lt;a href=&quot;#自动html转义&quot; class=&quot;headerlink&quot; title=&quot;自动html转义&quot;&gt;&lt;/a&gt;自动html转义&lt;/h1&gt;&lt;p&gt;当从模板生成html时，值可能包含影响html最终呈现的字符。&lt;/p&gt;
+&lt;p&gt;django的自动转义,默认是打开的：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt; 转义成 &amp;amp;lt;
+&amp;gt; 转义成 &amp;amp;gt;
+&amp;apos; 转义成 &amp;amp;#39
+&amp;quot; 转义成 &amp;amp;quot;
+$ 转义成 &amp;amp;amp;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果不需要自动转义可以关闭它&lt;/p&gt;
+&lt;p&gt;可以用safe过滤器关闭独立变量中的自动转义：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data = &amp;lt;b&amp;gt;
+{{ data }} -&amp;gt; &amp;amp;lt;b&amp;amp;gt;
+{{ data|safe }} -&amp;gt; &amp;lt;b&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以用autoescape标签关闭模板代码中的自动转义：&lt;/p&gt;
+&lt;p&gt;autoescape标签有off和on两个参数，表示关闭和打开自动转义。&lt;/p&gt;
+&lt;p&gt;父模板中的autoescape可以被子模板继承，也可以被include标签包含的模板继承。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{% autoescape off %}
+    {{ name }}
+    {% endautoescape %}
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;模板设置&quot;&gt;&lt;a href=&quot;#模板设置&quot; class=&quot;headerlink&quot; title=&quot;模板设置&quot;&gt;&lt;/a&gt;模板设置&lt;/h1&gt;&lt;p&gt;模板引擎在settings.py设置, django有两套模板引擎：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;TEMPLATES = 
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+      <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django之Deploy</title>
+    <link href="http://canuxcheng.com/2016/09/26/Django%E4%B9%8BDeploy/"/>
+    <id>http://canuxcheng.com/2016/09/26/Django之Deploy/</id>
+    <published>2016-09-27T02:23:22.000Z</published>
+    <updated>2016-11-08T09:27:53.878Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;发布django项目&quot;&gt;&lt;a href=&quot;#发布django项目&quot; class=&quot;headerlink&quot; title=&quot;发布django项目&quot;&gt;&lt;/a&gt;发布django项目&lt;/h1&gt;&lt;p&gt;django内置一个轻量级web开发服务器。&lt;/p&gt;
+&lt;p&gt;如果要发布django项目需要另外的操作。&lt;/p&gt;
+&lt;p&gt;WSGI: web server gateway interface&lt;/p&gt;
+&lt;p&gt;WSGI是python web服务器和应用的标准，PEP3333.&lt;/p&gt;
+&lt;p&gt;django默认会生成wsgi.py文件。&lt;/p&gt;
+&lt;p&gt;wsgi.py -&amp;gt; settings.py -&amp;gt; urls.py -&amp;gt; application&lt;/p&gt;
+&lt;p&gt;也可以发布到其它的云平台。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;deploy时django的设置&quot;&gt;&lt;a href=&quot;#deploy时django的设置&quot; class=&quot;headerlink&quot; title=&quot;deploy时django的设置&quot;&gt;&lt;/a&gt;deploy时django的设置&lt;/h1&gt;&lt;p&gt;settings.py中的设置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ALLOWED_HOSTS = [&amp;apos;*&amp;apos;]
+DEBUG = False
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;apache2-4-mod-wsgi&quot;&gt;&lt;a href=&quot;#apache2-4-mod-wsgi&quot; class=&quot;headerlink&quot; title=&quot;apache2.4 + mod_wsgi&quot;&gt;&lt;/a&gt;apache2.4 + mod_wsgi&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/GrahamDumpleton/mod_wsgi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/GrahamDumpleton/mod_wsgi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;mod_wsgi是C写的apache的模块，实现了兼容WSGI接口，用来部署python的web应用。&lt;/p&gt;
+&lt;p&gt;作为apache2的模块安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# ubuntu/debian
+sudo aptitude install apache2 # 安装apache2
+sudo aptitude install libapache2-mod-wsgi # for python2
+sudo aptitude install libapache2-mod-wsgi-py3 # for python3
+
+# redhat/centos/fedora
+sudo yum install httpd2
+sudo yum install httpd-devel
+sudo yum install mod_wsgi
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ubuntu创建网站的配置文件/etc/apache2/sites-available/mysite.conf:&lt;/p&gt;
+&lt;p&gt;Fedora创建网站的配置文件/etc/httpd/conf.d/mysite.conf:&lt;/p&gt;
+&lt;p&gt;一般部署到web服务器，/home/user/修改为/var/www/&lt;project-name&gt;/&lt;/project-name&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Include the project dir, can not inside VirtualHost section.
+WSGIPythonPath /home/user/mysite
+# If use virtualenv and named venv
+# WSGIPythonPath /home/user/mysite:/home/user/mysite/venv/lib/python2.7/site-packages
+
+&amp;lt;VirtualHost *:80&amp;gt;
+    ServerName localhost
+    # ServerName yoursite.domain
+    ServerAdmin canuxcheng@gmail.com
+
+    Alias /robots.txt /home/user/mysite/static/robots.txt
+    Alias /favicon.ico /home/user/mysite/static/favicon.ico
+
+    Alias /media/ /home/user/mysite/media/
+    Alias /static/ /home/user/mysite/static/
+
+    &amp;lt;Directory /home/user/mysite/media&amp;gt;
+    Required all granted
+    &amp;lt;/Directory&amp;gt;
+
+    &amp;lt;Directory /home/user/mysite/static&amp;gt;
+    Required all granted
+    &amp;lt;/Directory&amp;gt;
+
+    # If use daemon mode to run WSGI process.
+    WSGIDaemonProcess mysite python-path=/home/user/mysite
+    # If use virtualenv and named venv
+    # WSGIDaemonProcess mysite python-path=/home/user/mysite:/home/user/mysite/venv/lib/python2.7/site-packages
+
+    WSGIScriptAlias / /home/user/mysite/mysite/wsgi.py
+
+    &amp;lt;Directory /home/user/mysite/mysite&amp;gt;
+    &amp;lt;Files wsgi.py&amp;gt;
+    Required all granted
+    &amp;lt;/Files&amp;gt;
+    &amp;lt;/Directory&amp;gt;
+
+    # check the log in /var/log/apache2/error_mysite.log or access_mysite.log
+    ErrorLog ${APACHE_LOG_DIR}/error_mysite.log
+    CustomLog ${APACHE_LOG_DIR}/access_mysite.log combined
+&amp;lt;/VirtualHost&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改项目的wsgi.py:&lt;/p&gt;
+&lt;p&gt;因为环境变量是进程范围的，在同一个进程运行多个站点会出问题，所以推荐多站点使用mod_wsgi的守护进程模式,也可以在单进程中覆盖DJANGO_SETTINGS_MODULE这个变量。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import os
+
+from django.core.wsgi import get_wsgi_application
+
+# If you have more than 1 django project you need to change this.
+# Or you can use daemon mode for WSGI process.
+# os.environ.setdefault(&amp;quot;DJANGO_SETTINGS_MODULE&amp;quot;, &amp;quot;mysite.settings&amp;quot;)
+os.environ[&amp;quot;DIANGO_SETTINGS_MODULE&amp;quot;] = &amp;quot;mysite.settings&amp;quot;
+
+application = get_wsgi_application()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改项目的settings.py:&lt;/p&gt;
+&lt;p&gt;ROOT表示存放位置，URL表示对应网址。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DEBUG = False
+
+ALLOWED_HOSTS = [&amp;apos;*&amp;apos;]
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = &amp;apos;/static/&amp;apos;
+
+STATIC_ROOT = os.path.join(BASE_DIR, &amp;apos;static&amp;apos;)
+
+# Media files (upload files)
+MEDIA_URL = &amp;apos;/media/&amp;apos;
+
+MEDIA_ROOT = os.path.join(BASE_DIR, &amp;apos;media&amp;apos;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;收集静态文件和迁移：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py makemigration
+$python mamage.py migrate
+$python manage.py collectstatic
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;设置权限：&lt;/p&gt;
+&lt;p&gt;Ubuntu默认用户和组是www-data,Fedora默认用户和组是apache。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$cd /home/user
+$sudo chgrp www-data mysite
+$sudo chmod g+w mysite
+$sudo chgrp www-data mysite/db.sqlite3
+$sudo chmod g+w mysite/db.sqlite3
+$sudo chgrp -R www-data mysite/media/uploads
+$sudo chmod -R g+w mysite/media/uploads
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ubuntu激活网站：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo a2ensite &amp;lt;newsite&amp;gt;
+$sudo service apache2 restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fedora激活网站：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo systemctl restart  httpd
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;nginx-uWSGI&quot;&gt;&lt;a href=&quot;#nginx-uWSGI&quot; class=&quot;headerlink&quot; title=&quot;nginx + uWSGI&quot;&gt;&lt;/a&gt;nginx + uWSGI&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/unbit/uwsgi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/unbit/uwsgi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;C写的wsgi应用服务器。&lt;/p&gt;
+&lt;p&gt;安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install uwsgi
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;uwsgi --http :8000 --chdir /path/to/project --module mysite.wsgi
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;nginx-Gunicon&quot;&gt;&lt;a href=&quot;#nginx-Gunicon&quot; class=&quot;headerlink&quot; title=&quot;nginx + Gunicon&quot;&gt;&lt;/a&gt;nginx + Gunicon&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/benoitc/gunicorn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/benoitc/gunicorn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;纯python写的WSGI服务器。&lt;/p&gt;
+&lt;p&gt;安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install gunicorn
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在manage.py目录测试：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gunicorn mysite.wsgi
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;发布django项目&quot;&gt;&lt;a href=&quot;#发布django项目&quot; class=&quot;headerlink&quot; title=&quot;发布django项目&quot;&gt;&lt;/a&gt;发布django项目&lt;/h1&gt;&lt;p&gt;django内置一个轻量级web开发服务器。&lt;/p&gt;
+&lt;p&gt;如果要发布dja
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+      <category term="apache" scheme="http://canuxcheng.com/tags/apache/"/>
+    
+      <category term="nginx" scheme="http://canuxcheng.com/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NodeJS</title>
+    <link href="http://canuxcheng.com/2016/09/26/NodeJS/"/>
+    <id>http://canuxcheng.com/2016/09/26/NodeJS/</id>
+    <published>2016-09-26T19:31:25.000Z</published>
+    <updated>2016-09-27T07:32:02.460Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;nodejs&quot;&gt;&lt;a href=&quot;#nodejs&quot; class=&quot;headerlink&quot; title=&quot;nodejs&quot;&gt;&lt;/a&gt;nodejs&lt;/h1&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;nodejs&quot;&gt;&lt;a href=&quot;#nodejs&quot; class=&quot;headerlink&quot; title=&quot;nodejs&quot;&gt;&lt;/a&gt;nodejs&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="Web" scheme="http://canuxcheng.com/categories/Web/"/>
+    
+      <category term="NodeJS" scheme="http://canuxcheng.com/categories/Web/NodeJS/"/>
+    
+    
+      <category term="javascript" scheme="http://canuxcheng.com/tags/javascript/"/>
+    
+      <category term="node" scheme="http://canuxcheng.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WebServer</title>
+    <link href="http://canuxcheng.com/2016/09/26/WebServer/"/>
+    <id>http://canuxcheng.com/2016/09/26/WebServer/</id>
+    <published>2016-09-26T19:25:26.000Z</published>
+    <updated>2016-12-25T04:17:24.917Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;web服务器&quot;&gt;&lt;a href=&quot;#web服务器&quot; class=&quot;headerlink&quot; title=&quot;web服务器&quot;&gt;&lt;/a&gt;web服务器&lt;/h1&gt;&lt;p&gt;LAMP: Linux+apache+mysql+php&lt;/p&gt;
+&lt;p&gt;LNMP: Linux+nginx+mysql+php&lt;/p&gt;
+&lt;h1 id=&quot;Apache&quot;&gt;&lt;a href=&quot;#Apache&quot; class=&quot;headerlink&quot; title=&quot;Apache&quot;&gt;&lt;/a&gt;Apache&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/apache/httpd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/apache/httpd&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://httpd.apache.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://httpd.apache.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装apache2：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo aptitude install apache2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动服务器：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service apache2 start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动浏览器查看：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://localhost:80
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;nginx&quot;&gt;&lt;a href=&quot;#nginx&quot; class=&quot;headerlink&quot; title=&quot;nginx&quot;&gt;&lt;/a&gt;nginx&lt;/h1&gt;&lt;hr&gt;
+&lt;h1 id=&quot;静态站点&quot;&gt;&lt;a href=&quot;#静态站点&quot; class=&quot;headerlink&quot; title=&quot;静态站点&quot;&gt;&lt;/a&gt;静态站点&lt;/h1&gt;&lt;p&gt;pelican是python开发的静态站点生成器.&lt;/p&gt;
+&lt;p&gt;hexo是nodejs开发的静态站点生成器.&lt;/p&gt;
+&lt;p&gt;jekyll是ruby开发的静态站点生成器.&lt;/p&gt;
+&lt;p&gt;octopress是ruby开发的kekyll的升级版.&lt;/p&gt;
+&lt;h1 id=&quot;Blog-CMS系统&quot;&gt;&lt;a href=&quot;#Blog-CMS系统&quot; class=&quot;headerlink&quot; title=&quot;Blog/CMS系统&quot;&gt;&lt;/a&gt;Blog/CMS系统&lt;/h1&gt;&lt;p&gt;wordpress是php开发的website, blog, app框架。&lt;/p&gt;
+&lt;p&gt;joomla是php开发的内容管理系统.&lt;/p&gt;
+&lt;p&gt;drupal是php开发的内容管理系统.&lt;/p&gt;
+&lt;p&gt;django-cms是python开发的基于django的内容管理系统.&lt;/p&gt;
+&lt;p&gt;wagtail是python开发的基于django的内容管理系统.&lt;/p&gt;
+&lt;p&gt;mezzanine是python开发的基于django的内容管理系统.&lt;/p&gt;
+&lt;h1 id=&quot;Forum系统&quot;&gt;&lt;a href=&quot;#Forum系统&quot; class=&quot;headerlink&quot; title=&quot;Forum系统&quot;&gt;&lt;/a&gt;Forum系统&lt;/h1&gt;&lt;p&gt;vanilla是php开发的论坛系统.&lt;/p&gt;
+&lt;p&gt;phpbb是php开发的论坛系统.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;web服务器&quot;&gt;&lt;a href=&quot;#web服务器&quot; class=&quot;headerlink&quot; title=&quot;web服务器&quot;&gt;&lt;/a&gt;web服务器&lt;/h1&gt;&lt;p&gt;LAMP: Linux+apache+mysql+php&lt;/p&gt;
+&lt;p&gt;LNMP: Linux+nginx+
+    
+    </summary>
+    
+      <category term="Web" scheme="http://canuxcheng.com/categories/Web/"/>
+    
+    
+      <category term="apache" scheme="http://canuxcheng.com/tags/apache/"/>
+    
+      <category term="nginx" scheme="http://canuxcheng.com/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django之TPL</title>
+    <link href="http://canuxcheng.com/2016/09/26/Django%E4%B9%8BTPL/"/>
+    <id>http://canuxcheng.com/2016/09/26/Django之TPL/</id>
+    <published>2016-09-26T17:33:42.000Z</published>
+    <updated>2016-10-28T03:06:10.302Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;TPL&quot;&gt;&lt;a href=&quot;#TPL&quot; class=&quot;headerlink&quot; title=&quot;TPL&quot;&gt;&lt;/a&gt;TPL&lt;/h1&gt;&lt;p&gt;Django Third Party Library.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rosarior/awesome-django&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/rosarior/awesome-django&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Add this application to your django project in settings.py.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;INSTALLED_APPS = (
+    &amp;apos;south&amp;apos;,
+    &amp;apos;debug_toolbar&amp;apos;,
+    &amp;apos;crispy_forms&amp;apos;,
+    ...
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;South&quot;&gt;&lt;a href=&quot;#South&quot; class=&quot;headerlink&quot; title=&quot;South&quot;&gt;&lt;/a&gt;South&lt;/h1&gt;&lt;p&gt;django的migration的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bitbucket.org/andrewgodwin/south/src&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://bitbucket.org/andrewgodwin/south/src&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-debug-toolbar&quot;&gt;&lt;a href=&quot;#django-debug-toolbar&quot; class=&quot;headerlink&quot; title=&quot;django-debug-toolbar&quot;&gt;&lt;/a&gt;django-debug-toolbar&lt;/h1&gt;&lt;p&gt;django的debugging的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jazzband/django-debug-toolbar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jazzband/django-debug-toolbar&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-crispy-forms&quot;&gt;&lt;a href=&quot;#django-crispy-forms&quot; class=&quot;headerlink&quot; title=&quot;django-crispy-forms&quot;&gt;&lt;/a&gt;django-crispy-forms&lt;/h1&gt;&lt;p&gt;django的forms的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/django-crispy-forms/django-crispy-forms&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-crispy-forms/django-crispy-forms&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-bootstrap3&quot;&gt;&lt;a href=&quot;#django-bootstrap3&quot; class=&quot;headerlink&quot; title=&quot;django-bootstrap3&quot;&gt;&lt;/a&gt;django-bootstrap3&lt;/h1&gt;&lt;p&gt;django的forms的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dyve/django-bootstrap3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/dyve/django-bootstrap3&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-haystack&quot;&gt;&lt;a href=&quot;#django-haystack&quot; class=&quot;headerlink&quot; title=&quot;django-haystack&quot;&gt;&lt;/a&gt;django-haystack&lt;/h1&gt;&lt;p&gt;django的search的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/django-haystack/django-haystack&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-haystack/django-haystack&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-guardian&quot;&gt;&lt;a href=&quot;#django-guardian&quot; class=&quot;headerlink&quot; title=&quot;django-guardian&quot;&gt;&lt;/a&gt;django-guardian&lt;/h1&gt;&lt;p&gt;django的authorization的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/django-guardian/django-guardian&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-guardian/django-guardian&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-allauth&quot;&gt;&lt;a href=&quot;#django-allauth&quot; class=&quot;headerlink&quot; title=&quot;django-allauth&quot;&gt;&lt;/a&gt;django-allauth&lt;/h1&gt;&lt;p&gt;django的authentication的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/pennersr/django-allauth/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/pennersr/django-allauth/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;python-social-auth&quot;&gt;&lt;a href=&quot;#python-social-auth&quot; class=&quot;headerlink&quot; title=&quot;python-social-auth&quot;&gt;&lt;/a&gt;python-social-auth&lt;/h1&gt;&lt;p&gt;django的authentication的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/omab/python-social-auth/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/omab/python-social-auth/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-grappelli&quot;&gt;&lt;a href=&quot;#django-grappelli&quot; class=&quot;headerlink&quot; title=&quot;django-grappelli&quot;&gt;&lt;/a&gt;django-grappelli&lt;/h1&gt;&lt;p&gt;django的admin interface的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/sehmaschine/django-grappelli/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/sehmaschine/django-grappelli/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-rest-framework&quot;&gt;&lt;a href=&quot;#django-rest-framework&quot; class=&quot;headerlink&quot; title=&quot;django-rest-framework&quot;&gt;&lt;/a&gt;django-rest-framework&lt;/h1&gt;&lt;p&gt;django的RESTful API的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/tomchristie/django-rest-framework/tree/master&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/tomchristie/django-rest-framework/tree/master&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-tastypie&quot;&gt;&lt;a href=&quot;#django-tastypie&quot; class=&quot;headerlink&quot; title=&quot;django-tastypie&quot;&gt;&lt;/a&gt;django-tastypie&lt;/h1&gt;&lt;p&gt;django的RESTful API的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/django-tastypie/django-tastypie&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-tastypie/django-tastypie&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-taggit&quot;&gt;&lt;a href=&quot;#django-taggit&quot; class=&quot;headerlink&quot; title=&quot;django-taggit&quot;&gt;&lt;/a&gt;django-taggit&lt;/h1&gt;&lt;p&gt;django的tagging的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alex/django-taggit/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/alex/django-taggit/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;django-compressor&quot;&gt;&lt;a href=&quot;#django-compressor&quot; class=&quot;headerlink&quot; title=&quot;django-compressor&quot;&gt;&lt;/a&gt;django-compressor&lt;/h1&gt;&lt;p&gt;django的asset management的application。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/django-compressor/django-compressor&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-compressor/django-compressor&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;Others&quot;&gt;&lt;a href=&quot;#Others&quot; class=&quot;headerlink&quot; title=&quot;Others&quot;&gt;&lt;/a&gt;Others&lt;/h1&gt;&lt;h2 id=&quot;django-extensions&quot;&gt;&lt;a href=&quot;#django-extensions&quot; class=&quot;headerlink&quot; title=&quot;django-extensions&quot;&gt;&lt;/a&gt;django-extensions&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/django-extensions/django-extensions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-extensions/django-extensions/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;django-filter&quot;&gt;&lt;a href=&quot;#django-filter&quot; class=&quot;headerlink&quot; title=&quot;django-filter&quot;&gt;&lt;/a&gt;django-filter&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/carltongibson/django-filter&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/carltongibson/django-filter&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;TPL&quot;&gt;&lt;a href=&quot;#TPL&quot; class=&quot;headerlink&quot; title=&quot;TPL&quot;&gt;&lt;/a&gt;TPL&lt;/h1&gt;&lt;p&gt;Django Third Party Library.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ros
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+      <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django</title>
+    <link href="http://canuxcheng.com/2016/09/20/Django/"/>
+    <id>http://canuxcheng.com/2016/09/20/Django/</id>
+    <published>2016-09-20T15:14:07.000Z</published>
+    <updated>2016-10-27T09:17:39.384Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;django&quot;&gt;&lt;a href=&quot;#django&quot; class=&quot;headerlink&quot; title=&quot;django&quot;&gt;&lt;/a&gt;django&lt;/h1&gt;&lt;p&gt;django是python的web框架。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/django/django&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django/django&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.djangoproject.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.djangoproject.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://python.usyiyi.cn/translate/django_182/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.usyiyi.cn/translate/django_182/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;django遵守MVC设计模式，采用MTV框架。&lt;/p&gt;
+&lt;p&gt;M: model,数据存取&lt;/p&gt;
+&lt;p&gt;T: template，如何展现数据&lt;/p&gt;
+&lt;p&gt;V: view，展现哪些数据&lt;/p&gt;
+&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;django的1.8(2018.4)是长期支持版。&lt;/p&gt;
+&lt;p&gt;从1.7开始支持python3。&lt;/p&gt;
+&lt;p&gt;全局安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$pip install diango==1.8.2
+$sudo apt-get install python-django
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;virtualenv中安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$mkdir mysite
+$cd mysite
+$virtualenv venv
+$. venv/bin/activate
+$pip install django==1.8.2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;验证安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python
+&amp;gt;&amp;gt;&amp;gt;import django
+&amp;gt;&amp;gt;&amp;gt;django.VERSION
+&amp;gt;&amp;gt;&amp;gt;django.get_version()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装使用的数据库引擎的库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$pip install mysql-python # MySQLdb
+$pip install psycopg2
+$pip install cx_Oracle
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;project&quot;&gt;&lt;a href=&quot;#project&quot; class=&quot;headerlink&quot; title=&quot;project&quot;&gt;&lt;/a&gt;project&lt;/h1&gt;&lt;p&gt;创建一个名为mysite的项目&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$django-admin startproject mysite
+
+mysite
+|-- manage.py
+|-- mysite
+    |- __init__.py
+    |- settings.py
+    |- urls.py
+    |- wsgi.py
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;mysite/: 外层目录，可随意重命名&lt;/p&gt;
+&lt;p&gt;manage.py: 一个实用的命令行工具，可以让你已各种方式和django交互。&lt;/p&gt;
+&lt;p&gt;mysite/mysite/: 内层目录，python包,通过它导入其它类&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;init.py&lt;/strong&gt;: 一个空文件。&lt;/p&gt;
+&lt;p&gt;settings.py: django项目的配置。&lt;/p&gt;
+&lt;p&gt;urls.py: django项目的URL声明。&lt;/p&gt;
+&lt;p&gt;wsgi.py: 一个WSGI兼容的web服务器入口。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;验证开发服务器：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py runserver
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;浏览器输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://127.0.0.1:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;也可以指定别的ip和port：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py runserver &amp;lt;ip address&amp;gt;:&amp;lt;port&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;settings-py&quot;&gt;&lt;a href=&quot;#settings-py&quot; class=&quot;headerlink&quot; title=&quot;settings.py&quot;&gt;&lt;/a&gt;settings.py&lt;/h2&gt;&lt;p&gt;默认使用sqlite3数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DATABASES = {
+    &amp;apos;DEFAULT&amp;apos;: {
+        &amp;apos;ENGINE&amp;apos;:&amp;apos;django.db.backends.sqlite3&amp;apos;,
+        &amp;apos;NAME&amp;apos;:os.path.join(BASE_DIR,&amp;apos;db.sqlite3&amp;apos;),
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;手动配置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ENGINE:
+    django.db.backends.mysql
+    django.db.backends.oracle
+    django.db.badkends.postgresql_psycopg2
+
+NAME:
+    your database name
+
+USER:
+    your database username
+
+PASSWORD:
+    your database password
+
+HOST:
+    local database or remote database
+
+PORT:
+    database port
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django包含下列默认应用:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;INSTALLED_APPS = {
+    &amp;apos;django.contrib.admin&amp;apos;,
+    &amp;apos;django.contrib.auth&amp;apos;,
+    &amp;apos;django.contrib.contenttypes&amp;apos;,
+    &amp;apos;django.contrib.sessions&amp;apos;,
+    &amp;apos;django.contrib.messages&amp;apos;,
+    &amp;apos;django.contrib.staticfiles&amp;apos;,
+    # 在下面注册你的所有应用,django会自动查找应用的templates和static目录中的文件。
+    &amp;apos;register your application here&amp;apos;,
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;admin: 管理站点&lt;/p&gt;
+&lt;p&gt;auth: 认证系统&lt;/p&gt;
+&lt;p&gt;contenttypes: 用于内容类型的框架&lt;/p&gt;
+&lt;p&gt;sessions: 会话框架&lt;/p&gt;
+&lt;p&gt;messages: 消息框架&lt;/p&gt;
+&lt;p&gt;staticfiles: 管理静态文件的框架&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其它配置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DEBUG = True # 开发用来调试
+DEBUG = False # 部署之后关闭
+
+ALLOWED_HOSTS = [] # 设置哪些域名可以访问，优先级高于web服务器，debug=false必须设置
+ALLOWED_HOSTS = [&amp;apos;&amp;apos;*&amp;apos;&amp;apos;] # 允许所有域名访问
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;静态文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;STATIC_URL = &amp;apos;/static/&amp;apos;
+STATIC_ROOT = os.path.join(BASE_DIR, &amp;apos;static&amp;apos;) # 项目目录新建static目录存放js/css等静态文件,collectstatic命令用来收集静态文件。
+
+MEDIA_URL = &amp;apos;/media/&amp;apos;
+MEDIA_ROOT = os.path.join(BASE_DIR, &amp;apos;media&amp;apos;) # 用来存放用户上传的文件，与权限有关。
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;urls-py&quot;&gt;&lt;a href=&quot;#urls-py&quot; class=&quot;headerlink&quot; title=&quot;urls.py&quot;&gt;&lt;/a&gt;urls.py&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;from django.conf.urls import include, url
+from django.contrib import admin
+
+urlpatterns = [
+    # 默认的项目的admin的url
+    url(r&amp;apos;^admin/&amp;apos;, include(admin.site.urls)),
+    # 在项目URL添加链接到应用URL：
+    # 在下面添加你的所有应用的url, include内的应用的urls需要引号.
+    url(r&amp;apos;^polls/&amp;apos;, include(&amp;apos;polls.urls&amp;apos;, namespace=&amp;apos;polls&amp;apos;)),
+    ...,
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在项目的urls添加所有应用的urls，为每个应用独立创建urls，方便管理。&lt;/p&gt;
+&lt;p&gt;具体应用的urls参考django的view。&lt;/p&gt;
+&lt;h2 id=&quot;wsgi-py&quot;&gt;&lt;a href=&quot;#wsgi-py&quot; class=&quot;headerlink&quot; title=&quot;wsgi.py&quot;&gt;&lt;/a&gt;wsgi.py&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;import os
+from django.core.wsgi import get_wsgi_application
+os.environ.setdefault(&amp;quot;DJANGO_SETTINGS_MODULE&amp;quot;, &amp;quot;mysite.settings&amp;quot;)
+application = get_wsgi_application()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django通过wsgi来部署，参考django的deploy。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;application&quot;&gt;&lt;a href=&quot;#application&quot; class=&quot;headerlink&quot; title=&quot;application&quot;&gt;&lt;/a&gt;application&lt;/h1&gt;&lt;p&gt;应用，一个项目可以有多个应用，一个应用可以用到多个项目中。&lt;/p&gt;
+&lt;p&gt;可以单独打包应用发布到pypi，包名格式django-project，参考python的打包方法。&lt;/p&gt;
+&lt;p&gt;创建一个名为polls的应用：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$python manage.py startapp polls
+
+polls/
+|- admin.py
+|- __init__.py
+|- migrations
+|  |- __init__.py
+|- models.py
+|- tests.py
+|- views.py
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;admin.py admin管理界面&lt;/p&gt;
+&lt;p&gt;models.py 模型&lt;/p&gt;
+&lt;p&gt;views.py 视图&lt;/p&gt;
+&lt;p&gt;test.py 测试&lt;/p&gt;
+&lt;p&gt;migrations 迁移文件夹&lt;/p&gt;
+&lt;p&gt;urls.py 新建的application的url&lt;/p&gt;
+&lt;p&gt;templates 新建的模板路径&lt;/p&gt;
+&lt;p&gt;statics 新建的application的静态文件路径&lt;/p&gt;
+&lt;p&gt;form.py 新建的表单&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;manage-py&quot;&gt;&lt;a href=&quot;#manage-py&quot; class=&quot;headerlink&quot; title=&quot;manage.py&quot;&gt;&lt;/a&gt;manage.py&lt;/h1&gt;&lt;p&gt;manage.py有下面子命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[staticfiles]
+    collectstatic # 设置STATIC_ROOT = &amp;apos;/var/www/static/project/&amp;apos;用来收集静态文件
+    findstatic
+    runserver # 启动django自带的web开发服务器
+
+[sessions]
+    clearsessions
+
+[server]
+    runmodwsgi #
+
+[auth]
+    changepassword
+    createsuperuser
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell # 数据库命令行
+    diffsettings
+    dumpdata # 导出数据
+    flush # 清空数据库
+    inspectdb
+    loaddata # 导入数据
+    makemessages
+    makemigrations # 创建迁移文件
+    migrate # 执行迁移文件
+    runfcgi
+    shell # 项目环境终端
+    showmigrations
+    sql
+    sqlall
+    sqlclear
+    sqlcustom
+    sqldropindexes
+    sqlflush
+    sqlindexes
+    sqlmigrate # 查看迁移文件会执行哪些sql
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    syncdb
+    test
+    testserver
+    validate
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;django&quot;&gt;&lt;a href=&quot;#django&quot; class=&quot;headerlink&quot; title=&quot;django&quot;&gt;&lt;/a&gt;django&lt;/h1&gt;&lt;p&gt;django是python的web框架。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.co
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+      <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
+    
+      <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之java.beans</title>
+    <link href="http://canuxcheng.com/2016/09/12/Java%E4%B9%8Bjava.beans/"/>
+    <id>http://canuxcheng.com/2016/09/12/Java之java.beans/</id>
+    <published>2016-09-12T20:02:23.000Z</published>
+    <updated>2016-09-13T08:02:23.429Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

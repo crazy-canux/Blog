@@ -1,0 +1,1165 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="类(Class)类是构造对象的模板或蓝图，由类构造对象的过程称为创建类的实例。
+对象的三个主要特征：
+
+对象的行为
+对象的状态
+对象的标识
+
+类之间的关系：
+
+依赖
+聚合
+继承
+
+对象变量并没有实际包含一个对象，仅仅引用一个对象。
+使用预定义类,java自带几千个类：
+&amp;lt;object-type&amp;gt; &amp;lt;object-name&amp;gt; = new &amp;lt;object&amp;gt;()
+自定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java编程之面向对象">
+<meta property="og:url" content="http://canuxcheng.com/2016/04/02/Java编程之面向对象/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="类(Class)类是构造对象的模板或蓝图，由类构造对象的过程称为创建类的实例。
+对象的三个主要特征：
+
+对象的行为
+对象的状态
+对象的标识
+
+类之间的关系：
+
+依赖
+聚合
+继承
+
+对象变量并没有实际包含一个对象，仅仅引用一个对象。
+使用预定义类,java自带几千个类：
+&amp;lt;object-type&amp;gt; &amp;lt;object-name&amp;gt; = new &amp;lt;object&amp;gt;()
+自定">
+<meta property="og:updated_time" content="2016-09-21T14:29:46.034Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java编程之面向对象">
+<meta name="twitter:description" content="类(Class)类是构造对象的模板或蓝图，由类构造对象的过程称为创建类的实例。
+对象的三个主要特征：
+
+对象的行为
+对象的状态
+对象的标识
+
+类之间的关系：
+
+依赖
+聚合
+继承
+
+对象变量并没有实际包含一个对象，仅仅引用一个对象。
+使用预定义类,java自带几千个类：
+&amp;lt;object-type&amp;gt; &amp;lt;object-name&amp;gt; = new &amp;lt;object&amp;gt;()
+自定">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/04/02/Java编程之面向对象/"/>
+
+
+  <title> Java编程之面向对象 | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java编程之面向对象
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-02T22:49:07-04:00" content="2016-04-03">
+              2016-04-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/02/Java编程之面向对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/Java编程之面向对象/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="类-Class"><a href="#类-Class" class="headerlink" title="类(Class)"></a>类(Class)</h1><p>类是构造对象的模板或蓝图，由类构造对象的过程称为创建类的实例。</p>
+<p>对象的三个主要特征：</p>
+<ol>
+<li>对象的行为</li>
+<li>对象的状态</li>
+<li>对象的标识</li>
+</ol>
+<p>类之间的关系：</p>
+<ol>
+<li>依赖</li>
+<li>聚合</li>
+<li>继承</li>
+</ol>
+<p>对象变量并没有实际包含一个对象，仅仅引用一个对象。</p>
+<p>使用预定义类,java自带几千个类：</p>
+<pre><code>&lt;object-type&gt; &lt;object-name&gt; = new &lt;object&gt;()
+</code></pre><p>自定义类：</p>
+<p>包含三个部分，域（field），构造器（constructor），方法（method）。</p>
+<p>类名如果有多个单词组成，每个单词的首字母都要大写。</p>
+<pre><code>class ClassName
+{
+    field1
+    field2
+    ...
+    constructor1
+    constructor2
+    ...
+    method1
+    method2
+    ...
+}
+</code></pre><p>匿名类：</p>
+<p>匿名类还可以作为方法的参数。</p>
+<pre><code>ClassName var = new ClassName; / 这是显示申明类 /
+new ClassName.Field;
+new ClassName.Method; / 这是匿名类 /
+</code></pre><p>类设计技巧：</p>
+<ol>
+<li>一定要保证数据似有</li>
+<li>一定要对数据初始化</li>
+<li>不要在类中使用过多的基本类型</li>
+<li>不是所有的域都需要独立的域访问器或更改器。</li>
+<li>将职责过多的类进行分解。</li>
+<li>类名和方法名要能体现职责。</li>
+</ol>
+<h1 id="域-Field"><a href="#域-Field" class="headerlink" title="域(Field)"></a>域(Field)</h1><p>如果所有构造器方法都希望赋予相同的值，可以直接在申明时给域赋值。</p>
+<p>域定义在类中，整个类都可以访问。</p>
+<p>域存放在堆内存的对象中。</p>
+<p>域随着对象的创建而创建，随着对象的消失而消失。</p>
+<p>域都有默认初始化值，也可以手动初始化。</p>
+<p>域：</p>
+<p>域中的所有数据最好都是private。</p>
+<pre><code>private type name;
+</code></pre><p>用final修饰的是常量域,构造器必须初始化这个域,并且不能再修改。</p>
+<pre><code>private final type name;
+</code></pre><p>静态域：</p>
+<p>用static修饰的是静态域,静态域属于类，不属于任何对象，是唯一的。</p>
+<pre><code>private static type name;
+ClassName.name; # 通过类来访问
+</code></pre><p>static和final修饰的是静态常量。</p>
+<pre><code>private static final type name = value;
+ClassName.name; # 通过类来访问
+</code></pre><p>初始化块：</p>
+<p>在域中放初始化块，只要构造类对象就会在运行构造器方法之前运行初始化块。</p>
+<pre><code>{
+    var = val;
+    ...
+}
+
+/ 静态初始化块 /
+static
+{
+    var = val;
+    ...
+}
+</code></pre><h1 id="方法-Method"><a href="#方法-Method" class="headerlink" title="方法(Method)"></a>方法(Method)</h1><p>java中所有的方法都要在类的内部定义。</p>
+<p>方法有修饰符，返回值类型，方法名和参数组成。</p>
+<p>一种特殊方法，如果方法没有返回值，return后面直接分号，用修饰符void代替返回值类型。</p>
+<p>方法名如果有多个单词组成，首字母小写，后面的单词首字母大写。</p>
+<pre><code>&lt;decorate&gt;... &lt;type&gt; &lt;function_name&gt;(&lt;type&gt; &lt;argument&gt;, ...)
+{
+    statements;
+    return &lt;value&gt;;
+}
+
+&lt;decorate&gt;... void &lt;functionName&gt;(&lt;type&gt; &lt;arguments&gt;, ...)
+{
+    statements;
+    return;
+}
+</code></pre><p>对域进行读取的方法叫域访问器，用getFunction（）表示。</p>
+<p>对域进行设置的方法叫域更改器，用setFunction（）表示。</p>
+<p>方法的参数有显示参数和隐式参数，类对象（实例）就是隐式参数，用关键字this表示。</p>
+<p>静态方法：</p>
+<p>静态方法就是不面向对象的方法，也就是没有隐式参数this。</p>
+<p>静态方法只能访问自身类中的静态域,不能访问非静态域。</p>
+<pre><code>public static type name(arguments)
+{
+    ...
+}
+ClassName.name(arguments); # 用类名来调用
+</code></pre><p>方法参数：</p>
+<p>java方法参数是值调用，不是引用调用。</p>
+<p>一个方法不可能修改一个基本数据类型的参数的值。</p>
+<p>一个方法可以改变一个对象参数的状态。</p>
+<p>一个方法不能让对象参数引用一个新的对象。</p>
+<p>参数数量可变的方法：</p>
+<pre><code>public static double max(double... values)
+{
+    ...
+}
+</code></pre><h1 id="构造器-Constructor"><a href="#构造器-Constructor" class="headerlink" title="构造器(Constructor)"></a>构造器(Constructor)</h1><ol>
+<li>构造器与类同名</li>
+<li>每个类可以有多个构造器</li>
+<li>构造器可以有任意个参数</li>
+<li>构造器没有返回值</li>
+<li>构造器总是随new一起调用</li>
+<li>不要在构造器中定义与域重名的局部变量</li>
+</ol>
+<p>重载：</p>
+<p>多个构造器方法名字相同，参数不同，构成重载，编译器自动找匹配的构造器方法执行，找不到就编译错误。</p>
+<p>推荐在构造器方法中对域进行初始化，避免使用默认的初始化。</p>
+<p>当类没有提供任何构造器，系统会默认提供一个无参数的构造器，如果有至少一个构造器，而且没有提供无参数构造器，就不能用无参数的构造器初始化对象。</p>
+<p>构造器方法的参数：</p>
+<pre><code>/ 在前面加个a和域区分开 /
+public ConstructorName(type aName)
+{
+    ...
+}
+
+/ 和域同名，但是引用域需要加this区别 /
+public ConstructorName(type name)
+{
+    this.name = name;
+}
+
+/ 一个构造器方法内部调用另外的构造器方法 /
+public ConstructorName(type name)
+{
+    this(&quot;other argument&quot;, name);
+}
+</code></pre><h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><p>一个源文件只能包含一个public修饰的公有类，而且文件名要和这个类同名。</p>
+<p>编译器查找类的顺序：</p>
+<ol>
+<li>默认导入的包java.lang</li>
+<li>用import导入的其它包中的公有类</li>
+<li>当前包中的公有类，或导入的当前包的非共有类。</li>
+</ol>
+<p>编译器找到一个以上的同名类就报错，因为类必须是唯一的。</p>
+<p>编译器还会查看源文件，如果比类文件新就会自动编译源文件。</p>
+<p>类的路径要和包名匹配，需要设置类路径，类路径是所有包含类文件的路径的集合。</p>
+<p>jar文件包含多个压缩形式的类文件和子目录。</p>
+<p>用classpath当作类路径，linux/unix用冒号：隔开，windows用分号;隔开：</p>
+<pre><code>export CLASSPATH=/class/path:.:/jar/path
+
+set CLASSPATH=c:\class\path;.;c\jar\path
+</code></pre><p>可见性：</p>
+<ol>
+<li>private, 仅对本类可见</li>
+<li>default, 默认不用修饰符,对本包可见。</li>
+<li>protected， 对本包和所有子类可见</li>
+<li>public， 对所有类可见</li>
+</ol>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>关键字extends表示继承,java中的所有继承都是公有继承。</p>
+<p>已存在的类称为超类，基类，或父类。</p>
+<p>新类称为子类，派生类，或孩子类。</p>
+<pre><code>class SubClass extends Class
+{
+    ...
+}
+</code></pre><p>在子类中使用super来调用父类的同名的方法</p>
+<pre><code>public type getFunction()
+{
+    type var = super.getFunction();
+    ...
+}
+</code></pre><p>在子类构造器方法中使用super来调用父类同参数的构造器方法</p>
+<p>该语句必须放在构造器的第一句，如果没有显示用super调用，默认调用父类的默认构造器</p>
+<pre><code>public SubClass(arguments)
+{
+    super(arguments);
+    ...
+}
+</code></pre><p>继承可以是多层继承，由一个公共类派生出来的所有类的集合称为继承层次。</p>
+<p>java没有多继承，继承不能扩展多个类，一个子类只能继承一个父类，一个父类可以被多个子类继承。</p>
+<p>不允许被扩展的类称为final类，用final修饰:</p>
+<p>final类中的所有方法(不包括域)自动的成为final方法</p>
+<pre><code>final class SubClass extends ClassName
+{
+    ...
+}
+</code></pre><p>类中的特定方法也可以被申明为final，子类就不能覆盖这个方法：</p>
+<pre><code>class ClassName
+{
+    ...
+    public final type MethodName()
+    {
+        ...
+    }
+    ...
+}
+</code></pre><p>将父类转换成子类：</p>
+<p>只能在继承层次内进行转换，在转换之前应该使用instanceof检查能否检查。</p>
+<p>只有父类转换成子类需要强制转换，子类对象引用父类可以直接引用。</p>
+<pre><code>if (FatherObject instanceof SubClass)
+{
+    SubClass = (SubClass) FatherObject;
+    ...
+}
+</code></pre><p>抽象类：</p>
+<p>用abstract修饰的方法是抽象方法，包含抽象方法的类必须用abstract修饰为抽象类。</p>
+<p>最基本的类可以作为抽象类，申明抽象方法，在子类中实现方法。</p>
+<p>抽象类不能被实例化，但是可以引用非抽象子类的对象。</p>
+<pre><code>abstract class ClassName
+{
+    ...
+    public abstract type methodName();
+    ...
+}
+</code></pre><p>Object类：</p>
+<p>Object类是java中所有类的基类，如果一个类没有用extends明确父类，Object就是它的默认父类。</p>
+<p>可以用Object类型的变量引用任何类型对象。</p>
+<p>参考java.lang.Object的方法。</p>
+<p>继承的技巧：</p>
+<ol>
+<li>将公共操作和域放在父类</li>
+<li>不要使用受保护的域</li>
+<li>使用继承实现”is-a”关系</li>
+<li>除非所有继承的方法都有意义，否则不要使用继承</li>
+<li>在覆盖方法时，不要改变预期的行为</li>
+<li>使用多态，而非类型信息</li>
+<li>不要过多的使用反射</li>
+</ol>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><p>一个对象变量可以指示多种实际类型的现象被称为多态。</p>
+<p>java中的对象变量是多态的。</p>
+<p>编译器查看对象的申明类型和方法，列出该类中所有同名方法和父类中同名的public方法，再查看调用方法时提供的类型参数，如果找到完全匹配的就调用这个方法，这个过程叫重载解析。</p>
+<p>如果是private方法，static方法，final方法，或者构造器方法，编译器可以准确的知道调用哪个方法，这个过程叫静态绑定。</p>
+<p>虚拟机预先为每个类创建一个方法表，列出所有方法的签名和实际调用的方法。</p>
+<h1 id="包-Package"><a href="#包-Package" class="headerlink" title="包(Package)"></a>包(Package)</h1><p>标准java类库分布在多个包中，包方便类的管理。</p>
+<p>使用包要确保类名唯一。</p>
+<p>sun建议使用公司域名的逆序作为包名。</p>
+<p>使用import导入包：</p>
+<pre><code>import java.util.*;
+</code></pre><p>只能用<em>导入一个包，不能用java.</em>导入所有包。</p>
+<p>导入多个包，有类在使用时重名，写全路径：</p>
+<pre><code>import java.util.*;
+import java.sql.*;
+java.util.Date deadline = new java.util.Date();
+java.sql.Date today = new java.sql.Date();
+</code></pre><p>使用import导入包中的静态域和静态方法：</p>
+<pre><code>import static java.lang.System.*;
+import static java.lang.System.out;
+</code></pre><p>将类放入包中：</p>
+<p>在类的源文件开头添加一行语句,源文件要放到包名对应的目录结构中。</p>
+<pre><code>package package_name;
+</code></pre><h1 id="接口-Interface"><a href="#接口-Interface" class="headerlink" title="接口(Interface)"></a>接口(Interface)</h1><p>接口用interface来定义。</p>
+<p>接口中所有方法自动属于public，所以不用加public。</p>
+<p>接口不能有域和方法，这些应该在实现接口的类中定义。</p>
+<p>一个接口的例子，java8有1121个接口：</p>
+<pre><code>public interface Comparable&lt;T&gt;
+{
+    int compareTo(T other);
+}
+</code></pre><p>怎样让类实现一个接口：</p>
+<ol>
+<li>用implements将类申明为实现给定的接口</li>
+<li><p>对接口中所有方法定义(在自定义类中实现接口中的方法)</p>
+<pre><code>Class &lt;Class_Name&gt; implements &lt;Interface_Name&gt;
+{
+    public int &lt;Method_Name&gt;(...)
+    {
+        ...
+    }
+}
+</code></pre></li>
+</ol>
+<p>接口的特性：</p>
+<ol>
+<li>接口不是类，不能用new实例化一个接口。</li>
+<li>可以申明接口变量， Comparable x;</li>
+<li>接口变量必须引用实现了接口的类对象。</li>
+<li>检查一个对象是否实现了某个特定的接口，if (anObject instanceof Comparable) {…}</li>
+<li>接口像类一样可以用extends扩展。</li>
+<li>接口中不能用实例域和静态方法，但是可以有常量。</li>
+<li>一个类中可以实现多个接口，implements Interface1, Interface2。</li>
+</ol>
+<hr>
+<h1 id="包-Package-1"><a href="#包-Package-1" class="headerlink" title="包(Package)"></a>包(Package)</h1><p>标准java类库分布在多个包中，包方便类的管理。</p>
+<p>使用包要确保类名唯一。</p>
+<p>sun建议使用公司域名的逆序作为包名。</p>
+<p>使用import导入包中的类：</p>
+<pre><code>import java.util.*;
+</code></pre><p>只能用<em>导入一个包中的所有类，不能用java.</em>导入所有包中的类。</p>
+<p>导入多个包，有类在使用时重名，写全路径：</p>
+<pre><code>import java.util.*;
+import java.sql.*;
+java.util.Date deadline = new java.util.Date();
+java.sql.Date today = new java.sql.Date();
+</code></pre><p>使用import导入包中的静态域和静态方法：</p>
+<pre><code>import static java.lang.System.*;
+import static java.lang.System.out;
+</code></pre><p>将类放入包中：</p>
+<p>在类的源文件开头添加一行语句,源文件要放到包名对应的目录结构中。</p>
+<pre><code>package package_name;
+</code></pre><hr>
+<h1 id="异常和错误"><a href="#异常和错误" class="headerlink" title="异常和错误"></a>异常和错误</h1>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/02/C编程/" rel="next" title="C编程">
+                <i class="fa fa-chevron-left"></i> C编程
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/02/Java编程/" rel="prev" title="Java编程">
+                Java编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/02/Java编程之面向对象/"
+           data-title="Java编程之面向对象" data-url="http://canuxcheng.com/2016/04/02/Java编程之面向对象/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类-Class"><span class="nav-number">1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#域-Field"><span class="nav-number">2.</span> <span class="nav-text">域(Field)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法-Method"><span class="nav-number">3.</span> <span class="nav-text">方法(Method)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造器-Constructor"><span class="nav-number">4.</span> <span class="nav-text">构造器(Constructor)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">6.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">7.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包-Package"><span class="nav-number">8.</span> <span class="nav-text">包(Package)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口-Interface"><span class="nav-number">9.</span> <span class="nav-text">接口(Interface)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包-Package-1"><span class="nav-number">10.</span> <span class="nav-text">包(Package)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常和错误"><span class="nav-number">11.</span> <span class="nav-text">异常和错误</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,1008 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="GIT,github," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="GitGIT: 分布式版本控制系统。
+SVN: subversion并发式版本控制系统。
+Mercurial: hg分布式版本控制。
+和git相关的产品：
+
+github
+bitbucket
+sourceForge
+gitlab
+
+Git安装：
+sudo apt-get install git
+yum install git
+git config (Git配置)https://git-scm.co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GIT">
+<meta property="og:url" content="http://canuxcheng.com/2016/04/02/GIT/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="GitGIT: 分布式版本控制系统。
+SVN: subversion并发式版本控制系统。
+Mercurial: hg分布式版本控制。
+和git相关的产品：
+
+github
+bitbucket
+sourceForge
+gitlab
+
+Git安装：
+sudo apt-get install git
+yum install git
+git config (Git配置)https://git-scm.co">
+<meta property="og:updated_time" content="2016-12-26T02:19:07.768Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GIT">
+<meta name="twitter:description" content="GitGIT: 分布式版本控制系统。
+SVN: subversion并发式版本控制系统。
+Mercurial: hg分布式版本控制。
+和git相关的产品：
+
+github
+bitbucket
+sourceForge
+gitlab
+
+Git安装：
+sudo apt-get install git
+yum install git
+git config (Git配置)https://git-scm.co">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/04/02/GIT/"/>
+
+
+  <title> GIT | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                GIT
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-02T09:11:33-04:00" content="2016-04-02">
+              2016-04-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Develop/" itemprop="url" rel="index">
+                    <span itemprop="name">Develop</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Develop/GIT/" itemprop="url" rel="index">
+                    <span itemprop="name">GIT</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/02/GIT/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/GIT/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>GIT: 分布式版本控制系统。</p>
+<p>SVN: subversion并发式版本控制系统。</p>
+<p>Mercurial: hg分布式版本控制。</p>
+<p>和git相关的产品：</p>
+<ol>
+<li>github</li>
+<li>bitbucket</li>
+<li>sourceForge</li>
+<li>gitlab</li>
+</ol>
+<p>Git安装：</p>
+<pre><code>sudo apt-get install git
+yum install git
+</code></pre><h1 id="git-config-Git配置"><a href="#git-config-Git配置" class="headerlink" title="git config (Git配置)"></a>git config (Git配置)</h1><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="external">https://git-scm.com/book/zh/v2</a></p>
+<p>git配置文件：</p>
+<ol>
+<li>/etc/gitconfig 系统级的配置文件，通过git config –system设置</li>
+<li>~/.gitconfig 用户级的配置文件，通过git config –global设置</li>
+<li>.git/config 仓库级的配置文件，通过git config –local设置</li>
+</ol>
+<p>git配置：</p>
+<p>使用git config –global命令配置,或者直接修改~/.gitconfig文件。</p>
+<pre><code># 查看帮助
+git help config
+man git-config
+git config --help
+git config -l/--list # 查看所有配置
+git config --system
+git config --global
+git config --local
+git config --global user.name &quot;your_name&quot;
+git config --global user.email &quot;your_email&quot;
+git config --global core.editor vim
+</code></pre><p>多配置文件：</p>
+<p>在~/.gitconfig添加include可以调用其它配置文件</p>
+<pre><code>[include]
+    path = ~/myCode/xdevops/etc/git/gitcofig
+</code></pre><h1 id="git-remote-git-协议"><a href="#git-remote-git-协议" class="headerlink" title="git remote (git 协议)"></a>git remote (git 协议)</h1><p><a href="https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE</a></p>
+<p>git有四个协议：</p>
+<ol>
+<li><p>本地协议file</p>
+<pre><code>file:///path/to/project.git
+</code></pre></li>
+<li><p>SSH协议</p>
+<p> 拷贝ssh的公钥后不需要输入用户名和密码</p>
+<pre><code>ssh://git@github.com/&lt;username&gt;/&lt;project&gt;.git
+git@github.com:&lt;username&gt;/&lt;project&gt;.git
+</code></pre></li>
+<li><p>http协议</p>
+<p> 默认需要手动输入远程仓库的用户名和密码</p>
+<pre><code>https://github.com/&lt;username&gt;/&lt;project&gt;.git
+# 不用手动输入密码
+https://&lt;username&gt;:&lt;password&gt;@github.com/&lt;username&gt;/&lt;project&gt;.git
+</code></pre><p> 设置http代理：</p>
+<pre><code>git config --global http.proxy &quot;http://&lt;proxy&gt;:&lt;port&gt;&quot;
+git config --global http.proxy &quot;http://&lt;username&gt;:&lt;password&gt;@&lt;proxy&gt;:&lt;port&gt;&quot;
+# In gitconfig file
+[http]
+    proxy = http://&lt;proxy&gt;:&lt;port&gt;
+</code></pre></li>
+<li><p>Git协议</p>
+<pre><code>git://git@github.com/&lt;username&gt;/&lt;project&gt;.git
+</code></pre><p> 设置git代理：</p>
+<pre><code>git config --global core.gitproxy ...
+</code></pre></li>
+</ol>
+<p>设置git协议：</p>
+<p>如果公司的22端口被封，不能SSH到外网，用set-url将协议改成http即可。</p>
+<p>如果使用代理，配置http.proxy即可。</p>
+<pre><code># 查看帮助
+git remote --help
+git help remote
+man git-remote
+git remote -v # 查看远程仓库的详细信息
+git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=&lt;fetch|push&gt;] &lt;name&gt; &lt;url&gt;
+git remote add origin &lt;url&gt; # 给远程仓库origin添加url, 一个仓库可以添加多个url。
+git remote rename &lt;oldname&gt; &lt;newname&gt; # 重命名远程仓库
+git remote remove/rm &lt;name&gt; # 删除和远程仓库相关的所有信息
+git remote set-head
+git remote set-branches
+git remote [-v | --verbose] show [-n] &lt;name&gt;...
+git remote -v show origin # 查看远程仓库origin详细信息
+git remote prune
+git remote update
+git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]
+git remote set-url origin &lt;newurl&gt; # 修改远程仓库origin的url
+git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;
+git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;
+</code></pre><h1 id="git相关项目"><a href="#git相关项目" class="headerlink" title="git相关项目"></a>git相关项目</h1><h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2><p>Linux：</p>
+<p>git-gui gitk</p>
+<p><a href="http://repo.or.cz/w/git-gui.git/" target="_blank" rel="external">http://repo.or.cz/w/git-gui.git/</a></p>
+<pre><code>sudo apt-get install gitk
+</code></pre><p>windows:</p>
+<p><a href="https://git-scm.com/downloads/guis" target="_blank" rel="external">https://git-scm.com/downloads/guis</a></p>
+<h2 id="git-extras"><a href="#git-extras" class="headerlink" title="git-extras"></a>git-extras</h2><p><a href="https://github.com/tj/git-extras" target="_blank" rel="external">https://github.com/tj/git-extras</a></p>
+<h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><p>github的windows版本包含windows的git和对powershell的支持</p>
+<p><a href="https://desktop.github.com/" target="_blank" rel="external">https://desktop.github.com/</a></p>
+<ol>
+<li><p>注册github帐号</p>
+</li>
+<li><p>本地创建sshkey</p>
+<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;your-email&quot;
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+</code></pre></li>
+<li><p>复制key</p>
+<pre><code>sudo apt-get install xclip
+xclip -sel clip &lt; ~/.ssh/id_rsa.pub
+</code></pre></li>
+<li><p>添加public-key到github的settings的SSH keys。</p>
+</li>
+<li><p>测试SSH的无密码连接</p>
+<pre><code>ssh -T git@github.com
+</code></pre></li>
+</ol>
+<h3 id="projcet-gitignore"><a href="#projcet-gitignore" class="headerlink" title="projcet/.gitignore"></a>projcet/.gitignore</h3><p>忽略文件</p>
+<p><a href="https://github.com/github/gitignore" target="_blank" rel="external">https://github.com/github/gitignore</a></p>
+<h3 id="project-gitattributes"><a href="#project-gitattributes" class="headerlink" title="project/.gitattributes"></a>project/.gitattributes</h3><p>github现实编程语言</p>
+<p>*.py linguist-language=Python</p>
+<p><a href="https://github.com/github/linguist" target="_blank" rel="external">https://github.com/github/linguist</a></p>
+<h2 id="post-git"><a href="#post-git" class="headerlink" title="post-git"></a>post-git</h2><p>powershell的git</p>
+<p><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="external">https://github.com/dahlbyk/posh-git</a></p>
+<h2 id="git-for-windows"><a href="#git-for-windows" class="headerlink" title="git-for-windows"></a>git-for-windows</h2><p>windows的git</p>
+<p><a href="https://github.com/git-for-windows/git" target="_blank" rel="external">https://github.com/git-for-windows/git</a></p>
+<h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><p>git的结构：</p>
+<ol>
+<li>working directory(工作目录)<br> 通过git init初始化</li>
+<li>staging area(暂存区)<br> 通过git add添加index到暂存区</li>
+<li><p>repository(仓库)<br> 通过git commit提交到repository</p>
+<pre><code>git help &lt;verb&gt;
+git &lt;verb&gt; --help
+man git-&lt;verb&gt;
+
+git help -a
+git help -g
+</code></pre></li>
+</ol>
+<h2 id="init-Create-an-empty-Git-repository-or"><a href="#init-Create-an-empty-Git-repository-or" class="headerlink" title="init       Create an empty Git repository or"></a>init       Create an empty Git repository or</h2><pre><code>git init # 创建一个空repository
+</code></pre><h2 id="add-Add-file-contents-to-the-index"><a href="#add-Add-file-contents-to-the-index" class="headerlink" title="add        Add file contents to the index"></a>add        Add file contents to the index</h2><pre><code>git add .  # 不包括删除的文件
+git add -u # 不包括新建的文件
+git add -A # 添加working tree下的所有文件到index
+</code></pre><h2 id="commit-Record-changes-to-the-repository"><a href="#commit-Record-changes-to-the-repository" class="headerlink" title="commit     Record changes to the repository"></a>commit     Record changes to the repository</h2><pre><code>git commit
+</code></pre><h2 id="bisect-Find-by-binary-search-the-change-that-introduced-a-bug"><a href="#bisect-Find-by-binary-search-the-change-that-introduced-a-bug" class="headerlink" title="bisect     Find by binary search the change that introduced a bug"></a>bisect     Find by binary search the change that introduced a bug</h2><h2 id="branch-List-create-or-delete-branches"><a href="#branch-List-create-or-delete-branches" class="headerlink" title="branch     List, create, or delete branches"></a>branch     List, create, or delete branches</h2><h2 id="blame-Show-what-revision-and-author-last-modified-each-line-of-a-file"><a href="#blame-Show-what-revision-and-author-last-modified-each-line-of-a-file" class="headerlink" title="blame      Show what revision and author last modified each line of a file"></a>blame      Show what revision and author last modified each line of a file</h2><h2 id="checkout-Checkout-a-branch-or-paths-to-the-working-tree"><a href="#checkout-Checkout-a-branch-or-paths-to-the-working-tree" class="headerlink" title="checkout   Checkout a branch or paths to the working tree"></a>checkout   Checkout a branch or paths to the working tree</h2><h2 id="clone-Clone-a-repository-into-a-new-directory"><a href="#clone-Clone-a-repository-into-a-new-directory" class="headerlink" title="clone      Clone a repository into a new directory"></a>clone      Clone a repository into a new directory</h2><h2 id="diff-Show-changes-between-commits-commit-and-working-tree-etc"><a href="#diff-Show-changes-between-commits-commit-and-working-tree-etc" class="headerlink" title="diff       Show changes between commits, commit and working tree, etc"></a>diff       Show changes between commits, commit and working tree, etc</h2><h2 id="fetch-Download-objects-and-refs-from-another-repository"><a href="#fetch-Download-objects-and-refs-from-another-repository" class="headerlink" title="fetch      Download objects and refs from another repository"></a>fetch      Download objects and refs from another repository</h2><h2 id="grep-Print-lines-matching-a-pattern-reinitialize-an-existing-one"><a href="#grep-Print-lines-matching-a-pattern-reinitialize-an-existing-one" class="headerlink" title="grep       Print lines matching a pattern reinitialize an existing one"></a>grep       Print lines matching a pattern reinitialize an existing one</h2><h2 id="log-Show-commit-logs"><a href="#log-Show-commit-logs" class="headerlink" title="log        Show commit logs"></a>log        Show commit logs</h2><h2 id="merge-Join-two-or-more-development-histories-together"><a href="#merge-Join-two-or-more-development-histories-together" class="headerlink" title="merge      Join two or more development histories together"></a>merge      Join two or more development histories together</h2><h2 id="mv-Move-or-rename-a-file-a-directory-or-a-symlink"><a href="#mv-Move-or-rename-a-file-a-directory-or-a-symlink" class="headerlink" title="mv         Move or rename a file, a directory, or a symlink"></a>mv         Move or rename a file, a directory, or a symlink</h2><h2 id="pull-Fetch-from-and-integrate-with-another-repository-or-a-local-branch"><a href="#pull-Fetch-from-and-integrate-with-another-repository-or-a-local-branch" class="headerlink" title="pull       Fetch from and integrate with another repository or a local branch"></a>pull       Fetch from and integrate with another repository or a local branch</h2><h2 id="push-Update-remote-refs-along-with-associated-objects"><a href="#push-Update-remote-refs-along-with-associated-objects" class="headerlink" title="push       Update remote refs along with associated objects"></a>push       Update remote refs along with associated objects</h2><h2 id="rebase-Forward-port-local-commits-to-the-updated-upstream-head"><a href="#rebase-Forward-port-local-commits-to-the-updated-upstream-head" class="headerlink" title="rebase     Forward-port local commits to the updated upstream head"></a>rebase     Forward-port local commits to the updated upstream head</h2><h2 id="reset-Reset-current-HEAD-to-the-specified-state"><a href="#reset-Reset-current-HEAD-to-the-specified-state" class="headerlink" title="reset      Reset current HEAD to the specified state"></a>reset      Reset current HEAD to the specified state</h2><h2 id="rm-Remove-files-from-the-working-tree-and-from-the-index"><a href="#rm-Remove-files-from-the-working-tree-and-from-the-index" class="headerlink" title="rm         Remove files from the working tree and from the index"></a>rm         Remove files from the working tree and from the index</h2><h2 id="revert-Revert-some-existing-commits"><a href="#revert-Revert-some-existing-commits" class="headerlink" title="revert     Revert some existing commits"></a>revert     Revert some existing commits</h2><h2 id="reflog-Manage-reflog-information"><a href="#reflog-Manage-reflog-information" class="headerlink" title="reflog     Manage reflog information"></a>reflog     Manage reflog information</h2><pre><code>git reflog show # 查看素有git操作日
+</code></pre><h2 id="show-Show-various-types-of-objects"><a href="#show-Show-various-types-of-objects" class="headerlink" title="show       Show various types of objects"></a>show       Show various types of objects</h2><h2 id="status-Show-the-working-tree-status-tag-Create-list-delete-or-verify-a"><a href="#status-Show-the-working-tree-status-tag-Create-list-delete-or-verify-a" class="headerlink" title="status     Show the working tree status tag Create, list, delete or verify a"></a>status     Show the working tree status tag Create, list, delete or verify a</h2><h2 id="stash-Stash-the-changes-in-a-dirty-working-directory-away"><a href="#stash-Stash-the-changes-in-a-dirty-working-directory-away" class="headerlink" title="stash      Stash the changes in a dirty working directory away"></a>stash      Stash the changes in a dirty working directory away</h2><h2 id="tag-object-signed-with-GPG"><a href="#tag-object-signed-with-GPG" class="headerlink" title="tag        object signed with GPG"></a>tag        object signed with GPG</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GIT/" rel="tag">#GIT</a>
+          
+            <a href="/tags/github/" rel="tag">#github</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/02/VIM/" rel="next" title="VIM">
+                <i class="fa fa-chevron-left"></i> VIM
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/02/C编程/" rel="prev" title="C编程">
+                C编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/02/GIT/"
+           data-title="GIT" data-url="http://canuxcheng.com/2016/04/02/GIT/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-config-Git配置"><span class="nav-number">2.</span> <span class="nav-text">git config (Git配置)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-remote-git-协议"><span class="nav-number">3.</span> <span class="nav-text">git remote (git 协议)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git相关项目"><span class="nav-number">4.</span> <span class="nav-text">git相关项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GUI"><span class="nav-number">4.1.</span> <span class="nav-text">GUI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-extras"><span class="nav-number">4.2.</span> <span class="nav-text">git-extras</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github"><span class="nav-number">4.3.</span> <span class="nav-text">github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#projcet-gitignore"><span class="nav-number">4.3.1.</span> <span class="nav-text">projcet/.gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#project-gitattributes"><span class="nav-number">4.3.2.</span> <span class="nav-text">project/.gitattributes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#post-git"><span class="nav-number">4.4.</span> <span class="nav-text">post-git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-for-windows"><span class="nav-number">4.5.</span> <span class="nav-text">git-for-windows</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git命令"><span class="nav-number">5.</span> <span class="nav-text">Git命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#init-Create-an-empty-Git-repository-or"><span class="nav-number">5.1.</span> <span class="nav-text">init       Create an empty Git repository or</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-Add-file-contents-to-the-index"><span class="nav-number">5.2.</span> <span class="nav-text">add        Add file contents to the index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commit-Record-changes-to-the-repository"><span class="nav-number">5.3.</span> <span class="nav-text">commit     Record changes to the repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bisect-Find-by-binary-search-the-change-that-introduced-a-bug"><span class="nav-number">5.4.</span> <span class="nav-text">bisect     Find by binary search the change that introduced a bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#branch-List-create-or-delete-branches"><span class="nav-number">5.5.</span> <span class="nav-text">branch     List, create, or delete branches</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blame-Show-what-revision-and-author-last-modified-each-line-of-a-file"><span class="nav-number">5.6.</span> <span class="nav-text">blame      Show what revision and author last modified each line of a file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#checkout-Checkout-a-branch-or-paths-to-the-working-tree"><span class="nav-number">5.7.</span> <span class="nav-text">checkout   Checkout a branch or paths to the working tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clone-Clone-a-repository-into-a-new-directory"><span class="nav-number">5.8.</span> <span class="nav-text">clone      Clone a repository into a new directory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#diff-Show-changes-between-commits-commit-and-working-tree-etc"><span class="nav-number">5.9.</span> <span class="nav-text">diff       Show changes between commits, commit and working tree, etc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch-Download-objects-and-refs-from-another-repository"><span class="nav-number">5.10.</span> <span class="nav-text">fetch      Download objects and refs from another repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-Print-lines-matching-a-pattern-reinitialize-an-existing-one"><span class="nav-number">5.11.</span> <span class="nav-text">grep       Print lines matching a pattern reinitialize an existing one</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#log-Show-commit-logs"><span class="nav-number">5.12.</span> <span class="nav-text">log        Show commit logs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-Join-two-or-more-development-histories-together"><span class="nav-number">5.13.</span> <span class="nav-text">merge      Join two or more development histories together</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mv-Move-or-rename-a-file-a-directory-or-a-symlink"><span class="nav-number">5.14.</span> <span class="nav-text">mv         Move or rename a file, a directory, or a symlink</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull-Fetch-from-and-integrate-with-another-repository-or-a-local-branch"><span class="nav-number">5.15.</span> <span class="nav-text">pull       Fetch from and integrate with another repository or a local branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push-Update-remote-refs-along-with-associated-objects"><span class="nav-number">5.16.</span> <span class="nav-text">push       Update remote refs along with associated objects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase-Forward-port-local-commits-to-the-updated-upstream-head"><span class="nav-number">5.17.</span> <span class="nav-text">rebase     Forward-port local commits to the updated upstream head</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reset-Reset-current-HEAD-to-the-specified-state"><span class="nav-number">5.18.</span> <span class="nav-text">reset      Reset current HEAD to the specified state</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rm-Remove-files-from-the-working-tree-and-from-the-index"><span class="nav-number">5.19.</span> <span class="nav-text">rm         Remove files from the working tree and from the index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#revert-Revert-some-existing-commits"><span class="nav-number">5.20.</span> <span class="nav-text">revert     Revert some existing commits</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reflog-Manage-reflog-information"><span class="nav-number">5.21.</span> <span class="nav-text">reflog     Manage reflog information</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show-Show-various-types-of-objects"><span class="nav-number">5.22.</span> <span class="nav-text">show       Show various types of objects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#status-Show-the-working-tree-status-tag-Create-list-delete-or-verify-a"><span class="nav-number">5.23.</span> <span class="nav-text">status     Show the working tree status tag Create, list, delete or verify a</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stash-Stash-the-changes-in-a-dirty-working-directory-away"><span class="nav-number">5.24.</span> <span class="nav-text">stash      Stash the changes in a dirty working directory away</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-object-signed-with-GPG"><span class="nav-number">5.25.</span> <span class="nav-text">tag        object signed with GPG</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

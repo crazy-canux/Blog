@@ -1,0 +1,1103 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,django," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="模板设置模板引擎在settings.py设置, django有两套模板引擎：
+TEMPLATES = [
+    # DjangoTemplates
+    {
+        &amp;apos;BACKEND&amp;apos;: &amp;apos;django.template.backends.django.DjangoTemplates&amp;apos;,
+        # 定义项目的通用模板, mysite/t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django之Template">
+<meta property="og:url" content="http://canuxcheng.com/2016/10/03/Django之Template/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="模板设置模板引擎在settings.py设置, django有两套模板引擎：
+TEMPLATES = [
+    # DjangoTemplates
+    {
+        &amp;apos;BACKEND&amp;apos;: &amp;apos;django.template.backends.django.DjangoTemplates&amp;apos;,
+        # 定义项目的通用模板, mysite/t">
+<meta property="og:updated_time" content="2016-11-14T07:21:56.939Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django之Template">
+<meta name="twitter:description" content="模板设置模板引擎在settings.py设置, django有两套模板引擎：
+TEMPLATES = [
+    # DjangoTemplates
+    {
+        &amp;apos;BACKEND&amp;apos;: &amp;apos;django.template.backends.django.DjangoTemplates&amp;apos;,
+        # 定义项目的通用模板, mysite/t">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/10/03/Django之Template/"/>
+
+
+  <title> Django之Template | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Django之Template
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-03T16:12:49-04:00" content="2016-10-04">
+              2016-10-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/03/Django之Template/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/03/Django之Template/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="模板设置"><a href="#模板设置" class="headerlink" title="模板设置"></a>模板设置</h1><p>模板引擎在settings.py设置, django有两套模板引擎：</p>
+<pre><code>TEMPLATES = [
+    # DjangoTemplates
+    {
+        &apos;BACKEND&apos;: &apos;django.template.backends.django.DjangoTemplates&apos;,
+        # 定义项目的通用模板, mysite/templates
+        &apos;DIRS&apos;: [os.path.join(BASE_DIR, &apos;templates&apos;)],
+        # True 表示在所有安装应用的application/templates中查找。
+        &apos;APP_DIRS&apos;: True,
+        # 模板的选项：
+        &apos;OPTIONS&apos;: {
+        &apos;context_processors&apos;:
+        &apos;debug&apos;:
+        &apos;loaders&apos;:
+        &apos;string_if_invalid&apos;:
+        &apos;file_charset&apos;: &apos;utf-8&apos;
+        },
+    },
+
+    # Jinja2
+    {
+        &apos;BACKEND&apos;: &apos;django.template.backends.jinja2.Jinja2&apos;,
+        # 定义项目的通用模板, mysite/templates
+        &apos;DIRS&apos;: [os.path.join(BASE_DIR, &apos;templates&apos;)],
+        # True表示在所有已安装应用的application/jinja2中查找。
+        &apos;APP_DIRS&apos;: True,
+        # 模板的选项：
+        &apos;OPTIONS&apos;: {
+        &apos;autoescape&apos;: True
+        &apos;loader&apos;:
+        &apos;auto_reload&apos;:
+        &apos;undefined&apos;:
+        },
+    },
+]
+</code></pre><p>BACKEND定义模板引擎,django内置的模板引擎有两个django.template.backends.django.DjangoTemplates(默认)和django.template.backends.jinja2.Jinja2</p>
+<p>DIRS存放自定义的不在应用路径的模板，模板引擎按列表顺序搜索查找模板源文件,默认就是默认引擎的默认路径。</p>
+<p>APP_DIRS告诉模板引擎是否进入安装应用的templates(jinja2的目录是jinja2)查找模板。</p>
+<p>在视图中使用模板：</p>
+<p>默认django会在项目的所有应用的templates中查找模板，所以为了防止多个应用有同名的模板，需要在templates下新建application同名的目录来存放模板</p>
+<p>应用的模板文件需要在应用目录创建templates文件夹</p>
+<p>默认模板放在polls/templates/polls/XXX.html</p>
+<p>应用的静态文件需要在应用目录创建static文件夹</p>
+<p>默认静态文件存放在polls/static/polls/XXX.css</p>
+<p>静态文件夹用来集中存放和管理图片，js脚本和css样式表等静态文件。</p>
+<p>django.template.loader定义了两个函数加载模板。</p>
+<pre><code>get_template(template_name, dirs=&lt;object object&gt;, using=None)
+select_template(template_name_list, dirs=&lt;object object&gt;, using=None)
+</code></pre><h1 id="模板语言"><a href="#模板语言" class="headerlink" title="模板语言"></a>模板语言</h1><p>django模板语言由四部分组成：</p>
+<ul>
+<li>变量</li>
+<li>标签</li>
+<li>过滤器</li>
+<li>评论</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><pre><code>{{ var }}
+</code></pre><p>显示字符串：</p>
+<pre><code>string = &quot;test string&quot;
+return render(request, &apos;index.html&apos;, {&apos;string&apos;: string})
+
+{{ string }}
+</code></pre><p>显示字典：</p>
+<pre><code>dict = {&quot;key1&quot;: &quot;value1&quot;, &quot;key2&quot;: &quot;value2&quot;}
+return render(request, &apos;index.html&apos;, {&apos;dict&apos;: dict})
+
+{{ dict.name1 }}
+</code></pre><h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><pre><code>{% tag %}
+</code></pre><p>参考内置标签：</p>
+<p><a href="http://python.usyiyi.cn/translate/django_182/ref/templates/builtins.html#ref-templates-builtins-tags" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/templates/builtins.html#ref-templates-builtins-tags</a></p>
+<p>for标签：</p>
+<p>遍历列表：</p>
+<pre><code>list = [&apos;val1&apos;, &apos;val2&apos;, &apos;val3&apos;]
+return render(request, &apos;index.html&apos;, {&apos;list&apos;: &apos;list&apos;})
+
+{% for i in list %}
+    {{ i }}
+    {% endfor %}
+</code></pre><p>遍历字典：</p>
+<pre><code>{% for key, value in dict.items %}
+    {{ key }}: {{ value }}
+    {% endfor %}
+</code></pre><p>empty列表可能为空：</p>
+<pre><code>{% for i in list %}
+    ...
+    {% empty %}
+    ...
+    {% endfor %}
+</code></pre><p>reversed反向循环：</p>
+<pre><code>{% for i in list reversed %}
+</code></pre><p>for循环有用的变量：</p>
+<pre><code>forloop.counter    # 1 - indexed
+forloop.counter0    # 0 - indexed
+forloop.revcounter    # 1 - indexed
+forloop.revcounter0    # 0 - indexed
+forloop.first
+forloop.last
+forloop.parentloop
+</code></pre><p>if标签：</p>
+<pre><code>{% if expression %}
+    ...
+    {% else %}
+    ...
+    {% endif %}
+</code></pre><p>if可用的布尔操作符：</p>
+<pre><code>{% if expression1 and expression2 %}
+{% if not expression %}
+{% if expression1 or expression2 %}
+{% if not expression1 or expression2 %} # not优先级高于or
+{% if expression1 and not expression2 %} # not优先级高于and
+{% if expression1 and expression2 or expression3 %} # and优先级高于or
+{% if var == value %}
+{% if var != value %}
+{% if var < value %}
+{% if var > value %}
+{% if var <= value="" %}="" {%="" if="" var="">= value %}
+{% if var in value %}
+{% if a > b and b > c %}
+{% if var|filter"arguments expression %} # if中使用过滤器
+</=></code></pre><p>布尔操作符的优先级：</p>
+<pre><code>or
+and
+not
+in
+==, !=, &lt;, &gt;, &lt;=, &gt;=
+</code></pre><p>include标签：</p>
+<p>加载模板并以标签内的参数渲染。</p>
+<pre><code>{% include 'XXX.html' %}
+</code></pre><p>load标签：</p>
+<p>加载自定义模板标签集。</p>
+<pre><code>{% load foo bar from somelibrary %}
+</code></pre><p>now标签：</p>
+<p>显示最近的日期和事件。</p>
+<p>spaceless标签：</p>
+<p>删除html标签之间的空白格，包括制表符和换行。</p>
+<p>url标签：</p>
+<p>返回一个绝对路径的引用，该引用匹配一个给定的视图函数和一些可选的参数。</p>
+<pre><code>{% 'some-url-name' v1 v2 %}
+</code></pre><h3 id="模板继承"><a href="#模板继承" class="headerlink" title="模板继承"></a>模板继承</h3><p>block标签：</p>
+<p>在底层模板定义一些通用的内容，block标签可以被子模板覆盖。</p>
+<pre><code>{% block XXX %}
+    This is default content
+    {% endblock %}}
+</code></pre><p>extends标签：</p>
+<p>表示当前模板继承自父模板。</p>
+<p>extends标签必须放在子模板第一行。</p>
+<p>extends用来调用底层的模板，然后修改block标签内容。</p>
+<pre><code>{% extends "XXX.html"/variable %}
+{% block XXX %}
+    This is rewrite content
+    {% endblock %}
+</code></pre><p>block.super:</p>
+<p>如果需要获取父模板的block中的内容，可以用block.super。</p>
+<p>可以在父模板的block中增加内容，而不是完全覆盖。</p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><pre><code>{{ var|filter:arguments }}
+</code></pre><p>参考内置过滤器</p>
+<p><a href="http://python.usyiyi.cn/translate/django_182/ref/templates/builtins.html#ref-templates-builtins-filters" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/templates/builtins.html#ref-templates-builtins-filters</a></p>
+<p>add过滤器：</p>
+<p>把add后的参数加给value。</p>
+<pre><code>{{ value|add:"2" }} # value -&gt; value+2
+{{ value|addslashes }} # &quot;I&apos;m string&quot; -&gt; &quot;I\&apos;m string&quot;
+</code></pre><p>addslashed过滤器：</p>
+<p>在引号前面加\</p>
+<pre><code>{{ value|addslashes }} # I&apos;m canux -&gt; I\&apos;m canux
+</code></pre><p>capfirst过滤器：</p>
+<p>变量的第一个字母大写。</p>
+<pre><code>{{ value|capfirst }}
+</code></pre><p>center过滤器：</p>
+<p>使value在给定的宽度范围内居中。</p>
+<pre><code>{{ value|center:"15" }}
+</code></pre><p>cut过滤器：</p>
+<p>移除value中所有的与给出的变量相同的字符串。</p>
+<pre><code>{{ value|cut:"cut" }} # 移除value中的字符串&quot;cut&quot;
+</code></pre><p>date过滤器：</p>
+<p>根据给定格式对一个date变量格式化。</p>
+<p>default过滤器：</p>
+<p>给value设定默认值，如果value没有赋值，就用默认值。</p>
+<pre><code>{{ value|default:"default-value" }}
+</code></pre><p>default_if_none过滤器：</p>
+<p>仅当value是None使用默认值。</p>
+<pre><code>{{ value:default_if_none:"nothing" }}
+</code></pre><p>dictsort过滤器：</p>
+<p>dictsortreversed过滤器：</p>
+<p>divisibleby过滤器：</p>
+<p>如果value可以被给出的参数整除，返回True。</p>
+<pre><code>{{ value|divisibleby:"3" }}
+</code></pre><p>escape过滤器：</p>
+<p>escapejs过滤器：</p>
+<p>filesizeformat过滤器：</p>
+<p>格式化为人类可读的文件大小。</p>
+<p>first过滤器：</p>
+<p>返回迭代器的第一个元素。</p>
+<p>floatformat过滤器：</p>
+<p>force_escape过滤器：</p>
+<p>get_digit过滤器：</p>
+<p>iriencode过滤器：</p>
+<p>join过滤器：</p>
+<p>last过滤器：</p>
+<p>length过滤器：</p>
+<p>length_is过滤器：</p>
+<p>linebreaks过滤器：</p>
+<p>linebreaksbr过滤器：</p>
+<p>linenumbers过滤器：</p>
+<p>ljust过滤器：</p>
+<p>lower过滤器：</p>
+<p>把字符串转换成小写。</p>
+<p>make_list过滤器：</p>
+<p>phone2numeric过滤器：</p>
+<p>pluralize过滤器：</p>
+<p>pprint过滤器：</p>
+<p>random过滤器：</p>
+<p>romevetags过滤器：</p>
+<p>rjust过滤器：</p>
+<p>slice过滤器：</p>
+<p>slugify过滤器：</p>
+<p>stringformat过滤器：</p>
+<p>striptags过滤器：</p>
+<p>time过滤器：</p>
+<p>timesince过滤器：</p>
+<p>timeuntil过滤器：</p>
+<p>title过滤器：</p>
+<p>truncatechars过滤器：</p>
+<p>truncatechars_html过滤器：</p>
+<p>truncatewords过滤器：</p>
+<p>truncatewords_html过滤器;</p>
+<p>unordered_list过滤器：</p>
+<p>upper过滤器：</p>
+<p>将字符串转换成大写形式。</p>
+<p>urlencode过滤器：</p>
+<p>urlize过滤器：</p>
+<p>urlizetrunc过滤器：</p>
+<p>wordcount过滤器：</p>
+<p>wordwrap过滤器：</p>
+<p>yesno过滤器：</p>
+<p>i18n过滤器：</p>
+<p>l10n过滤器：</p>
+<p>tz过滤器：</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行注释：</p>
+<p>多行注释：</p>
+<p>也可以用comment标签表示多行注释。</p>
+<pre><code>{% comment %}
+    line1
+    line2
+    ...
+    {% endcomment %}
+</code></pre><h1 id="自动html转义"><a href="#自动html转义" class="headerlink" title="自动html转义"></a>自动html转义</h1><p>当从模板生成html时，值可能包含影响html最终呈现的字符。</p>
+<p>django的自动转义,默认是打开的：</p>
+<pre><code>&lt; 转义成 &amp;lt;
+&gt; 转义成 &amp;gt;
+&apos; 转义成 &amp;#39
+&quot; 转义成 &amp;quot;
+$ 转义成 &amp;amp;
+</code></pre><p>如果不需要自动转义可以关闭它</p>
+<p>可以用safe过滤器关闭独立变量中的自动转义：</p>
+<pre><code>data = &lt;b&gt;
+{{ data }} -&gt; &amp;lt;b&amp;gt;
+{{ data|safe }} -&gt; &lt;b&gt;
+</code></pre><p>可以用autoescape标签关闭模板代码中的自动转义：</p>
+<p>autoescape标签有off和on两个参数，表示关闭和打开自动转义。</p>
+<p>父模板中的autoescape可以被子模板继承，也可以被include标签包含的模板继承。</p>
+<pre><code>{% autoescape off %}
+    {{ name }}
+    {% endautoescape %}
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/django/" rel="tag">#django</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/26/Django之Deploy/" rel="next" title="Django之Deploy">
+                <i class="fa fa-chevron-left"></i> Django之Deploy
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/03/Django之Module/" rel="prev" title="Django之Module">
+                Django之Module <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/03/Django之Template/"
+           data-title="Django之Template" data-url="http://canuxcheng.com/2016/10/03/Django之Template/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模板设置"><span class="nav-number">1.</span> <span class="nav-text">模板设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板语言"><span class="nav-number">2.</span> <span class="nav-text">模板语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">2.2.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板继承"><span class="nav-number">2.2.1.</span> <span class="nav-text">模板继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">2.3.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.4.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动html转义"><span class="nav-number">3.</span> <span class="nav-text">自动html转义</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

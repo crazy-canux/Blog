@@ -1,0 +1,1002 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ITM,IBM,Tivoli,Monitoring,Agent Builder," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Canux's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="Agent BuilderIBM Agent Builder agents
+windows:
+C:\Program Files(x86)\IBM\AgentBuilder
+aix/linux:
+/opt/ibm/AgentBuilder
+Data source:
+
+JDBC
+HTTP
+SOAP
+Ping
+Socket
+Java API
+WMI
+Perfmon
+CIM
+SNMP
+JMX
+comman">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tivoli之AgentBuilder">
+<meta property="og:url" content="http://canuxcheng.com/2016/04/24/Tivoli之AgentBuilder/index.html">
+<meta property="og:site_name" content="Canux's Blog">
+<meta property="og:description" content="Agent BuilderIBM Agent Builder agents
+windows:
+C:\Program Files(x86)\IBM\AgentBuilder
+aix/linux:
+/opt/ibm/AgentBuilder
+Data source:
+
+JDBC
+HTTP
+SOAP
+Ping
+Socket
+Java API
+WMI
+Perfmon
+CIM
+SNMP
+JMX
+comman">
+<meta property="og:updated_time" content="2016-09-26T02:24:20.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tivoli之AgentBuilder">
+<meta name="twitter:description" content="Agent BuilderIBM Agent Builder agents
+windows:
+C:\Program Files(x86)\IBM\AgentBuilder
+aix/linux:
+/opt/ibm/AgentBuilder
+Data source:
+
+JDBC
+HTTP
+SOAP
+Ping
+Socket
+Java API
+WMI
+Perfmon
+CIM
+SNMP
+JMX
+comman">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://canuxcheng.com/2016/04/24/Tivoli之AgentBuilder/"/>
+
+
+  <title> Tivoli之AgentBuilder | Canux's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1258132457&web_id=1258132457" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Canux's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DevOps Software/Architect Engineer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xGAKY5LyK8xDYvH9zzcX','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Tivoli之AgentBuilder
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-24T22:19:28-04:00" content="2016-04-25">
+              2016-04-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Operation/" itemprop="url" rel="index">
+                    <span itemprop="name">Operation</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Operation/Tivoli/" itemprop="url" rel="index">
+                    <span itemprop="name">Tivoli</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/24/Tivoli之AgentBuilder/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/Tivoli之AgentBuilder/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Agent-Builder"><a href="#Agent-Builder" class="headerlink" title="Agent Builder"></a>Agent Builder</h1><p>IBM Agent Builder agents</p>
+<p>windows:</p>
+<pre><code>C:\Program Files(x86)\IBM\AgentBuilder
+</code></pre><p>aix/linux:</p>
+<pre><code>/opt/ibm/AgentBuilder
+</code></pre><p>Data source:</p>
+<ol>
+<li>JDBC</li>
+<li>HTTP</li>
+<li>SOAP</li>
+<li>Ping</li>
+<li>Socket</li>
+<li>Java API</li>
+<li>WMI</li>
+<li>Perfmon</li>
+<li>CIM</li>
+<li>SNMP</li>
+<li>JMX</li>
+<li>command return code</li>
+<li>output from a script</li>
+<li>A log file</li>
+<li>AIX Binary Log</li>
+<li>windows event log</li>
+<li>A process</li>
+<li>A Windows service</li>
+</ol>
+<h1 id="create-agent"><a href="#create-agent" class="headerlink" title="create agent"></a>create agent</h1><p>Every agent have a unique produce code.</p>
+<p>Like: k00-k99, k{0-9}{A-Z}.</p>
+<ol>
+<li><p>Create the agent in the Agent Builder<br> agent information<br> data source<br> runtime configuration</p>
+</li>
+<li><p>Install and test the agent<br> output and install the agent<br> config and start agent in MTEMS.<br> confirm agent data<br> revise and retest as needed</p>
+</li>
+<li><p>Add application support<br> create in TEP, including queries, workspaces, situations, and take actions.<br> Import application support into agent in Agent Builder.<br> Retest the agent and application support</p>
+</li>
+<li><p>Create an installation solution.<br> Create solution install package from the agent.<br> Create solution install package from the package.<br> Run the image on the target location.</p>
+</li>
+</ol>
+<h1 id="install-agent"><a href="#install-agent" class="headerlink" title="install agent"></a>install agent</h1><p>Three ways to instal the agent.</p>
+<p>You must install the TEMS and TEPS support on TEMS(HTEMS) and TEPS server.</p>
+<ol>
+<li><p>generate the agent files in an ITM installation on this machine</p>
+<p> 通过GUI快速安装，Agent Builder和ITM（TEMS和TEPS）安装在同一台机器上。</p>
+</li>
+<li><p>generate a solution install package</p>
+<p> 创建安装镜像来安装，windows的.exe和linux/unix的.bin。</p>
+</li>
+<li><p>create a compressed file so that the agent can be installed on another system</p>
+<p> 命令行安装。<br> 生成一个.zip和一个.tgz文件。<br> 包括windows的.bat和linux/unix的.sh安装文件</p>
+<p> 安装下面三个包(等效方法一）：</p>
+<pre><code>InstallIra.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
+InstallIra.bat C:\IBM\ITM -h &lt;HTEMS&gt; -u &lt;username&gt; -p &lt;password&gt; # for windows
+./InstallIra.sh /opt/IBM/ITM -h &lt;HTEMS&gt; -u &lt;username&gt; -p &lt;password&gt; # for linux
+</code></pre><p> 在被监控机器安装agent:</p>
+<pre><code>installIraAgent.bat/.sh itm_install_location
+installIraAgent.bat C:\IBM\ITM # for windows
+./installIraAgent.sh /opt/IBM/ITM # for linux
+</code></pre><p> 在TEMS(HTEMS)服务器安装对agent的支持：</p>
+<pre><code>installIraAgentTEMS.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
+installIraAgentTEMS.bat C:\IBM\ITM # for local HTEMS windows server.
+./installIraAgentTEMS.sh /opt/IBM/ITM # for local HTEMS linux server.
+</code></pre><p> 在TEPS服务器安装对agent的支持：</p>
+<pre><code>installIraAgentTEPS.bat/.sh itm_install_location [[-h TEPS_hostname] -u TEPS_username -p TEPS_password]
+installIraAgentTEPS.bat C:\IBM\ITM # for local TEPS windows server.
+./installIraAgentTEPS.sh /opt/IBM/ITM # for local TEPS linux server.
+</code></pre></li>
+</ol>
+<h1 id="config-agent"><a href="#config-agent" class="headerlink" title="config agent"></a>config agent</h1><p>需要为agent指定HTEMS服务器，并重启agent，然后重启TEPD。</p>
+<p>可以通过Tivoli Enterprise Monitoring Service来配置和启动，也可以通过命令行。</p>
+<p>查看所有agent信息：</p>
+<pre><code>/opt/IBM/ITM/bin/cinfo -i # check the productcode and platformCode.
+</code></pre><p>config agent:</p>
+<pre><code>./itmcmd config -A productcode
+</code></pre><p>start agent:</p>
+<pre><code>./tacmd agent start productcode
+</code></pre><h1 id="uninstall-agent"><a href="#uninstall-agent" class="headerlink" title="uninstall agent"></a>uninstall agent</h1><ol>
+<li><p>uninstall from commandline.</p>
+<p> windows:</p>
+<pre><code>cd ITM_INSTALL/TMAITM6
+cd C:\IBM\ITM\TMAITM6_x64
+kxx_uninstall.vbs ITM_INSTALL
+K&lt;product code&gt;_uninstall.vbs C:\IBM\ITM
+</code></pre><p> linux/unix:</p>
+<pre><code>/opt/IBM/ITM/bin/uninstall.sh [-f] [-i] [-h install_dir] productcode platformCode
+</code></pre></li>
+<li><p>Remove from TEP client(clear offline entry)</p>
+</li>
+</ol>
+<h1 id="Monitoring-windows-resources"><a href="#Monitoring-windows-resources" class="headerlink" title="Monitoring windows resources"></a>Monitoring windows resources</h1><ol>
+<li><p>Windows Management Instrumentation(WMI)</p>
+</li>
+<li><p>Windows Performance Monitor(Perfmon)</p>
+</li>
+<li><p>Windows Event Log</p>
+</li>
+</ol>
+<h1 id="Monitoring-process-and-command-return-codes"><a href="#Monitoring-process-and-command-return-codes" class="headerlink" title="Monitoring process and command return codes"></a>Monitoring process and command return codes</h1><ol>
+<li><p>Monitoring process</p>
+</li>
+<li><p>Monitoring command return code</p>
+</li>
+</ol>
+<h1 id="Monitoring-custom-data-sources"><a href="#Monitoring-custom-data-sources" class="headerlink" title="Monitoring custom data sources"></a>Monitoring custom data sources</h1><ol>
+<li><p>Monitoring script output</p>
+</li>
+<li><p>Monitoring log file</p>
+</li>
+</ol>
+<h1 id="Monitoring-remote-resources"><a href="#Monitoring-remote-resources" class="headerlink" title="Monitoring remote resources"></a>Monitoring remote resources</h1><ol>
+<li><p>Monitoring SNMP</p>
+</li>
+<li><p>Monitoring CIM</p>
+</li>
+<li><p>Moitoring JMX</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持是我创作的动力!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Canux CHENG WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Canux CHENG Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ITM/" rel="tag">#ITM</a>
+          
+            <a href="/tags/IBM/" rel="tag">#IBM</a>
+          
+            <a href="/tags/Tivoli/" rel="tag">#Tivoli</a>
+          
+            <a href="/tags/Monitoring/" rel="tag">#Monitoring</a>
+          
+            <a href="/tags/Agent-Builder/" rel="tag">#Agent Builder</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/21/Tivoli之OMNIbus/" rel="next" title="Tivoli之OMNIbus">
+                <i class="fa fa-chevron-left"></i> Tivoli之OMNIbus
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/25/PowerShell/" rel="prev" title="PowerShell">
+                PowerShell <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/24/Tivoli之AgentBuilder/"
+           data-title="Tivoli之AgentBuilder" data-url="http://canuxcheng.com/2016/04/24/Tivoli之AgentBuilder/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Canux CHENG" />
+          <p class="site-author-name" itemprop="name">Canux CHENG</p>
+          <p class="site-description motion-element" itemprop="description">Shell/PowerShell、Vim/Git/Tmux</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/crazy-canux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/users/4344009/canux" target="_blank" title="Stackoverflow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Stackoverflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/profile/preview?locale=zh_CN&trk=prof-0-sb-preview-primary-button" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canuxcheng@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-zero.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.csdn.net/home" title="CSDN" target="_blank">CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.51cto.com/" title="51CTO" target="_blank">51CTO</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bbs.chinaunix.net/" title="ChinaUnix" target="_blank">ChinaUnix</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itpub.net/forum.php" title="ITPUB" target="_blank">ITPUB</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Agent-Builder"><span class="nav-number">1.</span> <span class="nav-text">Agent Builder</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#create-agent"><span class="nav-number">2.</span> <span class="nav-text">create agent</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#install-agent"><span class="nav-number">3.</span> <span class="nav-text">install agent</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#config-agent"><span class="nav-number">4.</span> <span class="nav-text">config agent</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#uninstall-agent"><span class="nav-number">5.</span> <span class="nav-text">uninstall agent</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitoring-windows-resources"><span class="nav-number">6.</span> <span class="nav-text">Monitoring windows resources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitoring-process-and-command-return-codes"><span class="nav-number">7.</span> <span class="nav-text">Monitoring process and command return codes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitoring-custom-data-sources"><span class="nav-number">8.</span> <span class="nav-text">Monitoring custom data sources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitoring-remote-resources"><span class="nav-number">9.</span> <span class="nav-text">Monitoring remote resources</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Canux CHENG</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazy-canux"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
