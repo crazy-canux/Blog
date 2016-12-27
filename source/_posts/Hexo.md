@@ -309,7 +309,7 @@ ubuntu/debian安装：
 
 >\## Themes: https://hexo.io/themes/
 
->        theme: next
+>        theme: hexo-theme-canux
 
 >        Plugins:
 
@@ -321,13 +321,13 @@ ubuntu/debian安装：
 
 >        deploy:
 
->        type: git
+>          type: git
 
->        repo: git@github.com:<your-github-name>/<your-github-name>.github.io.git
+>          repo:
 
->        branch: master
+>             github: https://github.com/crazy-canux/crazy-canux.github.io.git,master
 
->        message:
+>             coding: https://git.coding.net/Canux/Canux.git,master
 
 ## 主题配置
 
@@ -340,20 +340,21 @@ hexo官方默认主题是&lt;folder>/themes/landscape。
     cd <folder>/themes
     git clone <github-url-of-your-favourite-theme>
 
-然后将全局配置的theme: landscape 改为
-theme: &lt;your-favourite-theme-name>
+然后将全局配置的 theme: landscape 改为 theme: &lt;your-favourite-theme-name>
 
 ***
 
 # 部署
 
-正常部署到github：
+部署到github和coding(gitcafe)：
 
     hexo clean
     hexo g
     hexo d
 
-访问http://<your-github-name>.github.io即可。
+github访问http://<your-github-name>.github.io即可。
+
+coding访问http://<your-coding-name>.coding.me/<your-coding-name>
 
 绑定自己的域名：
 1. 在域名供应商购买域名后添加解析，记录类型A或者CNAME，主机类型@或者www，记录值可以是http://<your-github-name>.github.io或者通过ping获取的ip地址。

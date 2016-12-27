@@ -79,7 +79,7 @@ deploy:
   type: git
   repo:
     github: https://crazy-canux:Wz1085694641@github.com/crazy-canux/crazy-canux.github.io.git,master
-    # coding: https://Canux:Wz1085694641@git.coding.net/Canux/Canux.coding.io.git,master
+    coding: https://Canux:Wz1085694641@git.coding.net/Canux/Canux.git,master
 
 # sitemap
 sitemap:

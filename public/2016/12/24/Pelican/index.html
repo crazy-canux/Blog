@@ -89,7 +89,8 @@
 <meta name="description" content="Pelicanpython开发的静态站点生成器.
 http://blog.getpelican.com/
 https://github.com/getpelican/pelican
-http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html">
+http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html
+http://pelican-zh.readthedocs.io/en/l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pelican">
 <meta property="og:url" content="http://canuxcheng.com/2016/12/24/Pelican/index.html">
@@ -97,14 +98,16 @@ http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html">
 <meta property="og:description" content="Pelicanpython开发的静态站点生成器.
 http://blog.getpelican.com/
 https://github.com/getpelican/pelican
-http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html">
-<meta property="og:updated_time" content="2016-12-25T05:13:33.811Z">
+http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html
+http://pelican-zh.readthedocs.io/en/l">
+<meta property="og:updated_time" content="2016-12-27T09:23:39.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pelican">
 <meta name="twitter:description" content="Pelicanpython开发的静态站点生成器.
 http://blog.getpelican.com/
 https://github.com/getpelican/pelican
-http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html">
+http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html
+http://pelican-zh.readthedocs.io/en/l">
 
 
 
@@ -396,7 +399,27 @@ http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html">
 <p><a href="http://blog.getpelican.com/" target="_blank" rel="external">http://blog.getpelican.com/</a></p>
 <p><a href="https://github.com/getpelican/pelican" target="_blank" rel="external">https://github.com/getpelican/pelican</a></p>
 <p><a href="http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html" target="_blank" rel="external">http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html</a></p>
-
+<p><a href="http://pelican-zh.readthedocs.io/en/latest/zh-cn/" target="_blank" rel="external">http://pelican-zh.readthedocs.io/en/latest/zh-cn/</a></p>
+<h1 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h1><p>创建环境:</p>
+<pre><code>$mkdir blog_pelican
+$cd blog_pelican
+$virtualenv venv
+$source venv/bin/activate
+$pip install pelican
+$pip install markdown
+</code></pre><p>创建pelican项目:</p>
+<pre><code>$pelican-quickstart
+</code></pre><p>生成下列文件和目录:</p>
+<pre><code>publishconf.py
+pelicanconf.py
+fabfile.py
+develop_server.sh
+Makefile
+content
+  |-
+output
+  |-
+</code></pre>
       
     </div>
 
@@ -669,7 +692,7 @@ http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pelican"><span class="nav-number">1.</span> <span class="nav-text">Pelican</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pelican"><span class="nav-number">1.</span> <span class="nav-text">Pelican</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建博客"><span class="nav-number">2.</span> <span class="nav-text">搭建博客</span></a></li></ol></div>
             
           </div>
         </section>

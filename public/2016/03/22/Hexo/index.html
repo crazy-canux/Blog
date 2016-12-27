@@ -110,7 +110,7 @@ themes
 安装hexo命令行插件hexo-cli：
 sudo npm install hexo-cli -g
 Nex">
-<meta property="og:updated_time" content="2016-12-25T04:31:50.744Z">
+<meta property="og:updated_time" content="2016-12-27T12:24:14.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="Hexo什么是hexo
@@ -597,7 +597,7 @@ pagination_dir: page
 </blockquote>
 <p>## Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a></p>
 <p>## Themes: <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></p>
-<pre><code>theme: next
+<pre><code>theme: hexo-theme-canux
 
 Plugins:
 
@@ -608,26 +608,27 @@ Plugins:
 <p>## deploy</p>
 <pre><code>deploy:
 
-type: git
+  type: git
 
-repo: git@github.com:&lt;your-github-name&gt;/&lt;your-github-name&gt;.github.io.git
+  repo:
 
-branch: master
+     github: https://github.com/crazy-canux/crazy-canux.github.io.git,master
 
-message:
+     coding: https://git.coding.net/Canux/Canux.git,master
 </code></pre></blockquote>
 <h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>hexo官方默认主题是&lt;folder&gt;/themes/landscape。</p>
 <p>主题配置文件是&lt;folder&gt;/themes/landscape/_config.yml</p>
 <p>现在将默认主题替换成自己喜欢的主题：</p>
 <pre><code>cd &lt;folder&gt;/themes
 git clone &lt;github-url-of-your-favourite-theme&gt;
-</code></pre><p>然后将全局配置的theme: landscape 改为<br>theme: &lt;your-favourite-theme-name&gt;</p>
+</code></pre><p>然后将全局配置的 theme: landscape 改为 theme: &lt;your-favourite-theme-name&gt;</p>
 <hr>
-<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>正常部署到github：</p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>部署到github和coding(gitcafe)：</p>
 <pre><code>hexo clean
 hexo g
 hexo d
-</code></pre><p>访问http://<your-github-name>.github.io即可。</your-github-name></p>
+</code></pre><p>github访问http://<your-github-name>.github.io即可。</your-github-name></p>
+<p>coding访问http://<your-coding-name>.coding.me/<your-coding-name></your-coding-name></your-coding-name></p>
 <p>绑定自己的域名：</p>
 <ol>
 <li>在域名供应商购买域名后添加解析，记录类型A或者CNAME，主机类型@或者www，记录值可以是http://<your-github-name>.github.io或者通过ping获取的ip地址。</your-github-name></li>
