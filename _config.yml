@@ -65,7 +65,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-next
+theme: hexo-theme-canux
 
 Plugins:
   - hexo-deployer-git
@@ -79,7 +79,7 @@ deploy:
   type: git
   repo:
     github: https://crazy-canux:Wz1085694641@github.com/crazy-canux/crazy-canux.github.io.git,master
-    coding: https://Canux:Wz1085694641@git.coding.net/Canux/Canux.coding.io.git,master
+    # coding: https://Canux:Wz1085694641@git.coding.net/Canux/Canux.coding.io.git,master
 
 # sitemap
 sitemap:
