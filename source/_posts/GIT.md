@@ -232,7 +232,7 @@ git的结构：
 
 ## commit     Record changes to the repository
 
-    git commit
+    git commit -m "[1.0.0.0]init repository."
 
 ## bisect     Find by binary search the change that introduced a bug
 
@@ -241,6 +241,8 @@ git的结构：
 ## blame      Show what revision and author last modified each line of a file
 
 ## checkout   Checkout a branch or paths to the working tree
+
+    $git checkout -b develop master
 
 ## clone      Clone a repository into a new directory
 
@@ -254,6 +256,8 @@ git的结构：
 
 ## merge      Join two or more development histories together
 
+    $git merge --no-ff develop
+
 ## mv         Move or rename a file, a directory, or a symlink
 
 ## pull       Fetch from and integrate with another repository or a local branch
@@ -264,13 +268,15 @@ git的结构：
 
 ## reset      Reset current HEAD to the specified state
 
+    $git reset --hard origin/master
+
 ## rm         Remove files from the working tree and from the index
 
 ## revert     Revert some existing commits
 
 ## reflog     Manage reflog information
 
-    git reflog show # 查看素有git操作日
+    $git reflog show # 查看素有git操作日
 
 ## show       Show various types of objects
 
@@ -280,4 +286,8 @@ git的结构：
 
 ## tag        object signed with GPG
 
+    $git tag -a v1.0.0.0 -m "release 1.0 version."
 
+## submodule  Initialize, update or inspect submodules
+
+    $git submodule add <repository> [<path>]
