@@ -87,39 +87,39 @@
 
 
 <meta name="description" content="WordPress安装安装依赖：
-sudo apt install apache2
-sudo apt install mysql-server
-sudo apt install php5
+$sudo apt install apache2
+$sudo apt install mysql-server
+$sudo apt install php5
 下载wordpress：
 $cd /var/www/html
 $git clone https://github.com/WordPress/WordPress.git
 配置添加mysql数据库：
-$mysql">
+$mys">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Wordpress">
 <meta property="og:url" content="http://canuxcheng.com/2016/11/17/Wordpress/index.html">
 <meta property="og:site_name" content="Canux's Blog">
 <meta property="og:description" content="WordPress安装安装依赖：
-sudo apt install apache2
-sudo apt install mysql-server
-sudo apt install php5
+$sudo apt install apache2
+$sudo apt install mysql-server
+$sudo apt install php5
 下载wordpress：
 $cd /var/www/html
 $git clone https://github.com/WordPress/WordPress.git
 配置添加mysql数据库：
-$mysql">
-<meta property="og:updated_time" content="2016-12-18T11:21:27.208Z">
+$mys">
+<meta property="og:updated_time" content="2016-12-28T13:25:11.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wordpress">
 <meta name="twitter:description" content="WordPress安装安装依赖：
-sudo apt install apache2
-sudo apt install mysql-server
-sudo apt install php5
+$sudo apt install apache2
+$sudo apt install mysql-server
+$sudo apt install php5
 下载wordpress：
 $cd /var/www/html
 $git clone https://github.com/WordPress/WordPress.git
 配置添加mysql数据库：
-$mysql">
+$mys">
 
 
 
@@ -396,9 +396,9 @@ $mysql">
 
       
         <h1 id="WordPress"><a href="#WordPress" class="headerlink" title="WordPress"></a>WordPress</h1><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装依赖：</p>
-<pre><code>sudo apt install apache2
-sudo apt install mysql-server
-sudo apt install php5
+<pre><code>$sudo apt install apache2
+$sudo apt install mysql-server
+$sudo apt install php5
 </code></pre><p>下载wordpress：</p>
 <pre><code>$cd /var/www/html
 $git clone https://github.com/WordPress/WordPress.git
@@ -410,6 +410,11 @@ mysql&gt; GRANT ALL PRIVILEGES ON wordpress.* TO &quot;wordpress&quot;@&quot;loc
 mysql&gt; FLUSH PRIVILEGES;
 </code></pre><p>登陆并安装站点：</p>
 <pre><code>http://localhost/WordPress/wp-admin/install.php
+</code></pre><hr>
+<h1 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h1><p>下载相应的语言版本,中文下载中文版的wordpress.</p>
+<p>然后将wordpress/wp-content/languages拷贝到英文版的wordpress/wp-content下</p>
+<p>语言包路径:</p>
+<pre><code>wordpress/wp-content/languages
 </code></pre><hr>
 <h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>修改wp-config.php安装主题不用输入ftp信息：</p>
 <pre><code>define(&quot;FS_METHOD&quot;, &quot;direct&quot;);
@@ -423,7 +428,13 @@ define(&quot;FS_CHMOD_FILE&quot;, 0777);
 <h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>插件安装在：</p>
 <pre><code>wordpress/wp-content/plugins
 </code></pre><h2 id="WordPress-Reset"><a href="#WordPress-Reset" class="headerlink" title="WordPress Reset"></a>WordPress Reset</h2><p>一款可以重置所有数据库数据的插件。</p>
-<h2 id="widget-settings-importexport"><a href="#widget-settings-importexport" class="headerlink" title="widget-settings-importexport"></a>widget-settings-importexport</h2><h2 id="wordpress-importer"><a href="#wordpress-importer" class="headerlink" title="wordpress-importer"></a>wordpress-importer</h2><h2 id="wordpress-move"><a href="#wordpress-move" class="headerlink" title="wordpress-move"></a>wordpress-move</h2>
+<h2 id="widget-settings-importexport"><a href="#widget-settings-importexport" class="headerlink" title="widget-settings-importexport"></a>widget-settings-importexport</h2><h2 id="wordpress-importer"><a href="#wordpress-importer" class="headerlink" title="wordpress-importer"></a>wordpress-importer</h2><h2 id="wordpress-move"><a href="#wordpress-move" class="headerlink" title="wordpress-move"></a>wordpress-move</h2><hr>
+<h1 id="主题开发"><a href="#主题开发" class="headerlink" title="主题开发"></a>主题开发</h1><p>404.php<br>footer.php<br>header.php<br>front-page.php<br>functions.php<br>page.php<br>single.php<br>searchform.php<br>sidebar.php<br>archive.php<br>comments.php<br>index.php<br>search.php</p>
+<p>style.css</p>
+<p>js</p>
+<p>screenshot.png<br>inc<br>images</p>
+<hr>
+<h1 id="插件开发"><a href="#插件开发" class="headerlink" title="插件开发"></a>插件开发</h1>
       
     </div>
 
@@ -583,7 +594,7 @@ define(&quot;FS_CHMOD_FILE&quot;, 0777);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-count">129</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -591,7 +602,7 @@ define(&quot;FS_CHMOD_FILE&quot;, 0777);
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -706,7 +717,7 @@ define(&quot;FS_CHMOD_FILE&quot;, 0777);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WordPress"><span class="nav-number">1.</span> <span class="nav-text">WordPress</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题"><span class="nav-number">4.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件"><span class="nav-number">5.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WordPress-Reset"><span class="nav-number">5.1.</span> <span class="nav-text">WordPress Reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#widget-settings-importexport"><span class="nav-number">5.2.</span> <span class="nav-text">widget-settings-importexport</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wordpress-importer"><span class="nav-number">5.3.</span> <span class="nav-text">wordpress-importer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wordpress-move"><span class="nav-number">5.4.</span> <span class="nav-text">wordpress-move</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WordPress"><span class="nav-number">1.</span> <span class="nav-text">WordPress</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语言"><span class="nav-number">4.</span> <span class="nav-text">语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题"><span class="nav-number">5.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件"><span class="nav-number">6.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WordPress-Reset"><span class="nav-number">6.1.</span> <span class="nav-text">WordPress Reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#widget-settings-importexport"><span class="nav-number">6.2.</span> <span class="nav-text">widget-settings-importexport</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wordpress-importer"><span class="nav-number">6.3.</span> <span class="nav-text">wordpress-importer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wordpress-move"><span class="nav-number">6.4.</span> <span class="nav-text">wordpress-move</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题开发"><span class="nav-number">7.</span> <span class="nav-text">主题开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件开发"><span class="nav-number">8.</span> <span class="nav-text">插件开发</span></a></li></ol></div>
             
           </div>
         </section>
@@ -725,7 +736,7 @@ define(&quot;FS_CHMOD_FILE&quot;, 0777);
         <div class="copyright" >
   
   &copy;  2013 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

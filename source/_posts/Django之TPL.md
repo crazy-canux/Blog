@@ -28,12 +28,6 @@ Add this application to your django project in settings.py.
         ...
     )
 
-# South
-
-django的migration的application。
-
-<https://bitbucket.org/andrewgodwin/south/src>
-
 # django-debug-toolbar
 
 django的debugging的application。
@@ -69,12 +63,6 @@ django的authorization的application。
 django的authentication的application。
 
 <https://github.com/pennersr/django-allauth/>
-
-# python-social-auth
-
-django的authentication的application。
-
-<https://github.com/omab/python-social-auth/>
 
 # django-grappelli
 
@@ -117,3 +105,35 @@ django的asset management的application。
 ## django-filter
 
 <https://github.com/carltongibson/django-filter>
+
+***
+
+# CMS Project
+
+## django-cms
+
+<https://github.com/divio/django-cms/>
+
+## wagtail
+
+<https://github.com/wagtail/wagtail>
+
+## mezzanine
+
+<https://github.com/stephenmcd/mezzanine/>
+
+# e-Commerce Project
+
+## django-oscar
+
+<https://github.com/django-oscar/django-oscar>
+
+## django-shop
+
+<https://github.com/awesto/django-shop>
+
+# PM Project
+
+## taiga
+
+<https://github.com/taigaio>

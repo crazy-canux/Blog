@@ -171,10 +171,12 @@ django包含下列默认应用:
     ALLOWED_HOSTS = [] # 设置哪些域名可以访问，优先级高于web服务器，debug=false必须设置
     ALLOWED_HOSTS = [''*''] # 允许所有域名访问
 
-静态文件：
+静态文件:
 
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'static') # 项目目录新建static目录存放js/css等静态文件,collectstatic命令用来收集静态文件。
+
+上传文件:
 
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 用来存放用户上传的文件，与权限有关。

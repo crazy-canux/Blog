@@ -104,7 +104,7 @@ http://python.usyiyi.cn/translate/django_182/index.html
 django遵守MVC设计模式，采用MTV框架。
 M: model,数据存取
 T: template，如何">
-<meta property="og:updated_time" content="2016-10-27T09:17:39.384Z">
+<meta property="og:updated_time" content="2017-01-03T09:09:27.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django">
 <meta name="twitter:description" content="djangodjango是python的web框架。
@@ -507,11 +507,11 @@ DEBUG = False # 部署之后关闭
 
 ALLOWED_HOSTS = [] # 设置哪些域名可以访问，优先级高于web服务器，debug=false必须设置
 ALLOWED_HOSTS = [&apos;&apos;*&apos;&apos;] # 允许所有域名访问
-</code></pre><p>静态文件：</p>
+</code></pre><p>静态文件:</p>
 <pre><code>STATIC_URL = &apos;/static/&apos;
 STATIC_ROOT = os.path.join(BASE_DIR, &apos;static&apos;) # 项目目录新建static目录存放js/css等静态文件,collectstatic命令用来收集静态文件。
-
-MEDIA_URL = &apos;/media/&apos;
+</code></pre><p>上传文件:</p>
+<pre><code>MEDIA_URL = &apos;/media/&apos;
 MEDIA_ROOT = os.path.join(BASE_DIR, &apos;media&apos;) # 用来存放用户上传的文件，与权限有关。
 </code></pre><h2 id="urls-py"><a href="#urls-py" class="headerlink" title="urls.py"></a>urls.py</h2><pre><code>from django.conf.urls import include, url
 from django.contrib import admin
@@ -767,7 +767,7 @@ polls/
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">128</span>
+              <span class="site-state-item-count">129</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -775,7 +775,7 @@ polls/
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -909,7 +909,7 @@ polls/
         <div class="copyright" >
   
   &copy;  2013 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

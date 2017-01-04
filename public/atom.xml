@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://canuxcheng.com/"/>
-  <updated>2016-12-27T09:23:39.943Z</updated>
+  <updated>2017-01-03T07:04:37.699Z</updated>
   <id>http://canuxcheng.com/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DjangoCMS</title>
+    <link href="http://canuxcheng.com/2016/12/27/DjangoCMS/"/>
+    <id>http://canuxcheng.com/2016/12/27/DjangoCMS/</id>
+    <published>2016-12-27T16:15:47.000Z</published>
+    <updated>2017-01-03T07:04:37.699Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;django-cms&quot;&gt;&lt;a href=&quot;#django-cms&quot; class=&quot;headerlink&quot; title=&quot;django-cms&quot;&gt;&lt;/a&gt;django-cms&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/divio/django-cms&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/divio/django-cms&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;python基于django的CMS/Blog框架.&lt;/p&gt;
+&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;初始化虚拟环境:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$cd hydra
+$virtualenv venv
+$source venv/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;独立项目:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$pip install djangocms-installer
+$djangocms -f -p . hydra
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;集成到django项目:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$pip install django-cms
+# Automatic install required, include:
+# django-treebeard
+# django-sekizai
+# djangocms-admin-style
+# django-classy-tags
+# django-formtools
+# six
+
+# Install some recommended tools:
+$pip install mysql-python
+$pip install djangocms-text-ckeditor
+$pip install djangocms-link
+$pip install djangocms-snippet
+...
+
+# Install file and image handing packages.
+$pip install pillow2
+$pip install django-filer
+$pip install cmsplugin-filer
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;django-cms&quot;&gt;&lt;a href=&quot;#django-cms&quot; class=&quot;headerlink&quot; title=&quot;django-cms&quot;&gt;&lt;/a&gt;django-cms&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/divio/djan
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django-CMS" scheme="http://canuxcheng.com/categories/Python/Django-CMS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Pelican</title>
@@ -103,12 +156,12 @@ output
     <link href="http://canuxcheng.com/2016/11/17/Wordpress/"/>
     <id>http://canuxcheng.com/2016/11/17/Wordpress/</id>
     <published>2016-11-17T16:06:31.000Z</published>
-    <updated>2016-12-18T11:21:27.208Z</updated>
+    <updated>2016-12-28T13:25:11.756Z</updated>
     
     <content type="html">&lt;h1 id=&quot;WordPress&quot;&gt;&lt;a href=&quot;#WordPress&quot; class=&quot;headerlink&quot; title=&quot;WordPress&quot;&gt;&lt;/a&gt;WordPress&lt;/h1&gt;&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;安装依赖：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt install apache2
-sudo apt install mysql-server
-sudo apt install php5
+&lt;pre&gt;&lt;code&gt;$sudo apt install apache2
+$sudo apt install mysql-server
+$sudo apt install php5
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下载wordpress：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$cd /var/www/html
 $git clone https://github.com/WordPress/WordPress.git
@@ -120,6 +173,11 @@ mysql&amp;gt; GRANT ALL PRIVILEGES ON wordpress.* TO &amp;quot;wordpress&amp;quo
 mysql&amp;gt; FLUSH PRIVILEGES;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;登陆并安装站点：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;http://localhost/WordPress/wp-admin/install.php
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;语言&quot;&gt;&lt;a href=&quot;#语言&quot; class=&quot;headerlink&quot; title=&quot;语言&quot;&gt;&lt;/a&gt;语言&lt;/h1&gt;&lt;p&gt;下载相应的语言版本,中文下载中文版的wordpress.&lt;/p&gt;
+&lt;p&gt;然后将wordpress/wp-content/languages拷贝到英文版的wordpress/wp-content下&lt;/p&gt;
+&lt;p&gt;语言包路径:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wordpress/wp-content/languages
 &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
 &lt;h1 id=&quot;主题&quot;&gt;&lt;a href=&quot;#主题&quot; class=&quot;headerlink&quot; title=&quot;主题&quot;&gt;&lt;/a&gt;主题&lt;/h1&gt;&lt;p&gt;修改wp-config.php安装主题不用输入ftp信息：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;define(&amp;quot;FS_METHOD&amp;quot;, &amp;quot;direct&amp;quot;);
@@ -133,7 +191,13 @@ define(&amp;quot;FS_CHMOD_FILE&amp;quot;, 0777);
 &lt;h1 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class=&quot;headerlink&quot; title=&quot;插件&quot;&gt;&lt;/a&gt;插件&lt;/h1&gt;&lt;p&gt;插件安装在：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;wordpress/wp-content/plugins
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;WordPress-Reset&quot;&gt;&lt;a href=&quot;#WordPress-Reset&quot; class=&quot;headerlink&quot; title=&quot;WordPress Reset&quot;&gt;&lt;/a&gt;WordPress Reset&lt;/h2&gt;&lt;p&gt;一款可以重置所有数据库数据的插件。&lt;/p&gt;
-&lt;h2 id=&quot;widget-settings-importexport&quot;&gt;&lt;a href=&quot;#widget-settings-importexport&quot; class=&quot;headerlink&quot; title=&quot;widget-settings-importexport&quot;&gt;&lt;/a&gt;widget-settings-importexport&lt;/h2&gt;&lt;h2 id=&quot;wordpress-importer&quot;&gt;&lt;a href=&quot;#wordpress-importer&quot; class=&quot;headerlink&quot; title=&quot;wordpress-importer&quot;&gt;&lt;/a&gt;wordpress-importer&lt;/h2&gt;&lt;h2 id=&quot;wordpress-move&quot;&gt;&lt;a href=&quot;#wordpress-move&quot; class=&quot;headerlink&quot; title=&quot;wordpress-move&quot;&gt;&lt;/a&gt;wordpress-move&lt;/h2&gt;</content>
+&lt;h2 id=&quot;widget-settings-importexport&quot;&gt;&lt;a href=&quot;#widget-settings-importexport&quot; class=&quot;headerlink&quot; title=&quot;widget-settings-importexport&quot;&gt;&lt;/a&gt;widget-settings-importexport&lt;/h2&gt;&lt;h2 id=&quot;wordpress-importer&quot;&gt;&lt;a href=&quot;#wordpress-importer&quot; class=&quot;headerlink&quot; title=&quot;wordpress-importer&quot;&gt;&lt;/a&gt;wordpress-importer&lt;/h2&gt;&lt;h2 id=&quot;wordpress-move&quot;&gt;&lt;a href=&quot;#wordpress-move&quot; class=&quot;headerlink&quot; title=&quot;wordpress-move&quot;&gt;&lt;/a&gt;wordpress-move&lt;/h2&gt;&lt;hr&gt;
+&lt;h1 id=&quot;主题开发&quot;&gt;&lt;a href=&quot;#主题开发&quot; class=&quot;headerlink&quot; title=&quot;主题开发&quot;&gt;&lt;/a&gt;主题开发&lt;/h1&gt;&lt;p&gt;404.php&lt;br&gt;footer.php&lt;br&gt;header.php&lt;br&gt;front-page.php&lt;br&gt;functions.php&lt;br&gt;page.php&lt;br&gt;single.php&lt;br&gt;searchform.php&lt;br&gt;sidebar.php&lt;br&gt;archive.php&lt;br&gt;comments.php&lt;br&gt;index.php&lt;br&gt;search.php&lt;/p&gt;
+&lt;p&gt;style.css&lt;/p&gt;
+&lt;p&gt;js&lt;/p&gt;
+&lt;p&gt;screenshot.png&lt;br&gt;inc&lt;br&gt;images&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;插件开发&quot;&gt;&lt;a href=&quot;#插件开发&quot; class=&quot;headerlink&quot; title=&quot;插件开发&quot;&gt;&lt;/a&gt;插件开发&lt;/h1&gt;</content>
     
     <summary type="html">
     
@@ -483,6 +547,77 @@ admin.site.register(Question, QuestionAdmin)
   </entry>
   
   <entry>
+    <title>Django之URL</title>
+    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BURL/"/>
+    <id>http://canuxcheng.com/2016/10/03/Django之URL/</id>
+    <published>2016-10-03T20:20:39.000Z</published>
+    <updated>2016-12-19T04:19:50.232Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;urls-py&quot;&gt;&lt;a href=&quot;#urls-py&quot; class=&quot;headerlink&quot; title=&quot;urls.py&quot;&gt;&lt;/a&gt;urls.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.conf.urls import url
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django请求站点的方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ROOT_URLCONF，在settings.py中设置。&lt;/li&gt;
+&lt;li&gt;寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。&lt;/li&gt;
+&lt;li&gt;dnango依次匹配每个URL模式，在第一个匹配停下。&lt;/li&gt;
+&lt;li&gt;一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。&lt;/li&gt;
+&lt;li&gt;如果没有匹配到或者过程跑出异常，django调用合适的错误处理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;将应用的视图映射到URL：&lt;/p&gt;
+&lt;p&gt;需要在应用目录新建urls.py文件,然后在项目的url中包含应用的url。&lt;/p&gt;
+&lt;p&gt;urlpatterns是url()实例类型的python列表。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from . import views
+
+urlpatterns = [
+    # views内的内容不要引号。
+    url(r&amp;apos;^$&amp;apos;, views.index, name=&amp;apos;index&amp;apos;),
+    # 基于类的视图
+    url(r&amp;apos;^$&amp;apos;, views.IndexView.as_view(), name=&amp;apos;index&amp;apos;),
+    ...,
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;没有命名的组：&lt;/p&gt;
+&lt;p&gt;视图函数只有request参数，匹配的正则表达式作为位置参数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;url(r&amp;apos;^pattern1/pattern2/$&amp;apos;, views.index, name=&amp;apos;index&amp;apos;),
+
+def index(request):
+    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命名组：&lt;/p&gt;
+&lt;p&gt;视图函数除了request参数还有关键字参数，匹配的命名表达式组作为关键字参数,覆盖默认的关键字参数。&lt;/p&gt;
+&lt;p&gt;使用命名的正则表达式组： (?P&lt;name&gt;pattern)&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt;name就是关键字参数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;url(r&amp;apos;^pattern1/(?P&amp;lt;name&amp;gt;pattern)/pattern2/$), views.index, name=&amp;apos;index),
+
+def index(request, name):
+    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;错误处理：&lt;/p&gt;
+&lt;p&gt;django会调用一个错误处理视图处理异常。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;handler404 页面没找到&lt;/li&gt;
+&lt;li&gt;handler500 服务器错误&lt;/li&gt;
+&lt;li&gt;handler403 权限被拒绝&lt;/li&gt;
+&lt;li&gt;handler400 无效的请求&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;你也可以在项目的urls.py中重新定义这些默认视图：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;handler404 = &amp;apos;mysite.views.your_custom_page_not_found_view&amp;apos;
+handler500 = &amp;apos;mysite.views.your_custom_error_view&amp;apos;
+handler403 = &amp;apos;mysite.views.your_custom_permission_denied_view&amp;apos;
+handler400 = &amp;apos;mysite.views.your_custom_bad_request_view&amp;apos;
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;urls-py&quot;&gt;&lt;a href=&quot;#urls-py&quot; class=&quot;headerlink&quot; title=&quot;urls.py&quot;&gt;&lt;/a&gt;urls.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.conf.urls import url
+&lt;/code&gt;&lt;/
+    
+    </summary>
+    
+      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
+    
+      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Django之View</title>
     <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BView/"/>
     <id>http://canuxcheng.com/2016/10/03/Django之View/</id>
@@ -580,77 +715,6 @@ def MyView(View):
     
       &lt;h1 id=&quot;views-py&quot;&gt;&lt;a href=&quot;#views-py&quot; class=&quot;headerlink&quot; title=&quot;views.py&quot;&gt;&lt;/a&gt;views.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.shortcuts import render
 &lt;/
-    
-    </summary>
-    
-      <category term="Python" scheme="http://canuxcheng.com/categories/Python/"/>
-    
-      <category term="Django" scheme="http://canuxcheng.com/categories/Python/Django/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Django之URL</title>
-    <link href="http://canuxcheng.com/2016/10/03/Django%E4%B9%8BURL/"/>
-    <id>http://canuxcheng.com/2016/10/03/Django之URL/</id>
-    <published>2016-10-03T20:20:39.000Z</published>
-    <updated>2016-12-19T04:19:50.232Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;urls-py&quot;&gt;&lt;a href=&quot;#urls-py&quot; class=&quot;headerlink&quot; title=&quot;urls.py&quot;&gt;&lt;/a&gt;urls.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.conf.urls import url
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;django请求站点的方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;ROOT_URLCONF，在settings.py中设置。&lt;/li&gt;
-&lt;li&gt;寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。&lt;/li&gt;
-&lt;li&gt;dnango依次匹配每个URL模式，在第一个匹配停下。&lt;/li&gt;
-&lt;li&gt;一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。&lt;/li&gt;
-&lt;li&gt;如果没有匹配到或者过程跑出异常，django调用合适的错误处理。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;将应用的视图映射到URL：&lt;/p&gt;
-&lt;p&gt;需要在应用目录新建urls.py文件,然后在项目的url中包含应用的url。&lt;/p&gt;
-&lt;p&gt;urlpatterns是url()实例类型的python列表。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;from . import views
-
-urlpatterns = [
-    # views内的内容不要引号。
-    url(r&amp;apos;^$&amp;apos;, views.index, name=&amp;apos;index&amp;apos;),
-    # 基于类的视图
-    url(r&amp;apos;^$&amp;apos;, views.IndexView.as_view(), name=&amp;apos;index&amp;apos;),
-    ...,
-]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;没有命名的组：&lt;/p&gt;
-&lt;p&gt;视图函数只有request参数，匹配的正则表达式作为位置参数。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;url(r&amp;apos;^pattern1/pattern2/$&amp;apos;, views.index, name=&amp;apos;index&amp;apos;),
-
-def index(request):
-    ...
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命名组：&lt;/p&gt;
-&lt;p&gt;视图函数除了request参数还有关键字参数，匹配的命名表达式组作为关键字参数,覆盖默认的关键字参数。&lt;/p&gt;
-&lt;p&gt;使用命名的正则表达式组： (?P&lt;name&gt;pattern)&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt;name就是关键字参数。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;url(r&amp;apos;^pattern1/(?P&amp;lt;name&amp;gt;pattern)/pattern2/$), views.index, name=&amp;apos;index),
-
-def index(request, name):
-    ...
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;错误处理：&lt;/p&gt;
-&lt;p&gt;django会调用一个错误处理视图处理异常。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;handler404 页面没找到&lt;/li&gt;
-&lt;li&gt;handler500 服务器错误&lt;/li&gt;
-&lt;li&gt;handler403 权限被拒绝&lt;/li&gt;
-&lt;li&gt;handler400 无效的请求&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;你也可以在项目的urls.py中重新定义这些默认视图：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;handler404 = &amp;apos;mysite.views.your_custom_page_not_found_view&amp;apos;
-handler500 = &amp;apos;mysite.views.your_custom_error_view&amp;apos;
-handler403 = &amp;apos;mysite.views.your_custom_permission_denied_view&amp;apos;
-handler400 = &amp;apos;mysite.views.your_custom_bad_request_view&amp;apos;
-&lt;/code&gt;&lt;/pre&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;urls-py&quot;&gt;&lt;a href=&quot;#urls-py&quot; class=&quot;headerlink&quot; title=&quot;urls.py&quot;&gt;&lt;/a&gt;urls.py&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;from django.conf.urls import url
-&lt;/code&gt;&lt;/
     
     </summary>
     
@@ -1374,7 +1438,7 @@ $sudo service apache2 restart
     <link href="http://canuxcheng.com/2016/09/26/Django%E4%B9%8BTPL/"/>
     <id>http://canuxcheng.com/2016/09/26/Django之TPL/</id>
     <published>2016-09-26T17:33:42.000Z</published>
-    <updated>2016-10-28T03:06:10.302Z</updated>
+    <updated>2017-01-03T09:41:38.908Z</updated>
     
     <content type="html">&lt;h1 id=&quot;TPL&quot;&gt;&lt;a href=&quot;#TPL&quot; class=&quot;headerlink&quot; title=&quot;TPL&quot;&gt;&lt;/a&gt;TPL&lt;/h1&gt;&lt;p&gt;Django Third Party Library.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rosarior/awesome-django&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/rosarior/awesome-django&lt;/a&gt;&lt;/p&gt;
@@ -1385,9 +1449,7 @@ $sudo service apache2 restart
     &amp;apos;crispy_forms&amp;apos;,
     ...
 )
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;South&quot;&gt;&lt;a href=&quot;#South&quot; class=&quot;headerlink&quot; title=&quot;South&quot;&gt;&lt;/a&gt;South&lt;/h1&gt;&lt;p&gt;django的migration的application。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://bitbucket.org/andrewgodwin/south/src&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://bitbucket.org/andrewgodwin/south/src&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;django-debug-toolbar&quot;&gt;&lt;a href=&quot;#django-debug-toolbar&quot; class=&quot;headerlink&quot; title=&quot;django-debug-toolbar&quot;&gt;&lt;/a&gt;django-debug-toolbar&lt;/h1&gt;&lt;p&gt;django的debugging的application。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;django-debug-toolbar&quot;&gt;&lt;a href=&quot;#django-debug-toolbar&quot; class=&quot;headerlink&quot; title=&quot;django-debug-toolbar&quot;&gt;&lt;/a&gt;django-debug-toolbar&lt;/h1&gt;&lt;p&gt;django的debugging的application。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/jazzband/django-debug-toolbar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jazzband/django-debug-toolbar&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;django-crispy-forms&quot;&gt;&lt;a href=&quot;#django-crispy-forms&quot; class=&quot;headerlink&quot; title=&quot;django-crispy-forms&quot;&gt;&lt;/a&gt;django-crispy-forms&lt;/h1&gt;&lt;p&gt;django的forms的application。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/django-crispy-forms/django-crispy-forms&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-crispy-forms/django-crispy-forms&lt;/a&gt;&lt;/p&gt;
@@ -1399,8 +1461,6 @@ $sudo service apache2 restart
 &lt;p&gt;&lt;a href=&quot;https://github.com/django-guardian/django-guardian&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-guardian/django-guardian&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;django-allauth&quot;&gt;&lt;a href=&quot;#django-allauth&quot; class=&quot;headerlink&quot; title=&quot;django-allauth&quot;&gt;&lt;/a&gt;django-allauth&lt;/h1&gt;&lt;p&gt;django的authentication的application。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/pennersr/django-allauth/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/pennersr/django-allauth/&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;python-social-auth&quot;&gt;&lt;a href=&quot;#python-social-auth&quot; class=&quot;headerlink&quot; title=&quot;python-social-auth&quot;&gt;&lt;/a&gt;python-social-auth&lt;/h1&gt;&lt;p&gt;django的authentication的application。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/omab/python-social-auth/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/omab/python-social-auth/&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;django-grappelli&quot;&gt;&lt;a href=&quot;#django-grappelli&quot; class=&quot;headerlink&quot; title=&quot;django-grappelli&quot;&gt;&lt;/a&gt;django-grappelli&lt;/h1&gt;&lt;p&gt;django的admin interface的application。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/sehmaschine/django-grappelli/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/sehmaschine/django-grappelli/&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;django-rest-framework&quot;&gt;&lt;a href=&quot;#django-rest-framework&quot; class=&quot;headerlink&quot; title=&quot;django-rest-framework&quot;&gt;&lt;/a&gt;django-rest-framework&lt;/h1&gt;&lt;p&gt;django的RESTful API的application。&lt;/p&gt;
@@ -1414,6 +1474,13 @@ $sudo service apache2 restart
 &lt;hr&gt;
 &lt;h1 id=&quot;Others&quot;&gt;&lt;a href=&quot;#Others&quot; class=&quot;headerlink&quot; title=&quot;Others&quot;&gt;&lt;/a&gt;Others&lt;/h1&gt;&lt;h2 id=&quot;django-extensions&quot;&gt;&lt;a href=&quot;#django-extensions&quot; class=&quot;headerlink&quot; title=&quot;django-extensions&quot;&gt;&lt;/a&gt;django-extensions&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/django-extensions/django-extensions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-extensions/django-extensions/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;django-filter&quot;&gt;&lt;a href=&quot;#django-filter&quot; class=&quot;headerlink&quot; title=&quot;django-filter&quot;&gt;&lt;/a&gt;django-filter&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/carltongibson/django-filter&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/carltongibson/django-filter&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;CMS-Project&quot;&gt;&lt;a href=&quot;#CMS-Project&quot; class=&quot;headerlink&quot; title=&quot;CMS Project&quot;&gt;&lt;/a&gt;CMS Project&lt;/h1&gt;&lt;h2 id=&quot;django-cms&quot;&gt;&lt;a href=&quot;#django-cms&quot; class=&quot;headerlink&quot; title=&quot;django-cms&quot;&gt;&lt;/a&gt;django-cms&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/divio/django-cms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/divio/django-cms/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;wagtail&quot;&gt;&lt;a href=&quot;#wagtail&quot; class=&quot;headerlink&quot; title=&quot;wagtail&quot;&gt;&lt;/a&gt;wagtail&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/wagtail/wagtail&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/wagtail/wagtail&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;mezzanine&quot;&gt;&lt;a href=&quot;#mezzanine&quot; class=&quot;headerlink&quot; title=&quot;mezzanine&quot;&gt;&lt;/a&gt;mezzanine&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/stephenmcd/mezzanine/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/stephenmcd/mezzanine/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;e-Commerce-Project&quot;&gt;&lt;a href=&quot;#e-Commerce-Project&quot; class=&quot;headerlink&quot; title=&quot;e-Commerce Project&quot;&gt;&lt;/a&gt;e-Commerce Project&lt;/h1&gt;&lt;h2 id=&quot;django-oscar&quot;&gt;&lt;a href=&quot;#django-oscar&quot; class=&quot;headerlink&quot; title=&quot;django-oscar&quot;&gt;&lt;/a&gt;django-oscar&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/django-oscar/django-oscar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django-oscar/django-oscar&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;django-shop&quot;&gt;&lt;a href=&quot;#django-shop&quot; class=&quot;headerlink&quot; title=&quot;django-shop&quot;&gt;&lt;/a&gt;django-shop&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/awesto/django-shop&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/awesto/django-shop&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;PM-Project&quot;&gt;&lt;a href=&quot;#PM-Project&quot; class=&quot;headerlink&quot; title=&quot;PM Project&quot;&gt;&lt;/a&gt;PM Project&lt;/h1&gt;&lt;h2 id=&quot;taiga&quot;&gt;&lt;a href=&quot;#taiga&quot; class=&quot;headerlink&quot; title=&quot;taiga&quot;&gt;&lt;/a&gt;taiga&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/taigaio&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/taigaio&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1439,7 +1506,7 @@ $sudo service apache2 restart
     <link href="http://canuxcheng.com/2016/09/20/Django/"/>
     <id>http://canuxcheng.com/2016/09/20/Django/</id>
     <published>2016-09-20T15:14:07.000Z</published>
-    <updated>2016-10-27T09:17:39.384Z</updated>
+    <updated>2017-01-03T09:09:27.845Z</updated>
     
     <content type="html">&lt;h1 id=&quot;django&quot;&gt;&lt;a href=&quot;#django&quot; class=&quot;headerlink&quot; title=&quot;django&quot;&gt;&lt;/a&gt;django&lt;/h1&gt;&lt;p&gt;django是python的web框架。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/django/django&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/django/django&lt;/a&gt;&lt;/p&gt;
@@ -1547,11 +1614,11 @@ DEBUG = False # 部署之后关闭
 
 ALLOWED_HOSTS = [] # 设置哪些域名可以访问，优先级高于web服务器，debug=false必须设置
 ALLOWED_HOSTS = [&amp;apos;&amp;apos;*&amp;apos;&amp;apos;] # 允许所有域名访问
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;静态文件：&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;静态文件:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;STATIC_URL = &amp;apos;/static/&amp;apos;
 STATIC_ROOT = os.path.join(BASE_DIR, &amp;apos;static&amp;apos;) # 项目目录新建static目录存放js/css等静态文件,collectstatic命令用来收集静态文件。
-
-MEDIA_URL = &amp;apos;/media/&amp;apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上传文件:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MEDIA_URL = &amp;apos;/media/&amp;apos;
 MEDIA_ROOT = os.path.join(BASE_DIR, &amp;apos;media&amp;apos;) # 用来存放用户上传的文件，与权限有关。
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;urls-py&quot;&gt;&lt;a href=&quot;#urls-py&quot; class=&quot;headerlink&quot; title=&quot;urls.py&quot;&gt;&lt;/a&gt;urls.py&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;from django.conf.urls import include, url
 from django.contrib import admin
@@ -1662,22 +1729,6 @@ polls/
       <category term="python" scheme="http://canuxcheng.com/tags/python/"/>
     
       <category term="django" scheme="http://canuxcheng.com/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之java.beans</title>
-    <link href="http://canuxcheng.com/2016/09/12/Java%E4%B9%8Bjava.beans/"/>
-    <id>http://canuxcheng.com/2016/09/12/Java之java.beans/</id>
-    <published>2016-09-12T20:02:23.000Z</published>
-    <updated>2016-09-13T08:02:23.429Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   

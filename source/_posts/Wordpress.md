@@ -17,9 +17,9 @@ permalink:
 
 安装依赖：
 
-    sudo apt install apache2
-    sudo apt install mysql-server
-    sudo apt install php5
+    $sudo apt install apache2
+    $sudo apt install mysql-server
+    $sudo apt install php5
 
 下载wordpress：
 
@@ -39,6 +39,18 @@ permalink:
 登陆并安装站点：
 
     http://localhost/WordPress/wp-admin/install.php
+
+***
+
+# 语言
+
+下载相应的语言版本,中文下载中文版的wordpress.
+
+然后将wordpress/wp-content/languages拷贝到英文版的wordpress/wp-content下
+
+语言包路径:
+
+    wordpress/wp-content/languages
 
 ***
 
@@ -75,3 +87,33 @@ permalink:
 ## wordpress-importer
 
 ## wordpress-move
+
+***
+
+# 主题开发
+
+404.php
+footer.php
+header.php
+front-page.php
+functions.php
+page.php
+single.php
+searchform.php
+sidebar.php
+archive.php
+comments.php
+index.php
+search.php
+
+style.css
+
+js
+
+screenshot.png
+inc
+images
+
+***
+
+# 插件开发
