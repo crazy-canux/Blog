@@ -5,7 +5,7 @@ comments: true
 date: 2016-08-03 21:57:26
 updated:
 tags:
-- reSt
+- reST
 - Sphinx
 - readthedoc
 categories:

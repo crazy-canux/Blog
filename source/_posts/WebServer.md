@@ -36,11 +36,13 @@ LNMP: Linux+nginx+mysql+php
 
     http://localhost:80
 
+***
+
 # nginx
 
 ***
 
-# 静态站点
+# Blog静态站点
 
 pelican是python开发的静态站点生成器.
 
@@ -50,7 +52,7 @@ jekyll是ruby开发的静态站点生成器.
 
 octopress是ruby开发的kekyll的升级版.
 
-# Blog/CMS系统
+# CMS系统
 
 wordpress是php开发的website, blog, app框架。
 

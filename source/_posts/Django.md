@@ -23,6 +23,8 @@ django是python的web框架。
 
 <http://python.usyiyi.cn/translate/django_182/index.html>
 
+<http://django-intro-zh.readthedocs.io/zh_CN/latest/>
+
 django遵守MVC设计模式，采用MTV框架。
 
 M: model,数据存取
@@ -33,9 +35,13 @@ V: view，展现哪些数据
 
 # 安装
 
-django的1.8(2018.4)是长期支持版。
+django1.8是长期支持版(2015.4).
 
-从1.7开始支持python3。
+django1.11是最后一个支持python2.7的长期支持版(2017.4).
+
+django2.0开始只支持python3(2018).
+
+django2.2是第一个python3的长期支持版(2019.4).
 
 全局安装：
 
@@ -174,12 +180,14 @@ django包含下列默认应用:
 静态文件:
 
     STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static') # 项目目录新建static目录存放js/css等静态文件,collectstatic命令用来收集静态文件。
+    # static目录存放js/css等静态文件,collectstatic命令用来收集静态文件。
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 上传文件:
 
     MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 用来存放用户上传的文件，与权限有关。
+    # media目录用来存放用户上传的文件，与权限有关.
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 ## urls.py
 
@@ -191,7 +199,7 @@ django包含下列默认应用:
         url(r'^admin/', include(admin.site.urls)),
         # 在项目URL添加链接到应用URL：
         # 在下面添加你的所有应用的url, include内的应用的urls需要引号.
-        url(r'^polls/', include('polls.urls', namespace='polls')),
+        url(r'^polls/', include('polls.urls')),
         ...,
     ]
 
@@ -229,23 +237,23 @@ django通过wsgi来部署，参考django的deploy。
     |- tests.py
     |- views.py
 
-> admin.py admin管理界面
-
-> models.py 模型
-
-> views.py 视图
-
-> test.py 测试
-
 > migrations 迁移文件夹
 
 > urls.py 新建的application的url
 
-> templates 新建的模板路径
+> models.py 模型
+
+> templates 新建的application的模板路径
+
+> views.py 视图
+
+> form.py 新建的application的表单
+
+> admin.py admin管理界面
+
+> test.py 测试
 
 > statics 新建的application的静态文件路径
-
-> form.py 新建的表单
 
 ***
 

@@ -12,7 +12,7 @@ tags:
 - next
 categories:
 - Web
-- NodeJS
+- Blog
 permalink:
 ---
 

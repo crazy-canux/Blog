@@ -6,8 +6,8 @@ date: 2016-12-24 23:37:09
 updated:
 tags:
 categories:
-- Python
-- Pelican
+- Web
+- Blog
 permalink:
 ---
 

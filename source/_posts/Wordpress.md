@@ -8,6 +8,7 @@ tags:
 - wordpress
 categories:
 - Web
+- CMS
 permalink:
 ---
 
@@ -90,29 +91,15 @@ permalink:
 
 ***
 
+# 设置
+
+默认的固定连接:
+
+    /index.php/%year%/%monthnum%/%day%/%postname%/
+
+***
+
 # 主题开发
-
-404.php
-footer.php
-header.php
-front-page.php
-functions.php
-page.php
-single.php
-searchform.php
-sidebar.php
-archive.php
-comments.php
-index.php
-search.php
-
-style.css
-
-js
-
-screenshot.png
-inc
-images
 
 ***
 

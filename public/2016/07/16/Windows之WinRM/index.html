@@ -90,7 +90,8 @@
 WinRM是WSMAN(WS-Management Protocol)的增强版。
 WinRM是基于SOAP的防火墙友好的远程协议。
 https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx
-windows自带winrm，但是需要设置一个listener, 默认端口59">
+WinRM设置:
+https://msdn.microsoft.com/en-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows之WinRM">
 <meta property="og:url" content="http://canuxcheng.com/2016/07/16/Windows之WinRM/index.html">
@@ -99,15 +100,17 @@ windows自带winrm，但是需要设置一个listener, 默认端口59">
 WinRM是WSMAN(WS-Management Protocol)的增强版。
 WinRM是基于SOAP的防火墙友好的远程协议。
 https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx
-windows自带winrm，但是需要设置一个listener, 默认端口59">
-<meta property="og:updated_time" content="2016-12-26T04:58:37.590Z">
+WinRM设置:
+https://msdn.microsoft.com/en-">
+<meta property="og:updated_time" content="2017-01-13T06:13:11.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows之WinRM">
 <meta name="twitter:description" content="WinRMWindows Remote Management
 WinRM是WSMAN(WS-Management Protocol)的增强版。
 WinRM是基于SOAP的防火墙友好的远程协议。
 https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx
-windows自带winrm，但是需要设置一个listener, 默认端口59">
+WinRM设置:
+https://msdn.microsoft.com/en-">
 
 
 
@@ -387,34 +390,31 @@ windows自带winrm，但是需要设置一个listener, 默认端口59">
 <p>WinRM是WSMAN(WS-Management Protocol)的增强版。</p>
 <p>WinRM是基于SOAP的防火墙友好的远程协议。</p>
 <p><a href="https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx" target="_blank" rel="external">https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx</a></p>
-<p>windows自带winrm，但是需要设置一个listener, 默认端口5985,建立一个http的连接。</p>
+<p>WinRM设置:</p>
 <p><a href="https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx" target="_blank" rel="external">https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx</a></p>
-<p>检查winrm状态：</p>
+<p>检查winrm所有配置：</p>
 <pre><code>cmd&gt; winrm get winrm/config
 </code></pre><p>快速设置winrm：</p>
 <pre><code>cmd&gt; winrm quickconfig
 cmd&gt; winrm quickconfig -transport:https
 </code></pre><p>查看listener配置：</p>
 <pre><code>cmd&gt; winrm enumerate winrm/config/listener
-</code></pre><p>使用不经加密的http配置:</p>
-<pre><code>cmd&gt; winrm set winrm/config/service @{AllowUnencrypted=&quot;true&quot;}
-</code></pre><h1 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h1><p>windows的三种网络安全协议。</p>
-<p>basic是基本的明文协议, NTLM是早期的安全协议,Kerberos是最新的安全协议.</p>
-<p>查看auth配置：</p>
-<pre><code>cmd&gt; winrm get winrm/config/client/auth
-cmd&gt; winrm get winrm/config/service/auth
-</code></pre><p>Kerberos和ntlm默认是打开的:</p>
+</code></pre><p>WinRM配置包括监听设置,协议设置,Client,Service和Winrs四部分.</p>
+<h1 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h1><p>windows的三种网络安全协议。</p>
+<p>Basic是基本的明文协议, NTLM是早期的安全协议,Kerberos是最新的安全协议.</p>
+<p>查看service的auth配置：</p>
+<pre><code>cmd&gt; winrm get winrm/config/service/auth
+</code></pre><p>service只有Negotiate和Kerberos是默认开启的:</p>
 <pre><code>Basic = false
 Certificate = false
-CredSSP = false
 Kerberos = true
 Negotiate = true
-</code></pre><p>Negotiate默认选择NTLM,除非这个应用指明使用Kerberos认证.</p>
-<p>设置Basic auth(默认关闭)：</p>
-<pre><code>cmd&gt; winrm set winrm/config/client/auth @{Basic=&quot;true&quot;}
-cmd&gt; winrm set winrm/config/service/auth @{Basic=&quot;true&quot;}
-</code></pre><p>设置CredSSP:</p>
-<pre><code>ps&gt; Enable-WSManCredSSP -Role Server -Force Set-Item -Path &quot;WSMan:\localhost\Service\Auth\CredSSP&quot; -Value $true
+CredSSP = false
+</code></pre><p>Negotiate对domain用户选择kerberos,对local用户选择NTLM.</p>
+<p>设置service的Basic和Certificate和CredSSP(默认关闭)：</p>
+<pre><code>cmd&gt; winrm set winrm/config/service/auth @{Basic=&quot;true&quot;}
+cmd&gt; winrm set winrm/config/service/auth @{Certificate=&quot;true&quot;}
+cmd&gt; winrm set winrm/config/service/auth @{CredSSP=&quot;true&quot;}
 </code></pre><h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><p>pywinrm</p>
 <p><a href="https://github.com/diyan/pywinrm" target="_blank" rel="external">https://github.com/diyan/pywinrm</a></p>
 <p>使用basic, certificate和NTLM：</p>
@@ -426,8 +426,8 @@ pip install pywinrm[kerberos]
 <pre><code>sudo apt-get install libssl-dev
 pip install pywinrm[credssp]
 </code></pre><p>transport参数:</p>
-<p>Basic and certificate(plaintext) just support local user.</p>
-<p>SSL will use certificate when used cert_pem and cert_key_pem, or revert to basic auth over https.</p>
+<p>Basic and Certificate(plaintext) just support local user.</p>
+<p>SSL will use Certificate when used cert_pem and cert_key_pem, or revert to Basic over https.</p>
 <p>NTLM support both local user and domain user, auth = ‘domain\user’</p>
 <p>CredSSP support both local user and domain user and just use https, auth = ‘domain\user’</p>
 <p>Kerberos just support domain user, auth = ‘user@domain’</p>
@@ -528,8 +528,8 @@ p.close_shell(shell_id)
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/18/PowerShell之WMI和CIM/" rel="prev" title="PowerShell之WMI和CIM">
-                PowerShell之WMI和CIM <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/18/PowerShell之RemoteManagement/" rel="prev" title="PowerShell之RemoteManagement">
+                PowerShell之RemoteManagement <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +628,7 @@ p.close_shell(shell_id)
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -636,7 +636,7 @@ p.close_shell(shell_id)
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -645,7 +645,7 @@ p.close_shell(shell_id)
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

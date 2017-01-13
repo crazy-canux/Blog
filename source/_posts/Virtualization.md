@@ -12,17 +12,19 @@ categories:
 permalink:
 ---
 
-# Vagrant
-
-# Docker
-
 ***
 
 # Kvm
 
+***
+
 # Xen(Citrix)
 
+***
+
 # HyperV(MicroSoft)
+
+***
 
 # vSphere(Vmware/Dell)
 

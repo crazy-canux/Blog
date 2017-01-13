@@ -118,7 +118,7 @@ Git安装：
 sudo apt-get install git
 yum install git
 git config (Git配置)https://git-scm.co">
-<meta property="og:updated_time" content="2016-12-27T04:26:38.967Z">
+<meta property="og:updated_time" content="2017-01-09T02:45:38.910Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT">
 <meta name="twitter:description" content="GitGIT: 分布式版本控制系统。
@@ -458,7 +458,7 @@ git config --global core.editor vim
 </code></pre><p>多配置文件：</p>
 <p>在~/.gitconfig添加include可以调用其它配置文件</p>
 <pre><code>[include]
-    path = ~/myCode/xdevops/etc/git/gitcofig
+    path = ~/myCode/pydeveloper/etc/git/gitcofig
 </code></pre><h1 id="git-remote-git-协议"><a href="#git-remote-git-协议" class="headerlink" title="git remote (git 协议)"></a>git remote (git 协议)</h1><p><a href="https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE</a></p>
 <p>git有四个协议：</p>
 <ol>
@@ -539,9 +539,9 @@ xclip -sel clip &lt; ~/.ssh/id_rsa.pub
 </ol>
 <h3 id="projcet-gitignore"><a href="#projcet-gitignore" class="headerlink" title="projcet/.gitignore"></a>projcet/.gitignore</h3><p>忽略文件</p>
 <p><a href="https://github.com/github/gitignore" target="_blank" rel="external">https://github.com/github/gitignore</a></p>
-<h3 id="project-gitattributes"><a href="#project-gitattributes" class="headerlink" title="project/.gitattributes"></a>project/.gitattributes</h3><p>github现实编程语言</p>
-<p>*.py linguist-language=Python</p>
-<p><a href="https://github.com/github/linguist" target="_blank" rel="external">https://github.com/github/linguist</a></p>
+<h3 id="project-gitattributes"><a href="#project-gitattributes" class="headerlink" title="project/.gitattributes"></a>project/.gitattributes</h3><p>github显示编程语言</p>
+<pre><code>* linguist-language=Python
+</code></pre><p><a href="https://github.com/github/linguist" target="_blank" rel="external">https://github.com/github/linguist</a></p>
 <h2 id="post-git"><a href="#post-git" class="headerlink" title="post-git"></a>post-git</h2><p>powershell的git</p>
 <p><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="external">https://github.com/dahlbyk/posh-git</a></p>
 <h2 id="git-for-windows"><a href="#git-for-windows" class="headerlink" title="git-for-windows"></a>git-for-windows</h2><p>windows的git</p>
@@ -564,11 +564,16 @@ git help -g
 git add -u # 不包括新建的文件
 git add -A # 添加working tree下的所有文件到index
 </code></pre><h2 id="commit-Record-changes-to-the-repository"><a href="#commit-Record-changes-to-the-repository" class="headerlink" title="commit     Record changes to the repository"></a>commit     Record changes to the repository</h2><pre><code>git commit -m &quot;[1.0.0.0]init repository.&quot;
-</code></pre><h2 id="bisect-Find-by-binary-search-the-change-that-introduced-a-bug"><a href="#bisect-Find-by-binary-search-the-change-that-introduced-a-bug" class="headerlink" title="bisect     Find by binary search the change that introduced a bug"></a>bisect     Find by binary search the change that introduced a bug</h2><h2 id="branch-List-create-or-delete-branches"><a href="#branch-List-create-or-delete-branches" class="headerlink" title="branch     List, create, or delete branches"></a>branch     List, create, or delete branches</h2><h2 id="blame-Show-what-revision-and-author-last-modified-each-line-of-a-file"><a href="#blame-Show-what-revision-and-author-last-modified-each-line-of-a-file" class="headerlink" title="blame      Show what revision and author last modified each line of a file"></a>blame      Show what revision and author last modified each line of a file</h2><h2 id="checkout-Checkout-a-branch-or-paths-to-the-working-tree"><a href="#checkout-Checkout-a-branch-or-paths-to-the-working-tree" class="headerlink" title="checkout   Checkout a branch or paths to the working tree"></a>checkout   Checkout a branch or paths to the working tree</h2><pre><code>$git checkout -b develop master
+</code></pre><h2 id="bisect-Find-by-binary-search-the-change-that-introduced-a-bug"><a href="#bisect-Find-by-binary-search-the-change-that-introduced-a-bug" class="headerlink" title="bisect     Find by binary search the change that introduced a bug"></a>bisect     Find by binary search the change that introduced a bug</h2><h2 id="branch-List-create-or-delete-branches"><a href="#branch-List-create-or-delete-branches" class="headerlink" title="branch     List, create, or delete branches"></a>branch     List, create, or delete branches</h2><pre><code>$git branch -m old-name new-name # 重命名
+</code></pre><h2 id="blame-Show-what-revision-and-author-last-modified-each-line-of-a-file"><a href="#blame-Show-what-revision-and-author-last-modified-each-line-of-a-file" class="headerlink" title="blame      Show what revision and author last modified each line of a file"></a>blame      Show what revision and author last modified each line of a file</h2><pre><code>$git blame filename # 查看文件的历史记录
+</code></pre><h2 id="checkout-Checkout-a-branch-or-paths-to-the-working-tree"><a href="#checkout-Checkout-a-branch-or-paths-to-the-working-tree" class="headerlink" title="checkout   Checkout a branch or paths to the working tree"></a>checkout   Checkout a branch or paths to the working tree</h2><pre><code>$git checkout -b develop master
 </code></pre><h2 id="clone-Clone-a-repository-into-a-new-directory"><a href="#clone-Clone-a-repository-into-a-new-directory" class="headerlink" title="clone      Clone a repository into a new directory"></a>clone      Clone a repository into a new directory</h2><h2 id="diff-Show-changes-between-commits-commit-and-working-tree-etc"><a href="#diff-Show-changes-between-commits-commit-and-working-tree-etc" class="headerlink" title="diff       Show changes between commits, commit and working tree, etc"></a>diff       Show changes between commits, commit and working tree, etc</h2><h2 id="fetch-Download-objects-and-refs-from-another-repository"><a href="#fetch-Download-objects-and-refs-from-another-repository" class="headerlink" title="fetch      Download objects and refs from another repository"></a>fetch      Download objects and refs from another repository</h2><h2 id="grep-Print-lines-matching-a-pattern-reinitialize-an-existing-one"><a href="#grep-Print-lines-matching-a-pattern-reinitialize-an-existing-one" class="headerlink" title="grep       Print lines matching a pattern reinitialize an existing one"></a>grep       Print lines matching a pattern reinitialize an existing one</h2><h2 id="log-Show-commit-logs"><a href="#log-Show-commit-logs" class="headerlink" title="log        Show commit logs"></a>log        Show commit logs</h2><h2 id="merge-Join-two-or-more-development-histories-together"><a href="#merge-Join-two-or-more-development-histories-together" class="headerlink" title="merge      Join two or more development histories together"></a>merge      Join two or more development histories together</h2><pre><code>$git merge --no-ff develop
-</code></pre><h2 id="mv-Move-or-rename-a-file-a-directory-or-a-symlink"><a href="#mv-Move-or-rename-a-file-a-directory-or-a-symlink" class="headerlink" title="mv         Move or rename a file, a directory, or a symlink"></a>mv         Move or rename a file, a directory, or a symlink</h2><h2 id="pull-Fetch-from-and-integrate-with-another-repository-or-a-local-branch"><a href="#pull-Fetch-from-and-integrate-with-another-repository-or-a-local-branch" class="headerlink" title="pull       Fetch from and integrate with another repository or a local branch"></a>pull       Fetch from and integrate with another repository or a local branch</h2><h2 id="push-Update-remote-refs-along-with-associated-objects"><a href="#push-Update-remote-refs-along-with-associated-objects" class="headerlink" title="push       Update remote refs along with associated objects"></a>push       Update remote refs along with associated objects</h2><h2 id="rebase-Forward-port-local-commits-to-the-updated-upstream-head"><a href="#rebase-Forward-port-local-commits-to-the-updated-upstream-head" class="headerlink" title="rebase     Forward-port local commits to the updated upstream head"></a>rebase     Forward-port local commits to the updated upstream head</h2><h2 id="reset-Reset-current-HEAD-to-the-specified-state"><a href="#reset-Reset-current-HEAD-to-the-specified-state" class="headerlink" title="reset      Reset current HEAD to the specified state"></a>reset      Reset current HEAD to the specified state</h2><pre><code>$git reset --hard origin/master
-</code></pre><h2 id="rm-Remove-files-from-the-working-tree-and-from-the-index"><a href="#rm-Remove-files-from-the-working-tree-and-from-the-index" class="headerlink" title="rm         Remove files from the working tree and from the index"></a>rm         Remove files from the working tree and from the index</h2><h2 id="revert-Revert-some-existing-commits"><a href="#revert-Revert-some-existing-commits" class="headerlink" title="revert     Revert some existing commits"></a>revert     Revert some existing commits</h2><h2 id="reflog-Manage-reflog-information"><a href="#reflog-Manage-reflog-information" class="headerlink" title="reflog     Manage reflog information"></a>reflog     Manage reflog information</h2><pre><code>$git reflog show # 查看素有git操作日
-</code></pre><h2 id="show-Show-various-types-of-objects"><a href="#show-Show-various-types-of-objects" class="headerlink" title="show       Show various types of objects"></a>show       Show various types of objects</h2><h2 id="status-Show-the-working-tree-status-tag-Create-list-delete-or-verify-a"><a href="#status-Show-the-working-tree-status-tag-Create-list-delete-or-verify-a" class="headerlink" title="status     Show the working tree status tag Create, list, delete or verify a"></a>status     Show the working tree status tag Create, list, delete or verify a</h2><h2 id="stash-Stash-the-changes-in-a-dirty-working-directory-away"><a href="#stash-Stash-the-changes-in-a-dirty-working-directory-away" class="headerlink" title="stash      Stash the changes in a dirty working directory away"></a>stash      Stash the changes in a dirty working directory away</h2><h2 id="tag-object-signed-with-GPG"><a href="#tag-object-signed-with-GPG" class="headerlink" title="tag        object signed with GPG"></a>tag        object signed with GPG</h2><pre><code>$git tag -a v1.0.0.0 -m &quot;release 1.0 version.&quot;
+</code></pre><h2 id="mv-Move-or-rename-a-file-a-directory-or-a-symlink"><a href="#mv-Move-or-rename-a-file-a-directory-or-a-symlink" class="headerlink" title="mv         Move or rename a file, a directory, or a symlink"></a>mv         Move or rename a file, a directory, or a symlink</h2><h2 id="pull-Fetch-from-and-integrate-with-another-repository-or-a-local-branch"><a href="#pull-Fetch-from-and-integrate-with-another-repository-or-a-local-branch" class="headerlink" title="pull       Fetch from and integrate with another repository or a local branch"></a>pull       Fetch from and integrate with another repository or a local branch</h2><h2 id="push-Update-remote-refs-along-with-associated-objects"><a href="#push-Update-remote-refs-along-with-associated-objects" class="headerlink" title="push       Update remote refs along with associated objects"></a>push       Update remote refs along with associated objects</h2><h2 id="rebase-Forward-port-local-commits-to-the-updated-upstream-head"><a href="#rebase-Forward-port-local-commits-to-the-updated-upstream-head" class="headerlink" title="rebase     Forward-port local commits to the updated upstream head"></a>rebase     Forward-port local commits to the updated upstream head</h2><pre><code>$git rebase -i head # 修改提交的信息
+</code></pre><h2 id="reset-Reset-current-HEAD-to-the-specified-state"><a href="#reset-Reset-current-HEAD-to-the-specified-state" class="headerlink" title="reset      Reset current HEAD to the specified state"></a>reset      Reset current HEAD to the specified state</h2><pre><code>$git reset --hard origin/master
+</code></pre><h2 id="rm-Remove-files-from-the-working-tree-and-from-the-index"><a href="#rm-Remove-files-from-the-working-tree-and-from-the-index" class="headerlink" title="rm         Remove files from the working tree and from the index"></a>rm         Remove files from the working tree and from the index</h2><h2 id="revert-Revert-some-existing-commits"><a href="#revert-Revert-some-existing-commits" class="headerlink" title="revert     Revert some existing commits"></a>revert     Revert some existing commits</h2><pre><code>$git revert head # 撤销一次merge
+</code></pre><h2 id="reflog-Manage-reflog-information"><a href="#reflog-Manage-reflog-information" class="headerlink" title="reflog     Manage reflog information"></a>reflog     Manage reflog information</h2><pre><code>$git reflog show # 查看素有git操作日
+</code></pre><h2 id="show-Show-various-types-of-objects"><a href="#show-Show-various-types-of-objects" class="headerlink" title="show       Show various types of objects"></a>show       Show various types of objects</h2><h2 id="status-Show-the-working-tree-status-tag-Create-list-delete-or-verify-a"><a href="#status-Show-the-working-tree-status-tag-Create-list-delete-or-verify-a" class="headerlink" title="status     Show the working tree status tag Create, list, delete or verify a"></a>status     Show the working tree status tag Create, list, delete or verify a</h2><pre><code>$git status
+</code></pre><h2 id="stash-Stash-the-changes-in-a-dirty-working-directory-away"><a href="#stash-Stash-the-changes-in-a-dirty-working-directory-away" class="headerlink" title="stash      Stash the changes in a dirty working directory away"></a>stash      Stash the changes in a dirty working directory away</h2><h2 id="tag-object-signed-with-GPG"><a href="#tag-object-signed-with-GPG" class="headerlink" title="tag        object signed with GPG"></a>tag        object signed with GPG</h2><pre><code>$git tag -a v1.0.0.0 -m &quot;release 1.0 version.&quot;
 </code></pre><h2 id="submodule-Initialize-update-or-inspect-submodules"><a href="#submodule-Initialize-update-or-inspect-submodules" class="headerlink" title="submodule  Initialize, update or inspect submodules"></a>submodule  Initialize, update or inspect submodules</h2><pre><code>$git submodule add &lt;repository&gt; [&lt;path&gt;]
 </code></pre>
       
@@ -632,8 +637,8 @@ git add -A # 添加working tree下的所有文件到index
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/02/C编程/" rel="prev" title="C编程">
-                C编程 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/02/Java编程之面向对象/" rel="prev" title="Java编程之面向对象">
+                Java编程之面向对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -732,7 +737,7 @@ git add -A # 添加working tree下的所有文件到index
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -740,7 +745,7 @@ git add -A # 添加working tree下的所有文件到index
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -749,7 +754,7 @@ git add -A # 添加working tree下的所有文件到index
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

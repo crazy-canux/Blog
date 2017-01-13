@@ -21,11 +21,11 @@ WinRM是基于SOAP的防火墙友好的远程协议。
 
 <https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx>
 
-windows自带winrm，但是需要设置一个listener, 默认端口5985,建立一个http的连接。
+WinRM设置:
 
 <https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx>
 
-检查winrm状态：
+检查winrm所有配置：
 
     cmd> winrm get winrm/config
 
@@ -38,39 +38,33 @@ windows自带winrm，但是需要设置一个listener, 默认端口5985,建立�
 
     cmd> winrm enumerate winrm/config/listener
 
-使用不经加密的http配置:
-
-    cmd> winrm set winrm/config/service @{AllowUnencrypted="true"}
+WinRM配置包括监听设置,协议设置,Client,Service和Winrs四部分.
 
 # 权限管理
 
 windows的三种网络安全协议。
 
-basic是基本的明文协议, NTLM是早期的安全协议,Kerberos是最新的安全协议.
+Basic是基本的明文协议, NTLM是早期的安全协议,Kerberos是最新的安全协议.
 
-查看auth配置：
+查看service的auth配置：
 
-    cmd> winrm get winrm/config/client/auth
     cmd> winrm get winrm/config/service/auth
 
-Kerberos和ntlm默认是打开的:
+service只有Negotiate和Kerberos是默认开启的:
 
     Basic = false
     Certificate = false
-    CredSSP = false
     Kerberos = true
     Negotiate = true
+    CredSSP = false
 
-Negotiate默认选择NTLM,除非这个应用指明使用Kerberos认证.
+Negotiate对domain用户选择kerberos,对local用户选择NTLM.
 
-设置Basic auth(默认关闭)：
+设置service的Basic和Certificate和CredSSP(默认关闭)：
 
-    cmd> winrm set winrm/config/client/auth @{Basic="true"}
     cmd> winrm set winrm/config/service/auth @{Basic="true"}
-
-设置CredSSP:
-
-    ps> Enable-WSManCredSSP -Role Server -Force Set-Item -Path "WSMan:\localhost\Service\Auth\CredSSP" -Value $true
+    cmd> winrm set winrm/config/service/auth @{Certificate="true"}
+    cmd> winrm set winrm/config/service/auth @{CredSSP="true"}
 
 # python
 
@@ -94,9 +88,9 @@ pywinrm
 
 transport参数:
 
-Basic and certificate(plaintext) just support local user.
+Basic and Certificate(plaintext) just support local user.
 
-SSL will use certificate when used cert_pem and cert_key_pem, or revert to basic auth over https.
+SSL will use Certificate when used cert_pem and cert_key_pem, or revert to Basic over https.
 
 NTLM support both local user and domain user, auth = 'domain\\user'
 

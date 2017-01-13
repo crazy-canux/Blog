@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="powershell,wmi,cim," />
+  <meta name="keywords" content="fabric," />
 
 
 
@@ -86,37 +86,16 @@
 
 
 
-<meta name="description" content="WMIGet-WmiObject
-Remove-WmiObject
-Invoke-WmiMethod
-Register-WmiEvent
-Set-WmiInstance
-
-# 用powershell跑一个wql。
-Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;winRM&amp;apos;&amp;quot; | F">
+<meta name="description" content="Shell/PowerShell、Vim/Git/Tmux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PowerShell之WMI和CIM">
-<meta property="og:url" content="http://canuxcheng.com/2016/07/18/PowerShell之WMI和CIM/index.html">
+<meta property="og:title" content="Operation之Fabric">
+<meta property="og:url" content="http://canuxcheng.com/2017/01/12/Operation之Fabric/index.html">
 <meta property="og:site_name" content="Canux's Blog">
-<meta property="og:description" content="WMIGet-WmiObject
-Remove-WmiObject
-Invoke-WmiMethod
-Register-WmiEvent
-Set-WmiInstance
-
-# 用powershell跑一个wql。
-Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;winRM&amp;apos;&amp;quot; | F">
-<meta property="og:updated_time" content="2016-11-15T02:08:59.069Z">
+<meta property="og:description" content="Shell/PowerShell、Vim/Git/Tmux">
+<meta property="og:updated_time" content="2017-01-13T02:25:15.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PowerShell之WMI和CIM">
-<meta name="twitter:description" content="WMIGet-WmiObject
-Remove-WmiObject
-Invoke-WmiMethod
-Register-WmiEvent
-Set-WmiInstance
-
-# 用powershell跑一个wql。
-Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;winRM&amp;apos;&amp;quot; | F">
+<meta name="twitter:title" content="Operation之Fabric">
+<meta name="twitter:description" content="Shell/PowerShell、Vim/Git/Tmux">
 
 
 
@@ -137,10 +116,10 @@ Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;
 
 
 
-  <link rel="canonical" href="http://canuxcheng.com/2016/07/18/PowerShell之WMI和CIM/"/>
+  <link rel="canonical" href="http://canuxcheng.com/2017/01/12/Operation之Fabric/"/>
 
 
-  <title> PowerShell之WMI和CIM | Canux's Blog </title>
+  <title> Operation之Fabric | Canux's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="en">
@@ -326,7 +305,7 @@ Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;
             
             
               
-                PowerShell之WMI和CIM
+                Operation之Fabric
               
             
           </h1>
@@ -338,8 +317,8 @@ Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T02:54:39-04:00" content="2016-07-18">
-              2016-07-18
+            <time itemprop="dateCreated" datetime="2017-01-12T08:18:33-05:00" content="2017-01-12">
+              2017-01-12
             </time>
           </span>
 
@@ -352,8 +331,8 @@ Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index">
-                    <span itemprop="name">Windows</span>
+                  <a href="/categories/Operation/" itemprop="url" rel="index">
+                    <span itemprop="name">Operation</span>
                   </a>
                 </span>
 
@@ -364,8 +343,8 @@ Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Windows/PowerShell/" itemprop="url" rel="index">
-                    <span itemprop="name">PowerShell</span>
+                  <a href="/categories/Operation/Fabric/" itemprop="url" rel="index">
+                    <span itemprop="name">Fabric</span>
                   </a>
                 </span>
 
@@ -380,8 +359,8 @@ Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/18/PowerShell之WMI和CIM/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/PowerShell之WMI和CIM/" itemprop="commentsCount"></span>
+                <a href="/2017/01/12/Operation之Fabric/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/12/Operation之Fabric/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -404,28 +383,7 @@ Get-WmiObject -Query &amp;quot;select * from win32_service where name=&amp;apos;
       
 
       
-        <h1 id="WMI"><a href="#WMI" class="headerlink" title="WMI"></a>WMI</h1><pre><code>Get-WmiObject
-Remove-WmiObject
-Invoke-WmiMethod
-Register-WmiEvent
-Set-WmiInstance
-
-# 用powershell跑一个wql。
-Get-WmiObject -Query &quot;select * from win32_service where name=&apos;winRM&apos;&quot; | Format-List -Property Name,status
-</code></pre><h1 id="CIM"><a href="#CIM" class="headerlink" title="CIM"></a>CIM</h1><p>powershell建议使用CIM。</p>
-<pre><code>Get-CimClass
-Get-CimInstance
-Get-CimSession
-Get-CimAssociatedInstance
-Invoke-CimMethod
-New-CimInstance
-New-CimSession
-New-CimSessionOption
-Register-CimIndicationEvent
-Remove-CimInstance
-Remove-CimSession
-Set-CimInstance
-</code></pre>
+        
       
     </div>
 
@@ -468,11 +426,7 @@ Set-CimInstance
       
         <div class="post-tags">
           
-            <a href="/tags/powershell/" rel="tag">#powershell</a>
-          
-            <a href="/tags/wmi/" rel="tag">#wmi</a>
-          
-            <a href="/tags/cim/" rel="tag">#cim</a>
+            <a href="/tags/fabric/" rel="tag">#fabric</a>
           
         </div>
       
@@ -481,17 +435,13 @@ Set-CimInstance
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/16/Windows之WinRM/" rel="next" title="Windows之WinRM">
-                <i class="fa fa-chevron-left"></i> Windows之WinRM
+              <a href="/2017/01/12/Operation之Ansible/" rel="next" title="Operation之Ansible">
+                <i class="fa fa-chevron-left"></i> Operation之Ansible
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/25/Develop/" rel="prev" title="Develop">
-                Develop <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,8 +493,8 @@ Set-CimInstance
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/18/PowerShell之WMI和CIM/"
-           data-title="PowerShell之WMI和CIM" data-url="http://canuxcheng.com/2016/07/18/PowerShell之WMI和CIM/">
+      <div class="ds-thread" data-thread-key="2017/01/12/Operation之Fabric/"
+           data-title="Operation之Fabric" data-url="http://canuxcheng.com/2017/01/12/Operation之Fabric/">
       </div>
     
   </div>
@@ -589,7 +539,7 @@ Set-CimInstance
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -597,7 +547,7 @@ Set-CimInstance
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -606,7 +556,7 @@ Set-CimInstance
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -712,7 +662,7 @@ Set-CimInstance
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WMI"><span class="nav-number">1.</span> <span class="nav-text">WMI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CIM"><span class="nav-number">2.</span> <span class="nav-text">CIM</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
         </section>

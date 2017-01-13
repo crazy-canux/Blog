@@ -86,31 +86,31 @@
 
 
 
-<meta name="description" content="PowershellConsole: command line interface
+<meta name="description" content="PowerShellConsole: command line interface
 ISE: script editor and console combination
 Version:
 2.0,3.0,4.0,5.0
-C:\windows\System32\powershell 存放64位powershell
-C:\windows\SysWOW64\powershell 存放32位powersh">
+C:\Windows\System32\powershell 存放64位powershell
+C:\Windows\SysWOW64\powershell 存放32位powersh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PowerShell">
 <meta property="og:url" content="http://canuxcheng.com/2016/04/25/PowerShell/index.html">
 <meta property="og:site_name" content="Canux's Blog">
-<meta property="og:description" content="PowershellConsole: command line interface
+<meta property="og:description" content="PowerShellConsole: command line interface
 ISE: script editor and console combination
 Version:
 2.0,3.0,4.0,5.0
-C:\windows\System32\powershell 存放64位powershell
-C:\windows\SysWOW64\powershell 存放32位powersh">
-<meta property="og:updated_time" content="2016-12-16T05:36:21.721Z">
+C:\Windows\System32\powershell 存放64位powershell
+C:\Windows\SysWOW64\powershell 存放32位powersh">
+<meta property="og:updated_time" content="2017-01-05T08:13:45.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PowerShell">
-<meta name="twitter:description" content="PowershellConsole: command line interface
+<meta name="twitter:description" content="PowerShellConsole: command line interface
 ISE: script editor and console combination
 Version:
 2.0,3.0,4.0,5.0
-C:\windows\System32\powershell 存放64位powershell
-C:\windows\SysWOW64\powershell 存放32位powersh">
+C:\Windows\System32\powershell 存放64位powershell
+C:\Windows\SysWOW64\powershell 存放32位powersh">
 
 
 
@@ -398,12 +398,12 @@ C:\windows\SysWOW64\powershell 存放32位powersh">
       
 
       
-        <h1 id="Powershell"><a href="#Powershell" class="headerlink" title="Powershell"></a>Powershell</h1><p>Console: command line interface</p>
+        <h1 id="PowerShell"><a href="#PowerShell" class="headerlink" title="PowerShell"></a>PowerShell</h1><p>Console: command line interface</p>
 <p>ISE: script editor and console combination</p>
 <p>Version:</p>
 <p>2.0,3.0,4.0,5.0</p>
-<p>C:\windows\System32\powershell 存放64位powershell</p>
-<p>C:\windows\SysWOW64\powershell 存放32位powershell</p>
+<p>C:\Windows\System32\powershell 存放64位powershell</p>
+<p>C:\Windows\SysWOW64\powershell 存放32位powershell</p>
 <pre><code>&gt;$PSVersionTable
 &gt;$HOST
 </code></pre><p>Install/Update:</p>
@@ -605,7 +605,7 @@ Param(
 <pre><code>Write-Verbose &quot;print verbose information.&quot; # 打印调试信息
 
 Write-Debug &quot;print debug information.&quot; # 使用-Debug进入debug模式，exit退出。
-</code></pre><p>调试相关系统变脸：</p>
+</code></pre><p>调试相关系统变量：</p>
 <pre><code>$ErrorActionPreference=&apos;Continue&apos; # 调试的系统变量，默认报错继续执行
 
 $DebugPreference=&apos;SilentlyContinue&apos;
@@ -626,41 +626,6 @@ Finally {
 </code></pre><p>断点调试：</p>
 <pre><code>$Condition = {if ($a -is [int] -and $a -gt 100) {Write-Host &quot;`$a was modified&quot;}}
 $Breakpoint = Set-PSBreakpoint -Variable a -Mode Write -Script $psise.CurrentFile.FullPath -Action $Condition
-</code></pre><hr>
-<h1 id="远程处理"><a href="#远程处理" class="headerlink" title="远程处理"></a>远程处理</h1><p>远程连接: 用RPC等方法，在发起远程连接的机器上执行命令.</p>
-<p>远程处理：远程处理用winrm等方法，在远程机器上执行命令.</p>
-<p>一对一远程处理:</p>
-<p>类似于linux的ssh。</p>
-<pre><code>Enter-PSSession -ComputerName name
-...
-Exit-PSSession
-</code></pre><p>一对多远程处理:</p>
-<p>同时远程到多台机器执行命令或脚本。</p>
-<p>Invoke-Command一次创建一个连接对象，返回PSComputerName属性，执行完后就关闭连接。</p>
-<pre><code>Invoke-Command -ComputerName name1,name2 -ScriptBlock {command1;command2}
-
-Invoke-Command -ComputerName name1,name2 -FilePath filepath
-
-Invoke-Command -ComputerName (Get-Content hosts.txt) ...
-</code></pre><p>通过argumentlist把本地的参数传给远程的命令:</p>
-<pre><code>$lvar1=&quot;value1&quot;
-$lvar2=&quot;value2&quot;
-Invoke-Command -ComputerName name
--ScriptBlock {
-Param($var1, $var2)
-...
-}
--ArgumentList $lvar1, $lvar2
-</code></pre><p>通过\$using:传本地参数到远程机器：</p>
-<pre><code>$var1=&quot;value1&quot;
-Invoke-Command -ComputerName name
--ScriptBlock {
-... $using:var1
-}
-</code></pre><p>创建持久的远程处理：</p>
-<pre><code>$session1=New-PSSession -ComputerName server1
-Enter-PSSession -Session $session1 ...
-Invoke-Command -Session $session1 ...
 </code></pre>
       
     </div>
@@ -823,7 +788,7 @@ Invoke-Command -Session $session1 ...
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -831,7 +796,7 @@ Invoke-Command -Session $session1 ...
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -840,7 +805,7 @@ Invoke-Command -Session $session1 ...
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -946,7 +911,7 @@ Invoke-Command -Session $session1 ...
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Powershell"><span class="nav-number">1.</span> <span class="nav-text">Powershell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell相关项目"><span class="nav-number">2.</span> <span class="nav-text">powershell相关项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#win32-openssh"><span class="nav-number">2.1.</span> <span class="nav-text">win32-openssh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell命令"><span class="nav-number">3.</span> <span class="nav-text">powershell命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell-script"><span class="nav-number">4.</span> <span class="nav-text">powershell script</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">5.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">6.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">6.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">6.2.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典："><span class="nav-number">6.3.</span> <span class="nav-text">字典：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number">7.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制流"><span class="nav-number">8.</span> <span class="nav-text">控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">9.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">10.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常和错误处理"><span class="nav-number">11.</span> <span class="nav-text">异常和错误处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程处理"><span class="nav-number">12.</span> <span class="nav-text">远程处理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PowerShell"><span class="nav-number">1.</span> <span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell相关项目"><span class="nav-number">2.</span> <span class="nav-text">powershell相关项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#win32-openssh"><span class="nav-number">2.1.</span> <span class="nav-text">win32-openssh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell命令"><span class="nav-number">3.</span> <span class="nav-text">powershell命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell-script"><span class="nav-number">4.</span> <span class="nav-text">powershell script</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">5.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">6.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">6.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">6.2.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典："><span class="nav-number">6.3.</span> <span class="nav-text">字典：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number">7.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制流"><span class="nav-number">8.</span> <span class="nav-text">控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">9.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">10.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常和错误处理"><span class="nav-number">11.</span> <span class="nav-text">异常和错误处理</span></a></li></ol></div>
             
           </div>
         </section>

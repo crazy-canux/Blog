@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://canuxcheng.com/2016/06/21/Python总结/index.html">
 <meta property="og:site_name" content="Canux's Blog">
 <meta property="og:description" content="python项目结构.|– AUTHORS.rst|– README.rst|– CONTRIBUTING.rst|– LICENSE|– project    项目源代码目录    |– init.py 包文件    |– tests      用来存放测试相关的文件        |– init.py.py 包文件|– bin        //用来存放将被setup.py安装的二进制脚本|–">
-<meta property="og:updated_time" content="2016-10-23T14:09:48.798Z">
+<meta property="og:updated_time" content="2017-01-06T05:09:31.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python总结">
 <meta name="twitter:description" content="python项目结构.|– AUTHORS.rst|– README.rst|– CONTRIBUTING.rst|– LICENSE|– project    项目源代码目录    |– init.py 包文件    |– tests      用来存放测试相关的文件        |– init.py.py 包文件|– bin        //用来存放将被setup.py安装的二进制脚本|–">
@@ -390,16 +390,28 @@
 </ol>
 <p>需要安装和导入才能使用的。</p>
 <p>python代码是对外部库的补充。</p>
+<hr>
 <h1 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h1><ul>
 <li><p>with as上下文管理</p>
 </li>
 <li><p>迭代器</p>
 </li>
 </ul>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><ul>
+<li><p>静态方法</p>
+</li>
+<li><p>类方法</p>
+</li>
+<li><p>抽象方法</p>
+</li>
+</ul>
+<h1 id="函数和函数式编程"><a href="#函数和函数式编程" class="headerlink" title="函数和函数式编程"></a>函数和函数式编程</h1><ul>
 <li><p>lambda与匿名函数</p>
 </li>
 <li><p>global变量</p>
+</li>
+<li><p>装饰器</p>
+<p>  装饰器本质就是函数，这个函数接受其它函数作为参数，并将其以一个新的修改后的函数进行替换。</p>
 </li>
 <li><p>列表表达式</p>
 <p>  使用中括号，列表表达式返回一个列表。</p>
@@ -415,19 +427,15 @@
 generator.next() # 获取下一个值
 </code></pre></li>
 <li><p>生成器与yield</p>
+<p>  任何使用yield的函数都称为生成器。</p>
 </li>
-</ul>
-<p>任何使用yield的函数都称为生成器。</p>
-<ul>
 <li><p>协程</p>
 </li>
 <li><p>协程与yield</p>
 </li>
-<li><p>装饰器</p>
-<p>  装饰器本质就是函数，这个函数接受其它函数作为参数，并将其以一个新的修改后的函数进行替换。</p>
-</li>
 </ul>
-<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><h1 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h1><h2 id="python2"><a href="#python2" class="headerlink" title="python2"></a>python2</h2><p>python2中的str和unicode是两种不同的类.</p>
+<hr>
+<h1 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h1><h2 id="python2"><a href="#python2" class="headerlink" title="python2"></a>python2</h2><p>python2中的str和unicode是两种不同的类.</p>
 <p>str存储的是已经编码的字节序列，输出时看到的每个字节用16进制表示，以\x开头，每个汉字占用三个字节长度。</p>
 <p>unicode存储的是编码前的字符，输出时看到的以\u开头，每个汉字占用一个长度。</p>
 <p>str类型可以通过decode()方法转化为unicode对象。</p>
@@ -501,8 +509,8 @@ print(sys.getdefaultencoding())
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/21/Python编程之面向对象/" rel="next" title="Python编程之面向对象">
-                <i class="fa fa-chevron-left"></i> Python编程之面向对象
+              <a href="/2016/06/21/Python编程/" rel="next" title="Python编程">
+                <i class="fa fa-chevron-left"></i> Python编程
               </a>
             
           </div>
@@ -609,7 +617,7 @@ print(sys.getdefaultencoding())
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -617,7 +625,7 @@ print(sys.getdefaultencoding())
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -626,7 +634,7 @@ print(sys.getdefaultencoding())
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -732,7 +740,7 @@ print(sys.getdefaultencoding())
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python项目结构"><span class="nav-number">1.</span> <span class="nav-text">python项目结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python的可用接口"><span class="nav-number">2.</span> <span class="nav-text">python的可用接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制流"><span class="nav-number">3.</span> <span class="nav-text">控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">5.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编码"><span class="nav-number">6.</span> <span class="nav-text">编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python2"><span class="nav-number">6.1.</span> <span class="nav-text">python2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python3"><span class="nav-number">6.2.</span> <span class="nav-text">python3</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python项目结构"><span class="nav-number">1.</span> <span class="nav-text">python项目结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python的可用接口"><span class="nav-number">2.</span> <span class="nav-text">python的可用接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制流"><span class="nav-number">3.</span> <span class="nav-text">控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">4.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数和函数式编程"><span class="nav-number">5.</span> <span class="nav-text">函数和函数式编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编码"><span class="nav-number">6.</span> <span class="nav-text">编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python2"><span class="nav-number">6.1.</span> <span class="nav-text">python2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python3"><span class="nav-number">6.2.</span> <span class="nav-text">python3</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -63,7 +63,7 @@ git配置：
 在~/.gitconfig添加include可以调用其它配置文件
 
     [include]
-        path = ~/myCode/xdevops/etc/git/gitcofig
+        path = ~/myCode/pydeveloper/etc/git/gitcofig
 
 # git remote (git 协议)
 
@@ -185,9 +185,9 @@ github的windows版本包含windows的git和对powershell的支持
 
 ### project/.gitattributes
 
-github现实编程语言
+github显示编程语言
 
-*.py linguist-language=Python
+    * linguist-language=Python
 
 <https://github.com/github/linguist>
 
@@ -238,7 +238,11 @@ git的结构：
 
 ## branch     List, create, or delete branches
 
+    $git branch -m old-name new-name # 重命名
+
 ## blame      Show what revision and author last modified each line of a file
+
+    $git blame filename # 查看文件的历史记录
 
 ## checkout   Checkout a branch or paths to the working tree
 
@@ -266,6 +270,8 @@ git的结构：
 
 ## rebase     Forward-port local commits to the updated upstream head
 
+    $git rebase -i head # 修改提交的信息
+
 ## reset      Reset current HEAD to the specified state
 
     $git reset --hard origin/master
@@ -274,6 +280,8 @@ git的结构：
 
 ## revert     Revert some existing commits
 
+    $git revert head # 撤销一次merge
+
 ## reflog     Manage reflog information
 
     $git reflog show # 查看素有git操作日
@@ -281,6 +289,8 @@ git的结构：
 ## show       Show various types of objects
 
 ## status     Show the working tree status tag Create, list, delete or verify a
+
+    $git status
 
 ## stash      Stash the changes in a dirty working directory away
 

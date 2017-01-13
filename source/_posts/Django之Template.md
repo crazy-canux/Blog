@@ -118,23 +118,29 @@ for标签：
     list = ['val1', 'val2', 'val3']
     return render(request, 'index.html', {'list': 'list'})
 
+    ```html
     {% for i in list %}
     {{ i }}
     {% endfor %}
+    ```
 
 遍历字典：
 
+    ```html
     {% for key, value in dict.items %}
     {{ key }}: {{ value }}
     {% endfor %}
+    ```
 
 empty列表可能为空：
 
+    ```html
     {% for i in list %}
     ...
     {% empty %}
     ...
     {% endfor %}
+    ```
 
 reversed反向循环：
 
@@ -152,11 +158,13 @@ for循环有用的变量：
 
 if标签：
 
+    ```html
     {% if expression %}
     ...
     {% else %}
     ...
     {% endif %}
+    ```
 
 if可用的布尔操作符：
 
@@ -216,9 +224,11 @@ block标签：
 
 在底层模板定义一些通用的内容，block标签可以被子模板覆盖。
 
+    ```html
     {% block XXX %}
     This is default content
     {% endblock %}}
+    ```
 
 extends标签：
 
@@ -228,10 +238,12 @@ extends标签必须放在子模板第一行。
 
 extends用来调用底层的模板，然后修改block标签内容。
 
+    ```html
     {% extends "XXX.html"/variable %}
     {% block XXX %}
     This is rewrite content
     {% endblock %}
+    ```
 
 block.super:
 
@@ -410,17 +422,18 @@ tz过滤器：
 
 单行注释：
 
+    ```html
     {# this is single line comment #}
+    ```
 
 多行注释：
 
-也可以用comment标签表示多行注释。
-
+    ```html
     {% comment %}
     line1
     line2
-    ...
     {% endcomment %}
+    ```
 
 # 自动html转义
 
@@ -448,7 +461,9 @@ autoescape标签有off和on两个参数，表示关闭和打开自动转义。
 
 父模板中的autoescape可以被子模板继承，也可以被include标签包含的模板继承。
 
+    ```html
     {% autoescape off %}
     {{ name }}
     {% endautoescape %}
+    ```
 

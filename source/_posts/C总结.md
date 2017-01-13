@@ -41,10 +41,40 @@ XPG
 
 SUS
 
-### Linux的标准C库glibc：
+# Linux的标准C库glibc：
 
 遵循ISO C11 和 POSIX.1-2008。
 
 还包括一些其它标准。
 
 关于ISO C 和 POSIX参考另外两篇博文。
+
+# C注释
+
+单行注释：
+
+    // comment
+
+    /* comment */
+
+多行注释：
+
+    /*
+     * comment1
+     * commenet2
+     */
+
+# 文档
+
+C程序可以用doxygen从程序中提取文档。
+
+文档注释：
+
+    /**
+     * @file
+     * @brief
+     * @author
+     * @date
+     * @version
+     * @copyright
+     */

@@ -25,10 +25,6 @@ KeePassX
 
 <https://github.com/keepassx/keepassx>
 
-# ansible
-
-# fabric
-
 # redmine
 
 # dokuwiki

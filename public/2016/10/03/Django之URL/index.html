@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Canux, CHENG, Python, Linux, Django" />
+  <meta name="keywords" content="URL," />
 
 
 
@@ -104,7 +104,7 @@ ROOT_URLCONF，在settings.py中设置。
 寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。
 dnango依次匹配每个URL模式，在第一个匹配停下。
 一旦一个正则表达式匹配，django就调用对应的视图，视图获得Ht">
-<meta property="og:updated_time" content="2016-12-19T04:19:50.232Z">
+<meta property="og:updated_time" content="2017-01-09T07:51:25.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django之URL">
 <meta name="twitter:description" content="urls.pyfrom django.conf.urls import url
@@ -410,10 +410,24 @@ dnango依次匹配每个URL模式，在第一个匹配停下。
 <li>一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。</li>
 <li>如果没有匹配到或者过程跑出异常，django调用合适的错误处理。</li>
 </ol>
-<p>将应用的视图映射到URL：</p>
-<p>需要在应用目录新建urls.py文件,然后在项目的url中包含应用的url。</p>
+<h1 id="项目的URL"><a href="#项目的URL" class="headerlink" title="项目的URL"></a>项目的URL</h1><p>项目的URL主要用来包含应用的URL以及全局的URL:</p>
+<pre><code>from django.conf.urls import include, url
+from django.contrib import admin
+
+urlpatterns = [
+    # 默认的项目的admin的url
+    url(r&apos;^admin/&apos;, include(admin.site.urls)),
+
+    # 在项目URL添加链接到应用URL：
+    # 在下面添加你的所有应用的url,
+    include内的应用的urls需要引号.
+    url(r&apos;^polls/&apos;, include(&apos;polls.urls&apos;)),
+    ...,
+]
+</code></pre><h1 id="应用的URL"><a href="#应用的URL" class="headerlink" title="应用的URL"></a>应用的URL</h1><p>将应用的视图映射到URL,需要在应用目录新建urls.py文件,然后在项目的url中包含应用的url。</p>
 <p>urlpatterns是url()实例类型的python列表。</p>
-<pre><code>from . import views
+<pre><code>from django.conf.urls import url
+from . import views
 
 urlpatterns = [
     # views内的内容不要引号。
@@ -422,22 +436,19 @@ urlpatterns = [
     url(r&apos;^$&apos;, views.IndexView.as_view(), name=&apos;index&apos;),
     ...,
 ]
-</code></pre><p>没有命名的组：</p>
-<p>视图函数只有request参数，匹配的正则表达式作为位置参数。</p>
+</code></pre><h1 id="没有命名的组"><a href="#没有命名的组" class="headerlink" title="没有命名的组"></a>没有命名的组</h1><p>视图函数只有request参数，匹配的正则表达式作为位置参数。</p>
 <pre><code>url(r&apos;^pattern1/pattern2/$&apos;, views.index, name=&apos;index&apos;),
 
 def index(request):
     ...
-</code></pre><p>命名组：</p>
-<p>视图函数除了request参数还有关键字参数，匹配的命名表达式组作为关键字参数,覆盖默认的关键字参数。</p>
+</code></pre><h1 id="命名组"><a href="#命名组" class="headerlink" title="命名组"></a>命名组</h1><p>视图函数除了request参数还有关键字参数，匹配的命名表达式组作为关键字参数,覆盖默认的关键字参数。</p>
 <p>使用命名的正则表达式组： (?P<name>pattern)</name></p>
 <p>name就是关键字参数。</p>
 <pre><code>url(r&apos;^pattern1/(?P&lt;name&gt;pattern)/pattern2/$), views.index, name=&apos;index),
 
 def index(request, name):
     ...
-</code></pre><p>错误处理：</p>
-<p>django会调用一个错误处理视图处理异常。</p>
+</code></pre><h1 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h1><p>django会调用一个错误处理视图处理异常。</p>
 <ol>
 <li>handler404 页面没找到</li>
 <li>handler500 服务器错误</li>
@@ -489,6 +500,12 @@ handler400 = &apos;mysite.views.your_custom_bad_request_view&apos;
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/URL/" rel="tag">#URL</a>
+          
+        </div>
       
 
       
@@ -603,7 +620,7 @@ handler400 = &apos;mysite.views.your_custom_bad_request_view&apos;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -611,7 +628,7 @@ handler400 = &apos;mysite.views.your_custom_bad_request_view&apos;
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -620,7 +637,7 @@ handler400 = &apos;mysite.views.your_custom_bad_request_view&apos;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -726,7 +743,7 @@ handler400 = &apos;mysite.views.your_custom_bad_request_view&apos;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#urls-py"><span class="nav-number">1.</span> <span class="nav-text">urls.py</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#urls-py"><span class="nav-number">1.</span> <span class="nav-text">urls.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目的URL"><span class="nav-number">2.</span> <span class="nav-text">项目的URL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用的URL"><span class="nav-number">3.</span> <span class="nav-text">应用的URL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#没有命名的组"><span class="nav-number">4.</span> <span class="nav-text">没有命名的组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命名组"><span class="nav-number">5.</span> <span class="nav-text">命名组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误处理"><span class="nav-number">6.</span> <span class="nav-text">错误处理</span></a></li></ol></div>
             
           </div>
         </section>

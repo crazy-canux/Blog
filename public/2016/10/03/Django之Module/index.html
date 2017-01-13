@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,django," />
+  <meta name="keywords" content="django,python," />
 
 
 
@@ -89,11 +89,10 @@
 <meta name="description" content="models.pyfrom django.db import models
 django模型是和数据库关联的，代码放在models.py，数据库信息在settings.py中统一配置即可。
 每个模型对应数据库唯一的一张表，是django.db.models.Model的子类。
+每个模型实例代表数据库中的一条特定记录.
 模型的每个属性都表示为数据库中的一个字段。
 
-在项目的settings.py中激活应用，并设置数据库相关参数。
-
-让dja">
+在项目的settings.py中激">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django之Module">
 <meta property="og:url" content="http://canuxcheng.com/2016/10/03/Django之Module/index.html">
@@ -101,22 +100,20 @@ django模型是和数据库关联的，代码放在models.py，数据库信息�
 <meta property="og:description" content="models.pyfrom django.db import models
 django模型是和数据库关联的，代码放在models.py，数据库信息在settings.py中统一配置即可。
 每个模型对应数据库唯一的一张表，是django.db.models.Model的子类。
+每个模型实例代表数据库中的一条特定记录.
 模型的每个属性都表示为数据库中的一个字段。
 
-在项目的settings.py中激活应用，并设置数据库相关参数。
-
-让dja">
-<meta property="og:updated_time" content="2016-10-13T07:51:31.501Z">
+在项目的settings.py中激">
+<meta property="og:updated_time" content="2017-01-11T08:53:42.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django之Module">
 <meta name="twitter:description" content="models.pyfrom django.db import models
 django模型是和数据库关联的，代码放在models.py，数据库信息在settings.py中统一配置即可。
 每个模型对应数据库唯一的一张表，是django.db.models.Model的子类。
+每个模型实例代表数据库中的一条特定记录.
 模型的每个属性都表示为数据库中的一个字段。
 
-在项目的settings.py中激活应用，并设置数据库相关参数。
-
-让dja">
+在项目的settings.py中激">
 
 
 
@@ -407,6 +404,7 @@ django模型是和数据库关联的，代码放在models.py，数据库信息�
         <h1 id="models-py"><a href="#models-py" class="headerlink" title="models.py"></a>models.py</h1><pre><code>from django.db import models
 </code></pre><p>django模型是和数据库关联的，代码放在models.py，数据库信息在settings.py中统一配置即可。</p>
 <p>每个模型对应数据库唯一的一张表，是django.db.models.Model的子类。</p>
+<p>每个模型实例代表数据库中的一条特定记录.</p>
 <p>模型的每个属性都表示为数据库中的一个字段。</p>
 <ul>
 <li><p>在项目的settings.py中激活应用，并设置数据库相关参数。</p>
@@ -422,21 +420,26 @@ django模型是和数据库关联的，代码放在models.py，数据库信息�
 <pre><code>$python manage.py migrate
 </code></pre></li>
 </ul>
+<hr>
 <h1 id="模型的字段类型和字段选项"><a href="#模型的字段类型和字段选项" class="headerlink" title="模型的字段类型和字段选项"></a>模型的字段类型和字段选项</h1><p>模型的每个属性都表示为数据库的一个字段,是Field子类的某个实例。</p>
 <p>模型的字段还有一些选项。</p>
-<p>模型字段类型和选项参考：</p>
-<p><a href="http://python.usyiyi.cn/documents/django_182/ref/models/fields.html#common-model-field-options" target="_blank" rel="external">http://python.usyiyi.cn/documents/django_182/ref/models/fields.html#common-model-field-options</a></p>
 <p>字段命名规则：</p>
 <ol>
 <li>不能是python的保留关键字。</li>
 <li>字段名中连续的下划线不能超过一个。</li>
 </ol>
-<p>字段的类型都是Field类的子类：</p>
+<p>访问其它应用的模型,导入即可：</p>
+<pre><code>from &lt;other-aplication&gt;.models import &lt;module-name&gt;
+</code></pre><p>模型字段类型和选项参考：</p>
+<p><a href="http://python.usyiyi.cn/documents/django_182/ref/models/fields.html#common-model-field-options" target="_blank" rel="external">http://python.usyiyi.cn/documents/django_182/ref/models/fields.html#common-model-field-options</a></p>
+<h2 id="模型字段类型"><a href="#模型字段类型" class="headerlink" title="模型字段类型"></a>模型字段类型</h2><p>字段的类型都是Field类的子类：</p>
 <p>每个字段都接受一个可选的位置参数(一般是第一个），叫字段的自述名,如果不指定就默认是字段名字（下划线换成空格）。</p>
+<p>自增字段:</p>
 <pre><code>AutoField
 # 默认django会每个模型添加一个自增主键字段,如果你显示设置一个自增主键字段就不会默认再添加,每个模型只能有一个主键字段。
 # id = models.AutoField(primary_key=True)
-BigIntegerField
+</code></pre><p>普通字段:</p>
+<pre><code>BigIntegerField
 BinaryField
 BooleanField
 CharField
@@ -462,36 +465,34 @@ TextField
 TimeField
 URLField
 UUIDField
-</code></pre><p>django定义了一系列字段类型描述数据库之间的关联:</p>
+</code></pre><p>关系字段:</p>
+<p>django定义了一系列字段类型描述数据库之间的关联:</p>
 <p>这三个字段要求第一个参数是模型类，用verbose_name选项才能指定自述名。</p>
 <pre><code>ForeignKey 定义多对一关系
 OneToOneField 定义一对一关系
 ManyToManyField 定义多对多关系
-</code></pre><p>django定义的字段的通用的选项：</p>
+</code></pre><h2 id="模型字段选项"><a href="#模型字段选项" class="headerlink" title="模型字段选项"></a>模型字段选项</h2><p>django定义的字段的通用的选项：</p>
 <p>每个字段都有特定的选项，也有通用的选项,特定参数参考文档。</p>
-<pre><code>null
-blank
-choices
-default
-help_text
-primary_key
-unique
-db_column
-db_index
-db_tablespace
-editable
-error_messages
-unique_for_date
-unique_for_month
-unique_for_year
-verbose_name
-validators
-</code></pre><p>访问其它应用的模型,导入即可：</p>
-<pre><code>from &lt;other-aplication&gt;.models import &lt;module-name&gt;
-</code></pre><h1 id="模型元数据"><a href="#模型元数据" class="headerlink" title="模型元数据"></a>模型元数据</h1><p>使用内部class Meta定义模型的元数据。</p>
+<pre><code>Field.null    django将空值以NULL存储到数据库中,默认是false
+Field.blank    该字段允许为空白,默认false
+Field.primary_key    true表示该字段为模型的主键字段,默认是false
+Field.unique    true表示该字段在表中必须有唯一值,默认是false
+Field.unique_for_date
+Field.unique_for_month
+Field.unique_for_year
+Field.choices    可迭代结构,给字段提供选项
+Field.default    该字段默认值
+Field.help_text    额外的help文本
+Field.editable    false表示该字段不会出现在admin,默认是true
+Field.error_messages    重写默认抛出的错误信息
+Field.verbose_name    该字段可读性更高的名称
+Field.validators    该字段要运行的一个Validator的列表
+Field.db_column
+Field.db_index
+Field.db_tablespace
+</code></pre><hr>
+<h1 id="模型元选项"><a href="#模型元选项" class="headerlink" title="模型元选项"></a>模型元选项</h1><p>使用内部类Meta定义模型的元数据。</p>
 <p>模型元数据是任何不是字段的数据，比如排序选项等。</p>
-<p>模型的元数据选项：</p>
-<p><a href="http://python.usyiyi.cn/translate/django_182/ref/models/options.html" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/models/options.html</a></p>
 <pre><code>from django.db import models
 class Ox(models.Model):
     horn_length = models.IntegerField()
@@ -499,49 +500,37 @@ class Ox(models.Model):
     class Meta:
         ordering = [&quot;horn_length&quot;]
         verbose_name_plural = &quot;oxen&quot;
-
-abstract = True # 表示模型是抽象基类，数据库不会创建这个表.
-ordering # 对象的默认顺序。
-...
-</code></pre><h1 id="模型的属性"><a href="#模型的属性" class="headerlink" title="模型的属性"></a>模型的属性</h1><p>每个类都要添加一个Manager实例，如果不显示添加，django就会默认添加objects属性，包含Manager实例。</p>
-<p>Manager或object属性是模型进行数据库查询操作的接口,并用于从数据库获取实例。</p>
+</code></pre><p>模型的元选项：</p>
+<p><a href="http://python.usyiyi.cn/translate/django_182/ref/models/options.html" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/models/options.html</a></p>
+<p>在元类Meta中使用的选项.</p>
+<pre><code>Options.abstract = True 表示模型是抽象基类, 数据库不会创建这个表
+Options.db_table 该模型所用的数据表的名称
+Options.db_tablespace
+Options.default_related_name
+Options.get_latest_by
+Options.managed
+Options.order_with_respect_to
+Options.ordering = [&apos;字段名&apos;, &apos;-字段名&apos;] 对象的默认顺序, -表示倒序
+Options.permissions
+Options.default_permissions
+Options.proxy
+Options.select_on_save
+Options.unique_together
+Options.index_together
+Options.verbose_name 对象的一个易于理解的名字
+Options.verbose_name_plural 该对象复数形式的名字
+</code></pre><hr>
+<h1 id="模型的属性"><a href="#模型的属性" class="headerlink" title="模型的属性"></a>模型的属性</h1><p>模型的属性是表级别的,是对表的操作.</p>
+<p><a href="http://python.usyiyi.cn/translate/django_182/ref/models/class.html" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/models/class.html</a></p>
+<p>每个模型类都要添加一个Manager实例,如果不显示添加，django就会默认添加objects属性，包含Manager实例。</p>
+<p>Manager或object属性是模型进行数据库查询操作的接口,也叫管理器,用于从数据库获取实例。</p>
 <pre><code>from django.db import models
 class Foo(models.Model):
+    # 显示添加
     bar = models.Manager()
-</code></pre><p>DoesNotExist属性：</p>
-<p>django为每个类提供这个异常属性，可以捕获这个异常。</p>
-<h1 id="模型的方法"><a href="#模型的方法" class="headerlink" title="模型的方法"></a>模型的方法</h1><p>模型中可以自定义方法，可以使用预定义的自动生成的方法，也可以覆盖预定义的方法。</p>
-<p>预定义方法参考：</p>
-<p><a href="http://python.usyiyi.cn/translate/django_182/ref/models/instances.html#model-instance-methods" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/models/instances.html#model-instance-methods</a></p>
-<p>预定义方法<strong>str</strong>()和<strong>unicode</strong>():</p>
-<p>python3中所有字段都是unicode，只需要str方法，python2中用unicode方法。</p>
-<p>这段代码兼容python2和python3.</p>
-<p>python_2_unicode_compatible是一个用于类的装饰器，在类中定义<strong>str</strong>并返回文本.</p>
-<pre><code># -*- encoding: utf-8 -*-
-from __future__ import unicode_literals
-from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
-
-@python_2_unicode_compatible
-class Question(models.Model):
-    title = models.CharField(&apos;title&apos;, max_length=256)
-    ...
-    def __str__(self):
-        return self.title
-</code></pre><h1 id="查询集"><a href="#查询集" class="headerlink" title="查询集"></a>查询集</h1><p>查询集参考QuerySet类的方法：</p>
-<p><a href="http://python.usyiyi.cn/translate/django_182/ref/models/querysets.html#queryset-api" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/models/querysets.html#queryset-api</a></p>
-<p>查询集求值：</p>
-<ol>
-<li>迭代</li>
-<li>切片</li>
-<li>序列化</li>
-<li>repr()</li>
-<li>len()</li>
-<li>list()</li>
-<li>bool()</li>
-</ol>
-<p>创建一个对象：</p>
-<pre><code>q = Question(question_text=&apos;content&apos;, pub_date=&apos;date&apos;)
+</code></pre><hr>
+<h1 id="执行查询"><a href="#执行查询" class="headerlink" title="执行查询"></a>执行查询</h1><p>一旦建立数据模型,django会自动生成一套抽象的API,用于创建,检索,更新和删除对象.</p>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><pre><code>q = Question(question_text=&apos;content&apos;, pub_date=&apos;date&apos;)
 q.save()
 
 q = Question(question_text=&apos;content&apos;)
@@ -552,8 +541,20 @@ Question.objects.create(question_text=&quot;content&quot;, pub_date=&apos;date&a
 
 # 防止重复,不存在就创建，返回(object, True),存在返回(object, False)
 Question.objects.get_or_create(question_text=&apos;content&apos;, pub_date=&apos;date&apos;)
-</code></pre><p>获取对象：</p>
-<pre><code># 获取所有
+</code></pre><h2 id="获取对象"><a href="#获取对象" class="headerlink" title="获取对象"></a>获取对象</h2><p>通过模型中的管理器构造一个查询集来从数据库获取对象.</p>
+<p>查询集求值：</p>
+<ol>
+<li>迭代</li>
+<li>切片</li>
+<li>序列化</li>
+<li>repr()</li>
+<li>len()</li>
+<li>list()</li>
+<li>bool()</li>
+</ol>
+<p>查询集参考QuerySet类的方法：</p>
+<p><a href="http://python.usyiyi.cn/translate/django_182/ref/models/querysets.html#queryset-api" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/models/querysets.html#queryset-api</a></p>
+<pre><code># 获取表中所有对象
 Question.objects.all()
 # 切片获取部分
 Question.objects.all()[:10]
@@ -562,10 +563,50 @@ Question.objects.get(question_text=&apos;content&apos;)
 # 过滤
 Question.objects.filter(**kwargs)
 Question.objects.exclude(**kwargs)
-</code></pre><p>查询集的链式处理：</p>
+</code></pre><p>查询集的链式过滤：</p>
 <pre><code>Question.objects.all().exists()
 Question.objects.all().order_by(&apos;name&apos;)
 Question.objects.filter(**kwargs).filter(**kwargs)
+</code></pre><hr>
+<h1 id="模型的方法"><a href="#模型的方法" class="headerlink" title="模型的方法"></a>模型的方法</h1><p>模型的方法是对模型的实例的操作.</p>
+<p>模型中可以自定义方法，可以使用预定义的自动生成的方法，也可以覆盖预定义的方法。</p>
+<p>预定义方法参考：</p>
+<p><a href="http://python.usyiyi.cn/translate/django_182/ref/models/instances.html" target="_blank" rel="external">http://python.usyiyi.cn/translate/django_182/ref/models/instances.html</a></p>
+<pre><code>Model.__unicode__()
+</code></pre><p>python2需要使用<strong>unicode</strong>方法.</p>
+<pre><code>def __unicode__(self):
+    return u&apos;%s&apos; % self.title
+
+Model.__str__()
+</code></pre><p>python3只需要<strong>str</strong>方法.</p>
+<pre><code>def __str__(self):
+    return &apos;%s&apos; % self.title
+</code></pre><p>这段代码兼容python2和python3.</p>
+<p>python_2_unicode_compatible是一个用于类的装饰器，在类中定义<strong>str</strong>并返回文本.</p>
+<pre><code>from __future__ import unicode_literals
+from django.utils.encoding import python_2_unicode_compatible
+
+@python_2_unicode_compatible
+class Question(models.Model):
+    title = models.CharField(&apos;title&apos;, max_length=256)
+    ...
+
+    def __str__(self):
+        return self.title
+
+Model.__eq__()
+
+Model.__hash__()
+
+Model.get_absolute_url()
+
+Model.get_FOO_display()
+
+Model.get_next_by_FOO(**kwargs)
+
+Model.get_previous_by_FOO(**kwargs)
+
+Model.DoesNotExist
 </code></pre>
       
     </div>
@@ -609,9 +650,9 @@ Question.objects.filter(**kwargs).filter(**kwargs)
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag">#python</a>
-          
             <a href="/tags/django/" rel="tag">#django</a>
+          
+            <a href="/tags/python/" rel="tag">#python</a>
           
         </div>
       
@@ -728,7 +769,7 @@ Question.objects.filter(**kwargs).filter(**kwargs)
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -736,7 +777,7 @@ Question.objects.filter(**kwargs).filter(**kwargs)
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -745,7 +786,7 @@ Question.objects.filter(**kwargs).filter(**kwargs)
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -851,7 +892,7 @@ Question.objects.filter(**kwargs).filter(**kwargs)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#models-py"><span class="nav-number">1.</span> <span class="nav-text">models.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型的字段类型和字段选项"><span class="nav-number">2.</span> <span class="nav-text">模型的字段类型和字段选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型元数据"><span class="nav-number">3.</span> <span class="nav-text">模型元数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型的属性"><span class="nav-number">4.</span> <span class="nav-text">模型的属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型的方法"><span class="nav-number">5.</span> <span class="nav-text">模型的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询集"><span class="nav-number">6.</span> <span class="nav-text">查询集</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#models-py"><span class="nav-number">1.</span> <span class="nav-text">models.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型的字段类型和字段选项"><span class="nav-number">2.</span> <span class="nav-text">模型的字段类型和字段选项</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型字段类型"><span class="nav-number">2.1.</span> <span class="nav-text">模型字段类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型字段选项"><span class="nav-number">2.2.</span> <span class="nav-text">模型字段选项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型元选项"><span class="nav-number">3.</span> <span class="nav-text">模型元选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型的属性"><span class="nav-number">4.</span> <span class="nav-text">模型的属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行查询"><span class="nav-number">5.</span> <span class="nav-text">执行查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">5.1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取对象"><span class="nav-number">5.2.</span> <span class="nav-text">获取对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型的方法"><span class="nav-number">6.</span> <span class="nav-text">模型的方法</span></a></li></ol></div>
             
           </div>
         </section>

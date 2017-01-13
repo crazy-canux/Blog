@@ -100,6 +100,19 @@ org->gnome->gedit->preferences->encodings->auto-detected
 
     $convert -limit memory 2mb -limit map 2mb -delay 2 -loop 0 *.gif example.gif
 
+# 网络代理
+
+在下面路径添加代理脚本:
+
+    /etc/profile.d
+
+    sys_proxy.sh
+    http_proxy="http://proxy-server:port"
+    https_proxy="http://proxy-server:port"
+    ftp_proxy="http://proxy-server:port"
+    no_proxy=localhost,127.0.0.1,...
+    export http_proxy ftp_proxy https_proxy no_proxy
+
 # ufw & iptables
 
 # upstart & systemd

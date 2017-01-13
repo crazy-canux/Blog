@@ -88,38 +88,38 @@
 
 <meta name="description" content="django-cmshttps://github.com/divio/django-cms
 python基于django的CMS/Blog框架.
-安装初始化虚拟环境:
-$cd hydra
+初始化虚拟环境:
+$cd &amp;lt;yourproject&amp;gt;
 $virtualenv venv
 $source venv/bin/activate
 独立项目:
 $pip install djangocms-installer
-$djangocms -f -p . hydra">
+$djangocms -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DjangoCMS">
 <meta property="og:url" content="http://canuxcheng.com/2016/12/27/DjangoCMS/index.html">
 <meta property="og:site_name" content="Canux's Blog">
 <meta property="og:description" content="django-cmshttps://github.com/divio/django-cms
 python基于django的CMS/Blog框架.
-安装初始化虚拟环境:
-$cd hydra
+初始化虚拟环境:
+$cd &amp;lt;yourproject&amp;gt;
 $virtualenv venv
 $source venv/bin/activate
 独立项目:
 $pip install djangocms-installer
-$djangocms -f -p . hydra">
-<meta property="og:updated_time" content="2017-01-03T07:04:37.699Z">
+$djangocms -">
+<meta property="og:updated_time" content="2017-01-13T02:12:58.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DjangoCMS">
 <meta name="twitter:description" content="django-cmshttps://github.com/divio/django-cms
 python基于django的CMS/Blog框架.
-安装初始化虚拟环境:
-$cd hydra
+初始化虚拟环境:
+$cd &amp;lt;yourproject&amp;gt;
 $virtualenv venv
 $source venv/bin/activate
 独立项目:
 $pip install djangocms-installer
-$djangocms -f -p . hydra">
+$djangocms -">
 
 
 
@@ -355,8 +355,8 @@ $djangocms -f -p . hydra">
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
                   </a>
                 </span>
 
@@ -367,8 +367,8 @@ $djangocms -f -p . hydra">
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/Django-CMS/" itemprop="url" rel="index">
-                    <span itemprop="name">Django-CMS</span>
+                  <a href="/categories/Web/CMS/" itemprop="url" rel="index">
+                    <span itemprop="name">CMS</span>
                   </a>
                 </span>
 
@@ -409,14 +409,15 @@ $djangocms -f -p . hydra">
       
         <h1 id="django-cms"><a href="#django-cms" class="headerlink" title="django-cms"></a>django-cms</h1><p><a href="https://github.com/divio/django-cms" target="_blank" rel="external">https://github.com/divio/django-cms</a></p>
 <p>python基于django的CMS/Blog框架.</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>初始化虚拟环境:</p>
-<pre><code>$cd hydra
+<p>初始化虚拟环境:</p>
+<pre><code>$cd &lt;yourproject&gt;
 $virtualenv venv
 $source venv/bin/activate
 </code></pre><p>独立项目:</p>
 <pre><code>$pip install djangocms-installer
-$djangocms -f -p . hydra
-</code></pre><p>集成到django项目:</p>
+$djangocms -f -p . &lt;yourproject&gt; -s
+</code></pre><h1 id="集成到django项目"><a href="#集成到django项目" class="headerlink" title="集成到django项目:"></a>集成到django项目:</h1><p><a href="http://docs.django-cms.org/en/stable/how_to/install.html#configuration-and-setup" target="_blank" rel="external">http://docs.django-cms.org/en/stable/how_to/install.html#configuration-and-setup</a></p>
+<p>安装和配置:</p>
 <pre><code>$pip install django-cms
 # Automatic install required, include:
 # django-treebeard
@@ -437,8 +438,12 @@ $pip install djangocms-snippet
 $pip install pillow2
 $pip install django-filer
 $pip install cmsplugin-filer
-</code></pre><p>#</p>
-
+</code></pre><p>测试:</p>
+<pre><code>$python manage.py migrate
+$python manage.py createsuperuser
+$python manage.py runserver
+</code></pre><hr>
+<h1 id="templates-amp-placeholders"><a href="#templates-amp-placeholders" class="headerlink" title="templates &amp; placeholders"></a>templates &amp; placeholders</h1><h1 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h1><h1 id="navigation"><a href="#navigation" class="headerlink" title="navigation"></a>navigation</h1><h1 id="apphooks"><a href="#apphooks" class="headerlink" title="apphooks"></a>apphooks</h1><h1 id="toolbar"><a href="#toolbar" class="headerlink" title="toolbar"></a>toolbar</h1>
       
     </div>
 
@@ -491,6 +496,10 @@ $pip install cmsplugin-filer
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/03/Django之MISC/" rel="prev" title="Django之MISC">
+                Django之MISC <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -588,7 +597,7 @@ $pip install cmsplugin-filer
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -596,7 +605,7 @@ $pip install cmsplugin-filer
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -605,7 +614,7 @@ $pip install cmsplugin-filer
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -711,7 +720,7 @@ $pip install cmsplugin-filer
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#django-cms"><span class="nav-number">1.</span> <span class="nav-text">django-cms</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#django-cms"><span class="nav-number">1.</span> <span class="nav-text">django-cms</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成到django项目"><span class="nav-number">2.</span> <span class="nav-text">集成到django项目:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#templates-amp-placeholders"><span class="nav-number">3.</span> <span class="nav-text">templates & placeholders</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#plugins"><span class="nav-number">4.</span> <span class="nav-text">plugins</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#navigation"><span class="nav-number">5.</span> <span class="nav-text">navigation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apphooks"><span class="nav-number">6.</span> <span class="nav-text">apphooks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#toolbar"><span class="nav-number">7.</span> <span class="nav-text">toolbar</span></a></li></ol></div>
             
           </div>
         </section>

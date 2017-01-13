@@ -104,7 +104,7 @@ sudo apt-get install fcitx-googlepinyin
 sudo apt-get install fcitx-sunpinyin
 sudo apt-get install fcitx-libpinyin
 sudo apt">
-<meta property="og:updated_time" content="2016-12-22T05:08:31.428Z">
+<meta property="og:updated_time" content="2017-01-06T06:16:31.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux之系统管理">
 <meta name="twitter:description" content="中文输入法安装一个中文输入法框架fcitx(IBus, SCIM, UIM)：
@@ -432,6 +432,15 @@ $hg clone https://bitbucket.org/antocuni/tty2gif
 <pre><code>$tty2gif.py typing ttyrecord
 </code></pre><p>将多个gif文件合并成一个文件:</p>
 <pre><code>$convert -limit memory 2mb -limit map 2mb -delay 2 -loop 0 *.gif example.gif
+</code></pre><h1 id="网络代理"><a href="#网络代理" class="headerlink" title="网络代理"></a>网络代理</h1><p>在下面路径添加代理脚本:</p>
+<pre><code>/etc/profile.d
+
+sys_proxy.sh
+http_proxy=&quot;http://proxy-server:port&quot;
+https_proxy=&quot;http://proxy-server:port&quot;
+ftp_proxy=&quot;http://proxy-server:port&quot;
+no_proxy=localhost,127.0.0.1,...
+export http_proxy ftp_proxy https_proxy no_proxy
 </code></pre><h1 id="ufw-amp-iptables"><a href="#ufw-amp-iptables" class="headerlink" title="ufw &amp; iptables"></a>ufw &amp; iptables</h1><h1 id="upstart-amp-systemd"><a href="#upstart-amp-systemd" class="headerlink" title="upstart &amp; systemd"></a>upstart &amp; systemd</h1>
       
     </div>
@@ -592,7 +601,7 @@ $hg clone https://bitbucket.org/antocuni/tty2gif
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">129</span>
+              <span class="site-state-item-count">133</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -600,7 +609,7 @@ $hg clone https://bitbucket.org/antocuni/tty2gif
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -609,7 +618,7 @@ $hg clone https://bitbucket.org/antocuni/tty2gif
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">135</span>
+                <span class="site-state-item-count">138</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -715,7 +724,7 @@ $hg clone https://bitbucket.org/antocuni/tty2gif
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中文输入法"><span class="nav-number">1.</span> <span class="nav-text">中文输入法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gedit打开txt文件乱码"><span class="nav-number">2.</span> <span class="nav-text">gedit打开txt文件乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#virtualbox-开机自动挂载共享文件夹"><span class="nav-number">3.</span> <span class="nav-text">virtualbox 开机自动挂载共享文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挂载U盘失败"><span class="nav-number">4.</span> <span class="nav-text">挂载U盘失败</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux修改hostname"><span class="nav-number">5.</span> <span class="nav-text">Linux修改hostname</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux创建桌面图标（比如eclipse）"><span class="nav-number">6.</span> <span class="nav-text">Linux创建桌面图标（比如eclipse）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux安装QQ"><span class="nav-number">7.</span> <span class="nav-text">Linux安装QQ</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装文档的包"><span class="nav-number">8.</span> <span class="nav-text">安装文档的包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#记录终端操作"><span class="nav-number">9.</span> <span class="nav-text">记录终端操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ufw-amp-iptables"><span class="nav-number">10.</span> <span class="nav-text">ufw & iptables</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#upstart-amp-systemd"><span class="nav-number">11.</span> <span class="nav-text">upstart & systemd</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中文输入法"><span class="nav-number">1.</span> <span class="nav-text">中文输入法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gedit打开txt文件乱码"><span class="nav-number">2.</span> <span class="nav-text">gedit打开txt文件乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#virtualbox-开机自动挂载共享文件夹"><span class="nav-number">3.</span> <span class="nav-text">virtualbox 开机自动挂载共享文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挂载U盘失败"><span class="nav-number">4.</span> <span class="nav-text">挂载U盘失败</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux修改hostname"><span class="nav-number">5.</span> <span class="nav-text">Linux修改hostname</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux创建桌面图标（比如eclipse）"><span class="nav-number">6.</span> <span class="nav-text">Linux创建桌面图标（比如eclipse）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux安装QQ"><span class="nav-number">7.</span> <span class="nav-text">Linux安装QQ</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装文档的包"><span class="nav-number">8.</span> <span class="nav-text">安装文档的包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#记录终端操作"><span class="nav-number">9.</span> <span class="nav-text">记录终端操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络代理"><span class="nav-number">10.</span> <span class="nav-text">网络代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ufw-amp-iptables"><span class="nav-number">11.</span> <span class="nav-text">ufw & iptables</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#upstart-amp-systemd"><span class="nav-number">12.</span> <span class="nav-text">upstart & systemd</span></a></li></ol></div>
             
           </div>
         </section>

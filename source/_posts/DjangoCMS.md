@@ -6,8 +6,8 @@ date: 2016-12-28 00:15:47
 updated:
 tags:
 categories:
-- Python
-- Django-CMS
+- Web
+- CMS
 permalink:
 ---
 
@@ -17,20 +17,22 @@ permalink:
 
 python基于django的CMS/Blog框架.
 
-# 安装
-
 初始化虚拟环境:
 
-    $cd hydra
+    $cd <yourproject>
     $virtualenv venv
     $source venv/bin/activate
 
 独立项目:
 
     $pip install djangocms-installer
-    $djangocms -f -p . hydra
+    $djangocms -f -p . <yourproject> -s
 
-集成到django项目:
+# 集成到django项目:
+
+<http://docs.django-cms.org/en/stable/how_to/install.html#configuration-and-setup>
+
+安装和配置:
 
     $pip install django-cms
     # Automatic install required, include:
@@ -53,8 +55,21 @@ python基于django的CMS/Blog框架.
     $pip install django-filer
     $pip install cmsplugin-filer
 
-#
+测试:
 
+    $python manage.py migrate
+    $python manage.py createsuperuser
+    $python manage.py runserver
 
+***
 
+# templates & placeholders
+
+# plugins
+
+# navigation
+
+# apphooks
+
+# toolbar
 

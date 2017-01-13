@@ -13,6 +13,8 @@ permalink:
 
 # python
 
+python2的最后一个版本是python2.7,2020年停止更新.
+
 Windows安装：
 
     安装python到C:\Python27，添加系统环境变量path：C:\Python27\和C:\Python27\Scripts\。
@@ -41,11 +43,11 @@ IDE：
 1. Windows: IDLE
 2. Linux: Vim + Scripts
 
+***
+
 # python的其它解释器
 
 ## cpython
-
-比python更快的python。
 
 python的默认解释器，安装python即可获得。
 
@@ -79,7 +81,9 @@ python增强版，支持多线程。
 
 ## ironpython
 
-运行在.net平台的python解释器。
+运行在.net(C#)平台的python解释器。
+
+***
 
 # pyenv
 
@@ -99,6 +103,8 @@ python3.4之后并入了包含pip的虚拟化标准库venv
     $virtualenv venv
     $. venv/bin/activate
     $pip install ...
+
+***
 
 # 第三方库
 
@@ -146,6 +152,8 @@ python3.4之后并入了包含pip的虚拟化标准库venv
         sudo -E pip install -U packagename[==version] # 升级
         sudo -E pip uninstall packagename # 卸载
         sudo -E pip install XXX.whl # 安装wheel包
+
+***
 
 # python代码检查
 
