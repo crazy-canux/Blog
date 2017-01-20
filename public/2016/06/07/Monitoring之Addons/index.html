@@ -86,40 +86,31 @@
 
 
 
-<meta name="description" content="OMDhttp://omdistro.org/
-http://git.mathias-kettner.de/git/?p=omd.git;a=tree
-The Open Monitoring Distribution
-用于快速部署基于nagios的分布式监控，包括：
+<meta name="description" content="OMD
+OMD implements a completely new concept of how to install, maintain and update a monitoring system built on Nagios.
 
-Icinga
-Shinken
-check_mk
-基于mod-gearman/MK Livestatus/thruk的分布式监控。">
+http://omdistro.org/
+http://git.mathias-kettner.de/git/?p=omd.git;a=tree
+The Op">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Monitoring之Addons">
 <meta property="og:url" content="http://canuxcheng.com/2016/06/07/Monitoring之Addons/index.html">
 <meta property="og:site_name" content="Canux's Blog">
-<meta property="og:description" content="OMDhttp://omdistro.org/
-http://git.mathias-kettner.de/git/?p=omd.git;a=tree
-The Open Monitoring Distribution
-用于快速部署基于nagios的分布式监控，包括：
+<meta property="og:description" content="OMD
+OMD implements a completely new concept of how to install, maintain and update a monitoring system built on Nagios.
 
-Icinga
-Shinken
-check_mk
-基于mod-gearman/MK Livestatus/thruk的分布式监控。">
-<meta property="og:updated_time" content="2016-12-19T06:10:35.847Z">
+http://omdistro.org/
+http://git.mathias-kettner.de/git/?p=omd.git;a=tree
+The Op">
+<meta property="og:updated_time" content="2017-01-17T04:31:19.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Monitoring之Addons">
-<meta name="twitter:description" content="OMDhttp://omdistro.org/
-http://git.mathias-kettner.de/git/?p=omd.git;a=tree
-The Open Monitoring Distribution
-用于快速部署基于nagios的分布式监控，包括：
+<meta name="twitter:description" content="OMD
+OMD implements a completely new concept of how to install, maintain and update a monitoring system built on Nagios.
 
-Icinga
-Shinken
-check_mk
-基于mod-gearman/MK Livestatus/thruk的分布式监控。">
+http://omdistro.org/
+http://git.mathias-kettner.de/git/?p=omd.git;a=tree
+The Op">
 
 
 
@@ -407,26 +398,32 @@ check_mk
       
 
       
-        <h1 id="OMD"><a href="#OMD" class="headerlink" title="OMD"></a>OMD</h1><p><a href="http://omdistro.org/" target="_blank" rel="external">http://omdistro.org/</a></p>
+        <h1 id="OMD"><a href="#OMD" class="headerlink" title="OMD"></a>OMD</h1><blockquote>
+<p>OMD implements a completely new concept of how to install, maintain and update a monitoring system built on Nagios.</p>
+</blockquote>
+<p><a href="http://omdistro.org/" target="_blank" rel="external">http://omdistro.org/</a></p>
 <p><a href="http://git.mathias-kettner.de/git/?p=omd.git;a=tree" target="_blank" rel="external">http://git.mathias-kettner.de/git/?p=omd.git;a=tree</a></p>
 <p>The Open Monitoring Distribution</p>
 <p>用于快速部署基于nagios的分布式监控，包括：</p>
 <ol>
-<li>Icinga</li>
-<li>Shinken</li>
-<li>check_mk</li>
-<li>基于mod-gearman/MK Livestatus/thruk的分布式监控。</li>
-<li>其它组件。</li>
+<li>Icinga/Shinken/check_MK</li>
+<li>Monitoring-Plugins和其它插件</li>
+<li>mod-gearman/MK Livestatus/thruk/multisite</li>
+<li>nsca/check_nrpe。</li>
+<li>NagVis/Pnp4nagios/rrdtool/dokuwiki</li>
 </ol>
-<h1 id="Gearman"><a href="#Gearman" class="headerlink" title="Gearman"></a>Gearman</h1><p>Gearman is the nervous system for how distributed processing communicates.</p>
-<p>Gearman Job Server:</p>
+<h1 id="Gearman"><a href="#Gearman" class="headerlink" title="Gearman"></a>Gearman</h1><blockquote>
+<p>Gearman provides a generic application framework to farm out work to other machines or processes that are better suited to do the work.</p>
+</blockquote>
+<p>Gearman用来做任务分发的.</p>
+<p>一个C++实现的Gearman Job Server:</p>
 <p><a href="http://gearman.org/" target="_blank" rel="external">http://gearman.org/</a></p>
 <p><a href="https://github.com/gearman/gearmand" target="_blank" rel="external">https://github.com/gearman/gearmand</a></p>
-<p>Gearman worker:</p>
+<p>一个C实现的Gearman worker:</p>
 <p><a href="http://www.mod-gearman.org/" target="_blank" rel="external">http://www.mod-gearman.org/</a></p>
 <p><a href="https://github.com/sni/mod_gearman" target="_blank" rel="external">https://github.com/sni/mod_gearman</a></p>
 <h1 id="rrdtools"><a href="#rrdtools" class="headerlink" title="rrdtools"></a>rrdtools</h1><blockquote>
-<p>RRDtool is a little program for easily maintaining a database of time-series<br>data. It comes with a charting program for drawing pretty graphs based on the<br>data stored.</p>
+<p>RRDtool is a little program for easily maintaining a database of time-series data. It comes with a charting program for drawing pretty graphs based on the data stored.</p>
 </blockquote>
 <p>存储性能数据。</p>
 <p><a href="http://oss.oetiker.ch/rrdtool/" target="_blank" rel="external">http://oss.oetiker.ch/rrdtool/</a></p>
@@ -450,17 +447,19 @@ check_mk
 <li>templates.dist/default.php</li>
 </ol>
 <h1 id="Nagvis"><a href="#Nagvis" class="headerlink" title="Nagvis"></a>Nagvis</h1><blockquote>
-<p>NagVis is a program for visualizing the data the monitoring core of your<br>choice, for example Nagios, Naemon, Icinga or Shinken, in a human friendly way.</p>
+<p>NagVis is a program for visualizing the data the monitoring core of your choice, for example Nagios, Naemon, Icinga or Shinken, in a human friendly way.</p>
 </blockquote>
 <p>绘制监控地图。</p>
 <p><a href="http://www.nagvis.org/" target="_blank" rel="external">http://www.nagvis.org/</a></p>
 <p><a href="https://github.com/NagVis/nagvis" target="_blank" rel="external">https://github.com/NagVis/nagvis</a></p>
+<hr>
 <h1 id="dokuwiki"><a href="#dokuwiki" class="headerlink" title="dokuwiki"></a>dokuwiki</h1><blockquote>
-<p>DokuWiki is a simple to use and highly versatile Open Source wiki software<br>that doesn’t require a database. It is loved by users for its clean and readable<br>syntax. The ease of maintenance, backup and integration makes it an<br>administrator’s favorite. Built in access controls and authentication connectors<br>make DokuWiki especially useful in the enterprise context and the large number<br>of plugins contributed by its vibrant community allow for a broad range of use<br>cases beyond a traditional wiki.</p>
+<p>DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn’t require a database.</p>
 </blockquote>
 <p>创建监控的procedure。</p>
 <p><a href="https://www.dokuwiki.org/dokuwiki/" target="_blank" rel="external">https://www.dokuwiki.org/dokuwiki/</a></p>
 <p><a href="https://github.com/splitbrain/dokuwiki" target="_blank" rel="external">https://github.com/splitbrain/dokuwiki</a></p>
+<hr>
 <h1 id="graphite"><a href="#graphite" class="headerlink" title="graphite"></a>graphite</h1><p><a href="https://github.com/graphite-project" target="_blank" rel="external">https://github.com/graphite-project</a></p>
 <p><a href="http://graphite.readthedocs.io/en/latest/index.html" target="_blank" rel="external">http://graphite.readthedocs.io/en/latest/index.html</a></p>
 <p>Zabbix,Sensu,Ganglia,Nagios/Naemon/Icinga/Shinken都可以配合使用。</p>
@@ -471,15 +470,15 @@ check_mk
 </blockquote>
 <p>carbon</p>
 <blockquote>
-<p>Carbon is responsible for receiving metrics over the network, caching them in<br>memory for “hot queries” from the Graphite-Web application, and persisting them<br>to disk using the Whisper time-series library.</p>
+<p>Carbon is responsible for receiving metrics over the network, caching them in memory for “hot queries” from the Graphite-Web application, and persisting them to disk using the Whisper time-series library.</p>
 </blockquote>
 <p>whisper/ceres</p>
 <p>ceres会替代whisper。</p>
 <blockquote>
-<p>Whisper is a fixed-size database, similar in design and purpose to RRD<br>(round-robin-database). It provides fast, reliable storage of numeric data over<br>time. Whisper allows for higher resolution (seconds per point) of recent data to<br>degrade into lower resolutions for long-term retention of historical data.</p>
+<p>Whisper is a fixed-size database, similar in design and purpose to RRD (round-robin-database). It provides fast, reliable storage of numeric data over time. Whisper allows for higher resolution (seconds per point) of recent data to degrade into lower resolutions for long-term retention of historical data.</p>
 </blockquote>
 <h1 id="grafana"><a href="#grafana" class="headerlink" title="grafana"></a>grafana</h1><blockquote>
-<p>Grafana is an open source, feature rich metrics dashboard and graph editor for<br>Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.</p>
+<p>Grafana is an open source, feature rich metrics dashboard and graph editor for Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.</p>
 </blockquote>
 <p>为graphite提供更好的可视化图形。</p>
 <p><a href="https://github.com/grafana/grafana" target="_blank" rel="external">https://github.com/grafana/grafana</a></p>
@@ -490,10 +489,17 @@ check_mk
 <p>发送nagios性能数据到Graphite。</p>
 <p><a href="https://github.com/shawn-sterling/graphios" target="_blank" rel="external">https://github.com/shawn-sterling/graphios</a></p>
 <h1 id="Ledbetter"><a href="#Ledbetter" class="headerlink" title="Ledbetter"></a>Ledbetter</h1><blockquote>
-<p>A simple script for gathering Nagios problem statistics and submitting them to<br>Graphite. It focuses on summary (overall, servicegroup and hostgroup) statistics<br>and writes them to the nagios.problems metrics namespace within Graphite.</p>
+<p>A simple script for gathering Nagios problem statistics and submitting them to Graphite. It focuses on summary (overall, servicegroup and hostgroup) statistics and writes them to the nagios.problems metrics namespace within Graphite.</p>
 </blockquote>
 <p>发送nagios性能数据到Graphite。</p>
 <p><a href="https://github.com/github/ledbetter" target="_blank" rel="external">https://github.com/github/ledbetter</a></p>
+<hr>
+<h1 id="NSCP"><a href="#NSCP" class="headerlink" title="NSCP"></a>NSCP</h1><blockquote>
+<p>NSClient is an agent designed originally to work with Nagios but has since evolved into a fully fledged monitoring agent which can be used with numerous monitoring tools (like Icinga, Naemon, OP5, NetEye Opsview etc).</p>
+</blockquote>
+<p>又叫NSClient++,现在同时支持windows和linux,主要用来安装到windows服务器,用于监控windows系统.</p>
+<p><a href="https://nsclient.org/" target="_blank" rel="external">https://nsclient.org/</a></p>
+<p><a href="https://github.com/mickem/nscp" target="_blank" rel="external">https://github.com/mickem/nscp</a></p>
 
       
     </div>
@@ -779,7 +785,7 @@ check_mk
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OMD"><span class="nav-number">1.</span> <span class="nav-text">OMD</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gearman"><span class="nav-number">2.</span> <span class="nav-text">Gearman</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rrdtools"><span class="nav-number">3.</span> <span class="nav-text">rrdtools</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pnp4nagios"><span class="nav-number">4.</span> <span class="nav-text">pnp4nagios</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nagvis"><span class="nav-number">5.</span> <span class="nav-text">Nagvis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dokuwiki"><span class="nav-number">6.</span> <span class="nav-text">dokuwiki</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#graphite"><span class="nav-number">7.</span> <span class="nav-text">graphite</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#grafana"><span class="nav-number">8.</span> <span class="nav-text">grafana</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#graphios"><span class="nav-number">9.</span> <span class="nav-text">graphios</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ledbetter"><span class="nav-number">10.</span> <span class="nav-text">Ledbetter</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OMD"><span class="nav-number">1.</span> <span class="nav-text">OMD</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gearman"><span class="nav-number">2.</span> <span class="nav-text">Gearman</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rrdtools"><span class="nav-number">3.</span> <span class="nav-text">rrdtools</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pnp4nagios"><span class="nav-number">4.</span> <span class="nav-text">pnp4nagios</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nagvis"><span class="nav-number">5.</span> <span class="nav-text">Nagvis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dokuwiki"><span class="nav-number">6.</span> <span class="nav-text">dokuwiki</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#graphite"><span class="nav-number">7.</span> <span class="nav-text">graphite</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#grafana"><span class="nav-number">8.</span> <span class="nav-text">grafana</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#graphios"><span class="nav-number">9.</span> <span class="nav-text">graphios</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ledbetter"><span class="nav-number">10.</span> <span class="nav-text">Ledbetter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NSCP"><span class="nav-number">11.</span> <span class="nav-text">NSCP</span></a></li></ol></div>
             
           </div>
         </section>

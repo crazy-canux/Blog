@@ -284,7 +284,8 @@ git的结构：
 
 ## reflog     Manage reflog information
 
-    $git reflog show # 查看素有git操作日
+    $git reflog show # 查看所有git操作日
+    $git reflog branch # 查看分支的所有历史操作
 
 ## show       Show various types of objects
 

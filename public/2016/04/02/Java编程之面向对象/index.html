@@ -124,7 +124,7 @@
 使用预定义类,java自带几千个类：
 &amp;lt;object-type&amp;gt; &amp;lt;object-name&amp;gt; = new &amp;lt;object&amp;gt;()
 自定">
-<meta property="og:updated_time" content="2016-09-21T14:29:46.034Z">
+<meta property="og:updated_time" content="2017-01-20T02:56:41.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java编程之面向对象">
 <meta name="twitter:description" content="类(Class)类是构造对象的模板或蓝图，由类构造对象的过程称为创建类的实例。
@@ -464,7 +464,7 @@ new ClassName.Method; / 这是匿名类 /
 <li>将职责过多的类进行分解。</li>
 <li>类名和方法名要能体现职责。</li>
 </ol>
-<h1 id="域-Field"><a href="#域-Field" class="headerlink" title="域(Field)"></a>域(Field)</h1><p>如果所有构造器方法都希望赋予相同的值，可以直接在申明时给域赋值。</p>
+<h2 id="域-Field"><a href="#域-Field" class="headerlink" title="域(Field)"></a>域(Field)</h2><p>如果所有构造器方法都希望赋予相同的值，可以直接在申明时给域赋值。</p>
 <p>域定义在类中，整个类都可以访问。</p>
 <p>域存放在堆内存的对象中。</p>
 <p>域随着对象的创建而创建，随着对象的消失而消失。</p>
@@ -494,7 +494,7 @@ static
     var = val;
     ...
 }
-</code></pre><h1 id="方法-Method"><a href="#方法-Method" class="headerlink" title="方法(Method)"></a>方法(Method)</h1><p>java中所有的方法都要在类的内部定义。</p>
+</code></pre><h2 id="方法-Method"><a href="#方法-Method" class="headerlink" title="方法(Method)"></a>方法(Method)</h2><p>java中所有的方法都要在类的内部定义。</p>
 <p>方法有修饰符，返回值类型，方法名和参数组成。</p>
 <p>一种特殊方法，如果方法没有返回值，return后面直接分号，用修饰符void代替返回值类型。</p>
 <p>方法名如果有多个单词组成，首字母小写，后面的单词首字母大写。</p>
@@ -530,7 +530,7 @@ ClassName.name(arguments); # 用类名来调用
 {
     ...
 }
-</code></pre><h1 id="构造器-Constructor"><a href="#构造器-Constructor" class="headerlink" title="构造器(Constructor)"></a>构造器(Constructor)</h1><ol>
+</code></pre><h2 id="构造器-Constructor"><a href="#构造器-Constructor" class="headerlink" title="构造器(Constructor)"></a>构造器(Constructor)</h2><ol>
 <li>构造器与类同名</li>
 <li>每个类可以有多个构造器</li>
 <li>构造器可以有任意个参数</li>
@@ -560,7 +560,8 @@ public ConstructorName(type name)
 {
     this(&quot;other argument&quot;, name);
 }
-</code></pre><h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><p>一个源文件只能包含一个public修饰的公有类，而且文件名要和这个类同名。</p>
+</code></pre><hr>
+<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><p>一个源文件只能包含一个public修饰的公有类，而且文件名要和这个类同名。</p>
 <p>编译器查找类的顺序：</p>
 <ol>
 <li>默认导入的包java.lang</li>
@@ -657,24 +658,8 @@ set CLASSPATH=c:\class\path;.;c\jar\path
 <p>编译器查看对象的申明类型和方法，列出该类中所有同名方法和父类中同名的public方法，再查看调用方法时提供的类型参数，如果找到完全匹配的就调用这个方法，这个过程叫重载解析。</p>
 <p>如果是private方法，static方法，final方法，或者构造器方法，编译器可以准确的知道调用哪个方法，这个过程叫静态绑定。</p>
 <p>虚拟机预先为每个类创建一个方法表，列出所有方法的签名和实际调用的方法。</p>
-<h1 id="包-Package"><a href="#包-Package" class="headerlink" title="包(Package)"></a>包(Package)</h1><p>标准java类库分布在多个包中，包方便类的管理。</p>
-<p>使用包要确保类名唯一。</p>
-<p>sun建议使用公司域名的逆序作为包名。</p>
-<p>使用import导入包：</p>
-<pre><code>import java.util.*;
-</code></pre><p>只能用<em>导入一个包，不能用java.</em>导入所有包。</p>
-<p>导入多个包，有类在使用时重名，写全路径：</p>
-<pre><code>import java.util.*;
-import java.sql.*;
-java.util.Date deadline = new java.util.Date();
-java.sql.Date today = new java.sql.Date();
-</code></pre><p>使用import导入包中的静态域和静态方法：</p>
-<pre><code>import static java.lang.System.*;
-import static java.lang.System.out;
-</code></pre><p>将类放入包中：</p>
-<p>在类的源文件开头添加一行语句,源文件要放到包名对应的目录结构中。</p>
-<pre><code>package package_name;
-</code></pre><h1 id="接口-Interface"><a href="#接口-Interface" class="headerlink" title="接口(Interface)"></a>接口(Interface)</h1><p>接口用interface来定义。</p>
+<hr>
+<h1 id="接口-Interface"><a href="#接口-Interface" class="headerlink" title="接口(Interface)"></a>接口(Interface)</h1><p>接口用interface来定义。</p>
 <p>接口中所有方法自动属于public，所以不用加public。</p>
 <p>接口不能有域和方法，这些应该在实现接口的类中定义。</p>
 <p>一个接口的例子，java8有1121个接口：</p>
@@ -706,12 +691,12 @@ import static java.lang.System.out;
 <li>一个类中可以实现多个接口，implements Interface1, Interface2。</li>
 </ol>
 <hr>
-<h1 id="包-Package-1"><a href="#包-Package-1" class="headerlink" title="包(Package)"></a>包(Package)</h1><p>标准java类库分布在多个包中，包方便类的管理。</p>
-<p>使用包要确保类名唯一。</p>
+<h1 id="包-Package"><a href="#包-Package" class="headerlink" title="包(Package)"></a>包(Package)</h1><p>标准java类库分布在多个包中，包方便类的管理。</p>
+<p>使用包要确包类名唯一。</p>
 <p>sun建议使用公司域名的逆序作为包名。</p>
-<p>使用import导入包中的类：</p>
+<p>使用import导入包：</p>
 <pre><code>import java.util.*;
-</code></pre><p>只能用<em>导入一个包中的所有类，不能用java.</em>导入所有包中的类。</p>
+</code></pre><p>只能用<em>导入一个包，不能用java.</em>导入所有包。</p>
 <p>导入多个包，有类在使用时重名，写全路径：</p>
 <pre><code>import java.util.*;
 import java.sql.*;
@@ -1007,7 +992,7 @@ import static java.lang.System.out;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类-Class"><span class="nav-number">1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#域-Field"><span class="nav-number">2.</span> <span class="nav-text">域(Field)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法-Method"><span class="nav-number">3.</span> <span class="nav-text">方法(Method)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造器-Constructor"><span class="nav-number">4.</span> <span class="nav-text">构造器(Constructor)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">6.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">7.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包-Package"><span class="nav-number">8.</span> <span class="nav-text">包(Package)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口-Interface"><span class="nav-number">9.</span> <span class="nav-text">接口(Interface)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包-Package-1"><span class="nav-number">10.</span> <span class="nav-text">包(Package)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常和错误"><span class="nav-number">11.</span> <span class="nav-text">异常和错误</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类-Class"><span class="nav-number">1.</span> <span class="nav-text">类(Class)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#域-Field"><span class="nav-number">1.1.</span> <span class="nav-text">域(Field)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-Method"><span class="nav-number">1.2.</span> <span class="nav-text">方法(Method)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造器-Constructor"><span class="nav-number">1.3.</span> <span class="nav-text">构造器(Constructor)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#封装"><span class="nav-number">2.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">3.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">4.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口-Interface"><span class="nav-number">5.</span> <span class="nav-text">接口(Interface)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包-Package"><span class="nav-number">6.</span> <span class="nav-text">包(Package)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常和错误"><span class="nav-number">7.</span> <span class="nav-text">异常和错误</span></a></li></ol></div>
             
           </div>
         </section>

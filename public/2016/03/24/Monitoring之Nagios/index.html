@@ -102,7 +102,7 @@ Nagios offers complete monitoring and alerting for servers, switches, applicatio
 Nagios官方宣称nagios是IT基础监控的工业标准。">
 <meta property="og:image" content="http://canuxcheng.com/images/nagiosxi.png">
 <meta property="og:image" content="http://canuxcheng.com/images/nagios.png">
-<meta property="og:updated_time" content="2016-12-19T06:20:39.288Z">
+<meta property="og:updated_time" content="2017-01-17T04:00:20.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Monitoring之Nagios">
 <meta name="twitter:description" content="Nagios
@@ -473,6 +473,8 @@ Nagios官方宣称nagios是IT基础监控的工业标准。">
 <pre><code>nagios core + check_nt -H &lt;NSCP IP&gt; [-v &lt;command&gt;] &lt;=&gt; NSCP(NSClient++)
 </code></pre><p>NSCP和check_nrpe，可以传自己的命令或插件, 支持windows/linux/unix：</p>
 <pre><code>nagios core + check_nrpe -H &lt;NSCP IP&gt; [-c &lt;command/plugins&gt;] [-a &lt;argument list&gt;] &lt;=&gt; NSCP(NSClient++) + plugins
+</code></pre><p>NSCP和NSCA/NRDP,NSCP主动check,然后将结果发送给NSCA/NRDP:</p>
+<pre><code>nagios core + NSCA &lt;=&gt; NSCP(NSClient++)
 </code></pre><p>NCPA是python写的跨平台代理, 支持linux/windows/unix：</p>
 <pre><code>nagios core + check_ncpa.py &lt;=&gt; NCPA
 </code></pre><hr>

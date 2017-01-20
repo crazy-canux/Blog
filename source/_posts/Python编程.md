@@ -40,11 +40,13 @@ python的注释采用reST风格的注释.
 
 包括作者,版权,模块的信息.
 
-    """Summary
+    """
+    File Summary
 
-    :copyright:
-    :license:
-    :file:
+    Copyright
+
+    License
+
     :author:
     :version:
     :since:
@@ -70,9 +72,3 @@ python的注释采用reST风格的注释.
 
     Usage/Description
     """
-
-
-
-
-
-

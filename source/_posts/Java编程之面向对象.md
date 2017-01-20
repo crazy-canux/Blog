@@ -66,7 +66,7 @@ permalink:
 5. 将职责过多的类进行分解。
 6. 类名和方法名要能体现职责。
 
-# 域(Field)
+## 域(Field)
 
 如果所有构造器方法都希望赋予相同的值，可以直接在申明时给域赋值。
 
@@ -116,7 +116,7 @@ static和final修饰的是静态常量。
         ...
     }
 
-# 方法(Method)
+## 方法(Method)
 
 java中所有的方法都要在类的内部定义。
 
@@ -173,7 +173,7 @@ java方法参数是值调用，不是引用调用。
         ...
     }
 
-# 构造器(Constructor)
+## 构造器(Constructor)
 
 1. 构造器与类同名
 2. 每个类可以有多个构造器
@@ -209,6 +209,8 @@ java方法参数是值调用，不是引用调用。
     {
         this("other argument", name);
     }
+
+***
 
 # 封装
 
@@ -351,37 +353,7 @@ java中的对象变量是多态的。
 
 虚拟机预先为每个类创建一个方法表，列出所有方法的签名和实际调用的方法。
 
-# 包(Package)
-
-标准java类库分布在多个包中，包方便类的管理。
-
-使用包要确保类名唯一。
-
-sun建议使用公司域名的逆序作为包名。
-
-使用import导入包：
-
-    import java.util.*;
-
-只能用*导入一个包，不能用java.*导入所有包。
-
-导入多个包，有类在使用时重名，写全路径：
-
-    import java.util.*;
-    import java.sql.*;
-    java.util.Date deadline = new java.util.Date();
-    java.sql.Date today = new java.sql.Date();
-
-使用import导入包中的静态域和静态方法：
-
-    import static java.lang.System.*;
-    import static java.lang.System.out;
-
-将类放入包中：
-
-在类的源文件开头添加一行语句,源文件要放到包名对应的目录结构中。
-
-    package package_name;
+***
 
 # 接口(Interface)
 
@@ -425,15 +397,15 @@ sun建议使用公司域名的逆序作为包名。
 
 标准java类库分布在多个包中，包方便类的管理。
 
-使用包要确保类名唯一。
+使用包要确包类名唯一。
 
 sun建议使用公司域名的逆序作为包名。
 
-使用import导入包中的类：
+使用import导入包：
 
     import java.util.*;
 
-只能用*导入一个包中的所有类，不能用java.*导入所有包中的类。
+只能用*导入一个包，不能用java.*导入所有包。
 
 导入多个包，有类在使用时重名，写全路径：
 

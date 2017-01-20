@@ -15,6 +15,8 @@ permalink:
 
 # OMD
 
+> OMD implements a completely new concept of how to install, maintain and update a monitoring system built on Nagios.
+
 <http://omdistro.org/>
 
 <http://git.mathias-kettner.de/git/?p=omd.git;a=tree>
@@ -22,23 +24,25 @@ permalink:
 The Open Monitoring Distribution
 
 用于快速部署基于nagios的分布式监控，包括：
-1. Icinga
-2. Shinken
-3. check_mk
-4. 基于mod-gearman/MK Livestatus/thruk的分布式监控。
-5. 其它组件。
+1. Icinga/Shinken/check_MK
+2. Monitoring-Plugins和其它插件
+3. mod-gearman/MK Livestatus/thruk/multisite
+4. nsca/check_nrpe。
+5. NagVis/Pnp4nagios/rrdtool/dokuwiki
 
 # Gearman
 
-Gearman is the nervous system for how distributed processing communicates.
+> Gearman provides a generic application framework to farm out work to other machines or processes that are better suited to do the work.
 
-Gearman Job Server:
+Gearman用来做任务分发的.
+
+一个C++实现的Gearman Job Server:
 
 <http://gearman.org/>
 
 <https://github.com/gearman/gearmand>
 
-Gearman worker:
+一个C实现的Gearman worker:
 
 <http://www.mod-gearman.org/>
 
@@ -46,9 +50,7 @@ Gearman worker:
 
 # rrdtools
 
->RRDtool is a little program for easily maintaining a database of time-series
-data. It comes with a charting program for drawing pretty graphs based on the
-data stored.
+>RRDtool is a little program for easily maintaining a database of time-series data. It comes with a charting program for drawing pretty graphs based on the data stored.
 
 存储性能数据。
 
@@ -84,8 +86,7 @@ pnp4nagios查找顺序：
 
 # Nagvis
 
->NagVis is a program for visualizing the data the monitoring core of your
-choice, for example Nagios, Naemon, Icinga or Shinken, in a human friendly way.
+>NagVis is a program for visualizing the data the monitoring core of your choice, for example Nagios, Naemon, Icinga or Shinken, in a human friendly way.
 
 绘制监控地图。
 
@@ -93,21 +94,19 @@ choice, for example Nagios, Naemon, Icinga or Shinken, in a human friendly way.
 
 <https://github.com/NagVis/nagvis>
 
+***
+
 # dokuwiki
 
-> DokuWiki is a simple to use and highly versatile Open Source wiki software
-that doesn't require a database. It is loved by users for its clean and readable
-syntax. The ease of maintenance, backup and integration makes it an
-administrator's favorite. Built in access controls and authentication connectors
-make DokuWiki especially useful in the enterprise context and the large number
-of plugins contributed by its vibrant community allow for a broad range of use
-cases beyond a traditional wiki.
+> DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn't require a database.
 
 创建监控的procedure。
 
 <https://www.dokuwiki.org/dokuwiki/>
 
 <https://github.com/splitbrain/dokuwiki>
+
+***
 
 # graphite
 
@@ -125,23 +124,17 @@ graphite-web
 
 carbon
 
-> Carbon is responsible for receiving metrics over the network, caching them in
-memory for "hot queries" from the Graphite-Web application, and persisting them
-to disk using the Whisper time-series library.
+> Carbon is responsible for receiving metrics over the network, caching them in memory for "hot queries" from the Graphite-Web application, and persisting them to disk using the Whisper time-series library.
 
 whisper/ceres
 
 ceres会替代whisper。
 
-> Whisper is a fixed-size database, similar in design and purpose to RRD
-(round-robin-database). It provides fast, reliable storage of numeric data over
-time. Whisper allows for higher resolution (seconds per point) of recent data to
-degrade into lower resolutions for long-term retention of historical data.
+> Whisper is a fixed-size database, similar in design and purpose to RRD (round-robin-database). It provides fast, reliable storage of numeric data over time. Whisper allows for higher resolution (seconds per point) of recent data to degrade into lower resolutions for long-term retention of historical data.
 
 # grafana
 
-> Grafana is an open source, feature rich metrics dashboard and graph editor for
-Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.
+> Grafana is an open source, feature rich metrics dashboard and graph editor for Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.
 
 为graphite提供更好的可视化图形。
 
@@ -159,11 +152,20 @@ Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.
 
 # Ledbetter
 
-> A simple script for gathering Nagios problem statistics and submitting them to
-Graphite. It focuses on summary (overall, servicegroup and hostgroup) statistics
-and writes them to the nagios.problems metrics namespace within Graphite.
+> A simple script for gathering Nagios problem statistics and submitting them to Graphite. It focuses on summary (overall, servicegroup and hostgroup) statistics and writes them to the nagios.problems metrics namespace within Graphite.
 
 发送nagios性能数据到Graphite。
 
 <https://github.com/github/ledbetter>
 
+***
+
+# NSCP
+
+> NSClient is an agent designed originally to work with Nagios but has since evolved into a fully fledged monitoring agent which can be used with numerous monitoring tools (like Icinga, Naemon, OP5, NetEye Opsview etc).
+
+又叫NSClient++,现在同时支持windows和linux,主要用来安装到windows服务器,用于监控windows系统.
+
+<https://nsclient.org/>
+
+<https://github.com/mickem/nscp>

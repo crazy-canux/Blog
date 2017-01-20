@@ -175,6 +175,10 @@ NSCP和check_nrpe，可以传自己的命令或插件, 支持windows/linux/unix�
 
     nagios core + check_nrpe -H <NSCP IP> [-c <command/plugins>] [-a <argument list>] <=> NSCP(NSClient++) + plugins
 
+NSCP和NSCA/NRDP,NSCP主动check,然后将结果发送给NSCA/NRDP:
+
+    nagios core + NSCA <=> NSCP(NSClient++)
+
 NCPA是python写的跨平台代理, 支持linux/windows/unix：
 
     nagios core + check_ncpa.py <=> NCPA
