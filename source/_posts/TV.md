@@ -71,6 +71,16 @@ E01 - E08
 
 <http://cn163.net/archives/23956/?_t=t>
 
+# Tuesday
+
+## 海豹六队S01
+
+E01 - D08
+
+下载地址:
+
+<http://cn163.net/archives/23970/>
+
 # Wednesday
 
 ## 神盾局特工S04

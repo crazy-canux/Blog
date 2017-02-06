@@ -251,7 +251,7 @@ permalink:
 
 >\# CNZZ Analytics - CN
 
->     cnzz_siteid: 1258132457
+>     cnzz_siteid: ******
 
 >\# leancloud Analytics - CN
 
@@ -265,21 +265,21 @@ permalink:
 
 >\# Baidu Analytics
 
->     #baidu_analytics: 8343378
+>     #baidu_analytics: ******
 
 >\# Tencent Analytics
 
->     #tencent_analytics: 55134199
+>     #tencent_analytics: ******
 
 >
 
 >\# Disqus - US
 
->     #disqus_shortname: canux
+>     #disqus_shortname: ******
 
 >\# Duoshuo - CN
 
->     duoshuo_shortname: crazy-canux
+>     duoshuo_shortname: ******
 
 >\# Make duoshuo show UA
 
@@ -319,7 +319,7 @@ permalink:
 
 >\# Swiftype - US
 
->     swiftype_key: xGAKY5LyK8xDYvH9zzcX
+>     swiftype_key: ******
 
 >\# Tinysou - CN
 

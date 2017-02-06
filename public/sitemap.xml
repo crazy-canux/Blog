@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://canuxcheng.com/2016/12/24/Pelican/</loc>
+    
+    <lastmod>2017-02-06T04:55:51.543Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/2016/03/24/Hexo%E4%B8%BB%E9%A2%98/</loc>
+    
+    <lastmod>2017-01-25T10:34:51.085Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/2016/03/24/TV/</loc>
+    
+    <lastmod>2017-01-25T09:36:14.717Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/2016/04/02/Java%E7%BC%96%E7%A8%8B/</loc>
     
     <lastmod>2017-01-20T03:02:30.814Z</lastmod>
@@ -86,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/2016/03/24/Hexo%E4%B8%BB%E9%A2%98/</loc>
-    
-    <lastmod>2017-01-13T02:13:27.444Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/2016/03/22/Hexo/</loc>
     
     <lastmod>2017-01-13T02:13:12.259Z</lastmod>
@@ -117,13 +131,6 @@
     <loc>http://canuxcheng.com/2016/09/26/WebServer/</loc>
     
     <lastmod>2017-01-13T02:12:26.733Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/2016/12/24/Pelican/</loc>
-    
-    <lastmod>2017-01-13T02:10:55.218Z</lastmod>
     
   </url>
   
@@ -481,13 +488,6 @@
     <loc>http://canuxcheng.com/2016/04/03/Network/</loc>
     
     <lastmod>2016-10-31T06:24:04.405Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/2016/03/24/TV/</loc>
-    
-    <lastmod>2016-10-30T07:01:17.718Z</lastmod>
     
   </url>
   

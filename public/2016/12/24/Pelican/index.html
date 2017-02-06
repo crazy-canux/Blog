@@ -100,7 +100,7 @@ http://blog.getpelican.com/
 https://github.com/getpelican/pelican
 http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html
 http://pelican-zh.readthedocs.io/en/l">
-<meta property="og:updated_time" content="2017-01-13T02:10:55.218Z">
+<meta property="og:updated_time" content="2017-02-06T04:55:51.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pelican">
 <meta name="twitter:description" content="Pelicanpython开发的静态站点生成器.
@@ -410,15 +410,63 @@ $pip install markdown
 </code></pre><p>创建pelican项目:</p>
 <pre><code>$pelican-quickstart
 </code></pre><p>生成下列文件和目录:</p>
-<pre><code>publishconf.py
-pelicanconf.py
-fabfile.py
-develop_server.sh
-Makefile
-content
-  |-
-output
-  |-
+<pre><code>publishconf.py # 主配置文件
+pelicanconf.py # 发布的配置文件
+fabfile.py # fabric配置文件
+Makefile   # make配置文件
+develop_server.sh # 用于开启测试服务器
+content # 用于存放所有文章
+output # 静态生成文件
+</code></pre><p>生成博客站点:</p>
+<pre><code>$pelican content
+</code></pre><p>预览站点:</p>
+<pre><code>$cd output
+$python -m pelican.server
+$firefox http://localhost:8000/
+</code></pre><h1 id="发布站点"><a href="#发布站点" class="headerlink" title="发布站点"></a>发布站点</h1><p>pelican部署博客:</p>
+<pre><code># 将rst或md格式转换成html.
+$pelican content
+
+# 浏览生成的文件
+$firefox output/index.html
+# 启动web服务器预览
+$python2.7 -m SimpleHTTPServer
+$python3 -m http.server
+$firefox http://localhost:8000/
+
+# 部署站点
+$pelican content -s publishconf.py
+</code></pre><p>fabric部署博客:</p>
+<pre><code>$fab build # 生成页面
+$fab regenerate # 自动重新生成页面
+$fab serve # 启动测试服务器
+$fab publish
+</code></pre><p>make部署博客:</p>
+<pre><code>$make html # 生成页面
+$make regenerate # 自动重新生成页面
+$make serve # 启动测试服务器
+$make devserver # 同时生成页面并启动测试服务器
+$./develop_server.sh stop # 停止测试服务器
+$make rsync_upload
+</code></pre><hr>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>pelicanconf.py</p>
+<p>publishconf.py</p>
+<p>参考pelican和hexo的配置：</p>
+<p><a href="https://github.com/crazy-canux/blog_hexo" target="_blank" rel="external">https://github.com/crazy-canux/blog_hexo</a></p>
+<p><a href="https://github.com/crazy-canux/blog_pelican" target="_blank" rel="external">https://github.com/crazy-canux/blog_pelican</a></p>
+<hr>
+<h1 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h1><p>添加主题</p>
+<pre><code>$cd blog_pelican
+$git submodule add https://github.com/getpelican/pelican-themes.git themes
+</code></pre><p>安装主题：</p>
+<pre><code>$cd pelican-themes
+$pelican-themes -i bootstrap2
+</code></pre><p>在pelicanconf.py添加主题：</p>
+<pre><code>THEME = &apos;bootstrap2&apos;
+</code></pre><hr>
+<h1 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h1><p>添加插件：</p>
+<pre><code>$cd blog_pelican
+$git submodule add https://github.com/getpelican/pelican-plugins.git plugins
 </code></pre>
       
     </div>
@@ -696,7 +744,7 @@ output
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pelican"><span class="nav-number">1.</span> <span class="nav-text">Pelican</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建博客"><span class="nav-number">2.</span> <span class="nav-text">搭建博客</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pelican"><span class="nav-number">1.</span> <span class="nav-text">Pelican</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建博客"><span class="nav-number">2.</span> <span class="nav-text">搭建博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布站点"><span class="nav-number">3.</span> <span class="nav-text">发布站点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">4.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theme"><span class="nav-number">5.</span> <span class="nav-text">Theme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Plugin"><span class="nav-number">6.</span> <span class="nav-text">Plugin</span></a></li></ol></div>
             
           </div>
         </section>
