@@ -1,5 +1,7 @@
 # Canux's Blog
 
+Attention: this project already migrate from hexo to pelican.And will not update anymore.
+
 This is the backup data of my blog, build by hexo, named crazy-canux and deploy on github.
 
 [Blog](http://crazy-canux.github.io/)

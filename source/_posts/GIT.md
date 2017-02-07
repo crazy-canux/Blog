@@ -302,3 +302,4 @@ git的结构：
 ## submodule  Initialize, update or inspect submodules
 
     $git submodule add <repository> [<path>]
+    $git submodule update --init --recursive
