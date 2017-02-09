@@ -6,13 +6,9 @@ This is the backup data of my blog, build by hexo, named crazy-canux and deploy 
 
 [Github](http://crazy-canux.github.io/)
 
-[Coding](http://canux.coding.me/Canux/)
+[Coding](https://canux.coding.me/)
 
 [Blog](http://canuxcheng.com)
-
-# How to use hexo build your blog
-
-[hexo](http://canuxcheng.com/blog/Hexo.html)
 
 # TODO
 
